@@ -7,13 +7,20 @@ namespace SoapServices
 {
 	public abstract class SoapClientBase
 	{
+		public static readonly XNamespace DefaultEnvelopeNamespace = XNamespace.Get("http://www.w3.org/2003/05/soap-envelope");
+		private const string DefaultContentType = "application/soap+xml";
+
 		private readonly Lazy<HttpClient> _lazyClient;
 
 		public Uri EndpointAddress { get; set; }
+		public XNamespace EnvelopeNamespace { get; set; }
+		public string ContentType { get; set; }
 
 		protected SoapClientBase()
 		{
 			_lazyClient = new Lazy<HttpClient>(CreateHttpClient);
+			EnvelopeNamespace = DefaultEnvelopeNamespace;
+			ContentType = DefaultContentType;
 		}
 
 		public Func<HttpClient> CustomClientInitFunc { get; set; }
@@ -42,7 +49,7 @@ namespace SoapServices
 		private TResponse GetResponse<TResponse>(string responseContent)
 		{
 			var doc = XDocument.Parse(responseContent);
-			var responseMessage = new ResponseMessage(doc);
+			var responseMessage = new ResponseMessage(doc, EnvelopeNamespace);
 			return responseMessage.GetContent<TResponse>();
 		}
 
@@ -51,7 +58,9 @@ namespace SoapServices
 			return new SoapMessageContent
 			{
 				Action = action,
-				BodyContent = request
+				BodyContent = request,
+				EnvelopeNamespace = EnvelopeNamespace,
+				ContentType = ContentType,				
 			};
 		}
 	}

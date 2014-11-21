@@ -8,27 +8,35 @@ namespace SoapServices
 {
 	public class ResponseMessage
 	{
-		private static readonly XNamespace NsEnvelope = XNamespace.Get("http://www.w3.org/2003/05/soap-envelope");
-
 		public XDocument Document { get; private set; }
+		public XNamespace EnvelopeNamespace { get; set; }
 		public SoapFault Fault { get; private set; }
 
 		protected XElement BodyContentNode { get; private set; }
 
 		public ResponseMessage(XDocument document)
+			: this(document, SoapClientBase.DefaultEnvelopeNamespace)
 		{
+		}
+
+		public ResponseMessage(XDocument document, XNamespace envelopeNamespace)
+		{
+			if (document == null) throw new ArgumentNullException("document");
+			if (envelopeNamespace == null) throw new ArgumentNullException("envelopeNamespace");
+
 			Document = document;
+			EnvelopeNamespace = envelopeNamespace;
 			Read();
 		}
 
 		private void Read()
 		{
-			var envelopeElement = Document.Element(XName.Get("Envelope", NsEnvelope.NamespaceName));
-			var bodyElement = envelopeElement.Element(XName.Get("Body", NsEnvelope.NamespaceName));
+			var envelopeElement = Document.Element(XName.Get("Envelope", EnvelopeNamespace.NamespaceName));
+			var bodyElement = envelopeElement.Element(XName.Get("Body", EnvelopeNamespace.NamespaceName));
 
 			BodyContentNode = bodyElement.FirstNode as XElement;
 
-			if (BodyContentNode != null && BodyContentNode.Name == XName.Get("Fault", NsEnvelope.NamespaceName))
+			if (BodyContentNode != null && BodyContentNode.Name == XName.Get("Fault", EnvelopeNamespace.NamespaceName))
 			{
 				Fault = Deserialize<SoapFault>(BodyContentNode, envelopeElement);
 			}

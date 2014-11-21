@@ -33,7 +33,7 @@ namespace SoapClientGenerator
 			targetClass.IsClass = true;
 			targetClass.TypeAttributes = TypeAttributes.Public;
 
-			if (Info.BaseType != typeof (object))
+			if (Info.BaseType != typeof(object))
 			{
 				targetClass.BaseTypes.Add(Info.BaseType);
 			}
@@ -48,21 +48,39 @@ namespace SoapClientGenerator
 			var xmlTypeAttr = Info.GetCustomAttribute<XmlTypeAttribute>();
 			var messageContractAttr = Info.GetCustomAttribute<MessageContractAttribute>();
 
+			bool addXmlRoot = false;
+			string xmlRootElementName = null;
+			string xmlRootNamespace = null;
+
 			if (xmlTypeAttr != null)
 			{
-				var attrType = new CodeTypeReference(typeof(XmlRootAttribute));
-				targetClass.CustomAttributes.Add(new CodeAttributeDeclaration(attrType,
-					new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(xmlTypeAttr.Namespace))));
+				addXmlRoot = true;
+				xmlRootNamespace = xmlTypeAttr.Namespace;
 			}
 			else
 			{
 				if (messageContractAttr != null)
 				{
-					var attrType = new CodeTypeReference(typeof(XmlRootAttribute));
-					targetClass.CustomAttributes.Add(new CodeAttributeDeclaration(attrType,
-						new CodeAttributeArgument(new CodePrimitiveExpression(messageContractAttr.WrapperName)),
-						new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(messageContractAttr.WrapperNamespace))));
+					addXmlRoot = true;
+					xmlRootElementName = messageContractAttr.WrapperName;
+					xmlRootNamespace = messageContractAttr.WrapperNamespace;
 				}
+			}
+
+			var bodyMember = Info.DeclaredFields.FirstOrDefault(f => f.IsPublic && f.GetCustomAttribute<MessageBodyMemberAttribute>() != null);
+			if (bodyMember != null)
+			{
+				xmlRootElementName = bodyMember.Name;
+				var bodyAttr = bodyMember.GetCustomAttribute<MessageBodyMemberAttribute>();
+				xmlRootNamespace = bodyAttr.Namespace;
+			}
+			
+			if (addXmlRoot)
+			{
+				var attrType = new CodeTypeReference(typeof(XmlRootAttribute));
+				targetClass.CustomAttributes.Add(new CodeAttributeDeclaration(attrType,
+					new CodeAttributeArgument("ElementName", new CodePrimitiveExpression(xmlRootElementName)),
+					new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(xmlRootNamespace))));
 			}
 
 			AddFields(targetClass);
@@ -75,6 +93,10 @@ namespace SoapClientGenerator
 		{
 			foreach (var prop in Info.DeclaredProperties.Where(p => p.GetCustomAttribute<XmlAnyAttributeAttribute>() == null && p.GetCustomAttribute<XmlIgnoreAttribute>() == null))
 			{
+				// TODO check
+				if (prop.PropertyType == typeof(System.Xml.XmlNode[]))
+					continue;
+
 				var propCode = new CodeMemberField
 				{
 					Attributes = MemberAttributes.Public | MemberAttributes.Final,
@@ -201,11 +223,23 @@ namespace SoapClientGenerator
 
 				var xmlElementAttr = field.GetCustomAttribute<XmlElementAttribute>();
 
-				var args = new List<CodeAttributeArgument>();
+				string elementName = null;
+				bool isNullable = true;
 				if (xmlElementAttr != null && !String.IsNullOrEmpty(xmlElementAttr.ElementName))
 				{
-					args.Add(new CodeAttributeArgument("ElementName", new CodePrimitiveExpression(xmlElementAttr.ElementName)));
+					elementName = xmlElementAttr.ElementName;					
 				}
+
+				var xmlArrayItemAttribute = field.GetCustomAttribute<XmlArrayItemAttribute>();
+				if (xmlArrayItemAttribute != null)
+				{
+					elementName = xmlArrayItemAttribute.ElementName;					
+					isNullable = xmlArrayItemAttribute.IsNullable;
+				}
+
+				var args = new List<CodeAttributeArgument>();
+				args.Add(new CodeAttributeArgument("ElementName", new CodePrimitiveExpression(elementName)));
+				args.Add(new CodeAttributeArgument("IsNullable", new CodePrimitiveExpression(isNullable)));
 
 				string ns = GetNamespace(xmlElementAttr, messageBodyMemberAttr);
 				if (ns != null)

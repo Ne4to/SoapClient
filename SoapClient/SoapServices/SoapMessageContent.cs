@@ -13,8 +13,6 @@ namespace SoapServices
 {
 	public class SoapMessageContent : IHttpContent
 	{
-		private static readonly XNamespace NsEnvelope = XNamespace.Get("http://www.w3.org/2003/05/soap-envelope");
-
 		private readonly Lazy<HttpStringContent> _lazyContent;
 		private readonly List<IMessageHeader> _soapHeaders;
 
@@ -23,6 +21,8 @@ namespace SoapServices
 		public List<IMessageHeader> SoapHeaders { get { return _soapHeaders; } }
 		public string Action { get; set; }
 		public object BodyContent { get; set; }
+		public XNamespace EnvelopeNamespace { get; set; }
+		public string ContentType { get; set; }
 		
 		public SoapMessageContent()
 		{
@@ -37,13 +37,14 @@ namespace SoapServices
 
 			Action = original.Action;
 			BodyContent = original.BodyContent;
+			EnvelopeNamespace = original.EnvelopeNamespace;
+			ContentType = original.ContentType;
 
 			foreach (var messageHeader in original.SoapHeaders)
 			{
 				SoapHeaders.Add(messageHeader);
 			}
 		}
-
 
 		private HttpStringContent CreateInnerContent()
 		{
@@ -53,10 +54,13 @@ namespace SoapServices
 			if (BodyContent == null)
 				throw new Exception("BodyContent is null");
 
-			var envelopeElement = new XElement(XName.Get("Envelope", NsEnvelope.NamespaceName));
-			envelopeElement.SetAttributeValue(XNamespace.Xmlns + "s", NsEnvelope);
+			if (EnvelopeNamespace == null)
+				throw new Exception("EnvelopeNamespace is null");
 
-			var headerElement = new XElement(XName.Get("Header", NsEnvelope.NamespaceName));
+			var envelopeElement = new XElement(XName.Get("Envelope", EnvelopeNamespace.NamespaceName));
+			envelopeElement.SetAttributeValue(XNamespace.Xmlns + "s", EnvelopeNamespace);
+
+			var headerElement = new XElement(XName.Get("Header", EnvelopeNamespace.NamespaceName));
 			envelopeElement.Add(headerElement);
 
 			foreach (var soapHeader in SoapHeaders)
@@ -64,11 +68,9 @@ namespace SoapServices
 				headerElement.Add(soapHeader.GetXml());
 			}
 
-			var bodyElement = new XElement(XName.Get("Body", NsEnvelope.NamespaceName));
+			var bodyElement = new XElement(XName.Get("Body", EnvelopeNamespace.NamespaceName));
 			envelopeElement.Add(bodyElement);
-
-
-
+			
 			var settings = new XmlWriterSettings
 			{
 				OmitXmlDeclaration = true,
@@ -89,7 +91,7 @@ namespace SoapServices
 			var doc = new XDocument(envelopeElement);
 
 			string envelopeStr = doc.ToString();
-			return new HttpStringContent(envelopeStr, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/soap+xml" + Action);
+			return new HttpStringContent(envelopeStr, Windows.Storage.Streams.UnicodeEncoding.Utf8, ContentType + Action);
 		}
 
 		#region IHttpContent implementstion

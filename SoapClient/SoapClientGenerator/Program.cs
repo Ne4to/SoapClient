@@ -20,6 +20,7 @@ namespace SoapClientGenerator
 		{
 			try
 			{
+				//Debugger.Launch();
 				WriteInfo();
 
 				if (args.Length < 3 || args.Length > 4)
@@ -38,7 +39,7 @@ namespace SoapClientGenerator
 				{
 					svcutil = svcutilParam.Value;
 				}
-				
+
 				CreateProxy(svcutil, wsdlUri, outFilePath, ns);
 			}
 			catch (Exception e)
@@ -183,15 +184,39 @@ namespace SoapClientGenerator
 				mth.Name = serviceMethod.Name;
 				mth.ReturnType = new CodeTypeReference(serviceMethod.MethodInfo.ReturnType);
 
-				foreach (var parameterInfo in serviceMethod.MethodInfo.GetParameters())
+				var parameterName = "request";
+				var parameterInfos = serviceMethod.MethodInfo.GetParameters();
+				Type sendType = parameterInfos[0].ParameterType;
+
+				foreach (var parameterInfo in parameterInfos)
 				{
+					var bodyMember =
+						parameterInfo.ParameterType.GetMembers(BindingFlags.Instance | BindingFlags.Public)
+							.FirstOrDefault(m => m.GetCustomAttribute<System.ServiceModel.MessageBodyMemberAttribute>() != null);
+
+					if (bodyMember != null)
+					{
+						parameterName += "." + bodyMember.Name;
+						var fieldInfo = bodyMember as FieldInfo;
+						if (fieldInfo != null)
+						{
+							sendType = fieldInfo.FieldType;
+						}
+
+						var propertyInfo = bodyMember as PropertyInfo;
+						if (propertyInfo != null)
+						{
+							sendType = propertyInfo.PropertyType;
+						}
+					}
+
 					mth.Parameters.Add(new CodeParameterDeclarationExpression(parameterInfo.ParameterType, parameterInfo.Name));
 				}
 
 				var returnStatement = new CodeMethodReturnStatement();
 
-				var invokeExpression = new CodeMethodInvokeExpression(new CodeThisReferenceExpression(), "CallAsync", new CodePrimitiveExpression(serviceMethod.Action), new CodeVariableReferenceExpression("request"));
-				invokeExpression.Method.TypeArguments.Add(serviceMethod.MethodInfo.GetParameters()[0].ParameterType);
+				var invokeExpression = new CodeMethodInvokeExpression(new CodeThisReferenceExpression(), "CallAsync", new CodePrimitiveExpression(serviceMethod.Action), new CodeVariableReferenceExpression(parameterName));
+				invokeExpression.Method.TypeArguments.Add(sendType);
 				invokeExpression.Method.TypeArguments.Add(serviceMethod.MethodInfo.ReturnType.GenericTypeArguments[0]);
 				returnStatement.Expression = invokeExpression;
 
@@ -265,6 +290,7 @@ namespace SoapClientGenerator
 			compilerParameters.ReferencedAssemblies.Add("System.dll");
 			compilerParameters.ReferencedAssemblies.Add("System.Xml.dll");
 			compilerParameters.ReferencedAssemblies.Add("System.ServiceModel.dll");
+			compilerParameters.ReferencedAssemblies.Add("System.Runtime.Serialization.dll");
 
 			var compilerResults = codeDomProvider.CompileAssemblyFromFile(compilerParameters, csFilePath);
 			var assembly = compilerResults.CompiledAssembly;
