@@ -1,0 +1,7 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Body>
+		<GetData xmlns="http://tempuri.org/">
+			<value>10</value>
+		</GetData>
+	</s:Body>
+</s:Envelope>
