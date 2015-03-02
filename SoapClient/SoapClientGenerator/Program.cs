@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.ServiceModel;
+using System.Xml.Linq;
 
 namespace SoapClientGenerator
 {
@@ -16,10 +18,27 @@ namespace SoapClientGenerator
 		private const int HelpHeaderWidth = 30;
 		private const string SvcUtilDefaultPath = @"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\SvcUtil.exe";
 
+		static readonly XNamespace xsdNamespace = XNamespace.Get("http://www.w3.org/2001/XMLSchema");
+		static readonly XNamespace wsdlNamespace = XNamespace.Get("http://schemas.xmlsoap.org/wsdl/");
+		static readonly XNamespace soapNamespace = XNamespace.Get("http://schemas.xmlsoap.org/wsdl/soap/");
+
 		static void Main(string[] args)
 		{
 			try
 			{
+				//var doc = LoadFullDoc(new Uri("http://localhost:57368/Service1.svc?wsdl"));
+				//doc.Save("WcfService1Wsdl.xml");
+				//return;
+
+				//LoadFullDoc(new Uri("http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?wsdl"));
+				//return;
+				//var uri = new Uri("http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?wsdl");
+				//var uri = new Uri("http://www.onvif.org/onvif/ver10/device/wsdl/devicemgmt.wsdl");
+
+				//var wsdlDoc = XDocument.Parse(File.ReadAllText("XMLFile5.xml")); // TODO SOAP 1.2
+
+				
+
 				//Debugger.Launch();
 				WriteInfo();
 
@@ -47,6 +66,7 @@ namespace SoapClientGenerator
 				Console.WriteLine("ERROR: {0}", e.Message);
 			}
 		}
+
 
 		private static List<AppParameter> GetParameters(IEnumerable<string> args)
 		{

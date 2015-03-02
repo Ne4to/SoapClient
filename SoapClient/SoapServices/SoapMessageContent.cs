@@ -91,7 +91,12 @@ namespace SoapServices
 			var doc = new XDocument(envelopeElement);
 
 			string envelopeStr = doc.ToString();
-			return new HttpStringContent(envelopeStr, Windows.Storage.Streams.UnicodeEncoding.Utf8, ContentType + Action);
+			//return new HttpStringContent(envelopeStr, Windows.Storage.Streams.UnicodeEncoding.Utf8, ContentType + Action);
+			var content = new HttpStringContent(envelopeStr, Windows.Storage.Streams.UnicodeEncoding.Utf8, ContentType);
+
+			//content.Headers.Add("SOAPAction", Action);
+
+			return content;
 		}
 
 		#region IHttpContent implementstion

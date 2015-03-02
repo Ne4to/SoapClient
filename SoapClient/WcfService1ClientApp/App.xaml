@@ -1,0 +1,7 @@
+﻿<Application
+    x:Class="WcfService1ClientApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WcfService1ClientApp">
+
+</Application>

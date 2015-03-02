@@ -1,0 +1,10 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Body>
+		<GetDataUsingDataContractResponse xmlns="http://tempuri.org/">
+			<GetDataUsingDataContractResult xmlns:a="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+				<a:BoolValue>true</a:BoolValue>
+				<a:StringValue>test strSuffix</a:StringValue>
+			</GetDataUsingDataContractResult>
+		</GetDataUsingDataContractResponse>
+	</s:Body>
+</s:Envelope>

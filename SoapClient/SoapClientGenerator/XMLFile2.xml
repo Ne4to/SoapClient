@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.8 svn-revision#13980. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.russianpost.org/RTM/DataExchangeESPP/Data" targetNamespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data">
+	<xs:simpleType name="BarcodeS10">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]{2,2}d{9}[A-Z]{2,2}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="PostalOrderEventsForMaiOutput" type="ns1:PostalOrderEventsForMaiOutput"></xs:element>
+	<xs:complexType name="PostalOrderEventsForMaiOutput">
+		<xs:sequence>
+			<xs:element name="PostalOrderEvent" type="ns1:PostalOrderEvent" minOccurs="0" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PostalOrderEventsForMailInput" type="ns1:PostalOrderEventsForMailInput"></xs:element>
+	<xs:complexType name="PostalOrderEventsForMailInput">
+		<xs:sequence></xs:sequence>
+		<xs:attribute name="Barcode" use="required" type="ns1:Barcode"></xs:attribute>
+		<xs:attribute name="Language" type="xs:string" default="RUS"></xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="Barcode">
+		<xs:union memberTypes="ns1:BarcodeS10 ns1:BarcodeRTM1"></xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="BarcodeRTM1">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{14}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="PostalOrderEventsForMailFault" type="ns1:PostalOrderEventsForMailFault"></xs:element>
+	<xs:complexType name="PostalOrderEventsForMailFault">
+		<xs:sequence>
+			<xs:element name="PostalOrderEventsForMailError" type="ns1:PostalOrderEventsForMailError" minOccurs="1" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PostalOrderEventsForMailError" type="ns1:PostalOrderEventsForMailError"></xs:element>
+	<xs:complexType name="PostalOrderEventsForMailError">
+		<xs:sequence></xs:sequence>
+		<xs:attribute name="ErrorID" use="optional" type="ns1:PostalOrderEventsForMailErrors"></xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="PostalOrderEventsForMailErrors">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="InvalidLoginOrPassword"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="PostalOrderEvent" type="ns1:PostalOrderEvent"></xs:element>
+	<xs:complexType name="PostalOrderEvent">
+		<xs:sequence></xs:sequence>
+		<xs:attribute name="Number" use="optional" type="ns1:NumberPostalOrder">
+		</xs:attribute>
+		<xs:attribute name="EventDateTime" use="optional" type="xs:dateTime">
+		</xs:attribute>
+		<xs:attribute name="EventType" use="optional" type="xs:integer">
+		</xs:attribute>
+		<xs:attribute name="EventName" use="optional" type="xs:string">
+		</xs:attribute>
+		<xs:attribute name="IndexTo" use="optional" type="xs:integer">
+		</xs:attribute>
+		<xs:attribute name="IndexEvent" use="optional" type="xs:integer">
+		</xs:attribute>
+		<xs:attribute name="SumPaymentForward" use="optional" type="xs:integer">
+		</xs:attribute>
+		<xs:attribute name="CountryEventCode" type="xs:string" use="optional">
+		</xs:attribute>
+		<xs:attribute name="CountryToCode" type="xs:string" use="optional">
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="NumberPostalOrder">
+		<xs:restriction base="xs:string"></xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Login" type="xs:string">
+	</xs:element>
+	<xs:element name="Password" type="xs:string">
+	</xs:element>
+</xs:schema>

@@ -41,7 +41,14 @@ namespace SoapServices
 		public async Task<TResponse> CallAsync<TRequest, TResponse>(string action, TRequest request)
 		{
 			IHttpContent httpContent = GetHttpContent(action, request);
-			var response = await Client.PostAsync(EndpointAddress, httpContent);
+
+			var requestMessage = new HttpRequestMessage(HttpMethod.Post, EndpointAddress);
+			requestMessage.Content = httpContent;
+			requestMessage.Headers.Add("SOAPAction", "\"" + action + "\"");
+
+			var response = await Client.SendRequestAsync(requestMessage);
+
+			//var response = await Client.PostAsync(EndpointAddress, httpContent);
 			var responseContent = await response.Content.ReadAsStringAsync();
 			return GetResponse<TResponse>(responseContent);
 		}
