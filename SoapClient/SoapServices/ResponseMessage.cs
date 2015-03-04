@@ -15,7 +15,7 @@ namespace SoapServices
 		protected XElement BodyContentNode { get; private set; }
 
 		public ResponseMessage(XDocument document)
-			: this(document, SoapClientBase.DefaultEnvelopeNamespace)
+			: this(document, SoapClientBase.Soap12EnvelopeNamespace)
 		{
 		}
 

@@ -14,13 +14,13 @@ namespace Builder.TestApp
 		static void Main(string[] args)
 		{
 			//LoadTestServiceWsdl();
-			//CreateTestServiceClient();
+			CreateTestServiceClient();
 
 			//LoadRussianPostWsdl();
-			CreateRussianPostClient();
+			//CreateRussianPostClient();
 
 			//LoadOnvifDmWsdl();
-			//CreateOnvifDmClient();
+			CreateOnvifDmClient();
 		}
 
 		private static void LoadTestServiceWsdl()
@@ -63,8 +63,8 @@ namespace Builder.TestApp
 		private static void CreateClient(string wsdlFilename, string outFileName)
 		{
 			var wsdlDoc = XDocument.Parse(File.ReadAllText(wsdlFilename));
-			var builder = new ProxyBuilder();
-			builder.Run(wsdlDoc);
+			var builder = new ProxyBuilder(wsdlDoc);
+			builder.Run();
 
 			var sourceCode = builder.GetSourceCode();
 

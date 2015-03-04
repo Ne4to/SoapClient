@@ -7,20 +7,20 @@ namespace SoapServices
 {
 	public abstract class SoapClientBase
 	{
-		public static readonly XNamespace DefaultEnvelopeNamespace = XNamespace.Get("http://www.w3.org/2003/05/soap-envelope");
-		private const string DefaultContentType = "application/soap+xml";
+		public static readonly XNamespace Soap11EnvelopeNamespace = XNamespace.Get("http://schemas.xmlsoap.org/soap/envelope/");
+		private const string Soap11ContentType = "text/xml";
+
+		public static readonly XNamespace Soap12EnvelopeNamespace = XNamespace.Get("http://www.w3.org/2003/05/soap-envelope");
+		private const string Soap12ContentType = "application/soap+xml";
 
 		private readonly Lazy<HttpClient> _lazyClient;
 
 		public Uri EndpointAddress { get; set; }
-		public XNamespace EnvelopeNamespace { get; set; }
-		public string ContentType { get; set; }
-
+		public SoapVersion SoapVersion { get; set; }
+		
 		protected SoapClientBase()
 		{
 			_lazyClient = new Lazy<HttpClient>(CreateHttpClient);
-			EnvelopeNamespace = DefaultEnvelopeNamespace;
-			ContentType = DefaultContentType;
 		}
 
 		public Func<HttpClient> CustomClientInitFunc { get; set; }
@@ -44,7 +44,9 @@ namespace SoapServices
 
 			var requestMessage = new HttpRequestMessage(HttpMethod.Post, EndpointAddress);
 			requestMessage.Content = httpContent;
-			requestMessage.Headers.Add("SOAPAction", "\"" + action + "\"");
+			
+			if (SoapVersion == SoapVersion.Soap11 && !String.IsNullOrEmpty(action))
+				requestMessage.Headers.Add("SOAPAction", "\"" + action + "\"");
 
 			var response = await Client.SendRequestAsync(requestMessage);
 
@@ -56,7 +58,7 @@ namespace SoapServices
 		private TResponse GetResponse<TResponse>(string responseContent)
 		{
 			var doc = XDocument.Parse(responseContent);
-			var responseMessage = new ResponseMessage(doc, EnvelopeNamespace);
+			var responseMessage = new ResponseMessage(doc, Soap11EnvelopeNamespace);
 			return responseMessage.GetContent<TResponse>();
 		}
 
@@ -66,8 +68,8 @@ namespace SoapServices
 			{
 				Action = action,
 				BodyContent = request,
-				EnvelopeNamespace = EnvelopeNamespace,
-				ContentType = ContentType,				
+				EnvelopeNamespace = Soap11EnvelopeNamespace,
+				ContentType = Soap11ContentType,				
 			};
 		}
 	}

@@ -195,437 +195,437 @@ namespace Aaaa
         
         public virtual System.Threading.Tasks.Task<GetServicesResponse> GetServices(GetServices request)
         {
-            return this.CallAsync<GetServices, GetServicesResponse>("http://www.onvif.org/ver10/device/wsdl/GetServices", request);
+            return this.CallAsync<GetServices, GetServicesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilities(GetServiceCapabilities request)
         {
-            return this.CallAsync<GetServiceCapabilities, GetServiceCapabilitiesResponse>("http://www.onvif.org/ver10/device/wsdl/GetServiceCapabilities", request);
+            return this.CallAsync<GetServiceCapabilities, GetServiceCapabilitiesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDeviceInformationResponse> GetDeviceInformation(GetDeviceInformation request)
         {
-            return this.CallAsync<GetDeviceInformation, GetDeviceInformationResponse>("http://www.onvif.org/ver10/device/wsdl/GetDeviceInformation", request);
+            return this.CallAsync<GetDeviceInformation, GetDeviceInformationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetSystemDateAndTimeResponse> SetSystemDateAndTime(SetSystemDateAndTime request)
         {
-            return this.CallAsync<SetSystemDateAndTime, SetSystemDateAndTimeResponse>("http://www.onvif.org/ver10/device/wsdl/SetSystemDateAndTime", request);
+            return this.CallAsync<SetSystemDateAndTime, SetSystemDateAndTimeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetSystemDateAndTimeResponse> GetSystemDateAndTime(GetSystemDateAndTime request)
         {
-            return this.CallAsync<GetSystemDateAndTime, GetSystemDateAndTimeResponse>("http://www.onvif.org/ver10/device/wsdl/GetSystemDateAndTime", request);
+            return this.CallAsync<GetSystemDateAndTime, GetSystemDateAndTimeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetSystemFactoryDefaultResponse> SetSystemFactoryDefault(SetSystemFactoryDefault request)
         {
-            return this.CallAsync<SetSystemFactoryDefault, SetSystemFactoryDefaultResponse>("http://www.onvif.org/ver10/device/wsdl/SetSystemFactoryDefault", request);
+            return this.CallAsync<SetSystemFactoryDefault, SetSystemFactoryDefaultResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<UpgradeSystemFirmwareResponse> UpgradeSystemFirmware(UpgradeSystemFirmware request)
         {
-            return this.CallAsync<UpgradeSystemFirmware, UpgradeSystemFirmwareResponse>("http://www.onvif.org/ver10/device/wsdl/UpgradeSystemFirmware", request);
+            return this.CallAsync<UpgradeSystemFirmware, UpgradeSystemFirmwareResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SystemRebootResponse> SystemReboot(SystemReboot request)
         {
-            return this.CallAsync<SystemReboot, SystemRebootResponse>("http://www.onvif.org/ver10/device/wsdl/SystemReboot", request);
+            return this.CallAsync<SystemReboot, SystemRebootResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<RestoreSystemResponse> RestoreSystem(RestoreSystem request)
         {
-            return this.CallAsync<RestoreSystem, RestoreSystemResponse>("http://www.onvif.org/ver10/device/wsdl/RestoreSystem", request);
+            return this.CallAsync<RestoreSystem, RestoreSystemResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetSystemBackupResponse> GetSystemBackup(GetSystemBackup request)
         {
-            return this.CallAsync<GetSystemBackup, GetSystemBackupResponse>("http://www.onvif.org/ver10/device/wsdl/GetSystemBackup", request);
+            return this.CallAsync<GetSystemBackup, GetSystemBackupResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetSystemLogResponse> GetSystemLog(GetSystemLog request)
         {
-            return this.CallAsync<GetSystemLog, GetSystemLogResponse>("http://www.onvif.org/ver10/device/wsdl/GetSystemLog", request);
+            return this.CallAsync<GetSystemLog, GetSystemLogResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetSystemSupportInformationResponse> GetSystemSupportInformation(GetSystemSupportInformation request)
         {
-            return this.CallAsync<GetSystemSupportInformation, GetSystemSupportInformationResponse>("http://www.onvif.org/ver10/device/wsdl/GetSystemSupportInformation", request);
+            return this.CallAsync<GetSystemSupportInformation, GetSystemSupportInformationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetScopesResponse> GetScopes(GetScopes request)
         {
-            return this.CallAsync<GetScopes, GetScopesResponse>("http://www.onvif.org/ver10/device/wsdl/GetScopes", request);
+            return this.CallAsync<GetScopes, GetScopesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetScopesResponse> SetScopes(SetScopes request)
         {
-            return this.CallAsync<SetScopes, SetScopesResponse>("http://www.onvif.org/ver10/device/wsdl/SetScopes", request);
+            return this.CallAsync<SetScopes, SetScopesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<AddScopesResponse> AddScopes(AddScopes request)
         {
-            return this.CallAsync<AddScopes, AddScopesResponse>("http://www.onvif.org/ver10/device/wsdl/AddScopes", request);
+            return this.CallAsync<AddScopes, AddScopesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<RemoveScopesResponse> RemoveScopes(RemoveScopes request)
         {
-            return this.CallAsync<RemoveScopes, RemoveScopesResponse>("http://www.onvif.org/ver10/device/wsdl/RemoveScopes", request);
+            return this.CallAsync<RemoveScopes, RemoveScopesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDiscoveryModeResponse> GetDiscoveryMode(GetDiscoveryMode request)
         {
-            return this.CallAsync<GetDiscoveryMode, GetDiscoveryModeResponse>("http://www.onvif.org/ver10/device/wsdl/GetDiscoveryMode", request);
+            return this.CallAsync<GetDiscoveryMode, GetDiscoveryModeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetDiscoveryModeResponse> SetDiscoveryMode(SetDiscoveryMode request)
         {
-            return this.CallAsync<SetDiscoveryMode, SetDiscoveryModeResponse>("http://www.onvif.org/ver10/device/wsdl/SetDiscoveryMode", request);
+            return this.CallAsync<SetDiscoveryMode, SetDiscoveryModeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetRemoteDiscoveryModeResponse> GetRemoteDiscoveryMode(GetRemoteDiscoveryMode request)
         {
-            return this.CallAsync<GetRemoteDiscoveryMode, GetRemoteDiscoveryModeResponse>("http://www.onvif.org/ver10/device/wsdl/GetRemoteDiscoveryMode", request);
+            return this.CallAsync<GetRemoteDiscoveryMode, GetRemoteDiscoveryModeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetRemoteDiscoveryModeResponse> SetRemoteDiscoveryMode(SetRemoteDiscoveryMode request)
         {
-            return this.CallAsync<SetRemoteDiscoveryMode, SetRemoteDiscoveryModeResponse>("http://www.onvif.org/ver10/device/wsdl/SetRemoteDiscoveryMode", request);
+            return this.CallAsync<SetRemoteDiscoveryMode, SetRemoteDiscoveryModeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDPAddressesResponse> GetDPAddresses(GetDPAddresses request)
         {
-            return this.CallAsync<GetDPAddresses, GetDPAddressesResponse>("http://www.onvif.org/ver10/device/wsdl/GetDPAddresses", request);
+            return this.CallAsync<GetDPAddresses, GetDPAddressesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetDPAddressesResponse> SetDPAddresses(SetDPAddresses request)
         {
-            return this.CallAsync<SetDPAddresses, SetDPAddressesResponse>("http://www.onvif.org/ver10/device/wsdl/SetDPAddresses", request);
+            return this.CallAsync<SetDPAddresses, SetDPAddressesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetEndpointReferenceResponse> GetEndpointReference(GetEndpointReference request)
         {
-            return this.CallAsync<GetEndpointReference, GetEndpointReferenceResponse>("http://www.onvif.org/ver10/device/wsdl/GetEndpointReference", request);
+            return this.CallAsync<GetEndpointReference, GetEndpointReferenceResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetRemoteUserResponse> GetRemoteUser(GetRemoteUser request)
         {
-            return this.CallAsync<GetRemoteUser, GetRemoteUserResponse>("http://www.onvif.org/ver10/device/wsdl/GetRemoteUser", request);
+            return this.CallAsync<GetRemoteUser, GetRemoteUserResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetRemoteUserResponse> SetRemoteUser(SetRemoteUser request)
         {
-            return this.CallAsync<SetRemoteUser, SetRemoteUserResponse>("http://www.onvif.org/ver10/device/wsdl/SetRemoteUser", request);
+            return this.CallAsync<SetRemoteUser, SetRemoteUserResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetUsersResponse> GetUsers(GetUsers request)
         {
-            return this.CallAsync<GetUsers, GetUsersResponse>("http://www.onvif.org/ver10/device/wsdl/GetUsers", request);
+            return this.CallAsync<GetUsers, GetUsersResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<CreateUsersResponse> CreateUsers(CreateUsers request)
         {
-            return this.CallAsync<CreateUsers, CreateUsersResponse>("http://www.onvif.org/ver10/device/wsdl/CreateUsers", request);
+            return this.CallAsync<CreateUsers, CreateUsersResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<DeleteUsersResponse> DeleteUsers(DeleteUsers request)
         {
-            return this.CallAsync<DeleteUsers, DeleteUsersResponse>("http://www.onvif.org/ver10/device/wsdl/DeleteUsers", request);
+            return this.CallAsync<DeleteUsers, DeleteUsersResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetUserResponse> SetUser(SetUser request)
         {
-            return this.CallAsync<SetUser, SetUserResponse>("http://www.onvif.org/ver10/device/wsdl/SetUser", request);
+            return this.CallAsync<SetUser, SetUserResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetWsdlUrlResponse> GetWsdlUrl(GetWsdlUrl request)
         {
-            return this.CallAsync<GetWsdlUrl, GetWsdlUrlResponse>("http://www.onvif.org/ver10/device/wsdl/GetWsdlUrl", request);
+            return this.CallAsync<GetWsdlUrl, GetWsdlUrlResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetCapabilitiesResponse> GetCapabilities(GetCapabilities request)
         {
-            return this.CallAsync<GetCapabilities, GetCapabilitiesResponse>("http://www.onvif.org/ver10/device/wsdl/GetCapabilities", request);
+            return this.CallAsync<GetCapabilities, GetCapabilitiesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetHostnameResponse> GetHostname(GetHostname request)
         {
-            return this.CallAsync<GetHostname, GetHostnameResponse>("http://www.onvif.org/ver10/device/wsdl/GetHostname", request);
+            return this.CallAsync<GetHostname, GetHostnameResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetHostnameResponse> SetHostname(SetHostname request)
         {
-            return this.CallAsync<SetHostname, SetHostnameResponse>("http://www.onvif.org/ver10/device/wsdl/SetHostname", request);
+            return this.CallAsync<SetHostname, SetHostnameResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetHostnameFromDHCPResponse> SetHostnameFromDHCP(SetHostnameFromDHCP request)
         {
-            return this.CallAsync<SetHostnameFromDHCP, SetHostnameFromDHCPResponse>("http://www.onvif.org/ver10/device/wsdl/SetHostnameFromDHCP", request);
+            return this.CallAsync<SetHostnameFromDHCP, SetHostnameFromDHCPResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDNSResponse> GetDNS(GetDNS request)
         {
-            return this.CallAsync<GetDNS, GetDNSResponse>("http://www.onvif.org/ver10/device/wsdl/GetDNS", request);
+            return this.CallAsync<GetDNS, GetDNSResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetDNSResponse> SetDNS(SetDNS request)
         {
-            return this.CallAsync<SetDNS, SetDNSResponse>("http://www.onvif.org/ver10/device/wsdl/SetDNS", request);
+            return this.CallAsync<SetDNS, SetDNSResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetNTPResponse> GetNTP(GetNTP request)
         {
-            return this.CallAsync<GetNTP, GetNTPResponse>("http://www.onvif.org/ver10/device/wsdl/GetNTP", request);
+            return this.CallAsync<GetNTP, GetNTPResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetNTPResponse> SetNTP(SetNTP request)
         {
-            return this.CallAsync<SetNTP, SetNTPResponse>("http://www.onvif.org/ver10/device/wsdl/SetNTP", request);
+            return this.CallAsync<SetNTP, SetNTPResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDynamicDNSResponse> GetDynamicDNS(GetDynamicDNS request)
         {
-            return this.CallAsync<GetDynamicDNS, GetDynamicDNSResponse>("http://www.onvif.org/ver10/device/wsdl/GetDynamicDNS", request);
+            return this.CallAsync<GetDynamicDNS, GetDynamicDNSResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetDynamicDNSResponse> SetDynamicDNS(SetDynamicDNS request)
         {
-            return this.CallAsync<SetDynamicDNS, SetDynamicDNSResponse>("http://www.onvif.org/ver10/device/wsdl/SetDynamicDNS", request);
+            return this.CallAsync<SetDynamicDNS, SetDynamicDNSResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetNetworkInterfacesResponse> GetNetworkInterfaces(GetNetworkInterfaces request)
         {
-            return this.CallAsync<GetNetworkInterfaces, GetNetworkInterfacesResponse>("http://www.onvif.org/ver10/device/wsdl/GetNetworkInterfaces", request);
+            return this.CallAsync<GetNetworkInterfaces, GetNetworkInterfacesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetNetworkInterfacesResponse> SetNetworkInterfaces(SetNetworkInterfaces request)
         {
-            return this.CallAsync<SetNetworkInterfaces, SetNetworkInterfacesResponse>("http://www.onvif.org/ver10/device/wsdl/SetNetworkInterfaces", request);
+            return this.CallAsync<SetNetworkInterfaces, SetNetworkInterfacesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetNetworkProtocolsResponse> GetNetworkProtocols(GetNetworkProtocols request)
         {
-            return this.CallAsync<GetNetworkProtocols, GetNetworkProtocolsResponse>("http://www.onvif.org/ver10/device/wsdl/GetNetworkProtocols", request);
+            return this.CallAsync<GetNetworkProtocols, GetNetworkProtocolsResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetNetworkProtocolsResponse> SetNetworkProtocols(SetNetworkProtocols request)
         {
-            return this.CallAsync<SetNetworkProtocols, SetNetworkProtocolsResponse>("http://www.onvif.org/ver10/device/wsdl/SetNetworkProtocols", request);
+            return this.CallAsync<SetNetworkProtocols, SetNetworkProtocolsResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetNetworkDefaultGatewayResponse> GetNetworkDefaultGateway(GetNetworkDefaultGateway request)
         {
-            return this.CallAsync<GetNetworkDefaultGateway, GetNetworkDefaultGatewayResponse>("http://www.onvif.org/ver10/device/wsdl/GetNetworkDefaultGateway", request);
+            return this.CallAsync<GetNetworkDefaultGateway, GetNetworkDefaultGatewayResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetNetworkDefaultGatewayResponse> SetNetworkDefaultGateway(SetNetworkDefaultGateway request)
         {
-            return this.CallAsync<SetNetworkDefaultGateway, SetNetworkDefaultGatewayResponse>("http://www.onvif.org/ver10/device/wsdl/SetNetworkDefaultGateway", request);
+            return this.CallAsync<SetNetworkDefaultGateway, SetNetworkDefaultGatewayResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetZeroConfigurationResponse> GetZeroConfiguration(GetZeroConfiguration request)
         {
-            return this.CallAsync<GetZeroConfiguration, GetZeroConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/GetZeroConfiguration", request);
+            return this.CallAsync<GetZeroConfiguration, GetZeroConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetZeroConfigurationResponse> SetZeroConfiguration(SetZeroConfiguration request)
         {
-            return this.CallAsync<SetZeroConfiguration, SetZeroConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/SetZeroConfiguration", request);
+            return this.CallAsync<SetZeroConfiguration, SetZeroConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetIPAddressFilterResponse> GetIPAddressFilter(GetIPAddressFilter request)
         {
-            return this.CallAsync<GetIPAddressFilter, GetIPAddressFilterResponse>("http://www.onvif.org/ver10/device/wsdl/GetIPAddressFilter", request);
+            return this.CallAsync<GetIPAddressFilter, GetIPAddressFilterResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetIPAddressFilterResponse> SetIPAddressFilter(SetIPAddressFilter request)
         {
-            return this.CallAsync<SetIPAddressFilter, SetIPAddressFilterResponse>("http://www.onvif.org/ver10/device/wsdl/SetIPAddressFilter", request);
+            return this.CallAsync<SetIPAddressFilter, SetIPAddressFilterResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<AddIPAddressFilterResponse> AddIPAddressFilter(AddIPAddressFilter request)
         {
-            return this.CallAsync<AddIPAddressFilter, AddIPAddressFilterResponse>("http://www.onvif.org/ver10/device/wsdl/AddIPAddressFilter", request);
+            return this.CallAsync<AddIPAddressFilter, AddIPAddressFilterResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<RemoveIPAddressFilterResponse> RemoveIPAddressFilter(RemoveIPAddressFilter request)
         {
-            return this.CallAsync<RemoveIPAddressFilter, RemoveIPAddressFilterResponse>("http://www.onvif.org/ver10/device/wsdl/RemoveIPAddressFilter", request);
+            return this.CallAsync<RemoveIPAddressFilter, RemoveIPAddressFilterResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetAccessPolicyResponse> GetAccessPolicy(GetAccessPolicy request)
         {
-            return this.CallAsync<GetAccessPolicy, GetAccessPolicyResponse>("http://www.onvif.org/ver10/device/wsdl/GetAccessPolicy", request);
+            return this.CallAsync<GetAccessPolicy, GetAccessPolicyResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetAccessPolicyResponse> SetAccessPolicy(SetAccessPolicy request)
         {
-            return this.CallAsync<SetAccessPolicy, SetAccessPolicyResponse>("http://www.onvif.org/ver10/device/wsdl/SetAccessPolicy", request);
+            return this.CallAsync<SetAccessPolicy, SetAccessPolicyResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<CreateCertificateResponse> CreateCertificate(CreateCertificate request)
         {
-            return this.CallAsync<CreateCertificate, CreateCertificateResponse>("http://www.onvif.org/ver10/device/wsdl/CreateCertificate", request);
+            return this.CallAsync<CreateCertificate, CreateCertificateResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetCertificatesResponse> GetCertificates(GetCertificates request)
         {
-            return this.CallAsync<GetCertificates, GetCertificatesResponse>("http://www.onvif.org/ver10/device/wsdl/GetCertificates", request);
+            return this.CallAsync<GetCertificates, GetCertificatesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetCertificatesStatusResponse> GetCertificatesStatus(GetCertificatesStatus request)
         {
-            return this.CallAsync<GetCertificatesStatus, GetCertificatesStatusResponse>("http://www.onvif.org/ver10/device/wsdl/GetCertificatesStatus", request);
+            return this.CallAsync<GetCertificatesStatus, GetCertificatesStatusResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetCertificatesStatusResponse> SetCertificatesStatus(SetCertificatesStatus request)
         {
-            return this.CallAsync<SetCertificatesStatus, SetCertificatesStatusResponse>("http://www.onvif.org/ver10/device/wsdl/SetCertificatesStatus", request);
+            return this.CallAsync<SetCertificatesStatus, SetCertificatesStatusResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<DeleteCertificatesResponse> DeleteCertificates(DeleteCertificates request)
         {
-            return this.CallAsync<DeleteCertificates, DeleteCertificatesResponse>("http://www.onvif.org/ver10/device/wsdl/DeleteCertificates", request);
+            return this.CallAsync<DeleteCertificates, DeleteCertificatesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetPkcs10RequestResponse> GetPkcs10Request(GetPkcs10Request request)
         {
-            return this.CallAsync<GetPkcs10Request, GetPkcs10RequestResponse>("http://www.onvif.org/ver10/device/wsdl/GetPkcs10Request", request);
+            return this.CallAsync<GetPkcs10Request, GetPkcs10RequestResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<LoadCertificatesResponse> LoadCertificates(LoadCertificates request)
         {
-            return this.CallAsync<LoadCertificates, LoadCertificatesResponse>("http://www.onvif.org/ver10/device/wsdl/LoadCertificates", request);
+            return this.CallAsync<LoadCertificates, LoadCertificatesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetClientCertificateModeResponse> GetClientCertificateMode(GetClientCertificateMode request)
         {
-            return this.CallAsync<GetClientCertificateMode, GetClientCertificateModeResponse>("http://www.onvif.org/ver10/device/wsdl/GetClientCertificateMode", request);
+            return this.CallAsync<GetClientCertificateMode, GetClientCertificateModeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetClientCertificateModeResponse> SetClientCertificateMode(SetClientCertificateMode request)
         {
-            return this.CallAsync<SetClientCertificateMode, SetClientCertificateModeResponse>("http://www.onvif.org/ver10/device/wsdl/SetClientCertificateMode", request);
+            return this.CallAsync<SetClientCertificateMode, SetClientCertificateModeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetRelayOutputsResponse> GetRelayOutputs(GetRelayOutputs request)
         {
-            return this.CallAsync<GetRelayOutputs, GetRelayOutputsResponse>("http://www.onvif.org/ver10/device/wsdl/GetRelayOutputs", request);
+            return this.CallAsync<GetRelayOutputs, GetRelayOutputsResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetRelayOutputSettingsResponse> SetRelayOutputSettings(SetRelayOutputSettings request)
         {
-            return this.CallAsync<SetRelayOutputSettings, SetRelayOutputSettingsResponse>("http://www.onvif.org/ver10/device/wsdl/SetRelayOutputSettings", request);
+            return this.CallAsync<SetRelayOutputSettings, SetRelayOutputSettingsResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetRelayOutputStateResponse> SetRelayOutputState(SetRelayOutputState request)
         {
-            return this.CallAsync<SetRelayOutputState, SetRelayOutputStateResponse>("http://www.onvif.org/ver10/device/wsdl/SetRelayOutputState", request);
+            return this.CallAsync<SetRelayOutputState, SetRelayOutputStateResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommand(SendAuxiliaryCommand request)
         {
-            return this.CallAsync<SendAuxiliaryCommand, SendAuxiliaryCommandResponse>("http://www.onvif.org/ver10/device/wsdl/SendAuxiliaryCommand", request);
+            return this.CallAsync<SendAuxiliaryCommand, SendAuxiliaryCommandResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetCACertificatesResponse> GetCACertificates(GetCACertificates request)
         {
-            return this.CallAsync<GetCACertificates, GetCACertificatesResponse>("http://www.onvif.org/ver10/device/wsdl/GetCACertificates", request);
+            return this.CallAsync<GetCACertificates, GetCACertificatesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<LoadCertificateWithPrivateKeyResponse> LoadCertificateWithPrivateKey(LoadCertificateWithPrivateKey request)
         {
-            return this.CallAsync<LoadCertificateWithPrivateKey, LoadCertificateWithPrivateKeyResponse>("http://www.onvif.org/ver10/device/wsdl/LoadCertificateWithPrivateKey", request);
+            return this.CallAsync<LoadCertificateWithPrivateKey, LoadCertificateWithPrivateKeyResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetCertificateInformationResponse> GetCertificateInformation(GetCertificateInformation request)
         {
-            return this.CallAsync<GetCertificateInformation, GetCertificateInformationResponse>("http://www.onvif.org/ver10/device/wsdl/GetCertificateInformation", request);
+            return this.CallAsync<GetCertificateInformation, GetCertificateInformationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<LoadCACertificatesResponse> LoadCACertificates(LoadCACertificates request)
         {
-            return this.CallAsync<LoadCACertificates, LoadCACertificatesResponse>("http://www.onvif.org/ver10/device/wsdl/LoadCACertificates", request);
+            return this.CallAsync<LoadCACertificates, LoadCACertificatesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<CreateDot1XConfigurationResponse> CreateDot1XConfiguration(CreateDot1XConfiguration request)
         {
-            return this.CallAsync<CreateDot1XConfiguration, CreateDot1XConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/CreateDot1XConfiguration", request);
+            return this.CallAsync<CreateDot1XConfiguration, CreateDot1XConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetDot1XConfigurationResponse> SetDot1XConfiguration(SetDot1XConfiguration request)
         {
-            return this.CallAsync<SetDot1XConfiguration, SetDot1XConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/SetDot1XConfiguration", request);
+            return this.CallAsync<SetDot1XConfiguration, SetDot1XConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDot1XConfigurationResponse> GetDot1XConfiguration(GetDot1XConfiguration request)
         {
-            return this.CallAsync<GetDot1XConfiguration, GetDot1XConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/GetDot1XConfiguration", request);
+            return this.CallAsync<GetDot1XConfiguration, GetDot1XConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDot1XConfigurationsResponse> GetDot1XConfigurations(GetDot1XConfigurations request)
         {
-            return this.CallAsync<GetDot1XConfigurations, GetDot1XConfigurationsResponse>("http://www.onvif.org/ver10/device/wsdl/GetDot1XConfigurations", request);
+            return this.CallAsync<GetDot1XConfigurations, GetDot1XConfigurationsResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<DeleteDot1XConfigurationResponse> DeleteDot1XConfiguration(DeleteDot1XConfiguration request)
         {
-            return this.CallAsync<DeleteDot1XConfiguration, DeleteDot1XConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/DeleteDot1XConfiguration", request);
+            return this.CallAsync<DeleteDot1XConfiguration, DeleteDot1XConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDot11CapabilitiesResponse> GetDot11Capabilities(GetDot11Capabilities request)
         {
-            return this.CallAsync<GetDot11Capabilities, GetDot11CapabilitiesResponse>("http://www.onvif.org/ver10/device/wsdl/GetDot11Capabilities", request);
+            return this.CallAsync<GetDot11Capabilities, GetDot11CapabilitiesResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetDot11StatusResponse> GetDot11Status(GetDot11Status request)
         {
-            return this.CallAsync<GetDot11Status, GetDot11StatusResponse>("http://www.onvif.org/ver10/device/wsdl/GetDot11Status", request);
+            return this.CallAsync<GetDot11Status, GetDot11StatusResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<ScanAvailableDot11NetworksResponse> ScanAvailableDot11Networks(ScanAvailableDot11Networks request)
         {
-            return this.CallAsync<ScanAvailableDot11Networks, ScanAvailableDot11NetworksResponse>("http://www.onvif.org/ver10/device/wsdl/ScanAvailableDot11Networks", request);
+            return this.CallAsync<ScanAvailableDot11Networks, ScanAvailableDot11NetworksResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetSystemUrisResponse> GetSystemUris(GetSystemUris request)
         {
-            return this.CallAsync<GetSystemUris, GetSystemUrisResponse>("http://www.onvif.org/ver10/device/wsdl/GetSystemUris", request);
+            return this.CallAsync<GetSystemUris, GetSystemUrisResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<StartFirmwareUpgradeResponse> StartFirmwareUpgrade(StartFirmwareUpgrade request)
         {
-            return this.CallAsync<StartFirmwareUpgrade, StartFirmwareUpgradeResponse>("http://www.onvif.org/ver10/device/wsdl/StartFirmwareUpgrade", request);
+            return this.CallAsync<StartFirmwareUpgrade, StartFirmwareUpgradeResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<StartSystemRestoreResponse> StartSystemRestore(StartSystemRestore request)
         {
-            return this.CallAsync<StartSystemRestore, StartSystemRestoreResponse>("http://www.onvif.org/ver10/device/wsdl/StartSystemRestore", request);
+            return this.CallAsync<StartSystemRestore, StartSystemRestoreResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetStorageConfigurationsResponse> GetStorageConfigurations(GetStorageConfigurations request)
         {
-            return this.CallAsync<GetStorageConfigurations, GetStorageConfigurationsResponse>("http://www.onvif.org/ver10/device/wsdl/GetStorageConfigurations", request);
+            return this.CallAsync<GetStorageConfigurations, GetStorageConfigurationsResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<CreateStorageConfigurationResponse> CreateStorageConfiguration(CreateStorageConfiguration request)
         {
-            return this.CallAsync<CreateStorageConfiguration, CreateStorageConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/CreateStorageConfiguration", request);
+            return this.CallAsync<CreateStorageConfiguration, CreateStorageConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<GetStorageConfigurationResponse> GetStorageConfiguration(GetStorageConfiguration request)
         {
-            return this.CallAsync<GetStorageConfiguration, GetStorageConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/GetStorageConfiguration", request);
+            return this.CallAsync<GetStorageConfiguration, GetStorageConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<SetStorageConfigurationResponse> SetStorageConfiguration(SetStorageConfiguration request)
         {
-            return this.CallAsync<SetStorageConfiguration, SetStorageConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/SetStorageConfiguration", request);
+            return this.CallAsync<SetStorageConfiguration, SetStorageConfigurationResponse>(null, request);
         }
         
         public virtual System.Threading.Tasks.Task<DeleteStorageConfigurationResponse> DeleteStorageConfiguration(DeleteStorageConfiguration request)
         {
-            return this.CallAsync<DeleteStorageConfiguration, DeleteStorageConfigurationResponse>("http://www.onvif.org/ver10/device/wsdl/DeleteStorageConfiguration", request);
+            return this.CallAsync<DeleteStorageConfiguration, DeleteStorageConfigurationResponse>(null, request);
         }
     }
     
@@ -867,7 +867,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DateTimeType")]
-        public SetDateTimeType DateTimeType;
+        public string DateTimeType;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DaylightSavings")]
         public bool DaylightSavings;
@@ -877,15 +877,6 @@ namespace Aaaa
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="UTCDateTime")]
         public DateTime UTCDateTime;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum SetDateTimeType
-    {
-        
-        Manual,
-        
-        NTP,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="TimeZone", Namespace="http://www.onvif.org/ver10/schema")]
@@ -958,7 +949,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DateTimeType")]
-        public SetDateTimeType DateTimeType;
+        public string DateTimeType;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DaylightSavings")]
         public bool DaylightSavings;
@@ -986,16 +977,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="FactoryDefault")]
-        public FactoryDefaultType FactoryDefault;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum FactoryDefaultType
-    {
-        
-        Hard,
-        
-        Soft,
+        public string FactoryDefault;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetSystemFactoryDefaultResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -1093,16 +1075,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="LogType")]
-        public SystemLogType LogType;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum SystemLogType
-    {
-        
-        System,
-        
-        Access,
+        public string LogType;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemLogResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -1166,19 +1139,10 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="ScopeDef")]
-        public ScopeDefinition ScopeDef;
+        public string ScopeDef;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="ScopeItem")]
         public string ScopeItem;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum ScopeDefinition
-    {
-        
-        Fixed,
-        
-        Configurable,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetScopes", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -1233,16 +1197,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DiscoveryMode")]
-        public DiscoveryMode DiscoveryMode;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum DiscoveryMode
-    {
-        
-        Discoverable,
-        
-        NonDiscoverable,
+        public string DiscoveryMode;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDiscoveryMode", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -1250,7 +1205,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DiscoveryMode")]
-        public DiscoveryMode DiscoveryMode;
+        public string DiscoveryMode;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDiscoveryModeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -1268,7 +1223,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="RemoteDiscoveryMode")]
-        public DiscoveryMode RemoteDiscoveryMode;
+        public string RemoteDiscoveryMode;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRemoteDiscoveryMode", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -1276,7 +1231,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="RemoteDiscoveryMode")]
-        public DiscoveryMode RemoteDiscoveryMode;
+        public string RemoteDiscoveryMode;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRemoteDiscoveryModeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -1302,45 +1257,19 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
-        public NetworkHostType Type;
+        public string Type;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
-        public IPv4Address IPv4Address;
+        public string IPv4Address;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
-        public IPv6Address IPv6Address;
+        public string IPv6Address;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DNSname")]
-        public DNSName DNSname;
+        public string DNSname;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public NetworkHostExtension Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum NetworkHostType
-    {
-        
-        IPv4,
-        
-        IPv6,
-        
-        DNS,
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum IPv4Address
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum IPv6Address
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum DNSName
-    {
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkHostExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -1438,25 +1367,10 @@ namespace Aaaa
         public string Password;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="UserLevel")]
-        public UserLevel UserLevel;
+        public string UserLevel;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public UserExtension Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum UserLevel
-    {
-        
-        Administrator,
-        
-        Operator,
-        
-        User,
-        
-        Anonymous,
-        
-        Extended,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="UserExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -1521,26 +1435,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Category")]
-        public CapabilityCategory Category;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum CapabilityCategory
-    {
-        
-        All,
-        
-        Analytics,
-        
-        Device,
-        
-        Events,
-        
-        Imaging,
-        
-        Media,
-        
-        PTZ,
+        public string Category;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCapabilitiesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -1726,15 +1621,10 @@ namespace Aaaa
         public bool Auxiliary;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="AuxiliaryCommands")]
-        public AuxiliaryData AuxiliaryCommands;
+        public string AuxiliaryCommands;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public IOCapabilitiesExtension2 Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum AuxiliaryData
-    {
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="IOCapabilitiesExtension2", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2140,22 +2030,13 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
-        public IPType Type;
+        public string Type;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
-        public IPv4Address IPv4Address;
+        public string IPv4Address;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
-        public IPv6Address IPv6Address;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum IPType
-    {
-        
-        IPv4,
-        
-        IPv6,
+        public string IPv6Address;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="DNSInformationExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2251,27 +2132,16 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
-        public DynamicDNSType Type;
+        public string Type;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
-        public DNSName Name;
+        public string Name;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="TTL")]
         public string TTL;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public DynamicDNSInformationExtension Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum DynamicDNSType
-    {
-        
-        NoUpdate,
-        
-        ClientUpdates,
-        
-        ServerUpdates,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="DynamicDNSInformationExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2284,10 +2154,10 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
-        public DynamicDNSType Type;
+        public string Type;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
-        public DNSName Name;
+        public string Name;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="TTL")]
         public string TTL;
@@ -2321,15 +2191,10 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
-        public ReferenceToken InterfaceToken;
+        public string InterfaceToken;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="NetworkInterface")]
         public NetworkInterfaceSetConfiguration NetworkInterface;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum ReferenceToken
-    {
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkInterfaceSetConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2366,16 +2231,7 @@ namespace Aaaa
         public int Speed;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Duplex")]
-        public Duplex Duplex;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Duplex
-    {
-        
-        Full,
-        
-        Half,
+        public string Duplex;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="IPv4NetworkInterfaceSetConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2397,7 +2253,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Address")]
-        public IPv4Address Address;
+        public string Address;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="PrefixLength")]
         public int PrefixLength;
@@ -2417,7 +2273,7 @@ namespace Aaaa
         public PrefixedIPv6Address Manual;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DHCP")]
-        public IPv6DHCPConfiguration DHCP;
+        public string DHCP;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="PrefixedIPv6Address", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2425,23 +2281,10 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Address")]
-        public IPv6Address Address;
+        public string Address;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="PrefixLength")]
         public int PrefixLength;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum IPv6DHCPConfiguration
-    {
-        
-        Auto,
-        
-        Stateful,
-        
-        Stateless,
-        
-        Off,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkInterfaceSetConfigurationExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2468,45 +2311,19 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="SSID")]
-        public Dot11SSIDType SSID;
+        public byte[] SSID;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Mode")]
-        public Dot11StationMode Mode;
+        public string Mode;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Alias")]
-        public Name Alias;
+        public string Alias;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Priority")]
-        public NetworkInterfaceConfigPriority Priority;
+        public int Priority;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Security")]
         public Dot11SecurityConfiguration Security;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Dot11SSIDType
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Dot11StationMode
-    {
-        
-        Adhoc,
-        
-        Infrastructure,
-        
-        Extended,
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Name
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum NetworkInterfaceConfigPriority
-    {
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11SecurityConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2514,47 +2331,19 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Mode")]
-        public Dot11SecurityMode Mode;
+        public string Mode;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Algorithm")]
-        public Dot11Cipher Algorithm;
+        public string Algorithm;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="PSK")]
         public Dot11PSKSet PSK;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1X")]
-        public ReferenceToken Dot1X;
+        public string Dot1X;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public Dot11SecurityConfigurationExtension Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Dot11SecurityMode
-    {
-        
-        None,
-        
-        WEP,
-        
-        PSK,
-        
-        Dot1X,
-        
-        Extended,
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Dot11Cipher
-    {
-        
-        CCMP,
-        
-        TKIP,
-        
-        Any,
-        
-        Extended,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11PSKSet", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2562,23 +2351,13 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Key")]
-        public Dot11PSK Key;
+        public byte[] Key;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Passphrase")]
-        public Dot11PSKPassphrase Passphrase;
+        public string Passphrase;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public Dot11PSKSetExtension Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Dot11PSK
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Dot11PSKPassphrase
-    {
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11PSKSetExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2622,7 +2401,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
-        public NetworkProtocolType Name;
+        public string Name;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
         public bool Enabled;
@@ -2632,17 +2411,6 @@ namespace Aaaa
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public NetworkProtocolExtension Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum NetworkProtocolType
-    {
-        
-        HTTP,
-        
-        HTTPS,
-        
-        RTSP,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkProtocolExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2681,10 +2449,10 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
-        public IPv4Address IPv4Address;
+        public string IPv4Address;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
-        public IPv6Address IPv6Address;
+        public string IPv6Address;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNetworkDefaultGateway", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -2692,10 +2460,10 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
-        public IPv4Address IPv4Address;
+        public string IPv4Address;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
-        public IPv6Address IPv6Address;
+        public string IPv6Address;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNetworkDefaultGatewayResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -2721,13 +2489,13 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
-        public ReferenceToken InterfaceToken;
+        public string InterfaceToken;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
         public bool Enabled;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Addresses")]
-        public IPv4Address Addresses;
+        public string Addresses;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public NetworkZeroConfigurationExtension Extension;
@@ -2754,7 +2522,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
-        public ReferenceToken InterfaceToken;
+        public string InterfaceToken;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
         public bool Enabled;
@@ -2783,7 +2551,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
-        public IPAddressFilterType Type;
+        public string Type;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
         public PrefixedIPv4Address IPv4Address;
@@ -2793,15 +2561,6 @@ namespace Aaaa
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public IPAddressFilterExtension Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum IPAddressFilterType
-    {
-        
-        Allow,
-        
-        Deny,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="IPAddressFilterExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -2917,8 +2676,6 @@ namespace Aaaa
         [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
         public string CertificateID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Certificate")]
-        public BinaryData Certificate;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCertificates", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3068,7 +2825,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="RelayOutputToken")]
-        public ReferenceToken RelayOutputToken;
+        public string RelayOutputToken;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Properties")]
         public RelayOutputSettings Properties;
@@ -3079,31 +2836,13 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Mode")]
-        public RelayMode Mode;
+        public string Mode;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="DelayTime")]
         public string DelayTime;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="IdleState")]
-        public RelayIdleState IdleState;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum RelayMode
-    {
-        
-        Monostable,
-        
-        Bistable,
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum RelayIdleState
-    {
-        
-        closed,
-        
-        open,
+        public string IdleState;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRelayOutputSettingsResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3116,19 +2855,10 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="RelayOutputToken")]
-        public ReferenceToken RelayOutputToken;
+        public string RelayOutputToken;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="LogicalState")]
-        public RelayLogicalState LogicalState;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum RelayLogicalState
-    {
-        
-        active,
-        
-        inactive,
+        public string LogicalState;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRelayOutputStateResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3141,7 +2871,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="AuxiliaryCommand")]
-        public AuxiliaryData AuxiliaryCommand;
+        public string AuxiliaryCommand;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="SendAuxiliaryCommandResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3149,7 +2879,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="AuxiliaryCommandResponse")]
-        public AuxiliaryData AuxiliaryCommandResponse;
+        public string AuxiliaryCommandResponse;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCACertificates", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3293,7 +3023,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfigurationToken")]
-        public ReferenceToken Dot1XConfigurationToken;
+        public string Dot1XConfigurationToken;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Identity")]
         public string Identity;
@@ -3369,7 +3099,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfigurationToken")]
-        public ReferenceToken Dot1XConfigurationToken;
+        public string Dot1XConfigurationToken;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot1XConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3398,7 +3128,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfigurationToken")]
-        public ReferenceToken Dot1XConfigurationToken;
+        public string Dot1XConfigurationToken;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteDot1XConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3444,7 +3174,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
-        public ReferenceToken InterfaceToken;
+        public string InterfaceToken;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot11StatusResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3460,39 +3190,22 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="SSID")]
-        public Dot11SSIDType SSID;
+        public byte[] SSID;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="BSSID")]
         public string BSSID;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="PairCipher")]
-        public Dot11Cipher PairCipher;
+        public string PairCipher;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="GroupCipher")]
-        public Dot11Cipher GroupCipher;
+        public string GroupCipher;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="SignalStrength")]
-        public Dot11SignalStrength SignalStrength;
+        public string SignalStrength;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="ActiveConfigAlias")]
-        public ReferenceToken ActiveConfigAlias;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Dot11SignalStrength
-    {
-        
-        None,
-        
-        VeryBad,
-        
-        Bad,
-        
-        Good,
-        
-        VeryGood,
-        
-        Extended,
+        public string ActiveConfigAlias;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="ScanAvailableDot11Networks", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3500,7 +3213,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
-        public ReferenceToken InterfaceToken;
+        public string InterfaceToken;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="ScanAvailableDot11NetworksResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3516,38 +3229,25 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="SSID")]
-        public Dot11SSIDType SSID;
+        public byte[] SSID;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="BSSID")]
         public string BSSID;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="AuthAndMangementSuite")]
-        public Dot11AuthAndMangementSuite AuthAndMangementSuite;
+        public string AuthAndMangementSuite;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="PairCipher")]
-        public Dot11Cipher PairCipher;
+        public string PairCipher;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="GroupCipher")]
-        public Dot11Cipher GroupCipher;
+        public string GroupCipher;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="SignalStrength")]
-        public Dot11SignalStrength SignalStrength;
+        public string SignalStrength;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
         public Dot11AvailableNetworksExtension Extension;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public enum Dot11AuthAndMangementSuite
-    {
-        
-        None,
-        
-        Dot1X,
-        
-        PSK,
-        
-        Extended,
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11AvailableNetworksExtension", Namespace="http://www.onvif.org/ver10/schema")]
@@ -3587,7 +3287,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
-        public SystemLogType Type;
+        public string Type;
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Uri")]
         public string Uri;
@@ -3687,7 +3387,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Token")]
-        public ReferenceToken Token;
+        public string Token;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetStorageConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3695,7 +3395,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Token")]
-        public ReferenceToken Token;
+        public string Token;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetStorageConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
@@ -3724,7 +3424,7 @@ namespace Aaaa
     {
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="Token")]
-        public ReferenceToken Token;
+        public string Token;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteStorageConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]

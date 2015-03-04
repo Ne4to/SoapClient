@@ -50,6 +50,14 @@ namespace Aaaa
         public string GetDataResult;
     }
     
+    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDataUsingDataContract", Namespace="http://tempuri.org/")]
+    public class GetDataUsingDataContract
+    {
+        
+        [System.Xml.Serialization.XmlElementAttribute(ElementName="composite")]
+        public CompositeType composite;
+    }
+    
     [System.Xml.Serialization.XmlRootAttribute(ElementName="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
     public class CompositeType
     {
@@ -59,14 +67,6 @@ namespace Aaaa
         
         [System.Xml.Serialization.XmlElementAttribute(ElementName="StringValue")]
         public string StringValue;
-    }
-    
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDataUsingDataContract", Namespace="http://tempuri.org/")]
-    public class GetDataUsingDataContract
-    {
-        
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="composite")]
-        public CompositeType composite;
     }
     
     [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDataUsingDataContractResponse", Namespace="http://tempuri.org/")]

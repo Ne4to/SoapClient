@@ -55,6 +55,7 @@
     <Compile Include="SoapMessageContent.cs" />
     <Compile Include="SoapReason.cs" />
     <Compile Include="SoapText.cs" />
+    <Compile Include="SoapVersion.cs" />
     <Compile Include="WsSecurityHeader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

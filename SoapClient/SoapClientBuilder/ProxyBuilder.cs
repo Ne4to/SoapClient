@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
@@ -14,68 +13,53 @@ using System.Xml.Serialization;
 
 namespace SoapClientBuilder
 {
+	// TODO XmlElementAttribute.DataType
+	// TODO XmlElementAttribute.IsNullable
+	// TODO XmlElementAttribute.Order
+	// TODO XML Documentation
 	public class ProxyBuilder
 	{
 		private const string ClientBaseClassName = "SoapServices.SoapClientBase";
 
-		private CodeCompileUnit _targetUnit;
-		private CodeNamespace _codeNamespace;
-		private XDocument _wsdlDoc;
+		private readonly XDocument _wsdlDoc;
 
+		private readonly CodeCompileUnit _codeUnit;
+		private readonly CodeNamespace _codeNamespace;
 
 		private Dictionary<XName, XElement> _messageElements;
 		private readonly Dictionary<XName, CodeTypeReference> _generatedTypes = new Dictionary<XName, CodeTypeReference>();
-		private Dictionary<XName, XElement> _schemaElements;
-		private Dictionary<XName, XElement> _schemaComplexTypes;
-		private Dictionary<XName, XElement> _schemaSimpleTypes;
+		private readonly Dictionary<XName, XElement> _schemaElements;
+		private readonly Dictionary<XName, XElement> _schemaComplexTypes;
+		private readonly Dictionary<XName, XElement> _schemaSimpleTypes;
+		private readonly Dictionary<XName, XElement> _schemaAttributes;
 
-		private void InitCodeDom()
-		{
-			_targetUnit = new CodeCompileUnit();
-			_codeNamespace = new CodeNamespace("Aaaa"); // TODO
-
-			//samples.Imports.Add(new CodeNamespaceImport("System"));
-
-			_targetUnit.Namespaces.Add(_codeNamespace);
-		}
-
-		public string GetSourceCode()
-		{
-			var provider = CodeDomProvider.CreateProvider("CSharp");
-			var options = new CodeGeneratorOptions();
-			options.BracingStyle = "C";
-			options.BlankLinesBetweenMembers = true;
-
-			var stringBuilder = new StringBuilder();
-
-			using (var sourceWriter = new StringWriter(stringBuilder))
-			{
-				provider.GenerateCodeFromCompileUnit(_targetUnit, sourceWriter, options);
-			}
-
-			return stringBuilder.ToString();
-		}
-
-		public void Run(XDocument wsdlDoc)
+		public ProxyBuilder(XDocument wsdlDoc)
 		{
 			if (wsdlDoc == null) throw new ArgumentNullException("wsdlDoc");
 			_wsdlDoc = wsdlDoc;
 
-			InitCodeDom();
+			_codeUnit = new CodeCompileUnit();
+			_codeNamespace = new CodeNamespace("Aaaa"); // TODO
+			//samples.Imports.Add(new CodeNamespaceImport("System"));
+			_codeUnit.Namespaces.Add(_codeNamespace);
+			
+			_schemaElements = GetSchemaItems("element");
+			_schemaComplexTypes = GetSchemaItems("complexType");
+			_schemaSimpleTypes = GetSchemaItems("simpleType");
+			_schemaAttributes = GetSchemaItems("attribute");
 
-			var targetNamespace = _wsdlDoc.Root.Attribute("targetNamespace").Value;
+			_messageElements = GetMessageElements();
+		}
 
-			InitMessageElementsDictionary(targetNamespace);
-			InitSchemaDictionaries();
-
-
+		public void Run()
+		{
 			var portTypeElements = _wsdlDoc.Root.Elements(Namespaces.Wsdl + "portType");
 			foreach (var portTypeElement in portTypeElements)
 			{
 				var portTypeName = portTypeElement.Attribute("name").Value;
 
 				XElement bindingElement = null;
-				foreach (var be in wsdlDoc.Root.Elements(Namespaces.Wsdl + "binding"))
+				foreach (var be in _wsdlDoc.Root.Elements(Namespaces.Wsdl + "binding"))
 				{
 					var typeName = GetTypeName(be, "type");
 					if (typeName.LocalName == portTypeName)
@@ -94,10 +78,13 @@ namespace SoapClientBuilder
 					var operationName = operation.Attribute("name").Value;
 
 					var opEl = bindingElement.Elements(Namespaces.Wsdl + "operation").Single(o => o.Attribute("name").Value == operationName);
+					string soapAction = null;
 					var soapOp = opEl.Element(Namespaces.Soap + "operation");
-					if (soapOp == null)
-						soapOp = opEl.Element(Namespaces.Soap12 + "operation");
-					var soapAction = soapOp.Attribute("soapAction").Value;
+					if (soapOp != null)
+					{
+						var soapActionAttr = soapOp.Attribute("soapAction");
+						soapAction = soapActionAttr == null ? null : soapActionAttr.Value;
+					}
 
 					var inputElement = operation.Element(Namespaces.Wsdl + "input");
 					var inputTypeReference = Process(inputElement);
@@ -111,13 +98,6 @@ namespace SoapClientBuilder
 			}
 		}
 
-		private void InitSchemaDictionaries()
-		{
-			_schemaElements = GetSchemaItems("element");
-			_schemaComplexTypes = GetSchemaItems("complexType");
-			_schemaSimpleTypes = GetSchemaItems("simpleType");
-		}
-
 		private Dictionary<XName, XElement> GetSchemaItems(string itemName)
 		{
 			var typesElement = _wsdlDoc.Root.Element(Namespaces.Wsdl + "types");
@@ -128,22 +108,14 @@ namespace SoapClientBuilder
 					let typeName = GetTypeName(typeElement, "name", schemaNamespace)
 					select new { typeName, typeElement };
 
-			//var dict = new Dictionary<XName, XElement>();
-
-			//foreach (var a in q)
-			//{
-			//	//dict[a.typeName] = a.typeElement;
-			//	dict.Add(a.typeName, a.typeElement);
-			//}
-
-			//return dict;
 			return q.ToDictionary(kvp => kvp.typeName, kvp => kvp.typeElement);
 		}
 
-		private void InitMessageElementsDictionary(string targetNamespace)
+		private Dictionary<XName, XElement> GetMessageElements()
 		{
+			var targetNamespace = _wsdlDoc.Root.Attribute("targetNamespace").Value;
 			var messageElements = _wsdlDoc.Root.Elements(Namespaces.Wsdl + "message").ToArray();
-			_messageElements = messageElements.ToDictionary(me => GetTypeName(me, "name", targetNamespace), me => me);
+			return messageElements.ToDictionary(me => GetTypeName(me, "name", targetNamespace), me => me);
 		}
 
 		private void AddInterfaceOperation(string operationName, CodeTypeReference outputTypeReference,
@@ -194,7 +166,7 @@ namespace SoapClientBuilder
 
 		private CodeTypeDeclaration AddServiceImplementation(CodeTypeDeclaration interfaceTypeDec)
 		{
-			var className = interfaceTypeDec.Name.StartsWith("I", StringComparison.Ordinal) ? interfaceTypeDec.Name.Substring(1) : interfaceTypeDec.Name + "Client";
+			var className = (interfaceTypeDec.Name.StartsWith("I", StringComparison.Ordinal) ? interfaceTypeDec.Name.Substring(1) : interfaceTypeDec.Name) + "Client";
 			var classTypeDec = new CodeTypeDeclaration(className);
 			classTypeDec.IsClass = true;
 			classTypeDec.IsPartial = true;
@@ -236,111 +208,165 @@ namespace SoapClientBuilder
 			if (_generatedTypes.TryGetValue(typeName, out codeTypeReference))
 				return codeTypeReference;
 
-			CodeTypeDeclaration targetClass = null;
-
-			XElement typeElement;
-			if (_schemaElements.TryGetValue(typeName, out typeElement))
-			{
-				var complexTypeElement = typeElement.Element(Namespaces.Xsd + "complexType");
-				if (complexTypeElement != null)
-				{
-					var localName = GetCodeTypeName(typeName.LocalName);
-					codeTypeReference = new CodeTypeReference(new CodeTypeParameter(localName));
-					_generatedTypes.Add(typeName, codeTypeReference);
-
-					CreateComplexTypeDeclaration(complexTypeElement, localName, typeName.NamespaceName);
-
-					return codeTypeReference;
-				}
-				else
-				{
-					var tn = GetTypeName(typeElement, "type");
-					var x = _schemaComplexTypes[tn];
-
-					var localName = GetCodeTypeName(tn.LocalName);
-					codeTypeReference = new CodeTypeReference(new CodeTypeParameter(localName));
-					_generatedTypes.Add(typeName, codeTypeReference);
-
-					CreateComplexTypeDeclaration(x, localName, tn.NamespaceName);
-
-					return codeTypeReference;
-				}
-			}
-
-			if (targetClass == null && _schemaComplexTypes.TryGetValue(typeName, out typeElement))
-			{
-				var localName = GetCodeTypeName(typeName.LocalName);
-				codeTypeReference = new CodeTypeReference(new CodeTypeParameter(localName));
-				_generatedTypes.Add(typeName, codeTypeReference);
-
-				CreateComplexTypeDeclaration(typeElement, localName, typeName.NamespaceName);
-
+			if (TryGetFromSchemaElement(typeName, out codeTypeReference))
 				return codeTypeReference;
-			}
 
-			if (targetClass == null && _schemaSimpleTypes.TryGetValue(typeName, out typeElement))
-			{
-				var listElement = typeElement.Element(Namespaces.Xsd + "list");
-				if (listElement != null)
-				{
-					var itemType = GetTypeName(listElement, "itemType");
-					var itemTypeCodeRef = GetCodeTypeReference(itemType);
-					codeTypeReference = new CodeTypeReference(String.Format("{0}[]", itemTypeCodeRef.BaseType));
-					_generatedTypes.Add(typeName, codeTypeReference);
-					return codeTypeReference;
-				}
+			if (TryGetFromSchemaComplexType(typeName, out codeTypeReference))
+				return codeTypeReference;
 
-				var restrictionElement = typeElement.Element(Namespaces.Xsd + "restriction");
-				if (restrictionElement != null)
-				{
-					var targetEnum = new CodeTypeDeclaration(typeName.LocalName);
-					targetEnum.IsEnum = true;
-					targetEnum.TypeAttributes = TypeAttributes.Public;
+			if (TryGetFromSchemaSimpleType(typeName, out codeTypeReference))
+				return codeTypeReference;
 
-					targetEnum.CustomAttributes.Add(new CodeAttributeDeclaration(
-						new CodeTypeReference(typeof(XmlTypeAttribute)),
-						new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(typeName.Namespace.NamespaceName))));
-					_codeNamespace.Types.Add(targetEnum);
+			if (TryGetFromSchemaAttribute(typeName, out codeTypeReference))
+				return codeTypeReference;
 
-					foreach (var xElement in restrictionElement.Elements(Namespaces.Xsd + "enumeration"))
-					{
-						var name = FixFieldName(xElement.Attribute("value").Value);
-
-						var f = new CodeMemberField(name, name);
-
-						//var xmlEnumAttr = memberInfo.GetCustomAttribute<XmlEnumAttribute>();
-						//if (xmlEnumAttr != null)
-						//{
-						//	var attrType = new CodeTypeReference(typeof(XmlEnumAttribute));
-						//	f.CustomAttributes.Add(new CodeAttributeDeclaration(attrType,
-						//		new CodeAttributeArgument(new CodePrimitiveExpression(xmlEnumAttr.Name))));
-						//}
-
-						targetEnum.Members.Add(f);
-					}
-
-					targetClass = targetEnum;
-					codeTypeReference = new CodeTypeReference(new CodeTypeParameter(targetClass.Name));
-					_generatedTypes.Add(typeName, codeTypeReference);
-					return codeTypeReference;
-				}
-			}
-
-			if (targetClass == null)
-				throw new NotSupportedException();
-
-
-
-			//var targetClass = CreateComplexTypeDeclaration(typeName, complexTypeElement);
-
-			//codeTypeReference = new CodeTypeReference(new CodeTypeParameter(targetClass.Name));
-			//_generatedTypes.Add(typeName, codeTypeReference);
-			return codeTypeReference;
+			var exceptionMessage = String.Format("Type '{0}' is not supported", typeName);
+			throw new NotSupportedException(exceptionMessage);
 		}
 
-		private List<string> _usedNames = new List<string>();
+		private bool TryGetFromSchemaElement(XName typeName, out CodeTypeReference typeReference)
+		{
+			XElement typeElement;
+			if (!_schemaElements.TryGetValue(typeName, out typeElement))
+			{
+				typeReference = null;
+				return false;
+			}
+
+			var complexTypeElement = typeElement.Element(Namespaces.Xsd + "complexType");
+			string localName;
+			if (complexTypeElement != null)
+			{
+				localName = GetCodeTypeName(typeName.LocalName);
+				typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
+				_generatedTypes.Add(typeName, typeReference);
+				CreateComplexTypeDeclaration(complexTypeElement, localName, typeName.NamespaceName);
+				return true;
+			}
+
+			var tn = GetTypeName(typeElement, "type");
+			var x = _schemaComplexTypes[tn];
+
+			localName = GetCodeTypeName(tn.LocalName);
+			typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
+			_generatedTypes.Add(typeName, typeReference);
+
+			CreateComplexTypeDeclaration(x, localName, tn.NamespaceName);
+
+			return true;
+		}
+
+		private bool TryGetFromSchemaComplexType(XName typeName, out CodeTypeReference typeReference)
+		{
+			XElement typeElement;
+			if (!_schemaComplexTypes.TryGetValue(typeName, out typeElement))
+			{
+				typeReference = null;
+				return false;
+			}
+
+			var localName = GetCodeTypeName(typeName.LocalName);
+			typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
+			_generatedTypes.Add(typeName, typeReference);
+
+			CreateComplexTypeDeclaration(typeElement, localName, typeName.NamespaceName);
+
+			return true;
+		}
+
+		private bool TryGetFromSchemaSimpleType(XName typeName, out CodeTypeReference typeReference)
+		{
+			XElement typeElement;
+			if (!_schemaSimpleTypes.TryGetValue(typeName, out typeElement))
+			{
+				typeReference = null;
+				return false;
+			}
+
+			var unionElement = typeElement.Element(Namespaces.Xsd + "union");
+			if (unionElement != null)
+			{
+				typeReference = GetCodeTypeReference(XName.Get("string", Namespaces.Xsd.NamespaceName));
+				return true;
+			}
+
+			var listElement = typeElement.Element(Namespaces.Xsd + "list");
+			if (listElement != null)
+			{
+				var itemType = GetTypeName(listElement, "itemType");
+				var itemTypeCodeRef = GetCodeTypeReference(itemType);
+				typeReference = new CodeTypeReference(String.Format("{0}[]", itemTypeCodeRef.BaseType));
+				_generatedTypes.Add(typeName, typeReference);
+
+				return true;
+			}
+
+			var restrictionElement = typeElement.Element(Namespaces.Xsd + "restriction");
+			if (restrictionElement == null)
+			{
+				typeReference = null;
+				return false;
+			}
+
+			var baseType = GetTypeName(restrictionElement, "base");
+			if (baseType != null)
+			{
+				typeReference = GetCodeTypeReference(baseType);
+				return true;
+			}
+
+			var targetEnum = new CodeTypeDeclaration(typeName.LocalName);
+			targetEnum.IsEnum = true;
+			targetEnum.TypeAttributes = TypeAttributes.Public;
+
+			targetEnum.CustomAttributes.Add(new CodeAttributeDeclaration(
+				new CodeTypeReference(typeof(XmlTypeAttribute)),
+				new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(typeName.Namespace.NamespaceName))));
+			_codeNamespace.Types.Add(targetEnum);
+
+			foreach (var xElement in restrictionElement.Elements(Namespaces.Xsd + "enumeration"))
+			{
+				var name = FixFieldName(xElement.Attribute("value").Value);
+
+				var f = new CodeMemberField(name, name);
+
+				// TODO enum values
+				//var xmlEnumAttr = memberInfo.GetCustomAttribute<XmlEnumAttribute>();
+				//if (xmlEnumAttr != null)
+				//{
+				//	var attrType = new CodeTypeReference(typeof(XmlEnumAttribute));
+				//	f.CustomAttributes.Add(new CodeAttributeDeclaration(attrType,
+				//		new CodeAttributeArgument(new CodePrimitiveExpression(xmlEnumAttr.Name))));
+				//}
+
+				targetEnum.Members.Add(f);
+			}
+
+			typeReference = new CodeTypeReference(new CodeTypeParameter(targetEnum.Name));
+			_generatedTypes.Add(typeName, typeReference);
+
+			return true;
+		}
+
+		private bool TryGetFromSchemaAttribute(XName typeName, out CodeTypeReference typeReference)
+		{
+			XElement typeElement;
+			if (!_schemaAttributes.TryGetValue(typeName, out typeElement))
+			{
+				typeReference = null;
+				return false;
+			}
+
+			var restrictionElement = typeElement.Element(Namespaces.Xsd + "simpleType").Element(Namespaces.Xsd + "restriction");
+			var baseType = GetTypeName(restrictionElement, "base");
+			typeReference = GetCodeTypeReference(baseType);
+			return true;
+		}
+
+		private readonly List<string> _usedNames = new List<string>();
 		private string GetCodeTypeName(string localName)
 		{
+			// TODO class name == field name
 			string newName;
 			if (_usedNames.Contains(localName))
 			{
@@ -353,17 +379,11 @@ namespace SoapClientBuilder
 
 			_usedNames.Add(newName);
 
-			return newName;			
+			return newName;
 		}
 
 		private CodeTypeDeclaration CreateComplexTypeDeclaration(XElement complexTypeElement, string typeName, string typeNamespace)
 		{
-			StackTrace trace = new StackTrace();
-			if (trace.FrameCount > 50)
-			{
-
-			}
-
 			var targetClass = new CodeTypeDeclaration(typeName)
 			{
 				IsClass = true,
@@ -535,6 +555,23 @@ namespace SoapClientBuilder
 				return null;
 
 			return soapActionAttribute.Value;
+		}
+
+		public string GetSourceCode()
+		{
+			var provider = CodeDomProvider.CreateProvider("CSharp");
+			var options = new CodeGeneratorOptions();
+			options.BracingStyle = "C";
+			options.BlankLinesBetweenMembers = true;
+
+			var stringBuilder = new StringBuilder();
+
+			using (var sourceWriter = new StringWriter(stringBuilder))
+			{
+				provider.GenerateCodeFromCompileUnit(_codeUnit, sourceWriter, options);
+			}
+
+			return stringBuilder.ToString();
 		}
 	}
 }

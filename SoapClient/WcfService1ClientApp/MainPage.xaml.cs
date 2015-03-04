@@ -31,10 +31,10 @@ namespace WcfService1ClientApp
 
 	    private async void MainPage_OnLoaded(object sender, RoutedEventArgs e)
 	    {
-		    Service1Client client = new Service1Client();
+		    Service1Client client = new Service1Client();			
 			client.EndpointAddress = new Uri("http://ne4topc/soaptest/Service1.svc");
-		    client.ContentType = "text/xml";
-		    client.EnvelopeNamespace = XNamespace.Get("http://schemas.xmlsoap.org/soap/envelope/");
+		    //client.ContentType = "text/xml";
+		    //client.EnvelopeNamespace = XNamespace.Get("http://schemas.xmlsoap.org/soap/envelope/");
 
  		    var x = await client.GetData(new GetData()
 		    {

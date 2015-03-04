@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5b95b2c1-99d7-41b3-bcc8-b9f49155d5d7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OperationHistory.xsd" MetadataType="Schema" ID="13ae8b8c-bc6c-4d43-8ca7-31e91f303659" SourceId="1" SourceUrl="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?xsd=4" />
+    <MetadataFile FileName="OperationHistory1.xsd" MetadataType="Schema" ID="d039b4ed-c942-49ed-8dd8-2696923665f9" SourceId="1" SourceUrl="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?xsd=2" />
+    <MetadataFile FileName="OperationHistory2.xsd" MetadataType="Schema" ID="898ad361-d7d1-4ca2-a9e8-7a9f1f06c99c" SourceId="1" SourceUrl="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?xsd=1" />
+    <MetadataFile FileName="OperationHistory3.xsd" MetadataType="Schema" ID="fe7c1cb6-27d1-4232-8d8e-da64c221eb45" SourceId="1" SourceUrl="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?xsd=3" />
+    <MetadataFile FileName="OperationHistory.wsdl" MetadataType="Wsdl" ID="5bf4ecfb-6325-4005-9322-12a58cfc1711" SourceId="1" SourceUrl="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://russianpost.org/sms-info/data" elementFormDefault="qualified" targetNamespace="http://russianpost.org/sms-info/data" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?xsd=4" namespace="http://schemas.xmlsoap.org/soap/envelope/" />
+  <xsd:element name="AuthorisationHeader">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="login" type="xsd:string" />
+        <xsd:element name="password" type="xsd:string" />
+      </xsd:sequence>
+      <xsd:attribute default="1" ref="env:mustUnderstand" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="LanguageData">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" maxOccurs="unbounded" name="Language">
+          <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" />
+            <xsd:attribute name="code" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="SmsHistoryRecord">
+    <xsd:sequence>
+      <xsd:element name="Id" type="xsd:integer" />
+      <xsd:element name="Number" type="tns:TelNumber" />
+      <xsd:element name="NotificationTypeID" type="xsd:integer" />
+      <xsd:element name="NotificationTypeName" type="xsd:string" />
+      <xsd:element name="NotificationStatusID" type="xsd:integer" />
+      <xsd:element name="NotificationStatusName" type="xsd:string" />
+      <xsd:element name="NotificationStatusDate" type="xsd:dateTime" />
+      <xsd:element name="SendedID" type="xsd:integer" />
+      <xsd:element name="SourceOperation" type="tns:Barcode" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Barcode">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="13" />
+      <xsd:maxLength value="14" />
+      <xsd:pattern value="([0-9]{14,14})|([a-z,A-Z]{2,2}[0-9]{9,9}[a-z,A-Z]{2,2})" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TelNumber">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="^([0-9]|\\+7)?[0-9]*$" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="SmsHistoryFaultReason" type="xsd:string" />
+  <xsd:element name="AuthorisationFaultReason" type="xsd:string" />
+  <xsd:element name="LanguageFaultReason" type="xsd:string" />
+  <xsd:element name="SmsHistoryRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Barcode" type="tns:Barcode" />
+        <xsd:element minOccurs="0" maxOccurs="1" default="RUS" name="Language" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SmsHistoryData">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="historyRecord" type="tns:SmsHistoryRecord" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:msg="http://russianpost.org/operationhistory/data" xmlns:sms="http://russianpost.org/sms-info/data" xmlns:tns="http://russianpost.org/operationhistory" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:espp="http://www.russianpost.org/RTM/DataExchangeESPP/Data" name="OperationHistory" targetNamespace="http://russianpost.org/operationhistory" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="http://russianpost.org/operationhistory">
+      <xsd:import schemaLocation="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?xsd=1" namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data" />
+      <xsd:import schemaLocation="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?xsd=2" namespace="http://russianpost.org/operationhistory/data" />
+      <xsd:import schemaLocation="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?xsd=3" namespace="http://russianpost.org/sms-info/data" />
+    </xsd:schema>
+  </types>
+  <message name="getOperationHistoryIn">
+    <part name="historyRequest" element="msg:OperationHistoryRequest" />
+    <part name="AuthorizationHeader" element="msg:AuthorizationHeader" />
+  </message>
+  <message name="getOperationHistoryOut">
+    <part name="messagePart" element="msg:OperationHistoryData" />
+  </message>
+  <message name="AuthorizationFault">
+    <part name="Reason" element="msg:AuthorizationFaultReason" />
+  </message>
+  <message name="OperationHistoryFault">
+    <part name="Reason" element="msg:OperationHistoryFaultReason" />
+  </message>
+  <message name="LanguageFault">
+    <part name="Reason" element="msg:LanguageFaultReason" />
+  </message>
+  <message name="UpdateOperationDataRequest">
+    <part name="UpdateRequest" element="msg:UpdateOperationRequest" />
+    <part name="AuthorizationHeader" element="msg:AuthorizationHeader" />
+  </message>
+  <message name="UpdateOperationDataResponse">
+    <part name="messagePart" element="msg:OperationHistoryData" />
+  </message>
+  <message name="getLanguageOut">
+    <part name="messagePart" element="msg:LanguageData" />
+  </message>
+  <message name="getLanguageIn">
+    <part name="AuthorizationHeader" element="msg:AuthorizationHeader" />
+  </message>
+  <message name="PostalOrderEventsForMaiOutput">
+    <part name="ResponseParam" element="espp:PostalOrderEventsForMaiOutput" />
+  </message>
+  <message name="PostalOrderEventsForMailInput">
+    <part name="AuthorizationHeader" element="msg:AuthorizationHeader" />
+    <part name="InputParam" element="espp:PostalOrderEventsForMailInput" />
+  </message>
+  <message name="PostalOrderEventsForMailFault">
+    <part name="Fault" element="espp:PostalOrderEventsForMailFault" />
+  </message>
+  <message name="getSmsHistoryRequest">
+    <part name="AuthorizationHeader" element="msg:AuthorizationHeader" />
+    <part name="SmsRequest" element="sms:SmsHistoryRequest" />
+  </message>
+  <message name="getSmsHistoryResponse">
+    <part name="SmsHistoryResponse" element="sms:SmsHistoryData" />
+  </message>
+  <message name="SmsHistoryFault">
+    <part name="SmsHistoryFault" element="sms:SmsHistoryFaultReason" />
+  </message>
+  <portType name="OperationHistoryInterface">
+    <operation name="GetOperationHistory">
+      <documentation>Метод получения истории операции над РПО.</documentation>
+      <input message="tns:getOperationHistoryIn" />
+      <output message="tns:getOperationHistoryOut" />
+      <fault name="AuthorizationFault" message="tns:AuthorizationFault" />
+      <fault name="OperationHistoryFault" message="tns:OperationHistoryFault" />
+      <fault name="LanguageFault" message="tns:LanguageFault" />
+    </operation>
+    <operation name="UpdateOperationData">
+      <documentation>Метод редактирования операционных данных.</documentation>
+      <input message="tns:UpdateOperationDataRequest" />
+      <output message="tns:UpdateOperationDataResponse" />
+      <fault name="AuthorizationFault" message="tns:AuthorizationFault" />
+      <fault name="OperationHistoryFault" message="tns:OperationHistoryFault" />
+      <fault name="LanguageFault" message="tns:LanguageFault" />
+    </operation>
+    <operation name="getLanguages">
+      <documentation>Метод получения списка доступных языков предоставления данных об РПО.</documentation>
+      <input name="getLanguageRequest" message="tns:getLanguageIn" />
+      <output name="getLanguageResponse" message="tns:getLanguageOut" />
+      <fault name="AuthorizationFault" message="tns:AuthorizationFault" />
+      <fault name="OperationHistoryFault" message="tns:OperationHistoryFault" />
+      <fault name="LanguageFault" message="tns:LanguageFault" />
+    </operation>
+    <operation name="PostalOrderEventsForMail">
+      <documentation>Метод получения данных о наложенном платеже. </documentation>
+      <input name="Request" message="tns:PostalOrderEventsForMailInput" />
+      <output name="Response" message="tns:PostalOrderEventsForMaiOutput" />
+      <fault name="Fault" message="tns:PostalOrderEventsForMailFault" />
+    </operation>
+    <operation name="getSmsHistory">
+      <documentation>Метод получения данных о переданных по отправлению СМС. </documentation>
+      <input message="tns:getSmsHistoryRequest" />
+      <output message="tns:getSmsHistoryResponse" />
+      <fault name="SmsHistoryFault" message="tns:SmsHistoryFault" />
+      <fault name="LanguageFault" message="tns:LanguageFault" />
+      <fault name="AuthorizationFault" message="tns:AuthorizationFault" />
+    </operation>
+  </portType>
+  <binding name="WebOperationHistory" type="tns:OperationHistoryInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetOperationHistory">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:header message="tns:getOperationHistoryIn" part="AuthorizationHeader" use="literal" />
+        <soap:body use="literal" parts="historyRequest" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="AuthorizationFault">
+        <soap:fault use="literal" name="AuthorizationFault" namespace="" />
+      </fault>
+      <fault name="OperationHistoryFault">
+        <soap:fault use="literal" name="OperationHistoryFault" namespace="" />
+      </fault>
+      <fault name="LanguageFault">
+        <soap:fault use="literal" name="LanguageFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="UpdateOperationData">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:header message="tns:UpdateOperationDataRequest" part="AuthorizationHeader" use="literal" />
+        <soap:body use="literal" parts="UpdateRequest" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="AuthorizationFault">
+        <soap:fault use="literal" name="AuthorizationFault" namespace="" />
+      </fault>
+      <fault name="OperationHistoryFault">
+        <soap:fault use="literal" name="OperationHistoryFault" namespace="" />
+      </fault>
+      <fault name="LanguageFault">
+        <soap:fault use="literal" name="LanguageFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getLanguages">
+      <soap:operation soapAction="" style="document" />
+      <input name="getLanguageRequest">
+        <soap:header message="tns:getLanguageIn" part="AuthorizationHeader" use="literal" />
+        <soap:body use="literal" parts="" />
+      </input>
+      <output name="getLanguageResponse">
+        <soap:body use="literal" parts="messagePart" />
+      </output>
+      <fault name="AuthorizationFault">
+        <soap:fault use="literal" name="AuthorizationFault" namespace="" />
+      </fault>
+      <fault name="OperationHistoryFault">
+        <soap:fault use="literal" name="OperationHistoryFault" namespace="" />
+      </fault>
+      <fault name="LanguageFault">
+        <soap:fault use="literal" name="LanguageFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="PostalOrderEventsForMail">
+      <soap:operation soapAction="" style="document" />
+      <input name="Request">
+        <soap:header message="tns:PostalOrderEventsForMailInput" part="AuthorizationHeader" use="literal" />
+        <soap:body use="literal" parts="InputParam" />
+      </input>
+      <output name="Response">
+        <soap:body use="literal" />
+      </output>
+      <fault name="Fault">
+        <soap:fault use="literal" name="Fault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getSmsHistory">
+      <soap:operation soapAction="" style="document" />
+      <input>
+        <soap:header message="tns:getSmsHistoryRequest" part="AuthorizationHeader" use="literal" />
+        <soap:body use="literal" parts="SmsRequest" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SmsHistoryFault">
+        <soap:fault use="literal" name="SmsHistoryFault" namespace="" />
+      </fault>
+      <fault name="LanguageFault">
+        <soap:fault use="literal" name="LanguageFault" namespace="" />
+      </fault>
+      <fault name="AuthorizationFault">
+        <soap:fault use="literal" name="AuthorizationFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="OperationHistory">
+    <port name="OperationHistory" binding="tns:WebOperationHistory">
+      <soap:address location="http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory" />
+    </port>
+  </service>
+</definitions>
