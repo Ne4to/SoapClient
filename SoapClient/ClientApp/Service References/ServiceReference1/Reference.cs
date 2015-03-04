@@ -26,6 +26,15 @@ namespace ClientApp.ServiceReference1 {
         private bool BoolValueField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal DecimalValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DoubleValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float FloatValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StringValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -47,6 +56,45 @@ namespace ClientApp.ServiceReference1 {
                 if ((this.BoolValueField.Equals(value) != true)) {
                     this.BoolValueField = value;
                     this.RaisePropertyChanged("BoolValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal DecimalValue {
+            get {
+                return this.DecimalValueField;
+            }
+            set {
+                if ((this.DecimalValueField.Equals(value) != true)) {
+                    this.DecimalValueField = value;
+                    this.RaisePropertyChanged("DecimalValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double DoubleValue {
+            get {
+                return this.DoubleValueField;
+            }
+            set {
+                if ((this.DoubleValueField.Equals(value) != true)) {
+                    this.DoubleValueField = value;
+                    this.RaisePropertyChanged("DoubleValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float FloatValue {
+            get {
+                return this.FloatValueField;
+            }
+            set {
+                if ((this.FloatValueField.Equals(value) != true)) {
+                    this.FloatValueField = value;
+                    this.RaisePropertyChanged("FloatValue");
                 }
             }
         }

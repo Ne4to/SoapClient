@@ -14,13 +14,16 @@ namespace Builder.TestApp
 		static void Main(string[] args)
 		{
 			//LoadTestServiceWsdl();
-			CreateTestServiceClient();
+			//CreateTestServiceClient();
 
 			//LoadRussianPostWsdl();
 			//CreateRussianPostClient();
 
 			//LoadOnvifDmWsdl();
-			CreateOnvifDmClient();
+			//CreateOnvifDmClient();
+
+			//LoadWeatherWsdl();
+			CreateWeatherClient();
 		}
 
 		private static void LoadTestServiceWsdl()
@@ -51,6 +54,16 @@ namespace Builder.TestApp
 		private static void CreateOnvifDmClient()
 		{
 			CreateClient("WcfService3.wsdl", @"3.cs");
+		}
+
+		private static void LoadWeatherWsdl()
+		{
+			Load("http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL", "WcfService4.wsdl");
+		}
+
+		private static void CreateWeatherClient()
+		{
+			CreateClient("WcfService4.wsdl", @"4.cs");
 		}
 		
 		private static void Load(string uri, string filename)

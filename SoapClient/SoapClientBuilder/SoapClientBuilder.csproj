@@ -52,6 +52,7 @@
     <Compile Include="Namespaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProxyBuilder.cs" />
+    <Compile Include="SimpleTypes.cs" />
     <Compile Include="WsdlDocumentLoader.cs" />
   </ItemGroup>
   <ItemGroup>

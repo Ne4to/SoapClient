@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -31,12 +32,21 @@ namespace WcfService1ClientApp
 
 	    private async void MainPage_OnLoaded(object sender, RoutedEventArgs e)
 	    {
-		    Service1Client client = new Service1Client();			
-			client.EndpointAddress = new Uri("http://ne4topc/soaptest/Service1.svc");
+		    //await CheckWcf();
+
+		    var client = new WeatherSoapClient();
+			client.EndpointAddress = new Uri("http://wsf.cdyne.com/WeatherWS/Weather.asmx");
+		    var x = await client.GetWeatherInformation(new GetWeatherInformation());
+	    }
+
+	    private async Task CheckWcf()
+	    {
+		    Service1Client client = new Service1Client();
+		    client.EndpointAddress = new Uri("http://ne4topc/soaptest/Service1.svc");
 		    //client.ContentType = "text/xml";
 		    //client.EnvelopeNamespace = XNamespace.Get("http://schemas.xmlsoap.org/soap/envelope/");
 
- 		    var x = await client.GetData(new GetData()
+		    var x = await client.GetData(new GetData()
 		    {
 			    value = 456
 		    });
@@ -46,7 +56,7 @@ namespace WcfService1ClientApp
 			    composite = new CompositeType()
 			    {
 				    BoolValue = true,
-					StringValue = "ssss"
+				    StringValue = "ssss"
 			    }
 		    });
 	    }

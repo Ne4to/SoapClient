@@ -112,6 +112,7 @@
     <Compile Include="1.cs" />
     <Compile Include="2.cs" />
     <Compile Include="3.cs" />
+    <Compile Include="4.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>

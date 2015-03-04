@@ -42,7 +42,7 @@ namespace SoapClientBuilder
 			_codeNamespace = new CodeNamespace("Aaaa"); // TODO
 			//samples.Imports.Add(new CodeNamespaceImport("System"));
 			_codeUnit.Namespaces.Add(_codeNamespace);
-			
+
 			_schemaElements = GetSchemaItems("element");
 			_schemaComplexTypes = GetSchemaItems("complexType");
 			_schemaSimpleTypes = GetSchemaItems("simpleType");
@@ -69,6 +69,18 @@ namespace SoapClientBuilder
 					}
 				}
 
+				if (bindingElement == null)
+					continue;
+
+				var soapBindingElement = bindingElement.Element(Namespaces.Soap + "binding");
+				if (soapBindingElement == null)
+					continue;
+
+				if (soapBindingElement.Attribute("transport").Value != "http://schemas.xmlsoap.org/soap/http")
+					continue;
+
+				//<soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+				//<http:binding verb="GET" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" />
 				var interfaceTypeDec = AddServiceInterface(portTypeName);
 				var implTypeDec = AddServiceImplementation(interfaceTypeDec);
 
@@ -460,12 +472,19 @@ namespace SoapClientBuilder
 						continue;
 					}
 
+					var minOccursAttr = xElement.Attribute("minOccurs");
+					var maxOccursAttr = xElement.Attribute("maxOccurs");
+					bool isCollection = minOccursAttr != null
+										&& minOccursAttr.Value == "0"
+										&& maxOccursAttr != null
+										&& maxOccursAttr.Value == "unbounded";
+					
 					CodeTypeReference codeTypeReference = GetCodeTypeReference(typeName2);
 
 					var fieldCode = new CodeMemberField();
 					fieldCode.Attributes = MemberAttributes.Public;
 					fieldCode.Name = name;
-					fieldCode.Type = codeTypeReference;
+					fieldCode.Type = isCollection ? new CodeTypeReference(String.Format("{0}[]", codeTypeReference.BaseType)) : codeTypeReference;
 
 					var args = new List<CodeAttributeArgument>();
 					args.Add(new CodeAttributeArgument("ElementName", new CodePrimitiveExpression(name)));

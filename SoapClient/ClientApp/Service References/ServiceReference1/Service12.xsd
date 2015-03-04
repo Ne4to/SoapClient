@@ -3,6 +3,9 @@
   <xs:complexType name="CompositeType">
     <xs:sequence>
       <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DecimalValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DoubleValue" type="xs:double" />
+      <xs:element minOccurs="0" name="FloatValue" type="xs:float" />
       <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

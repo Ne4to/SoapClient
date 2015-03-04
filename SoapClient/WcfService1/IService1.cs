@@ -43,5 +43,12 @@ namespace WcfService1
 			get { return stringValue; }
 			set { stringValue = value; }
 		}
+
+		[DataMember]
+		public float FloatValue { get; set; }
+		[DataMember]
+		public double DoubleValue { get; set; }		
+		[DataMember]
+		public decimal DecimalValue { get; set; }
 	}
 }
