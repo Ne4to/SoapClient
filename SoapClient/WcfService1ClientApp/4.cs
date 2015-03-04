@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Aaaa
+namespace MyNs4
 {
     
     
@@ -41,190 +41,196 @@ namespace Aaaa
         }
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetWeatherInformation", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class GetWeatherInformation
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetWeatherInformationResponse", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class GetWeatherInformationResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="GetWeatherInformationResult")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public ArrayOfWeatherDescription GetWeatherInformationResult;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ArrayOfWeatherDescription", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class ArrayOfWeatherDescription
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WeatherDescription")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public WeatherDescription[] WeatherDescription;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="WeatherDescription", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class WeatherDescription
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WeatherID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public short WeatherID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Description")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Description;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PictureURL")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string PictureURL;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCityForecastByZIP", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class GetCityForecastByZIP
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ZIP")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ZIP;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCityForecastByZIPResponse", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class GetCityForecastByZIPResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="GetCityForecastByZIPResult")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public ForecastReturn GetCityForecastByZIPResult;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ForecastReturn", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class ForecastReturn
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Success")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Success;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ResponseText")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string ResponseText;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="State")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string State;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="City")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string City;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WeatherStationCity")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string WeatherStationCity;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ForecastResult")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public ArrayOfForecast ForecastResult;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ArrayOfForecast", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class ArrayOfForecast
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Forecast")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Forecast[] Forecast;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Forecast", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class Forecast
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Date")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public System.DateTime Date;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WeatherID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public short WeatherID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Desciption")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Desciption;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Temperatures")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public temp Temperatures;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ProbabilityOfPrecipiation")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public POP ProbabilityOfPrecipiation;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="temp", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class temp
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MorningLow")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string MorningLow;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DaytimeHigh")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string DaytimeHigh;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="POP", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class POP
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Nighttime")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Nighttime;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Daytime")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Daytime;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCityWeatherByZIP", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class GetCityWeatherByZIP
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ZIP")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ZIP;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCityWeatherByZIPResponse", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class GetCityWeatherByZIPResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="GetCityWeatherByZIPResult")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public WeatherReturn GetCityWeatherByZIPResult;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="WeatherReturn", Namespace="http://ws.cdyne.com/WeatherWS/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws.cdyne.com/WeatherWS/")]
     public class WeatherReturn
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Success")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Success;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ResponseText")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string ResponseText;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="State")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string State;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="City")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string City;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WeatherStationCity")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string WeatherStationCity;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WeatherID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public short WeatherID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Description")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string Description;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Temperature")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string Temperature;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RelativeHumidity")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string RelativeHumidity;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Wind")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string Wind;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Pressure")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string Pressure;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Visibility")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string Visibility;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WindChill")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string WindChill;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Remarks")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string Remarks;
     }
 }

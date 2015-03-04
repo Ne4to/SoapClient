@@ -111,8 +111,18 @@
   <ItemGroup>
     <Compile Include="1.cs" />
     <Compile Include="2.cs" />
-    <Compile Include="3.cs" />
-    <Compile Include="4.cs" />
+    <Compile Include="3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="5.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="6.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>

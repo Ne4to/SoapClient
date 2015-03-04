@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Aaaa
+namespace MyNs2
 {
     
     
@@ -55,248 +55,254 @@ namespace Aaaa
         }
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="OperationHistoryRequest", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class OperationHistoryRequest
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Barcode")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Barcode;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MessageType")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int MessageType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Language")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Language;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AuthorizationHeader", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class AuthorizationHeader
     {
         
         [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.xmlsoap.org/soap/envelope/")]
         public bool mustUnderstand;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="login")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string login;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="password")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string password;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="OperationHistoryData", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class OperationHistoryData
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="historyRecord")]
-        public OperationHistoryRecord historyRecord;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public OperationHistoryRecord[] historyRecord;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="OperationHistoryRecord", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class OperationHistoryRecord
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AddressParameters")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public AddressParameters AddressParameters;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FinanceParameters")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public FinanceParameters FinanceParameters;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ItemParameters")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public ItemParameters ItemParameters;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="OperationParameters")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public OperationParameters OperationParameters;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UserParameters")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public UserParameters UserParameters;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AddressParameters", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class AddressParameters
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DestinationAddress")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Address DestinationAddress;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="OperationAddress")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public Address OperationAddress;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MailDirect")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Country MailDirect;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CountryFrom")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public Country CountryFrom;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CountryOper")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public Country CountryOper;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Address", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class Address
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Index")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Index;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Description")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Description;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Country", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class Country
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Id")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Id;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Code2A")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Code2A;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Code3A")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Code3A;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string Name;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NameRU")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string NameRU;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NameEN")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string NameEN;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="FinanceParameters", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class FinanceParameters
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Payment")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Payment;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Value")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int Value;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MassRate")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int MassRate;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="InsrRate")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public int InsrRate;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AirRate")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public int AirRate;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Rate")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public int Rate;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ItemParameters", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class ItemParameters
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Barcode")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Barcode;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Internum")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Internum;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ValidRuType")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool ValidRuType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ValidEnType")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool ValidEnType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ComplexItemName")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string ComplexItemName;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MailRank")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public Rtm02Parameter MailRank;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PostMark")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public Rtm02Parameter PostMark;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MailType")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public Rtm02Parameter MailType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MailCtg")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public Rtm02Parameter MailCtg;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Mass")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public int Mass;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MaxMassRU")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public int MaxMassRU;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MaxMassEN")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public int MaxMassEN;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Rtm02Parameter", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class Rtm02Parameter
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Id")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Id;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Name;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="OperationParameters", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class OperationParameters
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="OperType")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Rtm02Parameter OperType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="OperAttr")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public Rtm02Parameter OperAttr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="OperDate")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public System.DateTime OperDate;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="UserParameters", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class UserParameters
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SendCtg")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Rtm02Parameter SendCtg;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Sndr")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Sndr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Rcpn")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Rcpn;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="UpdateOperationRequest", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class UpdateOperationRequest
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RequestType")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string RequestType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SourceOperation")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public OperationHistoryRecord SourceOperation;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TargetOperation")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public OperationHistoryRecord TargetOperation;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ReasonDescription")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string ReasonDescription;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="InitiatorDepartment")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public int InitiatorDepartment;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ExecutorIP")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string ExecutorIP;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="LanguageData", Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/operationhistory/data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://russianpost.org/operationhistory/data")]
     public class LanguageData
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="PostalOrderEventsForMailInput", Namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data")]
     public class PostalOrderEventsForMailInput
     {
         
@@ -307,15 +313,16 @@ namespace Aaaa
         public string Language;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="PostalOrderEventsForMaiOutput", Namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data")]
     public class PostalOrderEventsForMaiOutput
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PostalOrderEvent")]
-        public PostalOrderEvent PostalOrderEvent;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PostalOrderEvent[] PostalOrderEvent;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="PostalOrderEvent", Namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data")]
     public class PostalOrderEvent
     {
         
@@ -347,54 +354,56 @@ namespace Aaaa
         public string CountryToCode;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SmsHistoryRequest", Namespace="http://russianpost.org/sms-info/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/sms-info/data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://russianpost.org/sms-info/data")]
     public class SmsHistoryRequest
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Barcode")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Barcode;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Language")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Language;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SmsHistoryData", Namespace="http://russianpost.org/sms-info/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/sms-info/data")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://russianpost.org/sms-info/data")]
     public class SmsHistoryData
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="historyRecord")]
-        public SmsHistoryRecord historyRecord;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public SmsHistoryRecord[] historyRecord;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SmsHistoryRecord", Namespace="http://russianpost.org/sms-info/data")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://russianpost.org/sms-info/data")]
     public class SmsHistoryRecord
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Id")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Id;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Number")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Number;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NotificationTypeID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int NotificationTypeID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NotificationTypeName")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string NotificationTypeName;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NotificationStatusID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public int NotificationStatusID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NotificationStatusName")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string NotificationStatusName;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NotificationStatusDate")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public System.DateTime NotificationStatusDate;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SendedID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public int SendedID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SourceOperation")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string SourceOperation;
     }
 }

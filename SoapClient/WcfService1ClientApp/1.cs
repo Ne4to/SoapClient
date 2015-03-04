@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Aaaa
+namespace MyNs1
 {
     
     
@@ -34,46 +34,50 @@ namespace Aaaa
         }
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetData", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/")]
     public class GetData
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="value")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int value;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDataResponse", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/")]
     public class GetDataResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="GetDataResult")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string GetDataResult;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDataUsingDataContract", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/")]
     public class GetDataUsingDataContract
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="composite")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public CompositeType composite;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
     public class CompositeType
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="BoolValue")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool BoolValue;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="StringValue")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string StringValue;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDataUsingDataContractResponse", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/")]
     public class GetDataUsingDataContractResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="GetDataUsingDataContractResult")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public CompositeType GetDataUsingDataContractResult;
     }
 }

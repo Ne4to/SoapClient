@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.Schema;
 using System.Xml.Serialization;
@@ -15,31 +16,33 @@ namespace SoapClientBuilder
 {
 	// TODO XmlElementAttribute.DataType
 	// TODO XmlElementAttribute.IsNullable
-	// TODO XmlElementAttribute.Order
 	// TODO XML Documentation
 	public class ProxyBuilder
 	{
 		private const string ClientBaseClassName = "SoapServices.SoapClientBase";
 
 		private readonly XDocument _wsdlDoc;
+		private readonly BuilderParameters _parameters;
 
 		private readonly CodeCompileUnit _codeUnit;
 		private readonly CodeNamespace _codeNamespace;
 
-		private Dictionary<XName, XElement> _messageElements;
+		private readonly Dictionary<XName, XElement> _messageElements;
 		private readonly Dictionary<XName, CodeTypeReference> _generatedTypes = new Dictionary<XName, CodeTypeReference>();
 		private readonly Dictionary<XName, XElement> _schemaElements;
 		private readonly Dictionary<XName, XElement> _schemaComplexTypes;
 		private readonly Dictionary<XName, XElement> _schemaSimpleTypes;
 		private readonly Dictionary<XName, XElement> _schemaAttributes;
 
-		public ProxyBuilder(XDocument wsdlDoc)
+		public ProxyBuilder(XDocument wsdlDoc, BuilderParameters parameters)
 		{
 			if (wsdlDoc == null) throw new ArgumentNullException("wsdlDoc");
+			if (parameters == null) throw new ArgumentNullException("parameters");
 			_wsdlDoc = wsdlDoc;
+			_parameters = parameters;
 
 			_codeUnit = new CodeCompileUnit();
-			_codeNamespace = new CodeNamespace("Aaaa"); // TODO
+			_codeNamespace = new CodeNamespace(parameters.CodeNamespace);
 			//samples.Imports.Add(new CodeNamespaceImport("System"));
 			_codeUnit.Namespaces.Add(_codeNamespace);
 
@@ -73,6 +76,11 @@ namespace SoapClientBuilder
 					continue;
 
 				var soapBindingElement = bindingElement.Element(Namespaces.Soap + "binding");
+				if (soapBindingElement == null)
+				{
+					soapBindingElement = bindingElement.Element(Namespaces.Soap12 + "binding");
+				}
+
 				if (soapBindingElement == null)
 					continue;
 
@@ -140,7 +148,7 @@ namespace SoapClientBuilder
 
 			mth.Parameters.Add(new CodeParameterDeclarationExpression(inputTypeReference, "request"));
 
-			interfaceTypeDec.Members.Add(mth);
+			interfaceTypeDec.Members.Add(mth);			
 		}
 
 		private static void AddImplementationOperation(string operationName, CodeTypeReference outputTypeReference, CodeTypeDeclaration implTypeDec, CodeTypeReference inputTypeReference, string soapAction)
@@ -201,13 +209,13 @@ namespace SoapClientBuilder
 			foreach (var partElement in parts)
 			{
 				var elementType = GetTypeName(partElement, "element");
-				result = GetCodeTypeReference(elementType);
+				result = GetCodeTypeReference(elementType, true);
 			}
 
 			return result;
 		}
 
-		private CodeTypeReference GetCodeTypeReference(XName typeName)
+		private CodeTypeReference GetCodeTypeReference(XName typeName, bool isRoot)
 		{
 			if (typeName == null)
 				throw new ArgumentNullException("typeName");
@@ -220,10 +228,10 @@ namespace SoapClientBuilder
 			if (_generatedTypes.TryGetValue(typeName, out codeTypeReference))
 				return codeTypeReference;
 
-			if (TryGetFromSchemaElement(typeName, out codeTypeReference))
+			if (TryGetFromSchemaElement(typeName, isRoot, out codeTypeReference))
 				return codeTypeReference;
 
-			if (TryGetFromSchemaComplexType(typeName, out codeTypeReference))
+			if (TryGetFromSchemaComplexType(typeName, isRoot, out codeTypeReference))
 				return codeTypeReference;
 
 			if (TryGetFromSchemaSimpleType(typeName, out codeTypeReference))
@@ -236,7 +244,7 @@ namespace SoapClientBuilder
 			throw new NotSupportedException(exceptionMessage);
 		}
 
-		private bool TryGetFromSchemaElement(XName typeName, out CodeTypeReference typeReference)
+		private bool TryGetFromSchemaElement(XName typeName, bool isRoot, out CodeTypeReference typeReference)
 		{
 			XElement typeElement;
 			if (!_schemaElements.TryGetValue(typeName, out typeElement))
@@ -252,7 +260,7 @@ namespace SoapClientBuilder
 				localName = GetCodeTypeName(typeName.LocalName);
 				typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
 				_generatedTypes.Add(typeName, typeReference);
-				CreateComplexTypeDeclaration(complexTypeElement, localName, typeName.NamespaceName);
+				CreateComplexTypeDeclaration(complexTypeElement, localName, typeName.NamespaceName, isRoot);
 				return true;
 			}
 
@@ -263,12 +271,12 @@ namespace SoapClientBuilder
 			typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
 			_generatedTypes.Add(typeName, typeReference);
 
-			CreateComplexTypeDeclaration(x, localName, tn.NamespaceName);
+			CreateComplexTypeDeclaration(x, localName, tn.NamespaceName, isRoot);
 
 			return true;
 		}
 
-		private bool TryGetFromSchemaComplexType(XName typeName, out CodeTypeReference typeReference)
+		private bool TryGetFromSchemaComplexType(XName typeName, bool isRoot, out CodeTypeReference typeReference)
 		{
 			XElement typeElement;
 			if (!_schemaComplexTypes.TryGetValue(typeName, out typeElement))
@@ -281,7 +289,7 @@ namespace SoapClientBuilder
 			typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
 			_generatedTypes.Add(typeName, typeReference);
 
-			CreateComplexTypeDeclaration(typeElement, localName, typeName.NamespaceName);
+			CreateComplexTypeDeclaration(typeElement, localName, typeName.NamespaceName, isRoot);
 
 			return true;
 		}
@@ -298,7 +306,7 @@ namespace SoapClientBuilder
 			var unionElement = typeElement.Element(Namespaces.Xsd + "union");
 			if (unionElement != null)
 			{
-				typeReference = GetCodeTypeReference(XName.Get("string", Namespaces.Xsd.NamespaceName));
+				typeReference = GetCodeTypeReference(XName.Get("string", Namespaces.Xsd.NamespaceName), false);
 				return true;
 			}
 
@@ -306,7 +314,7 @@ namespace SoapClientBuilder
 			if (listElement != null)
 			{
 				var itemType = GetTypeName(listElement, "itemType");
-				var itemTypeCodeRef = GetCodeTypeReference(itemType);
+				var itemTypeCodeRef = GetCodeTypeReference(itemType, false);
 				typeReference = new CodeTypeReference(String.Format("{0}[]", itemTypeCodeRef.BaseType));
 				_generatedTypes.Add(typeName, typeReference);
 
@@ -323,7 +331,7 @@ namespace SoapClientBuilder
 			var baseType = GetTypeName(restrictionElement, "base");
 			if (baseType != null)
 			{
-				typeReference = GetCodeTypeReference(baseType);
+				typeReference = GetCodeTypeReference(baseType, false);
 				return true;
 			}
 
@@ -371,7 +379,7 @@ namespace SoapClientBuilder
 
 			var restrictionElement = typeElement.Element(Namespaces.Xsd + "simpleType").Element(Namespaces.Xsd + "restriction");
 			var baseType = GetTypeName(restrictionElement, "base");
-			typeReference = GetCodeTypeReference(baseType);
+			typeReference = GetCodeTypeReference(baseType, false);
 			return true;
 		}
 
@@ -394,7 +402,7 @@ namespace SoapClientBuilder
 			return newName;
 		}
 
-		private CodeTypeDeclaration CreateComplexTypeDeclaration(XElement complexTypeElement, string typeName, string typeNamespace)
+		private CodeTypeDeclaration CreateComplexTypeDeclaration(XElement complexTypeElement, string typeName, string typeNamespace, bool isRoot)
 		{
 			var targetClass = new CodeTypeDeclaration(typeName)
 			{
@@ -403,10 +411,26 @@ namespace SoapClientBuilder
 			};
 			_codeNamespace.Types.Add(targetClass);
 
-			var attrType = new CodeTypeReference(typeof(XmlRootAttribute));
-			targetClass.CustomAttributes.Add(new CodeAttributeDeclaration(attrType,
-				new CodeAttributeArgument("ElementName", new CodePrimitiveExpression(typeName)),
-				new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(typeNamespace))));
+			var attrArgs = new List<CodeAttributeArgument>();
+			//attrArgs.Add(new CodeAttributeArgument("TypeName", new CodePrimitiveExpression(typeName)));
+			if (!String.IsNullOrEmpty(typeNamespace))
+				attrArgs.Add(new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(typeNamespace)));
+
+			var attrType = new CodeTypeReference(typeof(XmlTypeAttribute));
+			targetClass.CustomAttributes.Add(new CodeAttributeDeclaration(attrType, attrArgs.ToArray()));
+
+
+			if (isRoot)
+			{
+				attrArgs = new List<CodeAttributeArgument>();
+				if (!String.IsNullOrEmpty(typeNamespace))
+					attrArgs.Add(new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(typeNamespace)));
+
+				attrType = new CodeTypeReference(typeof (XmlRootAttribute));
+				targetClass.CustomAttributes.Add(new CodeAttributeDeclaration(attrType, attrArgs.ToArray()));
+			}
+
+			AddComment(complexTypeElement, targetClass);
 
 			foreach (var attributeElement in complexTypeElement.Elements(Namespaces.Xsd + "attribute"))
 			{
@@ -418,7 +442,7 @@ namespace SoapClientBuilder
 				if (refTypeName != null)
 				{
 					name = refTypeName.LocalName;
-					codeTypeReference = GetCodeTypeReference(refTypeName);
+					codeTypeReference = GetCodeTypeReference(refTypeName, false);
 
 					//[System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/2005/05/xmlmime")]
 					args.Add(new CodeAttributeArgument("Form", new CodeFieldReferenceExpression(new CodeTypeReferenceExpression(typeof(XmlSchemaForm)), "Qualified")));
@@ -428,7 +452,7 @@ namespace SoapClientBuilder
 				{
 					name = FixFieldName(attributeElement.Attribute("name").Value);
 					var typeName2 = GetTypeName(attributeElement, "type");
-					codeTypeReference = GetCodeTypeReference(typeName2);
+					codeTypeReference = GetCodeTypeReference(typeName2, false);
 				}
 
 				var fieldCode = new CodeMemberField();
@@ -444,25 +468,32 @@ namespace SoapClientBuilder
 				fieldCode.CustomAttributes.Add(new CodeAttributeDeclaration(attrType, args.ToArray()));
 
 				targetClass.Members.Add(fieldCode);
+
+				AddComment(attributeElement, fieldCode);
 			}
 
 			var sequenceElement = complexTypeElement.Element(Namespaces.Xsd + "sequence");
 			if (sequenceElement != null)
 			{
-				foreach (var xElement in sequenceElement.Elements(Namespaces.Xsd + "element"))
+				var xElements = sequenceElement.Elements(Namespaces.Xsd + "element").ToArray();
+				for (int index = 0; index < xElements.Length; index++)
 				{
-					string name;
+					var xElement = xElements[index];
+					string fieldName;
+					string xmlElementName;
 					XName typeName2;
 
 					var refTypeName = GetTypeName(xElement, "ref");
 					if (refTypeName != null)
 					{
-						name = refTypeName.LocalName;
+						xmlElementName = refTypeName.LocalName;
+						fieldName = refTypeName.LocalName;
 						typeName2 = refTypeName;
 					}
 					else
 					{
-						name = FixFieldName(xElement.Attribute("name").Value);
+						xmlElementName = xElement.Attribute("name").Value;
+						fieldName = FixFieldName(xElement.Attribute("name").Value);
 						typeName2 = GetTypeName(xElement, "type");
 					}
 
@@ -478,26 +509,45 @@ namespace SoapClientBuilder
 										&& minOccursAttr.Value == "0"
 										&& maxOccursAttr != null
 										&& maxOccursAttr.Value == "unbounded";
-					
-					CodeTypeReference codeTypeReference = GetCodeTypeReference(typeName2);
+
+					CodeTypeReference codeTypeReference = GetCodeTypeReference(typeName2, false);
 
 					var fieldCode = new CodeMemberField();
 					fieldCode.Attributes = MemberAttributes.Public;
-					fieldCode.Name = name;
-					fieldCode.Type = isCollection ? new CodeTypeReference(String.Format("{0}[]", codeTypeReference.BaseType)) : codeTypeReference;
+					fieldCode.Name = fieldName;
+					fieldCode.Type = isCollection
+						? new CodeTypeReference(String.Format("{0}[]", codeTypeReference.BaseType))
+						: codeTypeReference;
 
 					var args = new List<CodeAttributeArgument>();
-					args.Add(new CodeAttributeArgument("ElementName", new CodePrimitiveExpression(name)));
+
+					if (fieldName != xmlElementName)
+						args.Add(new CodeAttributeArgument("ElementName", new CodePrimitiveExpression(xmlElementName)));
+
+					args.Add(new CodeAttributeArgument("Order", new CodePrimitiveExpression(index)));
 					//args.Add(new CodeAttributeArgument("Namespace", new CodePrimitiveExpression(ns.NamespaceName)));
 
 					attrType = new CodeTypeReference(typeof(XmlElementAttribute));
 					fieldCode.CustomAttributes.Add(new CodeAttributeDeclaration(attrType, args.ToArray()));
 
 					targetClass.Members.Add(fieldCode);
+
+					AddComment(xElement, fieldCode);
 				}
 			}
 
 			return targetClass;
+		}
+
+		private static void AddComment(XElement xElement, CodeTypeMember memberElement)
+		{
+			var comment = GetComment(xElement);
+			if (comment != null)
+			{
+				memberElement.Comments.Add(new CodeCommentStatement("<summary>", true));
+				memberElement.Comments.Add(new CodeCommentStatement(comment, true));
+				memberElement.Comments.Add(new CodeCommentStatement("</summary>", true));
+			}
 		}
 
 		private string FixFieldName(string name)
@@ -513,10 +563,16 @@ namespace SoapClientBuilder
 
 		private static string GetComment(XElement xElement)
 		{
-			var documentationElement = xElement.Element(Namespaces.Wsdl + "documentation");
+			var annotationEl = xElement.Element(Namespaces.Xsd + "annotation");
+			if (annotationEl == null)
+				return null;
+
+			var documentationElement = annotationEl.Element(Namespaces.Xsd + "documentation");
 			if (documentationElement == null)
 				return null;
 
+			return Regex.Replace(documentationElement.Value, "\n", "\r\n");
+			
 			return documentationElement.Value;
 		}
 
@@ -563,19 +619,6 @@ namespace SoapClientBuilder
 			return XName.Get(localName, element.GetNamespaceOfPrefix(nsName).NamespaceName);
 		}
 
-		private static string GetSoapAction(XElement bindingOperationElement)
-		{
-			var operationElement = bindingOperationElement.Element(Namespaces.Soap + "operation");
-			if (operationElement == null)
-				return null;
-
-			var soapActionAttribute = operationElement.Attribute("soapAction");
-			if (soapActionAttribute == null)
-				return null;
-
-			return soapActionAttribute.Value;
-		}
-
 		public string GetSourceCode()
 		{
 			var provider = CodeDomProvider.CreateProvider("CSharp");
@@ -592,5 +635,10 @@ namespace SoapClientBuilder
 
 			return stringBuilder.ToString();
 		}
+	}
+
+	public class BuilderParameters
+	{
+		public string CodeNamespace { get; set; }
 	}
 }

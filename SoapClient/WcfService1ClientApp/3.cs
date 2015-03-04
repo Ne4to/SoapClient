@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Aaaa
+namespace MyNs3
 {
     
     
@@ -629,382 +629,630 @@ namespace Aaaa
         }
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetServices", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetServices
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IncludeCapability")]
+        /// <summary>
+        /// Indicates if the service capabilities (untyped) should be included in the response.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool IncludeCapability;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetServicesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetServicesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Service")]
+        /// <summary>
+        /// Each Service element contains information about one service.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Service Service;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Service", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class Service
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Namespace")]
+        /// <summary>
+        /// Namespace of the service being described. This parameter allows to match the service capabilities to the service. Note that only one set of capabilities is supported per namespace.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Namespace;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// The transport addresses where the service can be reached. The scheme and IP part shall match the one used in the request (i.e. the GetServices request).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Version")]
+        /// <summary>
+        /// The version of the service (not the ONVIF core spec version).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public OnvifVersion Version;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="OnvifVersion", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class OnvifVersion
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Major")]
+        /// <summary>
+        /// Major version number.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Major;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Minor")]
+        /// <summary>
+        /// Two digit minor version number (e.g. X.0.1 maps to "01" and X.2.1 maps to "21" where X stands for Major version number).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int Minor;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetServiceCapabilities", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetServiceCapabilities
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetServiceCapabilitiesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetServiceCapabilitiesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Capabilities")]
+        /// <summary>
+        /// The capabilities for the device service is returned in the Capabilities element.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public DeviceServiceCapabilities Capabilities;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeviceServiceCapabilities", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeviceServiceCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Network")]
+        /// <summary>
+        /// Network capabilities.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public NetworkCapabilities Network;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Security")]
+        /// <summary>
+        /// Security capabilities.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public SecurityCapabilities Security;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="System")]
+        /// <summary>
+        /// System capabilities.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public SystemCapabilities System;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Misc")]
+        /// <summary>
+        /// Capabilities that do not fit in any of the other categories.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public MiscCapabilities Misc;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkCapabilities", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class NetworkCapabilities
     {
         
+        /// <summary>
+        /// Indicates support for IP filtering.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool IPFilter;
         
+        /// <summary>
+        /// Indicates support for zeroconf.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool ZeroConfiguration;
         
+        /// <summary>
+        /// Indicates support for IPv6.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool IPVersion6;
         
+        /// <summary>
+        /// Indicates support for dynamic DNS configuration.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool DynDNS;
         
+        /// <summary>
+        /// Indicates support for IEEE 802.11 configuration.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool Dot11Configuration;
         
+        /// <summary>
+        /// Indicates the maximum number of Dot1X configurations supported by the device
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int Dot1XConfigurations;
         
+        /// <summary>
+        /// Indicates support for retrieval of hostname from DHCP.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool HostnameFromDHCP;
         
+        /// <summary>
+        /// Maximum number of NTP servers supported by the devices SetNTP command.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int NTP;
         
+        /// <summary>
+        /// Indicates support for Stateful IPv6 DHCP.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool DHCPv6;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SecurityCapabilities", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SecurityCapabilities
     {
         
+        /// <summary>
+        /// Indicates support for TLS 1.0.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool TLS10;
         
+        /// <summary>
+        /// Indicates support for TLS 1.1.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool TLS11;
         
+        /// <summary>
+        /// Indicates support for TLS 1.2.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool TLS12;
         
+        /// <summary>
+        /// Indicates support for onboard key generation.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool OnboardKeyGeneration;
         
+        /// <summary>
+        /// Indicates support for access policy configuration.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool AccessPolicyConfig;
         
+        /// <summary>
+        /// Indicates support for the ONVIF default access policy.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool DefaultAccessPolicy;
         
+        /// <summary>
+        /// Indicates support for IEEE 802.1X configuration.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool Dot1X;
         
+        /// <summary>
+        /// Indicates support for remote user configuration. Used when accessing another device.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool RemoteUserHandling;
         
+        /// <summary>
+        /// Indicates support for WS-Security X.509 token.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool X509Token;
         
+        /// <summary>
+        /// Indicates support for WS-Security SAML token.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool SAMLToken;
         
+        /// <summary>
+        /// Indicates support for WS-Security Kerberos token.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool KerberosToken;
         
+        /// <summary>
+        /// Indicates support for WS-Security Username token.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool UsernameToken;
         
+        /// <summary>
+        /// Indicates support for WS over HTTP digest authenticated communication layer.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool HttpDigest;
         
+        /// <summary>
+        /// Indicates support for WS-Security REL token.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool RELToken;
         
+        /// <summary>
+        /// EAP Methods supported by the device. The int values refer to the IANA EAP Registry.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int[] SupportedEAPMethods;
         
+        /// <summary>
+        /// The maximum number of users that the device supports.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int MaxUsers;
         
+        /// <summary>
+        /// Maximum number of characters supported for the username by CreateUsers.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int MaxUserNameLength;
         
+        /// <summary>
+        /// Maximum number of characters supported for the password by CreateUsers and SetUser.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int MaxPasswordLength;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemCapabilities", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SystemCapabilities
     {
         
+        /// <summary>
+        /// Indicates support for WS Discovery resolve requests.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool DiscoveryResolve;
         
+        /// <summary>
+        /// Indicates support for WS-Discovery Bye.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool DiscoveryBye;
         
+        /// <summary>
+        /// Indicates support for remote discovery.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool RemoteDiscovery;
         
+        /// <summary>
+        /// Indicates support for system backup through MTOM.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool SystemBackup;
         
+        /// <summary>
+        /// Indicates support for retrieval of system logging through MTOM.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool SystemLogging;
         
+        /// <summary>
+        /// Indicates support for firmware upgrade through MTOM.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool FirmwareUpgrade;
         
+        /// <summary>
+        /// Indicates support for firmware upgrade through HTTP.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool HttpFirmwareUpgrade;
         
+        /// <summary>
+        /// Indicates support for system backup through HTTP.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool HttpSystemBackup;
         
+        /// <summary>
+        /// Indicates support for retrieval of system logging through HTTP.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool HttpSystemLogging;
         
+        /// <summary>
+        /// Indicates support for retrieving support information through HTTP.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool HttpSupportInformation;
         
+        /// <summary>
+        /// Indicates support for storage configuration interfaces.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool StorageConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="MiscCapabilities", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class MiscCapabilities
     {
         
+        /// <summary>
+        /// Lists of commands supported by SendAuxiliaryCommand.
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string[] AuxiliaryCommands;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDeviceInformation", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDeviceInformation
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDeviceInformationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDeviceInformationResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Manufacturer")]
+        /// <summary>
+        /// The manufactor of the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Manufacturer;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Model")]
+        /// <summary>
+        /// The device model.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Model;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FirmwareVersion")]
+        /// <summary>
+        /// The firmware version in the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string FirmwareVersion;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SerialNumber")]
+        /// <summary>
+        /// The serial number of the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string SerialNumber;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="HardwareId")]
+        /// <summary>
+        /// The hardware ID of the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string HardwareId;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetSystemDateAndTime", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetSystemDateAndTime
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DateTimeType")]
+        /// <summary>
+        /// Defines if the date and time is set via NTP or manually.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string DateTimeType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DaylightSavings")]
+        /// <summary>
+        /// Automatically adjust Daylight savings if defined in TimeZone.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool DaylightSavings;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TimeZone")]
+        /// <summary>
+        /// The time zone in POSIX 1003.1 format
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public TimeZone TimeZone;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UTCDateTime")]
+        /// <summary>
+        /// Date and time in UTC. If time is obtained via NTP, UTCDateTime has no meaning
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public DateTime UTCDateTime;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="TimeZone", Namespace="http://www.onvif.org/ver10/schema")]
+    /// <summary>
+    /// 
+    ///				The TZ format is specified by POSIX, please refer to POSIX 1003.1 section 8.3
+    ///				Example: Europe, Paris TZ=CET-1CEST,M3.5.0/2,M10.5.0/3
+    ///				CET = designation for standard time when daylight saving is not in force
+    ///				-1 = offset in hours = negative so 1 hour east of Greenwich meridian
+    ///				CEST = designation when daylight saving is in force ("Central European Summer Time")
+    ///				, = no offset number between code and comma, so default to one hour ahead for daylight saving
+    ///				M3.5.0 = when daylight saving starts = the last Sunday in March (the "5th" week means the last in the month)
+    ///				/2, = the local time when the switch occurs = 2 a.m. in this case
+    ///				M10.5.0 = when daylight saving ends = the last Sunday in October.
+    ///				/3, = the local time when the switch occurs = 3 a.m. in this case
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class TimeZone
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TZ")]
+        /// <summary>
+        /// Posix timezone string.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string TZ;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DateTime", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DateTime
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Time")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Time Time;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Date")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public Date Date;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Time", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Time
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Hour")]
+        /// <summary>
+        /// Range is 0 to 23.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Hour;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Minute")]
+        /// <summary>
+        /// Range is 0 to 59.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int Minute;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Second")]
+        /// <summary>
+        /// Range is 0 to 61 (typically 59).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int Second;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Date", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Date
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Year")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Year;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Month")]
+        /// <summary>
+        /// Range is 1 to 12.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int Month;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Day")]
+        /// <summary>
+        /// Range is 1 to 31.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int Day;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetSystemDateAndTimeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetSystemDateAndTimeResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemDateAndTime", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemDateAndTime
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemDateAndTimeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemDateAndTimeResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SystemDateAndTime")]
+        /// <summary>
+        /// Contains information whether system date and time are set manually or by NTP, daylight savings is on or off, time zone in POSIX 1003.1 format and system date and time in UTC and also local system date and time.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public SystemDateTime SystemDateAndTime;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemDateTime", Namespace="http://www.onvif.org/ver10/schema")]
+    /// <summary>
+    /// General date time inforamtion returned by the GetSystemDateTime method.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SystemDateTime
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DateTimeType")]
+        /// <summary>
+        /// Indicates if the time is set manully or through NTP.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string DateTimeType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DaylightSavings")]
+        /// <summary>
+        /// Informative indicator whether daylight savings is currently on/off.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool DaylightSavings;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TimeZone")]
+        /// <summary>
+        /// Timezone information in Posix format.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public TimeZone TimeZone;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UTCDateTime")]
+        /// <summary>
+        /// Current system date and time in UTC format. This field is mandatory since version 2.0.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public DateTime UTCDateTime;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="LocalDateTime")]
+        /// <summary>
+        /// Date and time in local format.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public DateTime LocalDateTime;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public SystemDateTimeExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemDateTimeExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SystemDateTimeExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetSystemFactoryDefault", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetSystemFactoryDefault
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FactoryDefault")]
+        /// <summary>
+        /// Specifies the factory default action type.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string FactoryDefault;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetSystemFactoryDefaultResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetSystemFactoryDefaultResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="UpgradeSystemFirmware", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class UpgradeSystemFirmware
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Firmware")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public AttachmentData Firmware;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AttachmentData", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class AttachmentData
     {
         
         [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/2005/05/xmlmime")]
         public string contentType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Include")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Include Include;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Include", Namespace="http://www.w3.org/2004/08/xop/include")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2004/08/xop/include")]
     public class Include
     {
         
@@ -1012,2422 +1260,3263 @@ namespace Aaaa
         public string href;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="UpgradeSystemFirmwareResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class UpgradeSystemFirmwareResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Message")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Message;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemReboot", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SystemReboot
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemRebootResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SystemRebootResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Message")]
+        /// <summary>
+        /// Contains the reboot message sent by the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Message;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RestoreSystem", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class RestoreSystem
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="BackupFiles")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public BackupFile BackupFiles;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="BackupFile", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class BackupFile
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Name;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Data")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public AttachmentData Data;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RestoreSystemResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class RestoreSystemResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemBackup", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemBackup
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemBackupResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemBackupResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="BackupFiles")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public BackupFile BackupFiles;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemLog", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemLog
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="LogType")]
+        /// <summary>
+        /// Specifies the type of system log to get.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string LogType;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemLogResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemLogResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SystemLog")]
+        /// <summary>
+        /// Contains the system log information.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public SystemLog SystemLog;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemLog", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SystemLog
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Binary")]
+        /// <summary>
+        /// The log information as attachment data.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public AttachmentData Binary;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="String")]
+        /// <summary>
+        /// The log information as character data.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string String;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemSupportInformation", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemSupportInformation
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemSupportInformationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemSupportInformationResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SupportInformation")]
+        /// <summary>
+        /// Contains the arbitary device diagnostics information.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public SupportInformation SupportInformation;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SupportInformation", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SupportInformation
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Binary")]
+        /// <summary>
+        /// The support information as attachment data.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public AttachmentData Binary;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="String")]
+        /// <summary>
+        /// The support information as character data.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string String;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetScopes", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetScopes
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetScopesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetScopesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Scopes")]
+        /// <summary>
+        /// Contains a list of URI definining the device scopes. Scope parameters can be of two types: fixed and configurable. Fixed parameters can not be altered.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Scope Scopes;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Scope", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Scope
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ScopeDef")]
+        /// <summary>
+        /// Indicates if the scope is fixed or configurable.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ScopeDef;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ScopeItem")]
+        /// <summary>
+        /// Scope item URI.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string ScopeItem;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetScopes", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetScopes
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Scopes")]
+        /// <summary>
+        /// Contains a list of scope parameters that will replace all existing configurable scope parameters.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Scopes;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetScopesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetScopesResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AddScopes", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class AddScopes
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ScopeItem")]
+        /// <summary>
+        /// Contains a list of new configurable scope parameters that will be added to the existing configurable scope.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ScopeItem;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AddScopesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class AddScopesResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RemoveScopes", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class RemoveScopes
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ScopeItem")]
+        /// <summary>
+        /// Contains a list of URIs that should be removed from the device scope.
+        ///									Note that the response message always will match the request or an error will be returned. The use of the response is for that reason deprecated.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ScopeItem;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RemoveScopesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class RemoveScopesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ScopeItem")]
-        public string ScopeItem;
+        /// <summary>
+        /// Contains a list of URIs that has been removed from the device scope
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string[] ScopeItem;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDiscoveryMode", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDiscoveryMode
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDiscoveryModeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDiscoveryModeResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DiscoveryMode")]
+        /// <summary>
+        /// 
+        ///									Indicator of discovery mode: Discoverable, NonDiscoverable.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string DiscoveryMode;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDiscoveryMode", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDiscoveryMode
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DiscoveryMode")]
+        /// <summary>
+        /// 
+        ///									Indicator of discovery mode: Discoverable, NonDiscoverable.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string DiscoveryMode;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDiscoveryModeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDiscoveryModeResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetRemoteDiscoveryMode", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetRemoteDiscoveryMode
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetRemoteDiscoveryModeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetRemoteDiscoveryModeResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RemoteDiscoveryMode")]
+        /// <summary>
+        /// 
+        ///									Indicator of discovery mode: Discoverable, NonDiscoverable.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string RemoteDiscoveryMode;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRemoteDiscoveryMode", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetRemoteDiscoveryMode
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RemoteDiscoveryMode")]
+        /// <summary>
+        /// 
+        ///									Indicator of discovery mode: Discoverable, NonDiscoverable.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string RemoteDiscoveryMode;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRemoteDiscoveryModeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetRemoteDiscoveryModeResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDPAddresses", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDPAddresses
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDPAddressesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDPAddressesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DPAddress")]
-        public NetworkHost DPAddress;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public NetworkHost[] DPAddress;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkHost", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkHost
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
+        /// <summary>
+        /// Network host type: IPv4, IPv6 or DNS.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Type;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
+        /// <summary>
+        /// IPv4 address.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string IPv4Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
+        /// <summary>
+        /// IPv6 address.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string IPv6Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DNSname")]
+        /// <summary>
+        /// DNS name.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string DNSname;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public NetworkHostExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkHostExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkHostExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDPAddresses", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDPAddresses
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DPAddress")]
-        public NetworkHost DPAddress;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public NetworkHost[] DPAddress;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDPAddressesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDPAddressesResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetEndpointReference", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetEndpointReference
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetEndpointReferenceResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetEndpointReferenceResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="GUID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string GUID;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetRemoteUser", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetRemoteUser
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetRemoteUserResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetRemoteUserResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RemoteUser")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public RemoteUser RemoteUser;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RemoteUser", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class RemoteUser
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Username")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Username;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Password")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Password;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UseDerivedPassword")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool UseDerivedPassword;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRemoteUser", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetRemoteUser
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RemoteUser")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public RemoteUser RemoteUser;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRemoteUserResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetRemoteUserResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetUsers", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetUsers
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetUsersResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetUsersResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="User")]
-        public User User;
+        /// <summary>
+        /// Contains a list of the onvif users and following information is included in each entry: username and user level.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public User[] User;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="User", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class User
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Username")]
+        /// <summary>
+        /// Username string.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Username;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Password")]
+        /// <summary>
+        /// Password string.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Password;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UserLevel")]
+        /// <summary>
+        /// User level string.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string UserLevel;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public UserExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="UserExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class UserExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CreateUsers", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class CreateUsers
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="User")]
+        /// <summary>
+        /// Creates new device users and corresponding credentials. Each user entry includes: username, password and user level. Either all users are created successfully or a fault message MUST be returned without creating any user. If trying to create several users with exactly the same username the request is rejected and no users are created. If password is missing, then fault message Too weak password is returned.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public User User;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CreateUsersResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class CreateUsersResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteUsers", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeleteUsers
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Username")]
+        /// <summary>
+        /// Deletes users on an device and there may exist users that cannot be deleted to ensure access to the unit. Either all users are deleted successfully or a fault message MUST be returned and no users be deleted. If a username exists multiple times in the request, then a fault message is returned.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Username;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteUsersResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeleteUsersResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetUser", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetUser
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="User")]
+        /// <summary>
+        /// Updates the credentials for one or several users on an device. Either all change requests are processed successfully or a fault message MUST be returned. If the request contains the same username multiple times, a fault message is returned. 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public User User;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetUserResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetUserResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetWsdlUrl", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetWsdlUrl
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetWsdlUrlResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetWsdlUrlResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WsdlUrl")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string WsdlUrl;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCapabilities", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Category")]
-        public string Category;
+        /// <summary>
+        /// 
+        ///									List of categories to retrieve capability information on.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string[] Category;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCapabilitiesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCapabilitiesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Capabilities")]
+        /// <summary>
+        /// 
+        ///									Capability information.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Capabilities Capabilities;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Capabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Capabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Analytics")]
+        /// <summary>
+        /// Analytics capabilities
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public AnalyticsCapabilities Analytics;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Device")]
+        /// <summary>
+        /// Device capabilities
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public DeviceCapabilities Device;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Events")]
+        /// <summary>
+        /// Event capabilities
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public EventCapabilities Events;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Imaging")]
+        /// <summary>
+        /// Imaging capabilities
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public ImagingCapabilities Imaging;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Media")]
+        /// <summary>
+        /// Media capabilities
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public MediaCapabilities Media;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PTZ")]
+        /// <summary>
+        /// PTZ capabilities
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public PTZCapabilities PTZ;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public CapabilitiesExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AnalyticsCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class AnalyticsCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// Analytics service URI.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RuleSupport")]
+        /// <summary>
+        /// Indicates whether or not rules are supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool RuleSupport;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AnalyticsModuleSupport")]
+        /// <summary>
+        /// Indicates whether or not modules are supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool AnalyticsModuleSupport;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeviceCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DeviceCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// Device service URI.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Network")]
+        /// <summary>
+        /// Network capabilities.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public NetworkCapabilities1 Network;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="System")]
+        /// <summary>
+        /// System capabilities.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public SystemCapabilities1 System;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IO")]
+        /// <summary>
+        /// I/O capabilities.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public IOCapabilities IO;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Security")]
+        /// <summary>
+        /// Security capabilities.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public SecurityCapabilities1 Security;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public DeviceCapabilitiesExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkCapabilities1", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkCapabilities1
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPFilter")]
+        /// <summary>
+        /// Indicates whether or not IP filtering is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool IPFilter;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ZeroConfiguration")]
+        /// <summary>
+        /// Indicates whether or not zeroconf is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool ZeroConfiguration;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPVersion6")]
+        /// <summary>
+        /// Indicates whether or not IPv6 is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool IPVersion6;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DynDNS")]
+        /// <summary>
+        /// Indicates whether or not  is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool DynDNS;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public NetworkCapabilitiesExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkCapabilitiesExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkCapabilitiesExtension
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot11Configuration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Dot11Configuration;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public NetworkCapabilitiesExtension2 Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkCapabilitiesExtension2", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkCapabilitiesExtension2
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemCapabilities1", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SystemCapabilities1
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DiscoveryResolve")]
+        /// <summary>
+        /// Indicates whether or not WS Discovery resolve requests are supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool DiscoveryResolve;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DiscoveryBye")]
+        /// <summary>
+        /// Indicates whether or not WS-Discovery Bye is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool DiscoveryBye;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RemoteDiscovery")]
+        /// <summary>
+        /// Indicates whether or not remote discovery is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool RemoteDiscovery;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SystemBackup")]
+        /// <summary>
+        /// Indicates whether or not system backup is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool SystemBackup;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SystemLogging")]
+        /// <summary>
+        /// Indicates whether or not system logging is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public bool SystemLogging;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FirmwareUpgrade")]
+        /// <summary>
+        /// Indicates whether or not firmware upgrade is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public bool FirmwareUpgrade;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SupportedVersions")]
+        /// <summary>
+        /// Indicates supported ONVIF version(s).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public OnvifVersion SupportedVersions;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public SystemCapabilitiesExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemCapabilitiesExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SystemCapabilitiesExtension
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="HttpFirmwareUpgrade")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool HttpFirmwareUpgrade;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="HttpSystemBackup")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool HttpSystemBackup;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="HttpSystemLogging")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool HttpSystemLogging;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="HttpSupportInformation")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool HttpSupportInformation;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public SystemCapabilitiesExtension2 Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemCapabilitiesExtension2", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SystemCapabilitiesExtension2
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="IOCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class IOCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="InputConnectors")]
+        /// <summary>
+        /// Number of input connectors.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int InputConnectors;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RelayOutputs")]
+        /// <summary>
+        /// Number of relay outputs.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int RelayOutputs;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public IOCapabilitiesExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="IOCapabilitiesExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class IOCapabilitiesExtension
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Auxiliary")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Auxiliary;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AuxiliaryCommands")]
-        public string AuxiliaryCommands;
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string[] AuxiliaryCommands;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public IOCapabilitiesExtension2 Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="IOCapabilitiesExtension2", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class IOCapabilitiesExtension2
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SecurityCapabilities1", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SecurityCapabilities1
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TLS11")]
+        /// <summary>
+        /// Indicates whether or not TLS 1.1 is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(ElementName="TLS1.1", Order=0)]
         public bool TLS11;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TLS12")]
+        /// <summary>
+        /// Indicates whether or not TLS 1.2 is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(ElementName="TLS1.2", Order=1)]
         public bool TLS12;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="OnboardKeyGeneration")]
+        /// <summary>
+        /// Indicates whether or not onboard key generation is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool OnboardKeyGeneration;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AccessPolicyConfig")]
+        /// <summary>
+        /// Indicates whether or not access policy configuration is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool AccessPolicyConfig;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="X509Token")]
+        /// <summary>
+        /// Indicates whether or not WS-Security X.509 token is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(ElementName="X.509Token", Order=4)]
         public bool X509Token;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SAMLToken")]
+        /// <summary>
+        /// Indicates whether or not WS-Security SAML token is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public bool SAMLToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="KerberosToken")]
+        /// <summary>
+        /// Indicates whether or not WS-Security Kerberos token is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public bool KerberosToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RELToken")]
+        /// <summary>
+        /// Indicates whether or not WS-Security REL token is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public bool RELToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public SecurityCapabilitiesExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SecurityCapabilitiesExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SecurityCapabilitiesExtension
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TLS10")]
+        [System.Xml.Serialization.XmlElementAttribute(ElementName="TLS1.0", Order=0)]
         public bool TLS10;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public SecurityCapabilitiesExtension2 Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SecurityCapabilitiesExtension2", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SecurityCapabilitiesExtension2
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1X")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Dot1X;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SupportedEAPMethod")]
-        public int SupportedEAPMethod;
+        /// <summary>
+        /// EAP Methods supported by the device. The int values refer to the IANA EAP Registry.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int[] SupportedEAPMethod;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RemoteUserHandling")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool RemoteUserHandling;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeviceCapabilitiesExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DeviceCapabilitiesExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="EventCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class EventCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// Event service URI.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WSSubscriptionPolicySupport")]
+        /// <summary>
+        /// Indicates whether or not WS Subscription policy is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool WSSubscriptionPolicySupport;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WSPullPointSupport")]
+        /// <summary>
+        /// Indicates whether or not WS Pull Point is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool WSPullPointSupport;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WSPausableSubscriptionManagerInterfaceSupport")]
+        /// <summary>
+        /// Indicates whether or not WS Pausable Subscription Manager Interface is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool WSPausableSubscriptionManagerInterfaceSupport;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ImagingCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class ImagingCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// Imaging service URI.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="MediaCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class MediaCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// Media service URI.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="StreamingCapabilities")]
+        /// <summary>
+        /// Streaming capabilities.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public RealTimeStreamingCapabilities StreamingCapabilities;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public MediaCapabilitiesExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RealTimeStreamingCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class RealTimeStreamingCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RTPMulticast")]
+        /// <summary>
+        /// Indicates whether or not RTP multicast is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool RTPMulticast;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RTP_TCP")]
+        /// <summary>
+        /// Indicates whether or not RTP over TCP is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool RTP_TCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RTP_RTSP_TCP")]
+        /// <summary>
+        /// Indicates whether or not RTP/RTSP/TCP is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool RTP_RTSP_TCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public RealTimeStreamingCapabilitiesExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RealTimeStreamingCapabilitiesExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class RealTimeStreamingCapabilitiesExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="MediaCapabilitiesExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class MediaCapabilitiesExtension
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ProfileCapabilities")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public ProfileCapabilities ProfileCapabilities;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ProfileCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class ProfileCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MaximumNumberOfProfiles")]
+        /// <summary>
+        /// Maximum number of profiles.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int MaximumNumberOfProfiles;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="PTZCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class PTZCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// PTZ service URI.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CapabilitiesExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class CapabilitiesExtension
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DeviceIO")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public DeviceIOCapabilities DeviceIO;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Display")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public DisplayCapabilities Display;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Recording")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public RecordingCapabilities Recording;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Search")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public SearchCapabilities Search;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Replay")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public ReplayCapabilities Replay;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Receiver")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public ReceiverCapabilities Receiver;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AnalyticsDevice")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public AnalyticsDeviceCapabilities AnalyticsDevice;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extensions")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public CapabilitiesExtension2 Extensions;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeviceIOCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DeviceIOCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="VideoSources")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int VideoSources;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="VideoOutputs")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int VideoOutputs;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AudioSources")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public int AudioSources;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AudioOutputs")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public int AudioOutputs;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RelayOutputs")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public int RelayOutputs;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DisplayCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DisplayCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FixedLayout")]
+        /// <summary>
+        /// Indication that the SetLayout command supports only predefined layouts.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool FixedLayout;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RecordingCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class RecordingCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ReceiverSource")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool ReceiverSource;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MediaProfileSource")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool MediaProfileSource;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DynamicRecordings")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool DynamicRecordings;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DynamicTracks")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public bool DynamicTracks;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MaxStringLength")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public int MaxStringLength;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SearchCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SearchCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MetadataSearch")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool MetadataSearch;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ReplayCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class ReplayCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// The address of the replay service.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ReceiverCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class ReceiverCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        /// <summary>
+        /// The address of the receiver service.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RTP_Multicast")]
+        /// <summary>
+        /// Indicates whether the device can receive RTP multicast streams.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool RTP_Multicast;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RTP_TCP")]
+        /// <summary>
+        /// Indicates whether the device can receive RTP/TCP streams
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool RTP_TCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RTP_RTSP_TCP")]
+        /// <summary>
+        /// Indicates whether the device can receive RTP/RTSP/TCP streams.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool RTP_RTSP_TCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SupportedReceivers")]
+        /// <summary>
+        /// The maximum number of receivers supported by the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public int SupportedReceivers;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MaximumRTSPURILength")]
+        /// <summary>
+        /// The maximum allowed length for RTSP URIs.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public int MaximumRTSPURILength;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AnalyticsDeviceCapabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class AnalyticsDeviceCapabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="XAddr")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string XAddr;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RuleSupport")]
+        /// <summary>
+        /// Obsolete property.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool RuleSupport;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public AnalyticsDeviceExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AnalyticsDeviceExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class AnalyticsDeviceExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CapabilitiesExtension2", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class CapabilitiesExtension2
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetHostname", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetHostname
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetHostnameResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetHostnameResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="HostnameInformation")]
+        /// <summary>
+        /// Contains the hostname information.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public HostnameInformation HostnameInformation;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="HostnameInformation", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class HostnameInformation
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FromDHCP")]
+        /// <summary>
+        /// Indicates whether the hostname is obtained from DHCP or not.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool FromDHCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
+        /// <summary>
+        /// Indicates the hostname.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Name;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public HostnameInformationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="HostnameInformationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class HostnameInformationExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetHostname", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetHostname
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
+        /// <summary>
+        /// The hostname to set.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Name;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetHostnameResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetHostnameResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetHostnameFromDHCP", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetHostnameFromDHCP
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FromDHCP")]
+        /// <summary>
+        /// True if the hostname shall be obtained via DHCP.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool FromDHCP;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetHostnameFromDHCPResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetHostnameFromDHCPResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RebootNeeded")]
+        /// <summary>
+        /// 
+        ///									Indicates whether or not a reboot is required after configuration updates.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool RebootNeeded;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDNS", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDNS
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDNSResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDNSResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DNSInformation")]
+        /// <summary>
+        /// 
+        ///									DNS information.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public DNSInformation DNSInformation;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DNSInformation", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DNSInformation
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FromDHCP")]
+        /// <summary>
+        /// Indicates whether or not DNS information is retrieved from DHCP.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool FromDHCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SearchDomain")]
-        public string SearchDomain;
+        /// <summary>
+        /// Search domain.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string[] SearchDomain;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DNSFromDHCP")]
-        public IPAddress DNSFromDHCP;
+        /// <summary>
+        /// List of DNS addresses received from DHCP.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public IPAddress[] DNSFromDHCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DNSManual")]
-        public IPAddress DNSManual;
+        /// <summary>
+        /// List of manually entered DNS addresses.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public IPAddress[] DNSManual;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public DNSInformationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="IPAddress", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class IPAddress
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
+        /// <summary>
+        /// Indicates if the address is an IPv4 or IPv6 address.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Type;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
+        /// <summary>
+        /// IPv4 address.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string IPv4Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
+        /// <summary>
+        /// IPv6 address
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string IPv6Address;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DNSInformationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DNSInformationExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDNS", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDNS
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FromDHCP")]
+        /// <summary>
+        /// 
+        ///									Indicate if the DNS address is to be retrieved using DHCP.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool FromDHCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SearchDomain")]
-        public string SearchDomain;
+        /// <summary>
+        /// 
+        ///									DNS search domain.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string[] SearchDomain;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DNSManual")]
-        public IPAddress DNSManual;
+        /// <summary>
+        /// 
+        ///									DNS address(es) set manually.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public IPAddress[] DNSManual;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDNSResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDNSResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetNTP", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetNTP
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetNTPResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetNTPResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NTPInformation")]
+        /// <summary>
+        /// 
+        ///									NTP information.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public NTPInformation NTPInformation;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NTPInformation", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NTPInformation
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FromDHCP")]
+        /// <summary>
+        /// Indicates if NTP information is to be retrieved by using DHCP.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool FromDHCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NTPFromDHCP")]
-        public NetworkHost NTPFromDHCP;
+        /// <summary>
+        /// List of NTP addresses retrieved by using DHCP.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public NetworkHost[] NTPFromDHCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NTPManual")]
-        public NetworkHost NTPManual;
+        /// <summary>
+        /// List of manually entered NTP addresses.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public NetworkHost[] NTPManual;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public NTPInformationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NTPInformationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NTPInformationExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNTP", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetNTP
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="FromDHCP")]
+        /// <summary>
+        /// 
+        ///									Indicate if NTP address information is to be retrieved using DHCP.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool FromDHCP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NTPManual")]
-        public NetworkHost NTPManual;
+        /// <summary>
+        /// 
+        ///									Manual NTP settings.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public NetworkHost[] NTPManual;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNTPResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetNTPResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDynamicDNS", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDynamicDNS
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDynamicDNSResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDynamicDNSResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DynamicDNSInformation")]
+        /// <summary>
+        /// 
+        ///									Dynamic DNS information.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public DynamicDNSInformation DynamicDNSInformation;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DynamicDNSInformation", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DynamicDNSInformation
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
+        /// <summary>
+        /// Dynamic DNS type.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Type;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
+        /// <summary>
+        /// DNS name.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Name;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TTL")]
+        /// <summary>
+        /// Time to live.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string TTL;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public DynamicDNSInformationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DynamicDNSInformationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DynamicDNSInformationExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDynamicDNS", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDynamicDNS
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
+        /// <summary>
+        /// 
+        ///									Dynamic DNS type.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Type;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
+        /// <summary>
+        /// 
+        ///									DNS name.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Name;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TTL")]
+        /// <summary>
+        /// 
+        ///									DNS record time to live.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string TTL;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDynamicDNSResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDynamicDNSResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetNetworkInterfaces", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetNetworkInterfaces
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetNetworkInterfacesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetNetworkInterfacesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NetworkInterfaces")]
+        /// <summary>
+        /// 
+        ///									List of network interfaces.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public NetworkInterface NetworkInterfaces;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkInterface", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkInterface
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNetworkInterfaces", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetNetworkInterfaces
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
+        /// <summary>
+        /// 
+        ///									Symbolic network interface name.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string InterfaceToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NetworkInterface")]
+        /// <summary>
+        /// 
+        ///									Network interface name.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public NetworkInterfaceSetConfiguration NetworkInterface;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkInterfaceSetConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkInterfaceSetConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
+        /// <summary>
+        /// Indicates whether or not an interface is enabled.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Enabled;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Link")]
+        /// <summary>
+        /// Link configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public NetworkInterfaceConnectionSetting Link;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MTU")]
+        /// <summary>
+        /// Maximum transmission unit.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int MTU;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4")]
+        /// <summary>
+        /// IPv4 network interface configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public IPv4NetworkInterfaceSetConfiguration IPv4;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6")]
+        /// <summary>
+        /// IPv6 network interface configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public IPv6NetworkInterfaceSetConfiguration IPv6;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public NetworkInterfaceSetConfigurationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkInterfaceConnectionSetting", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkInterfaceConnectionSetting
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AutoNegotiation")]
+        /// <summary>
+        /// Auto negotiation on/off.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool AutoNegotiation;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Speed")]
+        /// <summary>
+        /// Speed.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int Speed;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Duplex")]
+        /// <summary>
+        /// Duplex type, Half or Full.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Duplex;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="IPv4NetworkInterfaceSetConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class IPv4NetworkInterfaceSetConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
+        /// <summary>
+        /// Indicates whether or not IPv4 is enabled.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Enabled;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Manual")]
-        public PrefixedIPv4Address Manual;
+        /// <summary>
+        /// List of manually added IPv4 addresses.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PrefixedIPv4Address[] Manual;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DHCP")]
+        /// <summary>
+        /// Indicates whether or not DHCP is used.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool DHCP;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="PrefixedIPv4Address", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class PrefixedIPv4Address
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Address")]
+        /// <summary>
+        /// IPv4 address
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PrefixLength")]
+        /// <summary>
+        /// Prefix/submask length
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int PrefixLength;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="IPv6NetworkInterfaceSetConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class IPv6NetworkInterfaceSetConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
+        /// <summary>
+        /// Indicates whether or not IPv6 is enabled.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Enabled;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AcceptRouterAdvert")]
+        /// <summary>
+        /// Indicates whether router advertisment is used.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool AcceptRouterAdvert;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Manual")]
-        public PrefixedIPv6Address Manual;
+        /// <summary>
+        /// List of manually added IPv6 addresses.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public PrefixedIPv6Address[] Manual;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DHCP")]
+        /// <summary>
+        /// DHCP configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string DHCP;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="PrefixedIPv6Address", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class PrefixedIPv6Address
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Address")]
+        /// <summary>
+        /// IPv6 address
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PrefixLength")]
+        /// <summary>
+        /// Prefix/submask length
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int PrefixLength;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkInterfaceSetConfigurationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkInterfaceSetConfigurationExtension
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot3")]
-        public Dot3Configuration Dot3;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Dot3Configuration[] Dot3;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot11")]
-        public Dot11Configuration Dot11;
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Dot11Configuration[] Dot11;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public NetworkInterfaceSetConfigurationExtension2 Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot3Configuration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot3Configuration
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11Configuration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11Configuration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SSID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public byte[] SSID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Mode")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Mode;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Alias")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Alias;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Priority")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public int Priority;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Security")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public Dot11SecurityConfiguration Security;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11SecurityConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11SecurityConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Mode")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Mode;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Algorithm")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Algorithm;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PSK")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Dot11PSKSet PSK;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1X")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string Dot1X;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public Dot11SecurityConfigurationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11PSKSet", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11PSKSet
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Key")]
+        /// <summary>
+        /// 
+        ///					According to IEEE802.11-2007 H.4.1 the RSNA PSK consists of 256 bits, or 64 octets when represented in hex
+        ///					Either Key or Passphrase shall be given, if both are supplied Key shall be used by the device and Passphrase ignored.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public byte[] Key;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Passphrase")]
+        /// <summary>
+        /// 
+        ///					According to IEEE802.11-2007 H.4.1 a pass-phrase is a sequence of between 8 and 63 ASCII-encoded characters and
+        ///					each character in the pass-phrase must have an encoding in the range of 32 to 126 (decimal),inclusive.
+        ///					If only Passpharse is supplied the Key shall be derived using the algorithm described in IEEE802.11-2007 section H.4
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Passphrase;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public Dot11PSKSetExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11PSKSetExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11PSKSetExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11SecurityConfigurationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11SecurityConfigurationExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkInterfaceSetConfigurationExtension2", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkInterfaceSetConfigurationExtension2
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNetworkInterfacesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetNetworkInterfacesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RebootNeeded")]
+        /// <summary>
+        /// 
+        ///									Indicates whether or not a reboot is required after configuration updates.
+        ///									If a device responds with RebootNeeded set to false, the device can be reached
+        ///									via the new IP address without further action. A client should be aware that a device
+        ///									may not be responsive for a short period of time until it signals availability at
+        ///									the new address via the discovery Hello messages.
+        ///									If a device responds with RebootNeeded set to true, it will be further available under
+        ///									its previous IP address. The settings will only be activated when the device is
+        ///									rebooted via the SystemReboot command.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool RebootNeeded;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetNetworkProtocols", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetNetworkProtocols
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetNetworkProtocolsResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetNetworkProtocolsResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NetworkProtocols")]
-        public NetworkProtocol NetworkProtocols;
+        /// <summary>
+        /// Contains an array of defined protocols supported by the device. There are three protocols defined; HTTP, HTTPS and RTSP. The following parameters can be retrieved for each protocol: port and enable/disable.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public NetworkProtocol[] NetworkProtocols;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkProtocol", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkProtocol
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Name")]
+        /// <summary>
+        /// Network protocol type string.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Name;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
+        /// <summary>
+        /// Indicates if the protocol is enabled or not.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool Enabled;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Port")]
+        /// <summary>
+        /// The port that is used by the protocol.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int Port;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public NetworkProtocolExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkProtocolExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkProtocolExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNetworkProtocols", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetNetworkProtocols
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NetworkProtocols")]
+        /// <summary>
+        /// Configures one or more defined network protocols supported by the device. There are currently three protocols defined; HTTP, HTTPS and RTSP. The following parameters can be set for each protocol: port and enable/disable.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public NetworkProtocol NetworkProtocols;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNetworkProtocolsResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetNetworkProtocolsResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetNetworkDefaultGateway", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetNetworkDefaultGateway
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetNetworkDefaultGatewayResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetNetworkDefaultGatewayResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NetworkGateway")]
+        /// <summary>
+        /// Gets the default IPv4 and IPv6 gateway settings from the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public NetworkGateway NetworkGateway;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkGateway", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkGateway
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
-        public string IPv4Address;
+        /// <summary>
+        /// IPv4 address string.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string[] IPv4Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
-        public string IPv6Address;
+        /// <summary>
+        /// IPv6 address string.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string[] IPv6Address;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNetworkDefaultGateway", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetNetworkDefaultGateway
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
-        public string IPv4Address;
+        /// <summary>
+        /// Sets IPv4 gateway address used as default setting.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string[] IPv4Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
-        public string IPv6Address;
+        /// <summary>
+        /// Sets IPv6 gateway address used as default setting.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string[] IPv6Address;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetNetworkDefaultGatewayResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetNetworkDefaultGatewayResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetZeroConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetZeroConfiguration
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetZeroConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetZeroConfigurationResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ZeroConfiguration")]
+        /// <summary>
+        /// Contains the zero-configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public NetworkZeroConfiguration ZeroConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkZeroConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkZeroConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
+        /// <summary>
+        /// Unique identifier of network interface.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string InterfaceToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
+        /// <summary>
+        /// Indicates whether the zero-configuration is enabled or not.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool Enabled;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Addresses")]
-        public string Addresses;
+        /// <summary>
+        /// The zero-configuration IPv4 address(es)
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string[] Addresses;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public NetworkZeroConfigurationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkZeroConfigurationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkZeroConfigurationExtension
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Additional")]
-        public NetworkZeroConfiguration Additional;
+        /// <summary>
+        /// Optional array holding the configuration for the second and possibly further interfaces.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public NetworkZeroConfiguration[] Additional;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public NetworkZeroConfigurationExtension2 Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="NetworkZeroConfigurationExtension2", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class NetworkZeroConfigurationExtension2
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetZeroConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetZeroConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
+        /// <summary>
+        /// Unique identifier referencing the physical interface.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string InterfaceToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
+        /// <summary>
+        /// Specifies if the zero-configuration should be enabled or not.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool Enabled;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetZeroConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetZeroConfigurationResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetIPAddressFilter", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetIPAddressFilter
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetIPAddressFilterResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetIPAddressFilterResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPAddressFilter")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public IPAddressFilter IPAddressFilter;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="IPAddressFilter", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class IPAddressFilter
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Type;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv4Address")]
-        public PrefixedIPv4Address IPv4Address;
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PrefixedIPv4Address[] IPv4Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPv6Address")]
-        public PrefixedIPv6Address IPv6Address;
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public PrefixedIPv6Address[] IPv6Address;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public IPAddressFilterExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="IPAddressFilterExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class IPAddressFilterExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetIPAddressFilter", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetIPAddressFilter
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPAddressFilter")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public IPAddressFilter IPAddressFilter;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetIPAddressFilterResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetIPAddressFilterResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AddIPAddressFilter", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class AddIPAddressFilter
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPAddressFilter")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public IPAddressFilter IPAddressFilter;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="AddIPAddressFilterResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class AddIPAddressFilterResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RemoveIPAddressFilter", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class RemoveIPAddressFilter
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IPAddressFilter")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public IPAddressFilter IPAddressFilter;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RemoveIPAddressFilterResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class RemoveIPAddressFilterResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetAccessPolicy", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetAccessPolicy
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetAccessPolicyResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetAccessPolicyResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PolicyFile")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public BinaryData PolicyFile;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="BinaryData", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class BinaryData
     {
         
         [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/2005/05/xmlmime")]
         public string contentType;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Data")]
+        /// <summary>
+        /// base64 encoded binary data.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public byte[] Data;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetAccessPolicy", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetAccessPolicy
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PolicyFile")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public BinaryData PolicyFile;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetAccessPolicyResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetAccessPolicyResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CreateCertificate", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class CreateCertificate
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        /// <summary>
+        /// Certificate id.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Subject")]
+        /// <summary>
+        /// Identification of the entity associated with the public-key.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Subject;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ValidNotBefore")]
+        /// <summary>
+        /// Certificate validity start date.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public System.DateTime ValidNotBefore;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ValidNotAfter")]
+        /// <summary>
+        /// Certificate expiry start date.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public System.DateTime ValidNotAfter;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CreateCertificateResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class CreateCertificateResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NvtCertificate")]
+        /// <summary>
+        /// 
+        ///									base64 encoded DER representation of certificate.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Certificate NvtCertificate;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Certificate", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Certificate
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        /// <summary>
+        /// Certificate id.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
         
+        /// <summary>
+        /// base64 encoded DER representation of certificate.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public BinaryData Certificate;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCertificates", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCertificates
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCertificatesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCertificatesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NvtCertificate")]
-        public Certificate NvtCertificate;
+        /// <summary>
+        /// 
+        ///									Id and base64 encoded DER representation of all available certificates.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Certificate[] NvtCertificate;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCertificatesStatus", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCertificatesStatus
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCertificatesStatusResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCertificatesStatusResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateStatus")]
-        public CertificateStatus CertificateStatus;
+        /// <summary>
+        /// 
+        ///									Indicates if a certificate is used in an optional HTTPS configuration of the device.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public CertificateStatus[] CertificateStatus;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CertificateStatus", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class CertificateStatus
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        /// <summary>
+        /// Certificate id.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Status")]
+        /// <summary>
+        /// Indicates whether or not a certificate is used in a HTTPS configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool Status;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetCertificatesStatus", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetCertificatesStatus
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateStatus")]
-        public CertificateStatus CertificateStatus;
+        /// <summary>
+        /// 
+        ///									Indicates if a certificate is to be used in an optional HTTPS configuration of the device.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public CertificateStatus[] CertificateStatus;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetCertificatesStatusResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetCertificatesStatusResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteCertificates", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeleteCertificates
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        /// <summary>
+        /// 
+        ///									List of ids of certificates to delete.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteCertificatesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeleteCertificatesResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetPkcs10Request", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetPkcs10Request
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        /// <summary>
+        /// 
+        ///									List of ids of certificates to delete.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Subject")]
+        /// <summary>
+        /// 
+        ///									Relative Dinstinguished Name(RDN) CommonName(CN).
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Subject;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Attributes")]
+        /// <summary>
+        /// 
+        ///									Optional base64 encoded DER attributes.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public BinaryData Attributes;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetPkcs10RequestResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetPkcs10RequestResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Pkcs10Request")]
+        /// <summary>
+        /// 
+        ///									base64 encoded DER representation of certificate.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public BinaryData Pkcs10Request;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="LoadCertificates", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class LoadCertificates
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="NVTCertificate")]
+        /// <summary>
+        /// 
+        ///									Optional id and base64 encoded DER representation of certificate.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Certificate NVTCertificate;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="LoadCertificatesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class LoadCertificatesResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetClientCertificateMode", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetClientCertificateMode
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetClientCertificateModeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetClientCertificateModeResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
+        /// <summary>
+        /// 
+        ///									Indicates whether or not client certificates are required by device.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Enabled;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetClientCertificateMode", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetClientCertificateMode
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Enabled")]
+        /// <summary>
+        /// 
+        ///									Indicates whether or not client certificates are required by device.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool Enabled;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetClientCertificateModeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetClientCertificateModeResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetRelayOutputs", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetRelayOutputs
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetRelayOutputsResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetRelayOutputsResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RelayOutputs")]
-        public RelayOutput RelayOutputs;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public RelayOutput[] RelayOutputs;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RelayOutput", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class RelayOutput
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRelayOutputSettings", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetRelayOutputSettings
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RelayOutputToken")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string RelayOutputToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Properties")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public RelayOutputSettings Properties;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="RelayOutputSettings", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class RelayOutputSettings
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Mode")]
+        /// <summary>
+        /// 
+        ///					'Bistable' or 'Monostable'
+        ///					Bistable – After setting the state, the relay remains in this state.Monostable – After setting the state, the relay returns to its idle state after the specified time.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Mode;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="DelayTime")]
+        /// <summary>
+        /// Time after which the relay returns to its idle state if it is in monostable mode. If the Mode field is set to bistable mode the value of the parameter can be ignored.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string DelayTime;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IdleState")]
+        /// <summary>
+        /// 
+        ///			'open' or 'closed'
+        ///			'open' means that the relay is open when the relay state is set to 'inactive' through the trigger command and closed when the state is set to 'active' through the same command.'closed' means that the relay is closed when the relay state is set to 'inactive' through the trigger command and open when the state is set to 'active' through the same command.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string IdleState;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRelayOutputSettingsResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetRelayOutputSettingsResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRelayOutputState", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetRelayOutputState
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="RelayOutputToken")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string RelayOutputToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="LogicalState")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string LogicalState;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetRelayOutputStateResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetRelayOutputStateResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SendAuxiliaryCommand", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SendAuxiliaryCommand
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AuxiliaryCommand")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string AuxiliaryCommand;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SendAuxiliaryCommandResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SendAuxiliaryCommandResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AuxiliaryCommandResponse")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string AuxiliaryCommandResponse;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCACertificates", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCACertificates
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCACertificatesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCACertificatesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CACertificate")]
-        public Certificate CACertificate;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Certificate[] CACertificate;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="LoadCertificateWithPrivateKey", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class LoadCertificateWithPrivateKey
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateWithPrivateKey")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public CertificateWithPrivateKey CertificateWithPrivateKey;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CertificateWithPrivateKey", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class CertificateWithPrivateKey
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Certificate")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public BinaryData Certificate;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PrivateKey")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public BinaryData PrivateKey;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="LoadCertificateWithPrivateKeyResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class LoadCertificateWithPrivateKeyResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCertificateInformation", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCertificateInformation
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetCertificateInformationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetCertificateInformationResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateInformation")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public CertificateInformation CertificateInformation;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CertificateInformation", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class CertificateInformation
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="IssuerDN")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string IssuerDN;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SubjectDN")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string SubjectDN;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="KeyUsage")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public CertificateUsage KeyUsage;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ExtendedKeyUsage")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public CertificateUsage ExtendedKeyUsage;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="KeyLength")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public int KeyLength;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Version")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string Version;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SerialNum")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string SerialNum;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SignatureAlgorithm")]
+        /// <summary>
+        /// Validity Range is from "NotBefore" to "NotAfter"; the corresponding DateTimeRange is from "From" to "Until"
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string SignatureAlgorithm;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Validity")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public DateTimeRange Validity;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public CertificateInformationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CertificateUsage", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class CertificateUsage
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DateTimeRange", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class DateTimeRange
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="From")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public System.DateTime From;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Until")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public System.DateTime Until;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CertificateInformationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class CertificateInformationExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="LoadCACertificates", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class LoadCACertificates
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CACertificate")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Certificate CACertificate;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="LoadCACertificatesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class LoadCACertificatesResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CreateDot1XConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class CreateDot1XConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfiguration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Dot1XConfiguration Dot1XConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot1XConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot1XConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfigurationToken")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Dot1XConfigurationToken;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Identity")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Identity;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AnonymousID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string AnonymousID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="EAPMethod")]
+        /// <summary>
+        /// 
+        ///				EAP Method type as defined in IANA EAP Registry.
+        ///			
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public int EAPMethod;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CACertificateID")]
-        public string CACertificateID;
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string[] CACertificateID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="EAPMethodConfiguration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public EAPMethodConfiguration EAPMethodConfiguration;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public Dot1XConfigurationExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="EAPMethodConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class EAPMethodConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TLSConfiguration")]
+        /// <summary>
+        /// Confgiuration information for TLS Method.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public TLSConfiguration TLSConfiguration;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Password")]
+        /// <summary>
+        /// Password for those EAP Methods that require a password. The password shall never be returned on a get method.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Password;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public EapMethodExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="TLSConfiguration", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class TLSConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="CertificateID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="EapMethodExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class EapMethodExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot1XConfigurationExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot1XConfigurationExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CreateDot1XConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class CreateDot1XConfigurationResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDot1XConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDot1XConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfiguration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Dot1XConfiguration Dot1XConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetDot1XConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetDot1XConfigurationResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot1XConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDot1XConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfigurationToken")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Dot1XConfigurationToken;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot1XConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDot1XConfigurationResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfiguration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Dot1XConfiguration Dot1XConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot1XConfigurations", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDot1XConfigurations
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot1XConfigurationsResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDot1XConfigurationsResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfiguration")]
-        public Dot1XConfiguration Dot1XConfiguration;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Dot1XConfiguration[] Dot1XConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteDot1XConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeleteDot1XConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Dot1XConfigurationToken")]
-        public string Dot1XConfigurationToken;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string[] Dot1XConfigurationToken;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteDot1XConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeleteDot1XConfigurationResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot11Capabilities", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDot11Capabilities
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot11CapabilitiesResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDot11CapabilitiesResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Capabilities")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Dot11Capabilities Capabilities;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11Capabilities", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11Capabilities
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="TKIP")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public bool TKIP;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ScanAvailableNetworks")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool ScanAvailableNetworks;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="MultipleConfiguration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool MultipleConfiguration;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AdHocStationMode")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public bool AdHocStationMode;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="WEP")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public bool WEP;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot11Status", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDot11Status
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string InterfaceToken;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetDot11StatusResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetDot11StatusResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Status")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public Dot11Status Status;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11Status", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11Status
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SSID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public byte[] SSID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="BSSID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string BSSID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PairCipher")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string PairCipher;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="GroupCipher")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string GroupCipher;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SignalStrength")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string SignalStrength;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ActiveConfigAlias")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string ActiveConfigAlias;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ScanAvailableDot11Networks", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class ScanAvailableDot11Networks
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="InterfaceToken")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string InterfaceToken;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="ScanAvailableDot11NetworksResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class ScanAvailableDot11NetworksResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Networks")]
-        public Dot11AvailableNetworks Networks;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Dot11AvailableNetworks[] Networks;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11AvailableNetworks", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11AvailableNetworks
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SSID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public byte[] SSID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="BSSID")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string BSSID;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="AuthAndMangementSuite")]
-        public string AuthAndMangementSuite;
+        /// <summary>
+        /// See IEEE802.11 7.3.2.25.2 for details.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string[] AuthAndMangementSuite;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="PairCipher")]
-        public string PairCipher;
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string[] PairCipher;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="GroupCipher")]
-        public string GroupCipher;
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string[] GroupCipher;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SignalStrength")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string SignalStrength;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Extension")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public Dot11AvailableNetworksExtension Extension;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="Dot11AvailableNetworksExtension", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Dot11AvailableNetworksExtension
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemUris", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemUris
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetSystemUrisResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetSystemUrisResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SystemLogUris")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public SystemLogUriList SystemLogUris;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SupportInfoUri")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string SupportInfoUri;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SystemBackupUri")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string SystemBackupUri;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemLogUriList", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SystemLogUriList
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="SystemLog")]
-        public SystemLogUri SystemLog;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public SystemLogUri[] SystemLog;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SystemLogUri", Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class SystemLogUri
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Type")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Type;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Uri")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Uri;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="StartFirmwareUpgrade", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class StartFirmwareUpgrade
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="StartFirmwareUpgradeResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class StartFirmwareUpgradeResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UploadUri")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string UploadUri;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UploadDelay")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string UploadDelay;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ExpectedDownTime")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string ExpectedDownTime;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="StartSystemRestore", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class StartSystemRestore
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="StartSystemRestoreResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class StartSystemRestoreResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UploadUri")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string UploadUri;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="ExpectedDownTime")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string ExpectedDownTime;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetStorageConfigurations", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetStorageConfigurations
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetStorageConfigurationsResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetStorageConfigurationsResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="StorageConfigurations")]
-        public StorageConfiguration StorageConfigurations;
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public StorageConfiguration[] StorageConfigurations;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="StorageConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class StorageConfiguration
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CreateStorageConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class CreateStorageConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="StorageConfiguration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public StorageConfigurationData StorageConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="StorageConfigurationData", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class StorageConfigurationData
     {
         
+        /// <summary>
+        /// StorageType lists the acceptable values for type attribute 
+        /// </summary>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string type;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="LocalPath")]
+        /// <summary>
+        ///  local path 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string LocalPath;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="StorageUri")]
+        /// <summary>
+        ///  Storage server address 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string StorageUri;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="User")]
+        /// <summary>
+        ///  User credential for the storage server 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public UserCredential User;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="UserCredential", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class UserCredential
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="UserName")]
+        /// <summary>
+        /// User name
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string UserName;
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Password")]
+        /// <summary>
+        ///  optional password
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Password;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="CreateStorageConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class CreateStorageConfigurationResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Token")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Token;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetStorageConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetStorageConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Token")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Token;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="GetStorageConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class GetStorageConfigurationResponse
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="StorageConfiguration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public StorageConfiguration StorageConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetStorageConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetStorageConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="StorageConfiguration")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public StorageConfiguration StorageConfiguration;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="SetStorageConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class SetStorageConfigurationResponse
     {
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteStorageConfiguration", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeleteStorageConfiguration
     {
         
-        [System.Xml.Serialization.XmlElementAttribute(ElementName="Token")]
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Token;
     }
     
-    [System.Xml.Serialization.XmlRootAttribute(ElementName="DeleteStorageConfigurationResponse", Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]
     public class DeleteStorageConfigurationResponse
     {
     }

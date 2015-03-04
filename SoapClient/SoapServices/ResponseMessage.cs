@@ -69,18 +69,11 @@ namespace SoapServices
 					}
 				}
 			}
-
-			var str = parseNode.ToString();
-
-			using (var stringReader = new StringReader(str))
+			
+			using (var xmlReader = parseNode.CreateReader())
 			{
-				var xmlReaderSettings = new XmlReaderSettings();
-				
-				using (var xmlReader = XmlReader.Create(stringReader, xmlReaderSettings))
-				{
-					var xmlSerializer = new XmlSerializer(typeof (T));
-					return (T) xmlSerializer.Deserialize(xmlReader);
-				}
+				var xmlSerializer = new XmlSerializer(typeof(T));
+				return (T)xmlSerializer.Deserialize(xmlReader);
 			}
 		}
 	}

@@ -14,16 +14,26 @@ namespace Builder.TestApp
 		static void Main(string[] args)
 		{
 			//LoadTestServiceWsdl();
-			//CreateTestServiceClient();
+			CreateTestServiceClient();
 
 			//LoadRussianPostWsdl();
-			//CreateRussianPostClient();
+			CreateRussianPostClient();
 
 			//LoadOnvifDmWsdl();
-			//CreateOnvifDmClient();
+			CreateOnvifDmClient();
+
+			// http://www.onvif.org/onvif/ver10/device/wsdl/devicemgmt.wsdl
+			// http://www.onvif.org/onvif/ver10/media/wsdl/media.wsdl
+			// http://www.onvif.org/onvif/ver20/ptz/wsdl/ptz.wsdl
 
 			//LoadWeatherWsdl();
 			CreateWeatherClient();
+
+			//LoadOnvifMediaWsdl();
+			CreateOnvifMediaClient();
+
+			//LoadOnvifPtzWsdl();
+			CreateOnvifPtzClient();
 		}
 
 		private static void LoadTestServiceWsdl()
@@ -33,7 +43,7 @@ namespace Builder.TestApp
 
 		private static void CreateTestServiceClient()
 		{
-			CreateClient("WcfService1.wsdl", @"1.cs");
+			CreateClient("WcfService1.wsdl", @"1.cs", 1);
 		}
 
 		private static void LoadRussianPostWsdl()
@@ -43,7 +53,7 @@ namespace Builder.TestApp
 
 		private static void CreateRussianPostClient()
 		{
-			CreateClient("WcfService2.wsdl", @"2.cs");
+			CreateClient("WcfService2.wsdl", @"2.cs", 2);
 		}
 
 		private static void LoadOnvifDmWsdl()
@@ -53,7 +63,7 @@ namespace Builder.TestApp
 
 		private static void CreateOnvifDmClient()
 		{
-			CreateClient("WcfService3.wsdl", @"3.cs");
+			CreateClient("WcfService3.wsdl", @"3.cs", 3);
 		}
 
 		private static void LoadWeatherWsdl()
@@ -63,7 +73,27 @@ namespace Builder.TestApp
 
 		private static void CreateWeatherClient()
 		{
-			CreateClient("WcfService4.wsdl", @"4.cs");
+			CreateClient("WcfService4.wsdl", @"4.cs", 4);
+		}
+
+		private static void LoadOnvifMediaWsdl()
+		{
+			Load("http://www.onvif.org/onvif/ver10/media/wsdl/media.wsdl", "WcfService5.wsdl");
+		}
+
+		private static void CreateOnvifMediaClient()
+		{
+			CreateClient("WcfService5.wsdl", @"5.cs", 5);
+		}
+
+		private static void LoadOnvifPtzWsdl()
+		{
+			Load("http://www.onvif.org/onvif/ver20/ptz/wsdl/ptz.wsdl", "WcfService6.wsdl");
+		}
+
+		private static void CreateOnvifPtzClient()
+		{
+			CreateClient("WcfService6.wsdl", @"6.cs", 6);
 		}
 		
 		private static void Load(string uri, string filename)
@@ -73,10 +103,13 @@ namespace Builder.TestApp
 			doc.Save(filename);
 		}
 
-		private static void CreateClient(string wsdlFilename, string outFileName)
+		private static void CreateClient(string wsdlFilename, string outFileName, int i)
 		{
 			var wsdlDoc = XDocument.Parse(File.ReadAllText(wsdlFilename));
-			var builder = new ProxyBuilder(wsdlDoc);
+			var builder = new ProxyBuilder(wsdlDoc, new BuilderParameters()
+			{
+				CodeNamespace = "MyNs" + i
+			});
 			builder.Run();
 
 			var sourceCode = builder.GetSourceCode();
