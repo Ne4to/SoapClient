@@ -14,10 +14,10 @@ namespace Builder.TestApp
 		static void Main(string[] args)
 		{
 			//LoadTestServiceWsdl();
-			CreateTestServiceClient();
+			//CreateTestServiceClient();
 
 			//LoadRussianPostWsdl();
-			CreateRussianPostClient();
+			//CreateRussianPostClient();
 
 			//LoadOnvifDmWsdl();
 			CreateOnvifDmClient();
@@ -27,7 +27,7 @@ namespace Builder.TestApp
 			// http://www.onvif.org/onvif/ver20/ptz/wsdl/ptz.wsdl
 
 			//LoadWeatherWsdl();
-			CreateWeatherClient();
+			//CreateWeatherClient();
 
 			//LoadOnvifMediaWsdl();
 			CreateOnvifMediaClient();
@@ -63,7 +63,7 @@ namespace Builder.TestApp
 
 		private static void CreateOnvifDmClient()
 		{
-			CreateClient("WcfService3.wsdl", @"3.cs", 3);
+			CreateClient("WcfService3.wsdl", @"3.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.DeviceManagement");
 		}
 
 		private static void LoadWeatherWsdl()
@@ -83,7 +83,7 @@ namespace Builder.TestApp
 
 		private static void CreateOnvifMediaClient()
 		{
-			CreateClient("WcfService5.wsdl", @"5.cs", 5);
+			CreateClient("WcfService5.wsdl", @"5.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media");
 		}
 
 		private static void LoadOnvifPtzWsdl()
@@ -93,7 +93,7 @@ namespace Builder.TestApp
 
 		private static void CreateOnvifPtzClient()
 		{
-			CreateClient("WcfService6.wsdl", @"6.cs", 6);
+			CreateClient("WcfService6.wsdl", @"6.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.PTZ");
 		}
 		
 		private static void Load(string uri, string filename)
@@ -116,5 +116,20 @@ namespace Builder.TestApp
 
 			File.WriteAllText(@"C:\Users\Alexey\Source\Repos\SoapClient\SoapClient\WcfService1ClientApp\" + outFileName, sourceCode);
 		}
+
+		private static void CreateClient(string wsdlFilename, string outFileName, string ns)
+		{
+			var wsdlDoc = XDocument.Parse(File.ReadAllText(wsdlFilename));
+			var builder = new ProxyBuilder(wsdlDoc, new BuilderParameters()
+			{
+				CodeNamespace = ns
+			});
+			builder.Run();
+
+			var sourceCode = builder.GetSourceCode();
+
+			File.WriteAllText(@"C:\Users\Alexey\Source\Repos\SoapClient\SoapClient\WcfService1ClientApp\" + outFileName, sourceCode);
+		}
+
 	}
 }

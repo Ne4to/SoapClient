@@ -8,574 +8,574 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyNs5
+namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media
 {
     
     
     public interface Media
     {
         
-        System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilities(GetServiceCapabilities request);
+        System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request);
         
-        System.Threading.Tasks.Task<GetVideoSourcesResponse> GetVideoSources(GetVideoSources request);
+        System.Threading.Tasks.Task<GetVideoSourcesResponse> GetVideoSourcesAsync(GetVideoSourcesRequest request);
         
-        System.Threading.Tasks.Task<GetAudioSourcesResponse> GetAudioSources(GetAudioSources request);
+        System.Threading.Tasks.Task<GetAudioSourcesResponse> GetAudioSourcesAsync(GetAudioSourcesRequest request);
         
-        System.Threading.Tasks.Task<GetAudioOutputsResponse> GetAudioOutputs(GetAudioOutputs request);
+        System.Threading.Tasks.Task<GetAudioOutputsResponse> GetAudioOutputsAsync(GetAudioOutputsRequest request);
         
-        System.Threading.Tasks.Task<CreateProfileResponse> CreateProfile(CreateProfile request);
+        System.Threading.Tasks.Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request);
         
-        System.Threading.Tasks.Task<GetProfileResponse> GetProfile(GetProfile request);
+        System.Threading.Tasks.Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request);
         
-        System.Threading.Tasks.Task<GetProfilesResponse> GetProfiles(GetProfiles request);
+        System.Threading.Tasks.Task<GetProfilesResponse> GetProfilesAsync(GetProfilesRequest request);
         
-        System.Threading.Tasks.Task<AddVideoEncoderConfigurationResponse> AddVideoEncoderConfiguration(AddVideoEncoderConfiguration request);
+        System.Threading.Tasks.Task<AddVideoEncoderConfigurationResponse> AddVideoEncoderConfigurationAsync(AddVideoEncoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemoveVideoEncoderConfigurationResponse> RemoveVideoEncoderConfiguration(RemoveVideoEncoderConfiguration request);
+        System.Threading.Tasks.Task<RemoveVideoEncoderConfigurationResponse> RemoveVideoEncoderConfigurationAsync(RemoveVideoEncoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<AddVideoSourceConfigurationResponse> AddVideoSourceConfiguration(AddVideoSourceConfiguration request);
+        System.Threading.Tasks.Task<AddVideoSourceConfigurationResponse> AddVideoSourceConfigurationAsync(AddVideoSourceConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemoveVideoSourceConfigurationResponse> RemoveVideoSourceConfiguration(RemoveVideoSourceConfiguration request);
+        System.Threading.Tasks.Task<RemoveVideoSourceConfigurationResponse> RemoveVideoSourceConfigurationAsync(RemoveVideoSourceConfigurationRequest request);
         
-        System.Threading.Tasks.Task<AddAudioEncoderConfigurationResponse> AddAudioEncoderConfiguration(AddAudioEncoderConfiguration request);
+        System.Threading.Tasks.Task<AddAudioEncoderConfigurationResponse> AddAudioEncoderConfigurationAsync(AddAudioEncoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemoveAudioEncoderConfigurationResponse> RemoveAudioEncoderConfiguration(RemoveAudioEncoderConfiguration request);
+        System.Threading.Tasks.Task<RemoveAudioEncoderConfigurationResponse> RemoveAudioEncoderConfigurationAsync(RemoveAudioEncoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<AddAudioSourceConfigurationResponse> AddAudioSourceConfiguration(AddAudioSourceConfiguration request);
+        System.Threading.Tasks.Task<AddAudioSourceConfigurationResponse> AddAudioSourceConfigurationAsync(AddAudioSourceConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemoveAudioSourceConfigurationResponse> RemoveAudioSourceConfiguration(RemoveAudioSourceConfiguration request);
+        System.Threading.Tasks.Task<RemoveAudioSourceConfigurationResponse> RemoveAudioSourceConfigurationAsync(RemoveAudioSourceConfigurationRequest request);
         
-        System.Threading.Tasks.Task<AddPTZConfigurationResponse> AddPTZConfiguration(AddPTZConfiguration request);
+        System.Threading.Tasks.Task<AddPTZConfigurationResponse> AddPTZConfigurationAsync(AddPTZConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemovePTZConfigurationResponse> RemovePTZConfiguration(RemovePTZConfiguration request);
+        System.Threading.Tasks.Task<RemovePTZConfigurationResponse> RemovePTZConfigurationAsync(RemovePTZConfigurationRequest request);
         
-        System.Threading.Tasks.Task<AddVideoAnalyticsConfigurationResponse> AddVideoAnalyticsConfiguration(AddVideoAnalyticsConfiguration request);
+        System.Threading.Tasks.Task<AddVideoAnalyticsConfigurationResponse> AddVideoAnalyticsConfigurationAsync(AddVideoAnalyticsConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemoveVideoAnalyticsConfigurationResponse> RemoveVideoAnalyticsConfiguration(RemoveVideoAnalyticsConfiguration request);
+        System.Threading.Tasks.Task<RemoveVideoAnalyticsConfigurationResponse> RemoveVideoAnalyticsConfigurationAsync(RemoveVideoAnalyticsConfigurationRequest request);
         
-        System.Threading.Tasks.Task<AddMetadataConfigurationResponse> AddMetadataConfiguration(AddMetadataConfiguration request);
+        System.Threading.Tasks.Task<AddMetadataConfigurationResponse> AddMetadataConfigurationAsync(AddMetadataConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemoveMetadataConfigurationResponse> RemoveMetadataConfiguration(RemoveMetadataConfiguration request);
+        System.Threading.Tasks.Task<RemoveMetadataConfigurationResponse> RemoveMetadataConfigurationAsync(RemoveMetadataConfigurationRequest request);
         
-        System.Threading.Tasks.Task<AddAudioOutputConfigurationResponse> AddAudioOutputConfiguration(AddAudioOutputConfiguration request);
+        System.Threading.Tasks.Task<AddAudioOutputConfigurationResponse> AddAudioOutputConfigurationAsync(AddAudioOutputConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemoveAudioOutputConfigurationResponse> RemoveAudioOutputConfiguration(RemoveAudioOutputConfiguration request);
+        System.Threading.Tasks.Task<RemoveAudioOutputConfigurationResponse> RemoveAudioOutputConfigurationAsync(RemoveAudioOutputConfigurationRequest request);
         
-        System.Threading.Tasks.Task<AddAudioDecoderConfigurationResponse> AddAudioDecoderConfiguration(AddAudioDecoderConfiguration request);
+        System.Threading.Tasks.Task<AddAudioDecoderConfigurationResponse> AddAudioDecoderConfigurationAsync(AddAudioDecoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<RemoveAudioDecoderConfigurationResponse> RemoveAudioDecoderConfiguration(RemoveAudioDecoderConfiguration request);
+        System.Threading.Tasks.Task<RemoveAudioDecoderConfigurationResponse> RemoveAudioDecoderConfigurationAsync(RemoveAudioDecoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<DeleteProfileResponse> DeleteProfile(DeleteProfile request);
+        System.Threading.Tasks.Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request);
         
-        System.Threading.Tasks.Task<GetVideoSourceConfigurationsResponse> GetVideoSourceConfigurations(GetVideoSourceConfigurations request);
+        System.Threading.Tasks.Task<GetVideoSourceConfigurationsResponse> GetVideoSourceConfigurationsAsync(GetVideoSourceConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetVideoEncoderConfigurationsResponse> GetVideoEncoderConfigurations(GetVideoEncoderConfigurations request);
+        System.Threading.Tasks.Task<GetVideoEncoderConfigurationsResponse> GetVideoEncoderConfigurationsAsync(GetVideoEncoderConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetAudioSourceConfigurationsResponse> GetAudioSourceConfigurations(GetAudioSourceConfigurations request);
+        System.Threading.Tasks.Task<GetAudioSourceConfigurationsResponse> GetAudioSourceConfigurationsAsync(GetAudioSourceConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetAudioEncoderConfigurationsResponse> GetAudioEncoderConfigurations(GetAudioEncoderConfigurations request);
+        System.Threading.Tasks.Task<GetAudioEncoderConfigurationsResponse> GetAudioEncoderConfigurationsAsync(GetAudioEncoderConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationsResponse> GetVideoAnalyticsConfigurations(GetVideoAnalyticsConfigurations request);
+        System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationsResponse> GetVideoAnalyticsConfigurationsAsync(GetVideoAnalyticsConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetMetadataConfigurationsResponse> GetMetadataConfigurations(GetMetadataConfigurations request);
+        System.Threading.Tasks.Task<GetMetadataConfigurationsResponse> GetMetadataConfigurationsAsync(GetMetadataConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetAudioOutputConfigurationsResponse> GetAudioOutputConfigurations(GetAudioOutputConfigurations request);
+        System.Threading.Tasks.Task<GetAudioOutputConfigurationsResponse> GetAudioOutputConfigurationsAsync(GetAudioOutputConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetAudioDecoderConfigurationsResponse> GetAudioDecoderConfigurations(GetAudioDecoderConfigurations request);
+        System.Threading.Tasks.Task<GetAudioDecoderConfigurationsResponse> GetAudioDecoderConfigurationsAsync(GetAudioDecoderConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetVideoSourceConfigurationResponse> GetVideoSourceConfiguration(GetVideoSourceConfiguration request);
+        System.Threading.Tasks.Task<GetVideoSourceConfigurationResponse> GetVideoSourceConfigurationAsync(GetVideoSourceConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetVideoEncoderConfigurationResponse> GetVideoEncoderConfiguration(GetVideoEncoderConfiguration request);
+        System.Threading.Tasks.Task<GetVideoEncoderConfigurationResponse> GetVideoEncoderConfigurationAsync(GetVideoEncoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetAudioSourceConfigurationResponse> GetAudioSourceConfiguration(GetAudioSourceConfiguration request);
+        System.Threading.Tasks.Task<GetAudioSourceConfigurationResponse> GetAudioSourceConfigurationAsync(GetAudioSourceConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetAudioEncoderConfigurationResponse> GetAudioEncoderConfiguration(GetAudioEncoderConfiguration request);
+        System.Threading.Tasks.Task<GetAudioEncoderConfigurationResponse> GetAudioEncoderConfigurationAsync(GetAudioEncoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationResponse> GetVideoAnalyticsConfiguration(GetVideoAnalyticsConfiguration request);
+        System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationResponse> GetVideoAnalyticsConfigurationAsync(GetVideoAnalyticsConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetMetadataConfigurationResponse> GetMetadataConfiguration(GetMetadataConfiguration request);
+        System.Threading.Tasks.Task<GetMetadataConfigurationResponse> GetMetadataConfigurationAsync(GetMetadataConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetAudioOutputConfigurationResponse> GetAudioOutputConfiguration(GetAudioOutputConfiguration request);
+        System.Threading.Tasks.Task<GetAudioOutputConfigurationResponse> GetAudioOutputConfigurationAsync(GetAudioOutputConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetAudioDecoderConfigurationResponse> GetAudioDecoderConfiguration(GetAudioDecoderConfiguration request);
+        System.Threading.Tasks.Task<GetAudioDecoderConfigurationResponse> GetAudioDecoderConfigurationAsync(GetAudioDecoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleVideoEncoderConfigurationsResponse> GetCompatibleVideoEncoderConfigurations(GetCompatibleVideoEncoderConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleVideoEncoderConfigurationsResponse> GetCompatibleVideoEncoderConfigurationsAsync(GetCompatibleVideoEncoderConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleVideoSourceConfigurationsResponse> GetCompatibleVideoSourceConfigurations(GetCompatibleVideoSourceConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleVideoSourceConfigurationsResponse> GetCompatibleVideoSourceConfigurationsAsync(GetCompatibleVideoSourceConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleAudioEncoderConfigurationsResponse> GetCompatibleAudioEncoderConfigurations(GetCompatibleAudioEncoderConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleAudioEncoderConfigurationsResponse> GetCompatibleAudioEncoderConfigurationsAsync(GetCompatibleAudioEncoderConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleAudioSourceConfigurationsResponse> GetCompatibleAudioSourceConfigurations(GetCompatibleAudioSourceConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleAudioSourceConfigurationsResponse> GetCompatibleAudioSourceConfigurationsAsync(GetCompatibleAudioSourceConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleVideoAnalyticsConfigurationsResponse> GetCompatibleVideoAnalyticsConfigurations(GetCompatibleVideoAnalyticsConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleVideoAnalyticsConfigurationsResponse> GetCompatibleVideoAnalyticsConfigurationsAsync(GetCompatibleVideoAnalyticsConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleMetadataConfigurationsResponse> GetCompatibleMetadataConfigurations(GetCompatibleMetadataConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleMetadataConfigurationsResponse> GetCompatibleMetadataConfigurationsAsync(GetCompatibleMetadataConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleAudioOutputConfigurationsResponse> GetCompatibleAudioOutputConfigurations(GetCompatibleAudioOutputConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleAudioOutputConfigurationsResponse> GetCompatibleAudioOutputConfigurationsAsync(GetCompatibleAudioOutputConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleAudioDecoderConfigurationsResponse> GetCompatibleAudioDecoderConfigurations(GetCompatibleAudioDecoderConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleAudioDecoderConfigurationsResponse> GetCompatibleAudioDecoderConfigurationsAsync(GetCompatibleAudioDecoderConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<SetVideoSourceConfigurationResponse> SetVideoSourceConfiguration(SetVideoSourceConfiguration request);
+        System.Threading.Tasks.Task<SetVideoSourceConfigurationResponse> SetVideoSourceConfigurationAsync(SetVideoSourceConfigurationRequest request);
         
-        System.Threading.Tasks.Task<SetVideoEncoderConfigurationResponse> SetVideoEncoderConfiguration(SetVideoEncoderConfiguration request);
+        System.Threading.Tasks.Task<SetVideoEncoderConfigurationResponse> SetVideoEncoderConfigurationAsync(SetVideoEncoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<SetAudioSourceConfigurationResponse> SetAudioSourceConfiguration(SetAudioSourceConfiguration request);
+        System.Threading.Tasks.Task<SetAudioSourceConfigurationResponse> SetAudioSourceConfigurationAsync(SetAudioSourceConfigurationRequest request);
         
-        System.Threading.Tasks.Task<SetAudioEncoderConfigurationResponse> SetAudioEncoderConfiguration(SetAudioEncoderConfiguration request);
+        System.Threading.Tasks.Task<SetAudioEncoderConfigurationResponse> SetAudioEncoderConfigurationAsync(SetAudioEncoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<SetVideoAnalyticsConfigurationResponse> SetVideoAnalyticsConfiguration(SetVideoAnalyticsConfiguration request);
+        System.Threading.Tasks.Task<SetVideoAnalyticsConfigurationResponse> SetVideoAnalyticsConfigurationAsync(SetVideoAnalyticsConfigurationRequest request);
         
-        System.Threading.Tasks.Task<SetMetadataConfigurationResponse> SetMetadataConfiguration(SetMetadataConfiguration request);
+        System.Threading.Tasks.Task<SetMetadataConfigurationResponse> SetMetadataConfigurationAsync(SetMetadataConfigurationRequest request);
         
-        System.Threading.Tasks.Task<SetAudioOutputConfigurationResponse> SetAudioOutputConfiguration(SetAudioOutputConfiguration request);
+        System.Threading.Tasks.Task<SetAudioOutputConfigurationResponse> SetAudioOutputConfigurationAsync(SetAudioOutputConfigurationRequest request);
         
-        System.Threading.Tasks.Task<SetAudioDecoderConfigurationResponse> SetAudioDecoderConfiguration(SetAudioDecoderConfiguration request);
+        System.Threading.Tasks.Task<SetAudioDecoderConfigurationResponse> SetAudioDecoderConfigurationAsync(SetAudioDecoderConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetVideoSourceConfigurationOptionsResponse> GetVideoSourceConfigurationOptions(GetVideoSourceConfigurationOptions request);
+        System.Threading.Tasks.Task<GetVideoSourceConfigurationOptionsResponse> GetVideoSourceConfigurationOptionsAsync(GetVideoSourceConfigurationOptionsRequest request);
         
-        System.Threading.Tasks.Task<GetVideoEncoderConfigurationOptionsResponse> GetVideoEncoderConfigurationOptions(GetVideoEncoderConfigurationOptions request);
+        System.Threading.Tasks.Task<GetVideoEncoderConfigurationOptionsResponse> GetVideoEncoderConfigurationOptionsAsync(GetVideoEncoderConfigurationOptionsRequest request);
         
-        System.Threading.Tasks.Task<GetAudioSourceConfigurationOptionsResponse> GetAudioSourceConfigurationOptions(GetAudioSourceConfigurationOptions request);
+        System.Threading.Tasks.Task<GetAudioSourceConfigurationOptionsResponse> GetAudioSourceConfigurationOptionsAsync(GetAudioSourceConfigurationOptionsRequest request);
         
-        System.Threading.Tasks.Task<GetAudioEncoderConfigurationOptionsResponse> GetAudioEncoderConfigurationOptions(GetAudioEncoderConfigurationOptions request);
+        System.Threading.Tasks.Task<GetAudioEncoderConfigurationOptionsResponse> GetAudioEncoderConfigurationOptionsAsync(GetAudioEncoderConfigurationOptionsRequest request);
         
-        System.Threading.Tasks.Task<GetMetadataConfigurationOptionsResponse> GetMetadataConfigurationOptions(GetMetadataConfigurationOptions request);
+        System.Threading.Tasks.Task<GetMetadataConfigurationOptionsResponse> GetMetadataConfigurationOptionsAsync(GetMetadataConfigurationOptionsRequest request);
         
-        System.Threading.Tasks.Task<GetAudioOutputConfigurationOptionsResponse> GetAudioOutputConfigurationOptions(GetAudioOutputConfigurationOptions request);
+        System.Threading.Tasks.Task<GetAudioOutputConfigurationOptionsResponse> GetAudioOutputConfigurationOptionsAsync(GetAudioOutputConfigurationOptionsRequest request);
         
-        System.Threading.Tasks.Task<GetAudioDecoderConfigurationOptionsResponse> GetAudioDecoderConfigurationOptions(GetAudioDecoderConfigurationOptions request);
+        System.Threading.Tasks.Task<GetAudioDecoderConfigurationOptionsResponse> GetAudioDecoderConfigurationOptionsAsync(GetAudioDecoderConfigurationOptionsRequest request);
         
-        System.Threading.Tasks.Task<GetGuaranteedNumberOfVideoEncoderInstancesResponse> GetGuaranteedNumberOfVideoEncoderInstances(GetGuaranteedNumberOfVideoEncoderInstances request);
+        System.Threading.Tasks.Task<GetGuaranteedNumberOfVideoEncoderInstancesResponse> GetGuaranteedNumberOfVideoEncoderInstancesAsync(GetGuaranteedNumberOfVideoEncoderInstancesRequest request);
         
-        System.Threading.Tasks.Task<GetStreamUriResponse> GetStreamUri(GetStreamUri request);
+        System.Threading.Tasks.Task<GetStreamUriResponse> GetStreamUriAsync(GetStreamUriRequest request);
         
-        System.Threading.Tasks.Task<StartMulticastStreamingResponse> StartMulticastStreaming(StartMulticastStreaming request);
+        System.Threading.Tasks.Task<StartMulticastStreamingResponse> StartMulticastStreamingAsync(StartMulticastStreamingRequest request);
         
-        System.Threading.Tasks.Task<StopMulticastStreamingResponse> StopMulticastStreaming(StopMulticastStreaming request);
+        System.Threading.Tasks.Task<StopMulticastStreamingResponse> StopMulticastStreamingAsync(StopMulticastStreamingRequest request);
         
-        System.Threading.Tasks.Task<SetSynchronizationPointResponse> SetSynchronizationPoint(SetSynchronizationPoint request);
+        System.Threading.Tasks.Task<SetSynchronizationPointResponse> SetSynchronizationPointAsync(SetSynchronizationPointRequest request);
         
-        System.Threading.Tasks.Task<GetSnapshotUriResponse> GetSnapshotUri(GetSnapshotUri request);
+        System.Threading.Tasks.Task<GetSnapshotUriResponse> GetSnapshotUriAsync(GetSnapshotUriRequest request);
         
-        System.Threading.Tasks.Task<GetVideoSourceModesResponse> GetVideoSourceModes(GetVideoSourceModes request);
+        System.Threading.Tasks.Task<GetVideoSourceModesResponse> GetVideoSourceModesAsync(GetVideoSourceModesRequest request);
         
-        System.Threading.Tasks.Task<SetVideoSourceModeResponse> SetVideoSourceMode(SetVideoSourceMode request);
+        System.Threading.Tasks.Task<SetVideoSourceModeResponse> SetVideoSourceModeAsync(SetVideoSourceModeRequest request);
         
-        System.Threading.Tasks.Task<GetOSDsResponse> GetOSDs(GetOSDs request);
+        System.Threading.Tasks.Task<GetOSDsResponse> GetOSDsAsync(GetOSDsRequest request);
         
-        System.Threading.Tasks.Task<GetOSDResponse> GetOSD(GetOSD request);
+        System.Threading.Tasks.Task<GetOSDResponse> GetOSDAsync(GetOSDRequest request);
         
-        System.Threading.Tasks.Task<GetOSDOptionsResponse> GetOSDOptions(GetOSDOptions request);
+        System.Threading.Tasks.Task<GetOSDOptionsResponse> GetOSDOptionsAsync(GetOSDOptionsRequest request);
         
-        System.Threading.Tasks.Task<SetOSDResponse> SetOSD(SetOSD request);
+        System.Threading.Tasks.Task<SetOSDResponse> SetOSDAsync(SetOSDRequest request);
         
-        System.Threading.Tasks.Task<CreateOSDResponse> CreateOSD(CreateOSD request);
+        System.Threading.Tasks.Task<CreateOSDResponse> CreateOSDAsync(CreateOSDRequest request);
         
-        System.Threading.Tasks.Task<DeleteOSDResponse> DeleteOSD(DeleteOSD request);
+        System.Threading.Tasks.Task<DeleteOSDResponse> DeleteOSDAsync(DeleteOSDRequest request);
     }
     
     public partial class MediaClient : SoapServices.SoapClientBase, Media
     {
         
-        public virtual System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilities(GetServiceCapabilities request)
+        public virtual System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request)
         {
-            return this.CallAsync<GetServiceCapabilities, GetServiceCapabilitiesResponse>(null, request);
+            return this.CallAsync<GetServiceCapabilitiesRequest, GetServiceCapabilitiesResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoSourcesResponse> GetVideoSources(GetVideoSources request)
+        public virtual System.Threading.Tasks.Task<GetVideoSourcesResponse> GetVideoSourcesAsync(GetVideoSourcesRequest request)
         {
-            return this.CallAsync<GetVideoSources, GetVideoSourcesResponse>(null, request);
+            return this.CallAsync<GetVideoSourcesRequest, GetVideoSourcesResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioSourcesResponse> GetAudioSources(GetAudioSources request)
+        public virtual System.Threading.Tasks.Task<GetAudioSourcesResponse> GetAudioSourcesAsync(GetAudioSourcesRequest request)
         {
-            return this.CallAsync<GetAudioSources, GetAudioSourcesResponse>(null, request);
+            return this.CallAsync<GetAudioSourcesRequest, GetAudioSourcesResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioOutputsResponse> GetAudioOutputs(GetAudioOutputs request)
+        public virtual System.Threading.Tasks.Task<GetAudioOutputsResponse> GetAudioOutputsAsync(GetAudioOutputsRequest request)
         {
-            return this.CallAsync<GetAudioOutputs, GetAudioOutputsResponse>(null, request);
+            return this.CallAsync<GetAudioOutputsRequest, GetAudioOutputsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<CreateProfileResponse> CreateProfile(CreateProfile request)
+        public virtual System.Threading.Tasks.Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request)
         {
-            return this.CallAsync<CreateProfile, CreateProfileResponse>(null, request);
+            return this.CallAsync<CreateProfileRequest, CreateProfileResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetProfileResponse> GetProfile(GetProfile request)
+        public virtual System.Threading.Tasks.Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request)
         {
-            return this.CallAsync<GetProfile, GetProfileResponse>(null, request);
+            return this.CallAsync<GetProfileRequest, GetProfileResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetProfilesResponse> GetProfiles(GetProfiles request)
+        public virtual System.Threading.Tasks.Task<GetProfilesResponse> GetProfilesAsync(GetProfilesRequest request)
         {
-            return this.CallAsync<GetProfiles, GetProfilesResponse>(null, request);
+            return this.CallAsync<GetProfilesRequest, GetProfilesResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddVideoEncoderConfigurationResponse> AddVideoEncoderConfiguration(AddVideoEncoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddVideoEncoderConfigurationResponse> AddVideoEncoderConfigurationAsync(AddVideoEncoderConfigurationRequest request)
         {
-            return this.CallAsync<AddVideoEncoderConfiguration, AddVideoEncoderConfigurationResponse>(null, request);
+            return this.CallAsync<AddVideoEncoderConfigurationRequest, AddVideoEncoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemoveVideoEncoderConfigurationResponse> RemoveVideoEncoderConfiguration(RemoveVideoEncoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemoveVideoEncoderConfigurationResponse> RemoveVideoEncoderConfigurationAsync(RemoveVideoEncoderConfigurationRequest request)
         {
-            return this.CallAsync<RemoveVideoEncoderConfiguration, RemoveVideoEncoderConfigurationResponse>(null, request);
+            return this.CallAsync<RemoveVideoEncoderConfigurationRequest, RemoveVideoEncoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddVideoSourceConfigurationResponse> AddVideoSourceConfiguration(AddVideoSourceConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddVideoSourceConfigurationResponse> AddVideoSourceConfigurationAsync(AddVideoSourceConfigurationRequest request)
         {
-            return this.CallAsync<AddVideoSourceConfiguration, AddVideoSourceConfigurationResponse>(null, request);
+            return this.CallAsync<AddVideoSourceConfigurationRequest, AddVideoSourceConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemoveVideoSourceConfigurationResponse> RemoveVideoSourceConfiguration(RemoveVideoSourceConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemoveVideoSourceConfigurationResponse> RemoveVideoSourceConfigurationAsync(RemoveVideoSourceConfigurationRequest request)
         {
-            return this.CallAsync<RemoveVideoSourceConfiguration, RemoveVideoSourceConfigurationResponse>(null, request);
+            return this.CallAsync<RemoveVideoSourceConfigurationRequest, RemoveVideoSourceConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddAudioEncoderConfigurationResponse> AddAudioEncoderConfiguration(AddAudioEncoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddAudioEncoderConfigurationResponse> AddAudioEncoderConfigurationAsync(AddAudioEncoderConfigurationRequest request)
         {
-            return this.CallAsync<AddAudioEncoderConfiguration, AddAudioEncoderConfigurationResponse>(null, request);
+            return this.CallAsync<AddAudioEncoderConfigurationRequest, AddAudioEncoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemoveAudioEncoderConfigurationResponse> RemoveAudioEncoderConfiguration(RemoveAudioEncoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemoveAudioEncoderConfigurationResponse> RemoveAudioEncoderConfigurationAsync(RemoveAudioEncoderConfigurationRequest request)
         {
-            return this.CallAsync<RemoveAudioEncoderConfiguration, RemoveAudioEncoderConfigurationResponse>(null, request);
+            return this.CallAsync<RemoveAudioEncoderConfigurationRequest, RemoveAudioEncoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddAudioSourceConfigurationResponse> AddAudioSourceConfiguration(AddAudioSourceConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddAudioSourceConfigurationResponse> AddAudioSourceConfigurationAsync(AddAudioSourceConfigurationRequest request)
         {
-            return this.CallAsync<AddAudioSourceConfiguration, AddAudioSourceConfigurationResponse>(null, request);
+            return this.CallAsync<AddAudioSourceConfigurationRequest, AddAudioSourceConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemoveAudioSourceConfigurationResponse> RemoveAudioSourceConfiguration(RemoveAudioSourceConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemoveAudioSourceConfigurationResponse> RemoveAudioSourceConfigurationAsync(RemoveAudioSourceConfigurationRequest request)
         {
-            return this.CallAsync<RemoveAudioSourceConfiguration, RemoveAudioSourceConfigurationResponse>(null, request);
+            return this.CallAsync<RemoveAudioSourceConfigurationRequest, RemoveAudioSourceConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddPTZConfigurationResponse> AddPTZConfiguration(AddPTZConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddPTZConfigurationResponse> AddPTZConfigurationAsync(AddPTZConfigurationRequest request)
         {
-            return this.CallAsync<AddPTZConfiguration, AddPTZConfigurationResponse>(null, request);
+            return this.CallAsync<AddPTZConfigurationRequest, AddPTZConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemovePTZConfigurationResponse> RemovePTZConfiguration(RemovePTZConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemovePTZConfigurationResponse> RemovePTZConfigurationAsync(RemovePTZConfigurationRequest request)
         {
-            return this.CallAsync<RemovePTZConfiguration, RemovePTZConfigurationResponse>(null, request);
+            return this.CallAsync<RemovePTZConfigurationRequest, RemovePTZConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddVideoAnalyticsConfigurationResponse> AddVideoAnalyticsConfiguration(AddVideoAnalyticsConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddVideoAnalyticsConfigurationResponse> AddVideoAnalyticsConfigurationAsync(AddVideoAnalyticsConfigurationRequest request)
         {
-            return this.CallAsync<AddVideoAnalyticsConfiguration, AddVideoAnalyticsConfigurationResponse>(null, request);
+            return this.CallAsync<AddVideoAnalyticsConfigurationRequest, AddVideoAnalyticsConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemoveVideoAnalyticsConfigurationResponse> RemoveVideoAnalyticsConfiguration(RemoveVideoAnalyticsConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemoveVideoAnalyticsConfigurationResponse> RemoveVideoAnalyticsConfigurationAsync(RemoveVideoAnalyticsConfigurationRequest request)
         {
-            return this.CallAsync<RemoveVideoAnalyticsConfiguration, RemoveVideoAnalyticsConfigurationResponse>(null, request);
+            return this.CallAsync<RemoveVideoAnalyticsConfigurationRequest, RemoveVideoAnalyticsConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddMetadataConfigurationResponse> AddMetadataConfiguration(AddMetadataConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddMetadataConfigurationResponse> AddMetadataConfigurationAsync(AddMetadataConfigurationRequest request)
         {
-            return this.CallAsync<AddMetadataConfiguration, AddMetadataConfigurationResponse>(null, request);
+            return this.CallAsync<AddMetadataConfigurationRequest, AddMetadataConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemoveMetadataConfigurationResponse> RemoveMetadataConfiguration(RemoveMetadataConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemoveMetadataConfigurationResponse> RemoveMetadataConfigurationAsync(RemoveMetadataConfigurationRequest request)
         {
-            return this.CallAsync<RemoveMetadataConfiguration, RemoveMetadataConfigurationResponse>(null, request);
+            return this.CallAsync<RemoveMetadataConfigurationRequest, RemoveMetadataConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddAudioOutputConfigurationResponse> AddAudioOutputConfiguration(AddAudioOutputConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddAudioOutputConfigurationResponse> AddAudioOutputConfigurationAsync(AddAudioOutputConfigurationRequest request)
         {
-            return this.CallAsync<AddAudioOutputConfiguration, AddAudioOutputConfigurationResponse>(null, request);
+            return this.CallAsync<AddAudioOutputConfigurationRequest, AddAudioOutputConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemoveAudioOutputConfigurationResponse> RemoveAudioOutputConfiguration(RemoveAudioOutputConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemoveAudioOutputConfigurationResponse> RemoveAudioOutputConfigurationAsync(RemoveAudioOutputConfigurationRequest request)
         {
-            return this.CallAsync<RemoveAudioOutputConfiguration, RemoveAudioOutputConfigurationResponse>(null, request);
+            return this.CallAsync<RemoveAudioOutputConfigurationRequest, RemoveAudioOutputConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AddAudioDecoderConfigurationResponse> AddAudioDecoderConfiguration(AddAudioDecoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<AddAudioDecoderConfigurationResponse> AddAudioDecoderConfigurationAsync(AddAudioDecoderConfigurationRequest request)
         {
-            return this.CallAsync<AddAudioDecoderConfiguration, AddAudioDecoderConfigurationResponse>(null, request);
+            return this.CallAsync<AddAudioDecoderConfigurationRequest, AddAudioDecoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemoveAudioDecoderConfigurationResponse> RemoveAudioDecoderConfiguration(RemoveAudioDecoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<RemoveAudioDecoderConfigurationResponse> RemoveAudioDecoderConfigurationAsync(RemoveAudioDecoderConfigurationRequest request)
         {
-            return this.CallAsync<RemoveAudioDecoderConfiguration, RemoveAudioDecoderConfigurationResponse>(null, request);
+            return this.CallAsync<RemoveAudioDecoderConfigurationRequest, RemoveAudioDecoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<DeleteProfileResponse> DeleteProfile(DeleteProfile request)
+        public virtual System.Threading.Tasks.Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request)
         {
-            return this.CallAsync<DeleteProfile, DeleteProfileResponse>(null, request);
+            return this.CallAsync<DeleteProfileRequest, DeleteProfileResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationsResponse> GetVideoSourceConfigurations(GetVideoSourceConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationsResponse> GetVideoSourceConfigurationsAsync(GetVideoSourceConfigurationsRequest request)
         {
-            return this.CallAsync<GetVideoSourceConfigurations, GetVideoSourceConfigurationsResponse>(null, request);
+            return this.CallAsync<GetVideoSourceConfigurationsRequest, GetVideoSourceConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationsResponse> GetVideoEncoderConfigurations(GetVideoEncoderConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationsResponse> GetVideoEncoderConfigurationsAsync(GetVideoEncoderConfigurationsRequest request)
         {
-            return this.CallAsync<GetVideoEncoderConfigurations, GetVideoEncoderConfigurationsResponse>(null, request);
+            return this.CallAsync<GetVideoEncoderConfigurationsRequest, GetVideoEncoderConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationsResponse> GetAudioSourceConfigurations(GetAudioSourceConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationsResponse> GetAudioSourceConfigurationsAsync(GetAudioSourceConfigurationsRequest request)
         {
-            return this.CallAsync<GetAudioSourceConfigurations, GetAudioSourceConfigurationsResponse>(null, request);
+            return this.CallAsync<GetAudioSourceConfigurationsRequest, GetAudioSourceConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationsResponse> GetAudioEncoderConfigurations(GetAudioEncoderConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationsResponse> GetAudioEncoderConfigurationsAsync(GetAudioEncoderConfigurationsRequest request)
         {
-            return this.CallAsync<GetAudioEncoderConfigurations, GetAudioEncoderConfigurationsResponse>(null, request);
+            return this.CallAsync<GetAudioEncoderConfigurationsRequest, GetAudioEncoderConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationsResponse> GetVideoAnalyticsConfigurations(GetVideoAnalyticsConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationsResponse> GetVideoAnalyticsConfigurationsAsync(GetVideoAnalyticsConfigurationsRequest request)
         {
-            return this.CallAsync<GetVideoAnalyticsConfigurations, GetVideoAnalyticsConfigurationsResponse>(null, request);
+            return this.CallAsync<GetVideoAnalyticsConfigurationsRequest, GetVideoAnalyticsConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetMetadataConfigurationsResponse> GetMetadataConfigurations(GetMetadataConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetMetadataConfigurationsResponse> GetMetadataConfigurationsAsync(GetMetadataConfigurationsRequest request)
         {
-            return this.CallAsync<GetMetadataConfigurations, GetMetadataConfigurationsResponse>(null, request);
+            return this.CallAsync<GetMetadataConfigurationsRequest, GetMetadataConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationsResponse> GetAudioOutputConfigurations(GetAudioOutputConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationsResponse> GetAudioOutputConfigurationsAsync(GetAudioOutputConfigurationsRequest request)
         {
-            return this.CallAsync<GetAudioOutputConfigurations, GetAudioOutputConfigurationsResponse>(null, request);
+            return this.CallAsync<GetAudioOutputConfigurationsRequest, GetAudioOutputConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationsResponse> GetAudioDecoderConfigurations(GetAudioDecoderConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationsResponse> GetAudioDecoderConfigurationsAsync(GetAudioDecoderConfigurationsRequest request)
         {
-            return this.CallAsync<GetAudioDecoderConfigurations, GetAudioDecoderConfigurationsResponse>(null, request);
+            return this.CallAsync<GetAudioDecoderConfigurationsRequest, GetAudioDecoderConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationResponse> GetVideoSourceConfiguration(GetVideoSourceConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationResponse> GetVideoSourceConfigurationAsync(GetVideoSourceConfigurationRequest request)
         {
-            return this.CallAsync<GetVideoSourceConfiguration, GetVideoSourceConfigurationResponse>(null, request);
+            return this.CallAsync<GetVideoSourceConfigurationRequest, GetVideoSourceConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationResponse> GetVideoEncoderConfiguration(GetVideoEncoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationResponse> GetVideoEncoderConfigurationAsync(GetVideoEncoderConfigurationRequest request)
         {
-            return this.CallAsync<GetVideoEncoderConfiguration, GetVideoEncoderConfigurationResponse>(null, request);
+            return this.CallAsync<GetVideoEncoderConfigurationRequest, GetVideoEncoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationResponse> GetAudioSourceConfiguration(GetAudioSourceConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationResponse> GetAudioSourceConfigurationAsync(GetAudioSourceConfigurationRequest request)
         {
-            return this.CallAsync<GetAudioSourceConfiguration, GetAudioSourceConfigurationResponse>(null, request);
+            return this.CallAsync<GetAudioSourceConfigurationRequest, GetAudioSourceConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationResponse> GetAudioEncoderConfiguration(GetAudioEncoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationResponse> GetAudioEncoderConfigurationAsync(GetAudioEncoderConfigurationRequest request)
         {
-            return this.CallAsync<GetAudioEncoderConfiguration, GetAudioEncoderConfigurationResponse>(null, request);
+            return this.CallAsync<GetAudioEncoderConfigurationRequest, GetAudioEncoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationResponse> GetVideoAnalyticsConfiguration(GetVideoAnalyticsConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationResponse> GetVideoAnalyticsConfigurationAsync(GetVideoAnalyticsConfigurationRequest request)
         {
-            return this.CallAsync<GetVideoAnalyticsConfiguration, GetVideoAnalyticsConfigurationResponse>(null, request);
+            return this.CallAsync<GetVideoAnalyticsConfigurationRequest, GetVideoAnalyticsConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetMetadataConfigurationResponse> GetMetadataConfiguration(GetMetadataConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetMetadataConfigurationResponse> GetMetadataConfigurationAsync(GetMetadataConfigurationRequest request)
         {
-            return this.CallAsync<GetMetadataConfiguration, GetMetadataConfigurationResponse>(null, request);
+            return this.CallAsync<GetMetadataConfigurationRequest, GetMetadataConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationResponse> GetAudioOutputConfiguration(GetAudioOutputConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationResponse> GetAudioOutputConfigurationAsync(GetAudioOutputConfigurationRequest request)
         {
-            return this.CallAsync<GetAudioOutputConfiguration, GetAudioOutputConfigurationResponse>(null, request);
+            return this.CallAsync<GetAudioOutputConfigurationRequest, GetAudioOutputConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationResponse> GetAudioDecoderConfiguration(GetAudioDecoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationResponse> GetAudioDecoderConfigurationAsync(GetAudioDecoderConfigurationRequest request)
         {
-            return this.CallAsync<GetAudioDecoderConfiguration, GetAudioDecoderConfigurationResponse>(null, request);
+            return this.CallAsync<GetAudioDecoderConfigurationRequest, GetAudioDecoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleVideoEncoderConfigurationsResponse> GetCompatibleVideoEncoderConfigurations(GetCompatibleVideoEncoderConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleVideoEncoderConfigurationsResponse> GetCompatibleVideoEncoderConfigurationsAsync(GetCompatibleVideoEncoderConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleVideoEncoderConfigurations, GetCompatibleVideoEncoderConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleVideoEncoderConfigurationsRequest, GetCompatibleVideoEncoderConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleVideoSourceConfigurationsResponse> GetCompatibleVideoSourceConfigurations(GetCompatibleVideoSourceConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleVideoSourceConfigurationsResponse> GetCompatibleVideoSourceConfigurationsAsync(GetCompatibleVideoSourceConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleVideoSourceConfigurations, GetCompatibleVideoSourceConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleVideoSourceConfigurationsRequest, GetCompatibleVideoSourceConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleAudioEncoderConfigurationsResponse> GetCompatibleAudioEncoderConfigurations(GetCompatibleAudioEncoderConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleAudioEncoderConfigurationsResponse> GetCompatibleAudioEncoderConfigurationsAsync(GetCompatibleAudioEncoderConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleAudioEncoderConfigurations, GetCompatibleAudioEncoderConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleAudioEncoderConfigurationsRequest, GetCompatibleAudioEncoderConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleAudioSourceConfigurationsResponse> GetCompatibleAudioSourceConfigurations(GetCompatibleAudioSourceConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleAudioSourceConfigurationsResponse> GetCompatibleAudioSourceConfigurationsAsync(GetCompatibleAudioSourceConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleAudioSourceConfigurations, GetCompatibleAudioSourceConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleAudioSourceConfigurationsRequest, GetCompatibleAudioSourceConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleVideoAnalyticsConfigurationsResponse> GetCompatibleVideoAnalyticsConfigurations(GetCompatibleVideoAnalyticsConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleVideoAnalyticsConfigurationsResponse> GetCompatibleVideoAnalyticsConfigurationsAsync(GetCompatibleVideoAnalyticsConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleVideoAnalyticsConfigurations, GetCompatibleVideoAnalyticsConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleVideoAnalyticsConfigurationsRequest, GetCompatibleVideoAnalyticsConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleMetadataConfigurationsResponse> GetCompatibleMetadataConfigurations(GetCompatibleMetadataConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleMetadataConfigurationsResponse> GetCompatibleMetadataConfigurationsAsync(GetCompatibleMetadataConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleMetadataConfigurations, GetCompatibleMetadataConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleMetadataConfigurationsRequest, GetCompatibleMetadataConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleAudioOutputConfigurationsResponse> GetCompatibleAudioOutputConfigurations(GetCompatibleAudioOutputConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleAudioOutputConfigurationsResponse> GetCompatibleAudioOutputConfigurationsAsync(GetCompatibleAudioOutputConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleAudioOutputConfigurations, GetCompatibleAudioOutputConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleAudioOutputConfigurationsRequest, GetCompatibleAudioOutputConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleAudioDecoderConfigurationsResponse> GetCompatibleAudioDecoderConfigurations(GetCompatibleAudioDecoderConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleAudioDecoderConfigurationsResponse> GetCompatibleAudioDecoderConfigurationsAsync(GetCompatibleAudioDecoderConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleAudioDecoderConfigurations, GetCompatibleAudioDecoderConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleAudioDecoderConfigurationsRequest, GetCompatibleAudioDecoderConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetVideoSourceConfigurationResponse> SetVideoSourceConfiguration(SetVideoSourceConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetVideoSourceConfigurationResponse> SetVideoSourceConfigurationAsync(SetVideoSourceConfigurationRequest request)
         {
-            return this.CallAsync<SetVideoSourceConfiguration, SetVideoSourceConfigurationResponse>(null, request);
+            return this.CallAsync<SetVideoSourceConfigurationRequest, SetVideoSourceConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetVideoEncoderConfigurationResponse> SetVideoEncoderConfiguration(SetVideoEncoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetVideoEncoderConfigurationResponse> SetVideoEncoderConfigurationAsync(SetVideoEncoderConfigurationRequest request)
         {
-            return this.CallAsync<SetVideoEncoderConfiguration, SetVideoEncoderConfigurationResponse>(null, request);
+            return this.CallAsync<SetVideoEncoderConfigurationRequest, SetVideoEncoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetAudioSourceConfigurationResponse> SetAudioSourceConfiguration(SetAudioSourceConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetAudioSourceConfigurationResponse> SetAudioSourceConfigurationAsync(SetAudioSourceConfigurationRequest request)
         {
-            return this.CallAsync<SetAudioSourceConfiguration, SetAudioSourceConfigurationResponse>(null, request);
+            return this.CallAsync<SetAudioSourceConfigurationRequest, SetAudioSourceConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetAudioEncoderConfigurationResponse> SetAudioEncoderConfiguration(SetAudioEncoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetAudioEncoderConfigurationResponse> SetAudioEncoderConfigurationAsync(SetAudioEncoderConfigurationRequest request)
         {
-            return this.CallAsync<SetAudioEncoderConfiguration, SetAudioEncoderConfigurationResponse>(null, request);
+            return this.CallAsync<SetAudioEncoderConfigurationRequest, SetAudioEncoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetVideoAnalyticsConfigurationResponse> SetVideoAnalyticsConfiguration(SetVideoAnalyticsConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetVideoAnalyticsConfigurationResponse> SetVideoAnalyticsConfigurationAsync(SetVideoAnalyticsConfigurationRequest request)
         {
-            return this.CallAsync<SetVideoAnalyticsConfiguration, SetVideoAnalyticsConfigurationResponse>(null, request);
+            return this.CallAsync<SetVideoAnalyticsConfigurationRequest, SetVideoAnalyticsConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetMetadataConfigurationResponse> SetMetadataConfiguration(SetMetadataConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetMetadataConfigurationResponse> SetMetadataConfigurationAsync(SetMetadataConfigurationRequest request)
         {
-            return this.CallAsync<SetMetadataConfiguration, SetMetadataConfigurationResponse>(null, request);
+            return this.CallAsync<SetMetadataConfigurationRequest, SetMetadataConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetAudioOutputConfigurationResponse> SetAudioOutputConfiguration(SetAudioOutputConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetAudioOutputConfigurationResponse> SetAudioOutputConfigurationAsync(SetAudioOutputConfigurationRequest request)
         {
-            return this.CallAsync<SetAudioOutputConfiguration, SetAudioOutputConfigurationResponse>(null, request);
+            return this.CallAsync<SetAudioOutputConfigurationRequest, SetAudioOutputConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetAudioDecoderConfigurationResponse> SetAudioDecoderConfiguration(SetAudioDecoderConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetAudioDecoderConfigurationResponse> SetAudioDecoderConfigurationAsync(SetAudioDecoderConfigurationRequest request)
         {
-            return this.CallAsync<SetAudioDecoderConfiguration, SetAudioDecoderConfigurationResponse>(null, request);
+            return this.CallAsync<SetAudioDecoderConfigurationRequest, SetAudioDecoderConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationOptionsResponse> GetVideoSourceConfigurationOptions(GetVideoSourceConfigurationOptions request)
+        public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationOptionsResponse> GetVideoSourceConfigurationOptionsAsync(GetVideoSourceConfigurationOptionsRequest request)
         {
-            return this.CallAsync<GetVideoSourceConfigurationOptions, GetVideoSourceConfigurationOptionsResponse>(null, request);
+            return this.CallAsync<GetVideoSourceConfigurationOptionsRequest, GetVideoSourceConfigurationOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationOptionsResponse> GetVideoEncoderConfigurationOptions(GetVideoEncoderConfigurationOptions request)
+        public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationOptionsResponse> GetVideoEncoderConfigurationOptionsAsync(GetVideoEncoderConfigurationOptionsRequest request)
         {
-            return this.CallAsync<GetVideoEncoderConfigurationOptions, GetVideoEncoderConfigurationOptionsResponse>(null, request);
+            return this.CallAsync<GetVideoEncoderConfigurationOptionsRequest, GetVideoEncoderConfigurationOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationOptionsResponse> GetAudioSourceConfigurationOptions(GetAudioSourceConfigurationOptions request)
+        public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationOptionsResponse> GetAudioSourceConfigurationOptionsAsync(GetAudioSourceConfigurationOptionsRequest request)
         {
-            return this.CallAsync<GetAudioSourceConfigurationOptions, GetAudioSourceConfigurationOptionsResponse>(null, request);
+            return this.CallAsync<GetAudioSourceConfigurationOptionsRequest, GetAudioSourceConfigurationOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationOptionsResponse> GetAudioEncoderConfigurationOptions(GetAudioEncoderConfigurationOptions request)
+        public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationOptionsResponse> GetAudioEncoderConfigurationOptionsAsync(GetAudioEncoderConfigurationOptionsRequest request)
         {
-            return this.CallAsync<GetAudioEncoderConfigurationOptions, GetAudioEncoderConfigurationOptionsResponse>(null, request);
+            return this.CallAsync<GetAudioEncoderConfigurationOptionsRequest, GetAudioEncoderConfigurationOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetMetadataConfigurationOptionsResponse> GetMetadataConfigurationOptions(GetMetadataConfigurationOptions request)
+        public virtual System.Threading.Tasks.Task<GetMetadataConfigurationOptionsResponse> GetMetadataConfigurationOptionsAsync(GetMetadataConfigurationOptionsRequest request)
         {
-            return this.CallAsync<GetMetadataConfigurationOptions, GetMetadataConfigurationOptionsResponse>(null, request);
+            return this.CallAsync<GetMetadataConfigurationOptionsRequest, GetMetadataConfigurationOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationOptionsResponse> GetAudioOutputConfigurationOptions(GetAudioOutputConfigurationOptions request)
+        public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationOptionsResponse> GetAudioOutputConfigurationOptionsAsync(GetAudioOutputConfigurationOptionsRequest request)
         {
-            return this.CallAsync<GetAudioOutputConfigurationOptions, GetAudioOutputConfigurationOptionsResponse>(null, request);
+            return this.CallAsync<GetAudioOutputConfigurationOptionsRequest, GetAudioOutputConfigurationOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationOptionsResponse> GetAudioDecoderConfigurationOptions(GetAudioDecoderConfigurationOptions request)
+        public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationOptionsResponse> GetAudioDecoderConfigurationOptionsAsync(GetAudioDecoderConfigurationOptionsRequest request)
         {
-            return this.CallAsync<GetAudioDecoderConfigurationOptions, GetAudioDecoderConfigurationOptionsResponse>(null, request);
+            return this.CallAsync<GetAudioDecoderConfigurationOptionsRequest, GetAudioDecoderConfigurationOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetGuaranteedNumberOfVideoEncoderInstancesResponse> GetGuaranteedNumberOfVideoEncoderInstances(GetGuaranteedNumberOfVideoEncoderInstances request)
+        public virtual System.Threading.Tasks.Task<GetGuaranteedNumberOfVideoEncoderInstancesResponse> GetGuaranteedNumberOfVideoEncoderInstancesAsync(GetGuaranteedNumberOfVideoEncoderInstancesRequest request)
         {
-            return this.CallAsync<GetGuaranteedNumberOfVideoEncoderInstances, GetGuaranteedNumberOfVideoEncoderInstancesResponse>(null, request);
+            return this.CallAsync<GetGuaranteedNumberOfVideoEncoderInstancesRequest, GetGuaranteedNumberOfVideoEncoderInstancesResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetStreamUriResponse> GetStreamUri(GetStreamUri request)
+        public virtual System.Threading.Tasks.Task<GetStreamUriResponse> GetStreamUriAsync(GetStreamUriRequest request)
         {
-            return this.CallAsync<GetStreamUri, GetStreamUriResponse>(null, request);
+            return this.CallAsync<GetStreamUriRequest, GetStreamUriResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<StartMulticastStreamingResponse> StartMulticastStreaming(StartMulticastStreaming request)
+        public virtual System.Threading.Tasks.Task<StartMulticastStreamingResponse> StartMulticastStreamingAsync(StartMulticastStreamingRequest request)
         {
-            return this.CallAsync<StartMulticastStreaming, StartMulticastStreamingResponse>(null, request);
+            return this.CallAsync<StartMulticastStreamingRequest, StartMulticastStreamingResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<StopMulticastStreamingResponse> StopMulticastStreaming(StopMulticastStreaming request)
+        public virtual System.Threading.Tasks.Task<StopMulticastStreamingResponse> StopMulticastStreamingAsync(StopMulticastStreamingRequest request)
         {
-            return this.CallAsync<StopMulticastStreaming, StopMulticastStreamingResponse>(null, request);
+            return this.CallAsync<StopMulticastStreamingRequest, StopMulticastStreamingResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetSynchronizationPointResponse> SetSynchronizationPoint(SetSynchronizationPoint request)
+        public virtual System.Threading.Tasks.Task<SetSynchronizationPointResponse> SetSynchronizationPointAsync(SetSynchronizationPointRequest request)
         {
-            return this.CallAsync<SetSynchronizationPoint, SetSynchronizationPointResponse>(null, request);
+            return this.CallAsync<SetSynchronizationPointRequest, SetSynchronizationPointResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetSnapshotUriResponse> GetSnapshotUri(GetSnapshotUri request)
+        public virtual System.Threading.Tasks.Task<GetSnapshotUriResponse> GetSnapshotUriAsync(GetSnapshotUriRequest request)
         {
-            return this.CallAsync<GetSnapshotUri, GetSnapshotUriResponse>(null, request);
+            return this.CallAsync<GetSnapshotUriRequest, GetSnapshotUriResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetVideoSourceModesResponse> GetVideoSourceModes(GetVideoSourceModes request)
+        public virtual System.Threading.Tasks.Task<GetVideoSourceModesResponse> GetVideoSourceModesAsync(GetVideoSourceModesRequest request)
         {
-            return this.CallAsync<GetVideoSourceModes, GetVideoSourceModesResponse>(null, request);
+            return this.CallAsync<GetVideoSourceModesRequest, GetVideoSourceModesResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetVideoSourceModeResponse> SetVideoSourceMode(SetVideoSourceMode request)
+        public virtual System.Threading.Tasks.Task<SetVideoSourceModeResponse> SetVideoSourceModeAsync(SetVideoSourceModeRequest request)
         {
-            return this.CallAsync<SetVideoSourceMode, SetVideoSourceModeResponse>(null, request);
+            return this.CallAsync<SetVideoSourceModeRequest, SetVideoSourceModeResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetOSDsResponse> GetOSDs(GetOSDs request)
+        public virtual System.Threading.Tasks.Task<GetOSDsResponse> GetOSDsAsync(GetOSDsRequest request)
         {
-            return this.CallAsync<GetOSDs, GetOSDsResponse>(null, request);
+            return this.CallAsync<GetOSDsRequest, GetOSDsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetOSDResponse> GetOSD(GetOSD request)
+        public virtual System.Threading.Tasks.Task<GetOSDResponse> GetOSDAsync(GetOSDRequest request)
         {
-            return this.CallAsync<GetOSD, GetOSDResponse>(null, request);
+            return this.CallAsync<GetOSDRequest, GetOSDResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetOSDOptionsResponse> GetOSDOptions(GetOSDOptions request)
+        public virtual System.Threading.Tasks.Task<GetOSDOptionsResponse> GetOSDOptionsAsync(GetOSDOptionsRequest request)
         {
-            return this.CallAsync<GetOSDOptions, GetOSDOptionsResponse>(null, request);
+            return this.CallAsync<GetOSDOptionsRequest, GetOSDOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetOSDResponse> SetOSD(SetOSD request)
+        public virtual System.Threading.Tasks.Task<SetOSDResponse> SetOSDAsync(SetOSDRequest request)
         {
-            return this.CallAsync<SetOSD, SetOSDResponse>(null, request);
+            return this.CallAsync<SetOSDRequest, SetOSDResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<CreateOSDResponse> CreateOSD(CreateOSD request)
+        public virtual System.Threading.Tasks.Task<CreateOSDResponse> CreateOSDAsync(CreateOSDRequest request)
         {
-            return this.CallAsync<CreateOSD, CreateOSDResponse>(null, request);
+            return this.CallAsync<CreateOSDRequest, CreateOSDResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<DeleteOSDResponse> DeleteOSD(DeleteOSD request)
+        public virtual System.Threading.Tasks.Task<DeleteOSDResponse> DeleteOSDAsync(DeleteOSDRequest request)
         {
-            return this.CallAsync<DeleteOSD, DeleteOSDResponse>(null, request);
+            return this.CallAsync<DeleteOSDRequest, DeleteOSDResponse>(null, request);
         }
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetServiceCapabilities
+    public class GetServiceCapabilitiesRequest
     {
     }
     
@@ -680,7 +680,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoSources
+    public class GetVideoSourcesRequest
     {
     }
     
@@ -700,13 +700,902 @@ namespace MyNs5
     /// Representation of a physical video input.
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class VideoSource
+    public class VideoSource : DeviceEntity
+    {
+        
+        /// <summary>
+        /// Frame rate in frames per second.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float Framerate;
+        
+        /// <summary>
+        /// Horizontal and vertical resolution
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VideoResolution Resolution;
+        
+        /// <summary>
+        /// Optional configuration of the image sensor.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ImagingSettings Imaging;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public VideoSourceExtension Extension;
+    }
+    
+    /// <summary>
+    /// Base class for physical entities like inputs and outputs.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class DeviceEntity
+    {
+        
+        /// <summary>
+        /// Unique identifier referencing the physical entity.
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string token;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class VideoResolution
+    {
+        
+        /// <summary>
+        /// Number of the columns of the Video image.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int Width;
+        
+        /// <summary>
+        /// Number of the lines of the Video image.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int Height;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImagingSettings
+    {
+        
+        /// <summary>
+        /// Enabled/disabled BLC mode (on/off).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public BacklightCompensation BacklightCompensation;
+        
+        /// <summary>
+        /// Image brightness (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Brightness;
+        
+        /// <summary>
+        /// Color saturation of the image (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public float ColorSaturation;
+        
+        /// <summary>
+        /// Contrast of the image (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public float Contrast;
+        
+        /// <summary>
+        /// Exposure mode of the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public Exposure Exposure;
+        
+        /// <summary>
+        /// Focus configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public FocusConfiguration Focus;
+        
+        /// <summary>
+        /// Infrared Cutoff Filter settings.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public IrCutFilterMode IrCutFilter;
+        
+        /// <summary>
+        /// Sharpness of the Video image.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public float Sharpness;
+        
+        /// <summary>
+        /// WDR settings.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public WideDynamicRange WideDynamicRange;
+        
+        /// <summary>
+        /// White balance settings.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public WhiteBalance WhiteBalance;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public ImagingSettingsExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class BacklightCompensation
+    {
+        
+        /// <summary>
+        /// Backlight compensation mode (on/off).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public BacklightCompensationMode Mode;
+        
+        /// <summary>
+        /// Optional level parameter (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Level;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum BacklightCompensationMode
+    {
+        
+        OFF,
+        
+        ON,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Exposure
+    {
+        
+        /// <summary>
+        /// 
+        ///					Exposure Mode
+        ///					Auto – Enabled the exposure algorithm on the NVT.Manual – Disabled exposure algorithm on the NVT.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ExposureMode Mode;
+        
+        /// <summary>
+        /// 
+        ///				The exposure priority mode (low noise/framerate).
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ExposurePriority Priority;
+        
+        /// <summary>
+        /// 
+        ///				Rectangular exposure mask.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Rectangle Window;
+        
+        /// <summary>
+        /// 
+        ///				Minimum value of exposure time range allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public float MinExposureTime;
+        
+        /// <summary>
+        /// 
+        ///				Maximum value of exposure time range allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public float MaxExposureTime;
+        
+        /// <summary>
+        /// 
+        ///				Minimum value of the sensor gain range that is allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public float MinGain;
+        
+        /// <summary>
+        /// 
+        ///				Maximum value of the sensor gain range that is allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public float MaxGain;
+        
+        /// <summary>
+        /// 
+        ///				Minimum value of the iris range allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public float MinIris;
+        
+        /// <summary>
+        /// 
+        ///				Maximum value of the iris range allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public float MaxIris;
+        
+        /// <summary>
+        /// 
+        ///				The fixed exposure time used by the image sensor (μs).
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public float ExposureTime;
+        
+        /// <summary>
+        /// 
+        ///				The fixed gain used by the image sensor (dB).
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public float Gain;
+        
+        /// <summary>
+        /// 
+        ///				The fixed attenuation of input light affected by the iris (dB). 0dB maps to a fully opened iris.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public float Iris;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum ExposureMode
+    {
+        
+        AUTO,
+        
+        MANUAL,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum ExposurePriority
+    {
+        
+        LowNoise,
+        
+        FrameRate,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Rectangle
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float bottom;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float top;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float right;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float left;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class FocusConfiguration
+    {
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AutoFocusMode AutoFocusMode;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float DefaultSpeed;
+        
+        /// <summary>
+        /// Parameter to set autofocus near limit (unit: meter).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public float NearLimit;
+        
+        /// <summary>
+        /// Parameter to set autofocus far limit (unit: meter).
+        ///If set to 0.0, infinity will be used.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public float FarLimit;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum AutoFocusMode
+    {
+        
+        AUTO,
+        
+        MANUAL,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum IrCutFilterMode
+    {
+        
+        ON,
+        
+        OFF,
+        
+        AUTO,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class WideDynamicRange
+    {
+        
+        /// <summary>
+        /// 
+        ///				White dynamic range (on/off)
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public WideDynamicMode Mode;
+        
+        /// <summary>
+        /// 
+        ///				Optional level parameter (unitless)
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Level;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum WideDynamicMode
+    {
+        
+        OFF,
+        
+        ON,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class WhiteBalance
+    {
+        
+        /// <summary>
+        /// Auto whitebalancing mode (auto/manual).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public WhiteBalanceMode Mode;
+        
+        /// <summary>
+        /// Rgain (unitless).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float CrGain;
+        
+        /// <summary>
+        /// Bgain (unitless).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public float CbGain;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum WhiteBalanceMode
+    {
+        
+        AUTO,
+        
+        MANUAL,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImagingSettingsExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class VideoSourceExtension
+    {
+        
+        /// <summary>
+        /// Optional configuration of the image sensor. To be used if imaging service 2.00 is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ImagingSettings20 Imaging;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VideoSourceExtension2 Extension;
+    }
+    
+    /// <summary>
+    /// Type describing the ImagingSettings of a VideoSource. The supported options and ranges can be obtained via the GetOptions command.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImagingSettings20
+    {
+        
+        /// <summary>
+        /// Enabled/disabled BLC mode (on/off).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public BacklightCompensation20 BacklightCompensation;
+        
+        /// <summary>
+        /// Image brightness (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Brightness;
+        
+        /// <summary>
+        /// Color saturation of the image (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public float ColorSaturation;
+        
+        /// <summary>
+        /// Contrast of the image (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public float Contrast;
+        
+        /// <summary>
+        /// Exposure mode of the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public Exposure20 Exposure;
+        
+        /// <summary>
+        /// Focus configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public FocusConfiguration20 Focus;
+        
+        /// <summary>
+        /// Infrared Cutoff Filter settings.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public IrCutFilterMode IrCutFilter;
+        
+        /// <summary>
+        /// Sharpness of the Video image.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public float Sharpness;
+        
+        /// <summary>
+        /// WDR settings.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public WideDynamicRange20 WideDynamicRange;
+        
+        /// <summary>
+        /// White balance settings.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public WhiteBalance20 WhiteBalance;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public ImagingSettingsExtension20 Extension;
+    }
+    
+    /// <summary>
+    /// Type describing whether BLC mode is enabled or disabled (on/off).
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class BacklightCompensation20
+    {
+        
+        /// <summary>
+        /// Backlight compensation mode (on/off).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public BacklightCompensationMode Mode;
+        
+        /// <summary>
+        /// Optional level parameter (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Level;
+    }
+    
+    /// <summary>
+    /// Type describing the exposure settings.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Exposure20
+    {
+        
+        /// <summary>
+        /// 
+        ///				Exposure Mode
+        ///				Auto – Enabled the exposure algorithm on the device.Manual – Disabled exposure algorithm on the device.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ExposureMode Mode;
+        
+        /// <summary>
+        /// 
+        ///				The exposure priority mode (low noise/framerate).
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ExposurePriority Priority;
+        
+        /// <summary>
+        /// 
+        ///				Rectangular exposure mask.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public Rectangle Window;
+        
+        /// <summary>
+        /// 
+        ///				Minimum value of exposure time range allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public float MinExposureTime;
+        
+        /// <summary>
+        /// 
+        ///				Maximum value of exposure time range allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public float MaxExposureTime;
+        
+        /// <summary>
+        /// 
+        ///				Minimum value of the sensor gain range that is allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public float MinGain;
+        
+        /// <summary>
+        /// 
+        ///				Maximum value of the sensor gain range that is allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public float MaxGain;
+        
+        /// <summary>
+        /// 
+        ///				Minimum value of the iris range allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public float MinIris;
+        
+        /// <summary>
+        /// 
+        ///				Maximum value of the iris range allowed to be used by the algorithm.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public float MaxIris;
+        
+        /// <summary>
+        /// 
+        ///				The fixed exposure time used by the image sensor (μs).
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public float ExposureTime;
+        
+        /// <summary>
+        /// 
+        ///				The fixed gain used by the image sensor (dB).
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public float Gain;
+        
+        /// <summary>
+        /// 
+        ///				The fixed attenuation of input light affected by the iris (dB). 0dB maps to a fully opened iris.
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public float Iris;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class FocusConfiguration20
+    {
+        
+        /// <summary>
+        /// 
+        ///			Mode of auto fucus.
+        ///			AUTOMANUAL
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AutoFocusMode AutoFocusMode;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float DefaultSpeed;
+        
+        /// <summary>
+        /// Parameter to set autofocus near limit (unit: meter).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public float NearLimit;
+        
+        /// <summary>
+        /// Parameter to set autofocus far limit (unit: meter).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public float FarLimit;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public FocusConfiguration20Extension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class FocusConfiguration20Extension
+    {
+    }
+    
+    /// <summary>
+    /// Type describing whether WDR mode is enabled or disabled (on/off).
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class WideDynamicRange20
+    {
+        
+        /// <summary>
+        /// Wide dynamic range mode (on/off).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public WideDynamicMode Mode;
+        
+        /// <summary>
+        /// Optional level parameter (unit unspecified).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Level;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class WhiteBalance20
+    {
+        
+        /// <summary>
+        /// 
+        ///				'AUTO' or 'MANUAL'
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public WhiteBalanceMode Mode;
+        
+        /// <summary>
+        /// 
+        ///				Rgain (unitless).
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float CrGain;
+        
+        /// <summary>
+        /// 
+        ///				Bgain (unitless).
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public float CbGain;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public WhiteBalance20Extension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class WhiteBalance20Extension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImagingSettingsExtension20
+    {
+        
+        /// <summary>
+        /// Optional element to configure Image Stabilization feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ImageStabilization ImageStabilization;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ImagingSettingsExtension202 Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImageStabilization
+    {
+        
+        /// <summary>
+        /// Parameter to enable/disable Image Stabilization feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ImageStabilizationMode Mode;
+        
+        /// <summary>
+        /// Optional level parameter (unit unspecified)
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Level;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ImageStabilizationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum ImageStabilizationMode
+    {
+        
+        OFF,
+        
+        ON,
+        
+        AUTO,
+        
+        Extended,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImageStabilizationExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImagingSettingsExtension202
+    {
+        
+        /// <summary>
+        /// An optional parameter applied to only auto mode to adjust timing of toggling Ir cut filter.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IrCutFilterAutoAdjustment[] IrCutFilterAutoAdjustment;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ImagingSettingsExtension203 Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class IrCutFilterAutoAdjustment
+    {
+        
+        /// <summary>
+        /// Specifies which boundaries to automatically toggle Ir cut filter following parameters are applied to. Its options shall be chosen from tt:IrCutFilterAutoBoundaryType.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string BoundaryType;
+        
+        /// <summary>
+        /// Adjusts boundary exposure level for toggling Ir cut filter to on/off specified with unitless normalized value from +1.0 to -1.0. Zero is default and -1.0 is the darkest adjustment (Unitless).
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float BoundaryOffset;
+        
+        /// <summary>
+        /// Delay time of toggling Ir cut filter to on/off after crossing of the boundary exposure levels.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ResponseTime;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public IrCutFilterAutoAdjustmentExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class IrCutFilterAutoAdjustmentExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImagingSettingsExtension203
+    {
+        
+        /// <summary>
+        /// Optional element to configure Image Contrast Compensation.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ToneCompensation ToneCompensation;
+        
+        /// <summary>
+        /// Optional element to configure Image Defogging.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Defogging Defogging;
+        
+        /// <summary>
+        /// Optional element to configure Image Noise Reduction.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public NoiseReduction NoiseReduction;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public ImagingSettingsExtension204 Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ToneCompensation
+    {
+        
+        /// <summary>
+        /// Parameter to enable/disable or automatic ToneCompensation feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Mode;
+        
+        /// <summary>
+        /// Optional level parameter specified with unitless normalized value from 0.0 to +1.0.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Level;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ToneCompensationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ToneCompensationExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Defogging
+    {
+        
+        /// <summary>
+        /// Parameter to enable/disable or automatic Defogging feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Mode;
+        
+        /// <summary>
+        /// Optional level parameter specified with unitless normalized value from 0.0 to +1.0.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Level;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public DefoggingExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class DefoggingExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class NoiseReduction
+    {
+        
+        /// <summary>
+        /// Level parameter specified with unitless normalized value from 0.0 to +1.0. Level=0 means no noise reduction or minimal noise reduction.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float Level;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ImagingSettingsExtension204
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class VideoSourceExtension2
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioSources
+    public class GetAudioSourcesRequest
     {
     }
     
@@ -726,13 +1615,19 @@ namespace MyNs5
     /// Representation of a physical audio input.
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class AudioSource
+    public class AudioSource : DeviceEntity
     {
+        
+        /// <summary>
+        /// number of available audio channels. (1: mono, 2: stereo) 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int Channels;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioOutputs
+    public class GetAudioOutputsRequest
     {
     }
     
@@ -752,13 +1647,13 @@ namespace MyNs5
     /// Representation of a physical audio outputs.
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class AudioOutput
+    public class AudioOutput : DeviceEntity
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class CreateProfile
+    public class CreateProfileRequest
     {
         
         /// <summary>
@@ -870,37 +1765,880 @@ namespace MyNs5
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class VideoSourceConfiguration
+    public class VideoSourceConfiguration : ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// Reference to the physical input.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string SourceToken;
+        
+        /// <summary>
+        /// Rectangle specifying the Video capturing area. The capturing area shall not be larger than the whole Video source area.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public IntRectangle Bounds;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public VideoSourceConfigurationExtension Extension;
+    }
+    
+    /// <summary>
+    /// Base type defining the common properties of a configuration.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// Token that uniquely refernces this configuration. Length up to 64 characters.
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string token;
+        
+        /// <summary>
+        /// User readable name. Length up to 64 characters.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Name;
+        
+        /// <summary>
+        /// Number of internal references currently using this configuration. This parameter is read-only and cannot be changed by a set request. For example the value increases if the configuration is added to a media profile or attached to a PaneConfiguration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int UseCount;
+    }
+    
+    /// <summary>
+    /// Rectangle defined by lower left corner position and size. Units are pixel.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class IntRectangle
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int x;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int y;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int width;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int height;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class VideoSourceConfigurationExtension
+    {
+        
+        /// <summary>
+        /// Optional element to configure rotation of captured image.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Rotate Rotate;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VideoSourceConfigurationExtension2 Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Rotate
+    {
+        
+        /// <summary>
+        /// Parameter to enable/disable Rotation feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public RotateMode Mode;
+        
+        /// <summary>
+        /// Optional parameter to configure how much degree of clockwise rotation of image  for On mode. Omitting this parameter for On mode means 180 degree rotation.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int Degree;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public RotateExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum RotateMode
+    {
+        
+        OFF,
+        
+        ON,
+        
+        AUTO,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class RotateExtension
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class AudioSourceConfiguration
+    public class VideoSourceConfigurationExtension2
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class VideoEncoderConfiguration
+    public class AudioSourceConfiguration : ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// Token of the Audio Source the configuration applies to
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string SourceToken;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class VideoEncoderConfiguration : ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// Used video codec, either Jpeg, H.264 or Mpeg4
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public VideoEncoding Encoding;
+        
+        /// <summary>
+        /// Configured video resolution
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public VideoResolution Resolution;
+        
+        /// <summary>
+        /// Relative value for the video quantizers and the quality of the video. A high value within supported quality range means higher quality
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public float Quality;
+        
+        /// <summary>
+        /// Optional element to configure rate control related parameters.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public VideoRateControl RateControl;
+        
+        /// <summary>
+        /// Optional element to configure Mpeg4 related parameters.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public Mpeg4Configuration MPEG4;
+        
+        /// <summary>
+        /// Optional element to configure H.264 related parameters.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public H264Configuration H264;
+        
+        /// <summary>
+        /// Defines the multicast settings that could be used for video streaming.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public MulticastConfiguration Multicast;
+        
+        /// <summary>
+        /// The rtsp session timeout for the related video stream
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string SessionTimeout;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum VideoEncoding
+    {
+        
+        JPEG,
+        
+        MPEG4,
+        
+        H264,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class VideoRateControl
+    {
+        
+        /// <summary>
+        /// Maximum output framerate in fps. If an EncodingInterval is provided the resulting encoded framerate will be reduced by the given factor.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int FrameRateLimit;
+        
+        /// <summary>
+        /// Interval at which images are encoded and transmitted. (A value of 1 means that every frame is encoded, a value of 2 means that every 2nd frame is encoded ...)
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int EncodingInterval;
+        
+        /// <summary>
+        /// the maximum output bitrate in kbps
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int BitrateLimit;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Mpeg4Configuration
+    {
+        
+        /// <summary>
+        /// Determines the interval in which the I-Frames will be coded. An entry of 1 indicates I-Frames are continuously generated. An entry of 2 indicates that every 2nd image is an I-Frame, and 3 only every 3rd frame, etc. The frames in between are coded as P or B Frames.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int GovLength;
+        
+        /// <summary>
+        /// the Mpeg4 profile, either simple profile (SP) or advanced simple profile (ASP)
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Mpeg4Profile Mpeg4Profile;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum Mpeg4Profile
+    {
+        
+        SP,
+        
+        ASP,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class H264Configuration
+    {
+        
+        /// <summary>
+        /// Group of Video frames length. Determines typically the interval in which the I-Frames will be coded. An entry of 1 indicates I-Frames are continuously generated. An entry of 2 indicates that every 2nd image is an I-Frame, and 3 only every 3rd frame, etc. The frames in between are coded as P or B Frames.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int GovLength;
+        
+        /// <summary>
+        /// the H.264 profile, either baseline, main, extended or high
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public H264Profile H264Profile;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum H264Profile
+    {
+        
+        Baseline,
+        
+        Main,
+        
+        Extended,
+        
+        High,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class MulticastConfiguration
+    {
+        
+        /// <summary>
+        /// The multicast address (if this address is set to 0 no multicast streaming is enaled)
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IPAddress Address;
+        
+        /// <summary>
+        /// The RTP mutlicast destination port. A device may support RTCP. In this case the port value shall be even to allow the corresponding RTCP stream to be mapped to the next higher (odd) destination port number as defined in the RTSP specification.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int Port;
+        
+        /// <summary>
+        /// In case of IPv6 the TTL value is assumed as the hop limit. Note that for IPV6 and administratively scoped IPv4 multicast the primary use for hop limit / TTL is to prevent packets from (endlessly) circulating and not limiting scope. In these cases the address contains the scope.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int TTL;
+        
+        /// <summary>
+        /// Read only property signalling that streaming is persistant. Use the methods StartMulticastStreaming and StopMulticastStreaming to switch its state.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool AutoStart;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class IPAddress
+    {
+        
+        /// <summary>
+        /// Indicates if the address is an IPv4 or IPv6 address.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IPType Type;
+        
+        /// <summary>
+        /// IPv4 address.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string IPv4Address;
+        
+        /// <summary>
+        /// IPv6 address
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string IPv6Address;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum IPType
+    {
+        
+        IPv4,
+        
+        IPv6,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class AudioEncoderConfiguration : ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// Audio codec used for encoding the audio input (either G.711, G.726 or AAC)
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AudioEncoding Encoding;
+        
+        /// <summary>
+        /// The output bitrate in kbps.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int Bitrate;
+        
+        /// <summary>
+        /// The output sample rate in kHz.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int SampleRate;
+        
+        /// <summary>
+        /// Defines the multicast settings that could be used for video streaming.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public MulticastConfiguration Multicast;
+        
+        /// <summary>
+        /// The rtsp session timeout for the related audio stream
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string SessionTimeout;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum AudioEncoding
+    {
+        
+        G711,
+        
+        G726,
+        
+        AAC,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class VideoAnalyticsConfiguration : ConfigurationEntity
+    {
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AnalyticsEngineConfiguration AnalyticsEngineConfiguration;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public RuleEngineConfiguration RuleEngineConfiguration;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class AnalyticsEngineConfiguration
+    {
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Config[] AnalyticsModule;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public AnalyticsEngineConfigurationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Config
+    {
+        
+        /// <summary>
+        /// Name of the configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name;
+        
+        /// <summary>
+        /// Type of the configuration represented by a unique QName. The Type characterizes a ConfigDescription defining the Parameters.
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.Xml.XmlQualifiedName Type;
+        
+        /// <summary>
+        /// List of configuration parameters as defined in the correspding description.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ItemList Parameters;
+    }
+    
+    /// <summary>
+    /// 
+    ///			List of parameters according to the corresponding ItemListDescription.
+    ///			Each item in the list shall have a unique name.
+    ///		
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ItemList
+    {
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public ItemListExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ItemListExtension
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class AudioEncoderConfiguration
+    public class AnalyticsEngineConfigurationExtension
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class VideoAnalyticsConfiguration
+    public class RuleEngineConfiguration
+    {
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Config[] Rule;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public RuleEngineConfigurationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class RuleEngineConfigurationExtension
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class PTZConfiguration
+    public class PTZConfiguration : ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// 
+        ///                A mandatory reference to the PTZ Node that the PTZ Configuration belongs to.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string NodeToken;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports absolute Pan/Tilt movements, it shall specify one Absolute Pan/Tilt Position Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DefaultAbsolutePantTiltPositionSpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports absolute zoom movements, it shall specify one Absolute Zoom Position Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string DefaultAbsoluteZoomPositionSpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports relative Pan/Tilt movements, it shall specify one RelativePan/Tilt Translation Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string DefaultRelativePanTiltTranslationSpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports relative zoom movements, it shall specify one Relative Zoom Translation Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string DefaultRelativeZoomTranslationSpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports continuous Pan/Tilt movements, it shall specify one Continuous Pan/Tilt Velocity Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string DefaultContinuousPanTiltVelocitySpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports continuous zoom movements, it shall specify one Continuous Zoom Velocity Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string DefaultContinuousZoomVelocitySpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports absolute or relative PTZ movements, it shall specify corresponding default Pan/Tilt and Zoom speeds.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public PTZSpeed DefaultPTZSpeed;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports continuous movements, it shall specify a default timeout, after which the movement stops.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string DefaultPTZTimeout;
+        
+        /// <summary>
+        /// 
+        ///                The Pan/Tilt limits element should be present for a PTZ Node that supports an absolute Pan/Tilt. If the element is present it signals the support for configurable Pan/Tilt limits. If limits are enabled, the Pan/Tilt movements shall always stay within the specified range. The Pan/Tilt limits are disabled by setting the limits to –INF or +INF.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public PanTiltLimits PanTiltLimits;
+        
+        /// <summary>
+        /// 
+        ///                The Zoom limits element should be present for a PTZ Node that supports absolute zoom. If the element is present it signals the supports for configurable Zoom limits. If limits are enabled the zoom movements shall always stay within the specified range. The Zoom limits are disabled by settings the limits to -INF and +INF.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public ZoomLimits ZoomLimits;
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public PTZConfigurationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZSpeed
+    {
+        
+        /// <summary>
+        /// Pan and tilt speed. The x component corresponds to pan and the y component to tilt. If omitted in a request, the current (if any) PanTilt movement should not be affected. 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Vector2D PanTilt;
+        
+        /// <summary>
+        /// 
+        ///            A zoom speed. If omitted in a request, the current (if any) Zoom movement should not be affected.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Vector1D Zoom;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Vector2D
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float x;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float y;
+        
+        /// <summary>
+        /// 
+        ///  				Pan/tilt coordinate space selector. The following options are defined: http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string space;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Vector1D
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float x;
+        
+        /// <summary>
+        /// 
+        ///  				Pan/tilt coordinate space selector. The following options are defined: http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string space;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PanTiltLimits
+    {
+        
+        /// <summary>
+        /// 
+        ///            A range of pan tilt limits.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Space2DDescription Range;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Space2DDescription
+    {
+        
+        /// <summary>
+        /// 
+        ///            A URI of coordinate systems.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string URI;
+        
+        /// <summary>
+        /// 
+        ///            A range of x-axis.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public FloatRange XRange;
+        
+        /// <summary>
+        /// 
+        ///            A range of y-axis.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public FloatRange YRange;
+    }
+    
+    /// <summary>
+    /// Range of values greater equal Min value and less equal Max value.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class FloatRange
+    {
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public float Min;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public float Max;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ZoomLimits
+    {
+        
+        /// <summary>
+        /// 
+        ///            A range of zoom limit
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Space1DDescription Range;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Space1DDescription
+    {
+        
+        /// <summary>
+        /// 
+        ///            A URI of coordinate systems.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string URI;
+        
+        /// <summary>
+        /// 
+        ///            A range of x-axis.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public FloatRange XRange;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZConfigurationExtension
+    {
+        
+        /// <summary>
+        /// Optional element to configure PT Control Direction related features.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTControlDirection PTControlDirection;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PTZConfigurationExtension2 Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTControlDirection
+    {
+        
+        /// <summary>
+        /// Optional element to configure related parameters for E-Flip.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public EFlip EFlip;
+        
+        /// <summary>
+        /// Optional element to configure related parameters for reversing of PT Control Direction.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Reverse Reverse;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public PTControlDirectionExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class EFlip
+    {
+        
+        /// <summary>
+        /// Parameter to enable/disable E-Flip feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public EFlipMode Mode;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum EFlipMode
+    {
+        
+        OFF,
+        
+        ON,
+        
+        Extended,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Reverse
+    {
+        
+        /// <summary>
+        /// Parameter to enable/disable Reverse feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ReverseMode Mode;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum ReverseMode
+    {
+        
+        OFF,
+        
+        ON,
+        
+        AUTO,
+        
+        Extended,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTControlDirectionExtension
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class MetadataConfiguration
+    public class PTZConfigurationExtension2
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class MetadataConfiguration : ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// optional element to configure which PTZ related data is to include in the metadata stream
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTZFilter PTZStatus;
+        
+        /// <summary>
+        /// Optional element to configure the streaming of events. A client might be interested in receiving all, 
+        ///								none or some of the events produced by the device:To get all events: Include the Events element but do not include a filter.To get no events: Do not include the Events element.To get only some events: Include the Events element and include a filter in the element.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EventSubscription Events;
+        
+        /// <summary>
+        /// Defines whether the streamed metadata will include metadata from the analytics engines (video, cell motion, audio etc.)
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool Analytics;
+        
+        /// <summary>
+        /// Defines the multicast settings that could be used for video streaming.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public MulticastConfiguration Multicast;
+        
+        /// <summary>
+        /// The rtsp session timeout for the related audio stream
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string SessionTimeout;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AnalyticsEngineConfiguration AnalyticsEngineConfiguration;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public MetadataConfigurationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZFilter
+    {
+        
+        /// <summary>
+        /// True if the metadata stream shall contain the PTZ status (IDLE, MOVING or UNKNOWN)
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool Status;
+        
+        /// <summary>
+        /// True if the metadata stream shall contain the PTZ position
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool Position;
+    }
+    
+    /// <summary>
+    /// Subcription handling in the same way as base notification subscription.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class EventSubscription
+    {
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public FilterType Filter;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://docs.oasis-open.org/wsn/b-2")]
+    public class FilterType
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class MetadataConfigurationExtension
     {
     }
     
@@ -925,8 +2663,39 @@ namespace MyNs5
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class AudioOutputConfiguration
+    public class AudioOutputConfiguration : ConfigurationEntity
     {
+        
+        /// <summary>
+        /// Token of the phsycial Audio output.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string OutputToken;
+        
+        /// <summary>
+        /// 
+        ///						An audio channel MAY support different types of audio transmission. While for full duplex
+        ///						operation no special handling is required, in half duplex operation the transmission direction
+        ///						needs to be switched.
+        ///						The optional SendPrimacy parameter inside the AudioOutputConfiguration indicates which
+        ///						direction is currently active. An NVC can switch between different modes by setting the
+        ///						AudioOutputConfiguration.
+        ///						The following modes for the Send-Primacy are defined:www.onvif.org/ver20/HalfDuplex/Server
+        ///						The server is allowed to send audio data to the client. The client shall not send
+        ///						audio data via the backchannel to the NVT in this mode.www.onvif.org/ver20/HalfDuplex/Client
+        ///						The client is allowed to send audio data via the backchannel to the server. The
+        ///						NVT shall not send audio data to the client in this mode.www.onvif.org/ver20/HalfDuplex/Auto
+        ///							It is up to the device how to deal with sending and receiving audio data.
+        ///						Acoustic echo cancellation is out of ONVIF scope.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string SendPrimacy;
+        
+        /// <summary>
+        /// Volume setting of the output. The applicable range is defined via the option AudioOutputOptions.OutputLevelRange.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int OutputLevel;
     }
     
     /// <summary>
@@ -934,7 +2703,7 @@ namespace MyNs5
     ///decoding .A decoder shall decode every data it receives (according to its capabilities).
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class AudioDecoderConfiguration
+    public class AudioDecoderConfiguration : ConfigurationEntity
     {
     }
     
@@ -945,7 +2714,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetProfile
+    public class GetProfileRequest
     {
         
         /// <summary>
@@ -969,7 +2738,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetProfiles
+    public class GetProfilesRequest
     {
     }
     
@@ -987,7 +2756,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddVideoEncoderConfiguration
+    public class AddVideoEncoderConfigurationRequest
     {
         
         /// <summary>
@@ -1011,7 +2780,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemoveVideoEncoderConfiguration
+    public class RemoveVideoEncoderConfigurationRequest
     {
         
         /// <summary>
@@ -1030,7 +2799,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddVideoSourceConfiguration
+    public class AddVideoSourceConfigurationRequest
     {
         
         /// <summary>
@@ -1054,7 +2823,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemoveVideoSourceConfiguration
+    public class RemoveVideoSourceConfigurationRequest
     {
         
         /// <summary>
@@ -1073,7 +2842,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddAudioEncoderConfiguration
+    public class AddAudioEncoderConfigurationRequest
     {
         
         /// <summary>
@@ -1097,7 +2866,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemoveAudioEncoderConfiguration
+    public class RemoveAudioEncoderConfigurationRequest
     {
         
         /// <summary>
@@ -1116,7 +2885,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddAudioSourceConfiguration
+    public class AddAudioSourceConfigurationRequest
     {
         
         /// <summary>
@@ -1140,7 +2909,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemoveAudioSourceConfiguration
+    public class RemoveAudioSourceConfigurationRequest
     {
         
         /// <summary>
@@ -1159,7 +2928,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddPTZConfiguration
+    public class AddPTZConfigurationRequest
     {
         
         /// <summary>
@@ -1183,7 +2952,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemovePTZConfiguration
+    public class RemovePTZConfigurationRequest
     {
         
         /// <summary>
@@ -1202,7 +2971,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddVideoAnalyticsConfiguration
+    public class AddVideoAnalyticsConfigurationRequest
     {
         
         /// <summary>
@@ -1226,7 +2995,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemoveVideoAnalyticsConfiguration
+    public class RemoveVideoAnalyticsConfigurationRequest
     {
         
         /// <summary>
@@ -1245,7 +3014,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddMetadataConfiguration
+    public class AddMetadataConfigurationRequest
     {
         
         /// <summary>
@@ -1269,7 +3038,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemoveMetadataConfiguration
+    public class RemoveMetadataConfigurationRequest
     {
         
         /// <summary>
@@ -1288,7 +3057,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddAudioOutputConfiguration
+    public class AddAudioOutputConfigurationRequest
     {
         
         /// <summary>
@@ -1312,7 +3081,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemoveAudioOutputConfiguration
+    public class RemoveAudioOutputConfigurationRequest
     {
         
         /// <summary>
@@ -1331,7 +3100,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class AddAudioDecoderConfiguration
+    public class AddAudioDecoderConfigurationRequest
     {
         
         /// <summary>
@@ -1355,7 +3124,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class RemoveAudioDecoderConfiguration
+    public class RemoveAudioDecoderConfigurationRequest
     {
         
         /// <summary>
@@ -1373,7 +3142,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class DeleteProfile
+    public class DeleteProfileRequest
     {
         
         /// <summary>
@@ -1391,7 +3160,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoSourceConfigurations
+    public class GetVideoSourceConfigurationsRequest
     {
     }
     
@@ -1409,7 +3178,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoEncoderConfigurations
+    public class GetVideoEncoderConfigurationsRequest
     {
     }
     
@@ -1427,7 +3196,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioSourceConfigurations
+    public class GetAudioSourceConfigurationsRequest
     {
     }
     
@@ -1445,7 +3214,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioEncoderConfigurations
+    public class GetAudioEncoderConfigurationsRequest
     {
     }
     
@@ -1463,7 +3232,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoAnalyticsConfigurations
+    public class GetVideoAnalyticsConfigurationsRequest
     {
     }
     
@@ -1481,7 +3250,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetMetadataConfigurations
+    public class GetMetadataConfigurationsRequest
     {
     }
     
@@ -1499,7 +3268,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioOutputConfigurations
+    public class GetAudioOutputConfigurationsRequest
     {
     }
     
@@ -1517,7 +3286,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioDecoderConfigurations
+    public class GetAudioDecoderConfigurationsRequest
     {
     }
     
@@ -1535,7 +3304,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoSourceConfiguration
+    public class GetVideoSourceConfigurationRequest
     {
         
         /// <summary>
@@ -1559,7 +3328,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoEncoderConfiguration
+    public class GetVideoEncoderConfigurationRequest
     {
         
         /// <summary>
@@ -1583,7 +3352,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioSourceConfiguration
+    public class GetAudioSourceConfigurationRequest
     {
         
         /// <summary>
@@ -1607,7 +3376,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioEncoderConfiguration
+    public class GetAudioEncoderConfigurationRequest
     {
         
         /// <summary>
@@ -1631,7 +3400,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoAnalyticsConfiguration
+    public class GetVideoAnalyticsConfigurationRequest
     {
         
         /// <summary>
@@ -1655,7 +3424,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetMetadataConfiguration
+    public class GetMetadataConfigurationRequest
     {
         
         /// <summary>
@@ -1679,7 +3448,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioOutputConfiguration
+    public class GetAudioOutputConfigurationRequest
     {
         
         /// <summary>
@@ -1703,7 +3472,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioDecoderConfiguration
+    public class GetAudioDecoderConfigurationRequest
     {
         
         /// <summary>
@@ -1727,7 +3496,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetCompatibleVideoEncoderConfigurations
+    public class GetCompatibleVideoEncoderConfigurationsRequest
     {
         
         /// <summary>
@@ -1751,7 +3520,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetCompatibleVideoSourceConfigurations
+    public class GetCompatibleVideoSourceConfigurationsRequest
     {
         
         /// <summary>
@@ -1775,7 +3544,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetCompatibleAudioEncoderConfigurations
+    public class GetCompatibleAudioEncoderConfigurationsRequest
     {
         
         /// <summary>
@@ -1799,7 +3568,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetCompatibleAudioSourceConfigurations
+    public class GetCompatibleAudioSourceConfigurationsRequest
     {
         
         /// <summary>
@@ -1823,7 +3592,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetCompatibleVideoAnalyticsConfigurations
+    public class GetCompatibleVideoAnalyticsConfigurationsRequest
     {
         
         /// <summary>
@@ -1847,7 +3616,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetCompatibleMetadataConfigurations
+    public class GetCompatibleMetadataConfigurationsRequest
     {
         
         /// <summary>
@@ -1871,7 +3640,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetCompatibleAudioOutputConfigurations
+    public class GetCompatibleAudioOutputConfigurationsRequest
     {
         
         /// <summary>
@@ -1895,7 +3664,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetCompatibleAudioDecoderConfigurations
+    public class GetCompatibleAudioDecoderConfigurationsRequest
     {
         
         /// <summary>
@@ -1919,7 +3688,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetVideoSourceConfiguration
+    public class SetVideoSourceConfigurationRequest
     {
         
         /// <summary>
@@ -1943,7 +3712,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetVideoEncoderConfiguration
+    public class SetVideoEncoderConfigurationRequest
     {
         
         /// <summary>
@@ -1967,7 +3736,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetAudioSourceConfiguration
+    public class SetAudioSourceConfigurationRequest
     {
         
         /// <summary>
@@ -1991,7 +3760,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetAudioEncoderConfiguration
+    public class SetAudioEncoderConfigurationRequest
     {
         
         /// <summary>
@@ -2015,7 +3784,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetVideoAnalyticsConfiguration
+    public class SetVideoAnalyticsConfigurationRequest
     {
         
         /// <summary>
@@ -2039,7 +3808,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetMetadataConfiguration
+    public class SetMetadataConfigurationRequest
     {
         
         /// <summary>
@@ -2063,7 +3832,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetAudioOutputConfiguration
+    public class SetAudioOutputConfigurationRequest
     {
         
         /// <summary>
@@ -2087,7 +3856,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetAudioDecoderConfiguration
+    public class SetAudioDecoderConfigurationRequest
     {
         
         /// <summary>
@@ -2111,7 +3880,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoSourceConfigurationOptions
+    public class GetVideoSourceConfigurationOptionsRequest
     {
         
         /// <summary>
@@ -2227,7 +3996,7 @@ namespace MyNs5
         /// Supported options of Rotate mode parameter.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Mode;
+        public RotateMode Mode;
         
         /// <summary>
         /// List of supported degree value for rotation.
@@ -2262,7 +4031,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoEncoderConfigurationOptions
+    public class GetVideoEncoderConfigurationOptionsRequest
     {
         
         /// <summary>
@@ -2343,23 +4112,6 @@ namespace MyNs5
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class VideoResolution
-    {
-        
-        /// <summary>
-        /// Number of the columns of the Video image.
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int Width;
-        
-        /// <summary>
-        /// Number of the lines of the Video image.
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public int Height;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
     public class Mpeg4Options
     {
         
@@ -2391,7 +4143,7 @@ namespace MyNs5
         /// List of supported MPEG-4 profiles.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string Mpeg4ProfilesSupported;
+        public Mpeg4Profile Mpeg4ProfilesSupported;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
@@ -2426,7 +4178,7 @@ namespace MyNs5
         /// List of supported H.264 profiles.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string H264ProfilesSupported;
+        public H264Profile H264ProfilesSupported;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
@@ -2456,18 +4208,36 @@ namespace MyNs5
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class JpegOptions2
+    public class JpegOptions2 : JpegOptions
     {
+        
+        /// <summary>
+        /// Supported range of encoded bitrate in kbps.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IntRange BitrateRange;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class Mpeg4Options2
+    public class Mpeg4Options2 : Mpeg4Options
     {
+        
+        /// <summary>
+        /// Supported range of encoded bitrate in kbps.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IntRange BitrateRange;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class H264Options2
+    public class H264Options2 : H264Options
     {
+        
+        /// <summary>
+        /// Supported range of encoded bitrate in kbps.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IntRange BitrateRange;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
@@ -2477,7 +4247,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioSourceConfigurationOptions
+    public class GetAudioSourceConfigurationOptionsRequest
     {
         
         /// <summary>
@@ -2526,7 +4296,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioEncoderConfigurationOptions
+    public class GetAudioEncoderConfigurationOptionsRequest
     {
         
         /// <summary>
@@ -2573,7 +4343,7 @@ namespace MyNs5
         /// The enoding used for audio data (either G.711, G.726 or AAC)
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Encoding;
+        public AudioEncoding Encoding;
         
         /// <summary>
         /// List of supported bitrates in kbps for the specified Encoding
@@ -2590,7 +4360,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetMetadataConfigurationOptions
+    public class GetMetadataConfigurationOptionsRequest
     {
         
         /// <summary>
@@ -2687,7 +4457,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioOutputConfigurationOptions
+    public class GetAudioOutputConfigurationOptionsRequest
     {
         
         /// <summary>
@@ -2753,7 +4523,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetAudioDecoderConfigurationOptions
+    public class GetAudioDecoderConfigurationOptionsRequest
     {
         
         /// <summary>
@@ -2865,7 +4635,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetGuaranteedNumberOfVideoEncoderInstances
+    public class GetGuaranteedNumberOfVideoEncoderInstancesRequest
     {
         
         /// <summary>
@@ -2907,7 +4677,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetStreamUri
+    public class GetStreamUriRequest
     {
         
         /// <summary>
@@ -2931,10 +4701,19 @@ namespace MyNs5
         /// Defines if a multicast or unicast stream is requested
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Stream;
+        public StreamType Stream;
         
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public Transport Transport;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum StreamType
+    {
+        
+        RTPUnicast,
+        
+        RTPMulticast,
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
@@ -2945,13 +4724,26 @@ namespace MyNs5
         /// Defines the network protocol for streaming, either UDP=RTP/UDP, RTSP=RTP/RTSP/TCP or HTTP=RTP/RTSP/HTTP/TCP 
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Protocol;
+        public TransportProtocol Protocol;
         
         /// <summary>
         /// Optional element to describe further tunnel options. This element is normally not needed 
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public Transport Tunnel;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum TransportProtocol
+    {
+        
+        UDP,
+        
+        TCP,
+        
+        RTSP,
+        
+        HTTP,
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
@@ -2997,7 +4789,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class StartMulticastStreaming
+    public class StartMulticastStreamingRequest
     {
         
         /// <summary>
@@ -3015,7 +4807,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class StopMulticastStreaming
+    public class StopMulticastStreamingRequest
     {
         
         /// <summary>
@@ -3033,7 +4825,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetSynchronizationPoint
+    public class SetSynchronizationPointRequest
     {
         
         /// <summary>
@@ -3051,7 +4843,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetSnapshotUri
+    public class GetSnapshotUriRequest
     {
         
         /// <summary>
@@ -3075,7 +4867,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetVideoSourceModes
+    public class GetVideoSourceModesRequest
     {
         
         /// <summary>
@@ -3154,7 +4946,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetVideoSourceMode
+    public class SetVideoSourceModeRequest
     {
         
         /// <summary>
@@ -3184,7 +4976,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetOSDs
+    public class GetOSDsRequest
     {
         
         /// <summary>
@@ -3207,13 +4999,208 @@ namespace MyNs5
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class OSDConfiguration
+    public class OSDConfiguration : DeviceEntity
+    {
+        
+        /// <summary>
+        /// Reference to the video source configuration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public OSDReference VideoSourceConfigurationToken;
+        
+        /// <summary>
+        /// Type of OSD.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public OSDType Type;
+        
+        /// <summary>
+        /// Position configuration of OSD.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public OSDPosConfiguration Position;
+        
+        /// <summary>
+        /// Text configuration of OSD. It shall be present when the value of Type field is Text.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public OSDTextConfiguration TextString;
+        
+        /// <summary>
+        /// Image configuration of OSD. It shall be present when the value of Type field is Image
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public OSDImgConfiguration Image;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public OSDConfigurationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDReference
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum OSDType
+    {
+        
+        Text,
+        
+        Image,
+        
+        Extended,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDPosConfiguration
+    {
+        
+        /// <summary>
+        /// For OSD position type, following are the pre-defined: UpperLeftUpperRightLowerLeftLowerRightCustom
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Type;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Vector Pos;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public OSDPosConfigurationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Vector
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float x;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float y;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDPosConfigurationExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDTextConfiguration
+    {
+        
+        /// <summary>
+        /// 
+        ///						The following OSD Text Type are defined:Plain - The Plain type means the OSD is shown as a text string which defined in the "PlainText" item.Date - The Date type means the OSD is shown as a date, format of which should be present in the "DateFormat" item.Time - The Time type means the OSD is shown as a time, format of which should be present in the "TimeFormat" item.DateAndTime - The DateAndTime type means the OSD is shown as date and time, format of which should be present in the "DateFormat" and the "TimeFormat" item.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Type;
+        
+        /// <summary>
+        /// 
+        ///						List of supported OSD date formats. This element shall be present when the value of Type field has Date or DateAndTime. The following DateFormat are defined:M/d/yyyy - e.g. 3/6/2013MM/dd/yyyy - e.g. 03/06/2013dd/MM/yyyy - e.g. 06/03/2013yyyy/MM/dd - e.g. 2013/03/06yyyy-MM-dd - e.g. 2013-06-03dddd, MMMM dd, yyyy - e.g. Wednesday, March 06, 2013MMMM dd, yyyy - e.g. March 06, 2013dd MMMM, yyyy - e.g. 06 March, 2013
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DateFormat;
+        
+        /// <summary>
+        /// 
+        ///						List of supported OSD time formats. This element shall be present when the value of Type field has Time or DateAndTime. The following TimeFormat are defined:h:mm:ss tt - e.g. 2:14:21 PMhh:mm:ss tt - e.g. 02:14:21 PMH:mm:ss - e.g. 14:14:21HH:mm:ss - e.g. 14:14:21
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string TimeFormat;
+        
+        /// <summary>
+        /// Font size of the text in pt.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int FontSize;
+        
+        /// <summary>
+        /// Font color of the text.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public OSDColor FontColor;
+        
+        /// <summary>
+        /// Background color of the text.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public OSDColor BackgroundColor;
+        
+        /// <summary>
+        /// The content of text to be displayed.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string PlainText;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public OSDTextConfigurationExtension Extension;
+    }
+    
+    /// <summary>
+    /// The value range of "Transparent" could be defined by vendors only should follow this rule: the minimum value means non-transparent and the maximum value maens fully transparent.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDColor
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Transparent;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Color Color;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Color
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float X;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float Y;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float Z;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Colorspace;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDTextConfigurationExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDImgConfiguration
+    {
+        
+        /// <summary>
+        /// The URI of the image which to be displayed.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ImgPath;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public OSDImgConfigurationExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDImgConfigurationExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class OSDConfigurationExtension
     {
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetOSD
+    public class GetOSDRequest
     {
         
         /// <summary>
@@ -3237,7 +5224,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class GetOSDOptions
+    public class GetOSDOptionsRequest
     {
         
         /// <summary>
@@ -3273,7 +5260,7 @@ namespace MyNs5
         /// List supported type of OSD configuration. When a device indicates the supported number for each types in MaximumNumberOfOSDs, related type shall be presented. A device shall return Option element relating to listed type.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Type;
+        public OSDType Type;
         
         /// <summary>
         /// List available OSD position type. Following are the pre-defined:UpperLeftUpperRightLowerLeftLowerRightCustom
@@ -3431,7 +5418,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class SetOSD
+    public class SetOSDRequest
     {
         
         /// <summary>
@@ -3449,7 +5436,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class CreateOSD
+    public class CreateOSDRequest
     {
         
         /// <summary>
@@ -3473,7 +5460,7 @@ namespace MyNs5
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver10/media/wsdl")]
-    public class DeleteOSD
+    public class DeleteOSDRequest
     {
         
         /// <summary>

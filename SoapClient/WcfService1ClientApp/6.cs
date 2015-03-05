@@ -8,210 +8,210 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyNs6
+namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.PTZ
 {
     
     
     public interface PTZ
     {
         
-        System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilities(GetServiceCapabilities request);
+        System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request);
         
-        System.Threading.Tasks.Task<GetNodesResponse> GetNodes(GetNodes request);
+        System.Threading.Tasks.Task<GetNodesResponse> GetNodesAsync(GetNodesRequest request);
         
-        System.Threading.Tasks.Task<GetNodeResponse> GetNode(GetNode request);
+        System.Threading.Tasks.Task<GetNodeResponse> GetNodeAsync(GetNodeRequest request);
         
-        System.Threading.Tasks.Task<GetConfigurationResponse> GetConfiguration(GetConfiguration request);
+        System.Threading.Tasks.Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetConfigurationsResponse> GetConfigurations(GetConfigurations request);
+        System.Threading.Tasks.Task<GetConfigurationsResponse> GetConfigurationsAsync(GetConfigurationsRequest request);
         
-        System.Threading.Tasks.Task<SetConfigurationResponse> SetConfiguration(SetConfiguration request);
+        System.Threading.Tasks.Task<SetConfigurationResponse> SetConfigurationAsync(SetConfigurationRequest request);
         
-        System.Threading.Tasks.Task<GetConfigurationOptionsResponse> GetConfigurationOptions(GetConfigurationOptions request);
+        System.Threading.Tasks.Task<GetConfigurationOptionsResponse> GetConfigurationOptionsAsync(GetConfigurationOptionsRequest request);
         
-        System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommand(SendAuxiliaryCommand request);
+        System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommandAsync(SendAuxiliaryCommandRequest request);
         
-        System.Threading.Tasks.Task<GetPresetsResponse> GetPresets(GetPresets request);
+        System.Threading.Tasks.Task<GetPresetsResponse> GetPresetsAsync(GetPresetsRequest request);
         
-        System.Threading.Tasks.Task<SetPresetResponse> SetPreset(SetPreset request);
+        System.Threading.Tasks.Task<SetPresetResponse> SetPresetAsync(SetPresetRequest request);
         
-        System.Threading.Tasks.Task<RemovePresetResponse> RemovePreset(RemovePreset request);
+        System.Threading.Tasks.Task<RemovePresetResponse> RemovePresetAsync(RemovePresetRequest request);
         
-        System.Threading.Tasks.Task<GotoPresetResponse> GotoPreset(GotoPreset request);
+        System.Threading.Tasks.Task<GotoPresetResponse> GotoPresetAsync(GotoPresetRequest request);
         
-        System.Threading.Tasks.Task<GotoHomePositionResponse> GotoHomePosition(GotoHomePosition request);
+        System.Threading.Tasks.Task<GotoHomePositionResponse> GotoHomePositionAsync(GotoHomePositionRequest request);
         
-        System.Threading.Tasks.Task<SetHomePositionResponse> SetHomePosition(SetHomePosition request);
+        System.Threading.Tasks.Task<SetHomePositionResponse> SetHomePositionAsync(SetHomePositionRequest request);
         
-        System.Threading.Tasks.Task<ContinuousMoveResponse> ContinuousMove(ContinuousMove request);
+        System.Threading.Tasks.Task<ContinuousMoveResponse> ContinuousMoveAsync(ContinuousMoveRequest request);
         
-        System.Threading.Tasks.Task<RelativeMoveResponse> RelativeMove(RelativeMove request);
+        System.Threading.Tasks.Task<RelativeMoveResponse> RelativeMoveAsync(RelativeMoveRequest request);
         
-        System.Threading.Tasks.Task<GetStatusResponse> GetStatus(GetStatus request);
+        System.Threading.Tasks.Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request);
         
-        System.Threading.Tasks.Task<AbsoluteMoveResponse> AbsoluteMove(AbsoluteMove request);
+        System.Threading.Tasks.Task<AbsoluteMoveResponse> AbsoluteMoveAsync(AbsoluteMoveRequest request);
         
-        System.Threading.Tasks.Task<StopResponse> Stop(Stop request);
+        System.Threading.Tasks.Task<StopResponse> StopAsync(StopRequest request);
         
-        System.Threading.Tasks.Task<GetPresetToursResponse> GetPresetTours(GetPresetTours request);
+        System.Threading.Tasks.Task<GetPresetToursResponse> GetPresetToursAsync(GetPresetToursRequest request);
         
-        System.Threading.Tasks.Task<GetPresetTourResponse> GetPresetTour(GetPresetTour request);
+        System.Threading.Tasks.Task<GetPresetTourResponse> GetPresetTourAsync(GetPresetTourRequest request);
         
-        System.Threading.Tasks.Task<GetPresetTourOptionsResponse> GetPresetTourOptions(GetPresetTourOptions request);
+        System.Threading.Tasks.Task<GetPresetTourOptionsResponse> GetPresetTourOptionsAsync(GetPresetTourOptionsRequest request);
         
-        System.Threading.Tasks.Task<CreatePresetTourResponse> CreatePresetTour(CreatePresetTour request);
+        System.Threading.Tasks.Task<CreatePresetTourResponse> CreatePresetTourAsync(CreatePresetTourRequest request);
         
-        System.Threading.Tasks.Task<ModifyPresetTourResponse> ModifyPresetTour(ModifyPresetTour request);
+        System.Threading.Tasks.Task<ModifyPresetTourResponse> ModifyPresetTourAsync(ModifyPresetTourRequest request);
         
-        System.Threading.Tasks.Task<OperatePresetTourResponse> OperatePresetTour(OperatePresetTour request);
+        System.Threading.Tasks.Task<OperatePresetTourResponse> OperatePresetTourAsync(OperatePresetTourRequest request);
         
-        System.Threading.Tasks.Task<RemovePresetTourResponse> RemovePresetTour(RemovePresetTour request);
+        System.Threading.Tasks.Task<RemovePresetTourResponse> RemovePresetTourAsync(RemovePresetTourRequest request);
         
-        System.Threading.Tasks.Task<GetCompatibleConfigurationsResponse> GetCompatibleConfigurations(GetCompatibleConfigurations request);
+        System.Threading.Tasks.Task<GetCompatibleConfigurationsResponse> GetCompatibleConfigurationsAsync(GetCompatibleConfigurationsRequest request);
     }
     
     public partial class PTZClient : SoapServices.SoapClientBase, PTZ
     {
         
-        public virtual System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilities(GetServiceCapabilities request)
+        public virtual System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request)
         {
-            return this.CallAsync<GetServiceCapabilities, GetServiceCapabilitiesResponse>(null, request);
+            return this.CallAsync<GetServiceCapabilitiesRequest, GetServiceCapabilitiesResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetNodesResponse> GetNodes(GetNodes request)
+        public virtual System.Threading.Tasks.Task<GetNodesResponse> GetNodesAsync(GetNodesRequest request)
         {
-            return this.CallAsync<GetNodes, GetNodesResponse>(null, request);
+            return this.CallAsync<GetNodesRequest, GetNodesResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetNodeResponse> GetNode(GetNode request)
+        public virtual System.Threading.Tasks.Task<GetNodeResponse> GetNodeAsync(GetNodeRequest request)
         {
-            return this.CallAsync<GetNode, GetNodeResponse>(null, request);
+            return this.CallAsync<GetNodeRequest, GetNodeResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetConfigurationResponse> GetConfiguration(GetConfiguration request)
+        public virtual System.Threading.Tasks.Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request)
         {
-            return this.CallAsync<GetConfiguration, GetConfigurationResponse>(null, request);
+            return this.CallAsync<GetConfigurationRequest, GetConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetConfigurationsResponse> GetConfigurations(GetConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetConfigurationsResponse> GetConfigurationsAsync(GetConfigurationsRequest request)
         {
-            return this.CallAsync<GetConfigurations, GetConfigurationsResponse>(null, request);
+            return this.CallAsync<GetConfigurationsRequest, GetConfigurationsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetConfigurationResponse> SetConfiguration(SetConfiguration request)
+        public virtual System.Threading.Tasks.Task<SetConfigurationResponse> SetConfigurationAsync(SetConfigurationRequest request)
         {
-            return this.CallAsync<SetConfiguration, SetConfigurationResponse>(null, request);
+            return this.CallAsync<SetConfigurationRequest, SetConfigurationResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetConfigurationOptionsResponse> GetConfigurationOptions(GetConfigurationOptions request)
+        public virtual System.Threading.Tasks.Task<GetConfigurationOptionsResponse> GetConfigurationOptionsAsync(GetConfigurationOptionsRequest request)
         {
-            return this.CallAsync<GetConfigurationOptions, GetConfigurationOptionsResponse>(null, request);
+            return this.CallAsync<GetConfigurationOptionsRequest, GetConfigurationOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommand(SendAuxiliaryCommand request)
+        public virtual System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommandAsync(SendAuxiliaryCommandRequest request)
         {
-            return this.CallAsync<SendAuxiliaryCommand, SendAuxiliaryCommandResponse>(null, request);
+            return this.CallAsync<SendAuxiliaryCommandRequest, SendAuxiliaryCommandResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetPresetsResponse> GetPresets(GetPresets request)
+        public virtual System.Threading.Tasks.Task<GetPresetsResponse> GetPresetsAsync(GetPresetsRequest request)
         {
-            return this.CallAsync<GetPresets, GetPresetsResponse>(null, request);
+            return this.CallAsync<GetPresetsRequest, GetPresetsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetPresetResponse> SetPreset(SetPreset request)
+        public virtual System.Threading.Tasks.Task<SetPresetResponse> SetPresetAsync(SetPresetRequest request)
         {
-            return this.CallAsync<SetPreset, SetPresetResponse>(null, request);
+            return this.CallAsync<SetPresetRequest, SetPresetResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemovePresetResponse> RemovePreset(RemovePreset request)
+        public virtual System.Threading.Tasks.Task<RemovePresetResponse> RemovePresetAsync(RemovePresetRequest request)
         {
-            return this.CallAsync<RemovePreset, RemovePresetResponse>(null, request);
+            return this.CallAsync<RemovePresetRequest, RemovePresetResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GotoPresetResponse> GotoPreset(GotoPreset request)
+        public virtual System.Threading.Tasks.Task<GotoPresetResponse> GotoPresetAsync(GotoPresetRequest request)
         {
-            return this.CallAsync<GotoPreset, GotoPresetResponse>(null, request);
+            return this.CallAsync<GotoPresetRequest, GotoPresetResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GotoHomePositionResponse> GotoHomePosition(GotoHomePosition request)
+        public virtual System.Threading.Tasks.Task<GotoHomePositionResponse> GotoHomePositionAsync(GotoHomePositionRequest request)
         {
-            return this.CallAsync<GotoHomePosition, GotoHomePositionResponse>(null, request);
+            return this.CallAsync<GotoHomePositionRequest, GotoHomePositionResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<SetHomePositionResponse> SetHomePosition(SetHomePosition request)
+        public virtual System.Threading.Tasks.Task<SetHomePositionResponse> SetHomePositionAsync(SetHomePositionRequest request)
         {
-            return this.CallAsync<SetHomePosition, SetHomePositionResponse>(null, request);
+            return this.CallAsync<SetHomePositionRequest, SetHomePositionResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<ContinuousMoveResponse> ContinuousMove(ContinuousMove request)
+        public virtual System.Threading.Tasks.Task<ContinuousMoveResponse> ContinuousMoveAsync(ContinuousMoveRequest request)
         {
-            return this.CallAsync<ContinuousMove, ContinuousMoveResponse>(null, request);
+            return this.CallAsync<ContinuousMoveRequest, ContinuousMoveResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RelativeMoveResponse> RelativeMove(RelativeMove request)
+        public virtual System.Threading.Tasks.Task<RelativeMoveResponse> RelativeMoveAsync(RelativeMoveRequest request)
         {
-            return this.CallAsync<RelativeMove, RelativeMoveResponse>(null, request);
+            return this.CallAsync<RelativeMoveRequest, RelativeMoveResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetStatusResponse> GetStatus(GetStatus request)
+        public virtual System.Threading.Tasks.Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request)
         {
-            return this.CallAsync<GetStatus, GetStatusResponse>(null, request);
+            return this.CallAsync<GetStatusRequest, GetStatusResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<AbsoluteMoveResponse> AbsoluteMove(AbsoluteMove request)
+        public virtual System.Threading.Tasks.Task<AbsoluteMoveResponse> AbsoluteMoveAsync(AbsoluteMoveRequest request)
         {
-            return this.CallAsync<AbsoluteMove, AbsoluteMoveResponse>(null, request);
+            return this.CallAsync<AbsoluteMoveRequest, AbsoluteMoveResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<StopResponse> Stop(Stop request)
+        public virtual System.Threading.Tasks.Task<StopResponse> StopAsync(StopRequest request)
         {
-            return this.CallAsync<Stop, StopResponse>(null, request);
+            return this.CallAsync<StopRequest, StopResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetPresetToursResponse> GetPresetTours(GetPresetTours request)
+        public virtual System.Threading.Tasks.Task<GetPresetToursResponse> GetPresetToursAsync(GetPresetToursRequest request)
         {
-            return this.CallAsync<GetPresetTours, GetPresetToursResponse>(null, request);
+            return this.CallAsync<GetPresetToursRequest, GetPresetToursResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetPresetTourResponse> GetPresetTour(GetPresetTour request)
+        public virtual System.Threading.Tasks.Task<GetPresetTourResponse> GetPresetTourAsync(GetPresetTourRequest request)
         {
-            return this.CallAsync<GetPresetTour, GetPresetTourResponse>(null, request);
+            return this.CallAsync<GetPresetTourRequest, GetPresetTourResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetPresetTourOptionsResponse> GetPresetTourOptions(GetPresetTourOptions request)
+        public virtual System.Threading.Tasks.Task<GetPresetTourOptionsResponse> GetPresetTourOptionsAsync(GetPresetTourOptionsRequest request)
         {
-            return this.CallAsync<GetPresetTourOptions, GetPresetTourOptionsResponse>(null, request);
+            return this.CallAsync<GetPresetTourOptionsRequest, GetPresetTourOptionsResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<CreatePresetTourResponse> CreatePresetTour(CreatePresetTour request)
+        public virtual System.Threading.Tasks.Task<CreatePresetTourResponse> CreatePresetTourAsync(CreatePresetTourRequest request)
         {
-            return this.CallAsync<CreatePresetTour, CreatePresetTourResponse>(null, request);
+            return this.CallAsync<CreatePresetTourRequest, CreatePresetTourResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<ModifyPresetTourResponse> ModifyPresetTour(ModifyPresetTour request)
+        public virtual System.Threading.Tasks.Task<ModifyPresetTourResponse> ModifyPresetTourAsync(ModifyPresetTourRequest request)
         {
-            return this.CallAsync<ModifyPresetTour, ModifyPresetTourResponse>(null, request);
+            return this.CallAsync<ModifyPresetTourRequest, ModifyPresetTourResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<OperatePresetTourResponse> OperatePresetTour(OperatePresetTour request)
+        public virtual System.Threading.Tasks.Task<OperatePresetTourResponse> OperatePresetTourAsync(OperatePresetTourRequest request)
         {
-            return this.CallAsync<OperatePresetTour, OperatePresetTourResponse>(null, request);
+            return this.CallAsync<OperatePresetTourRequest, OperatePresetTourResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<RemovePresetTourResponse> RemovePresetTour(RemovePresetTour request)
+        public virtual System.Threading.Tasks.Task<RemovePresetTourResponse> RemovePresetTourAsync(RemovePresetTourRequest request)
         {
-            return this.CallAsync<RemovePresetTour, RemovePresetTourResponse>(null, request);
+            return this.CallAsync<RemovePresetTourRequest, RemovePresetTourResponse>(null, request);
         }
         
-        public virtual System.Threading.Tasks.Task<GetCompatibleConfigurationsResponse> GetCompatibleConfigurations(GetCompatibleConfigurations request)
+        public virtual System.Threading.Tasks.Task<GetCompatibleConfigurationsResponse> GetCompatibleConfigurationsAsync(GetCompatibleConfigurationsRequest request)
         {
-            return this.CallAsync<GetCompatibleConfigurations, GetCompatibleConfigurationsResponse>(null, request);
+            return this.CallAsync<GetCompatibleConfigurationsRequest, GetCompatibleConfigurationsResponse>(null, request);
         }
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetServiceCapabilities
+    public class GetServiceCapabilitiesRequest
     {
     }
     
@@ -264,7 +264,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetNodes
+    public class GetNodesRequest
     {
     }
     
@@ -282,175 +282,65 @@ namespace MyNs6
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class PTZNode
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetNode
-    {
-        
-        /// <summary>
-        /// Token of the requested PTZNode.
-        ///								
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string NodeToken;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetNodeResponse
-    {
-        
-        /// <summary>
-        /// A requested PTZNode.
-        ///								
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PTZNode PTZNode;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetConfiguration
-    {
-        
-        /// <summary>
-        /// Token of the requested PTZConfiguration.
-        ///								
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string PTZConfigurationToken;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetConfigurationResponse
-    {
-        
-        /// <summary>
-        /// A requested PTZConfiguration.
-        ///								
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PTZConfiguration PTZConfiguration;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class PTZConfiguration
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetConfigurations
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetConfigurationsResponse
-    {
-        
-        /// <summary>
-        /// A list of all existing PTZConfigurations on the device.
-        ///								
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PTZConfiguration[] PTZConfiguration;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class SetConfiguration
+    public class PTZNode : DeviceEntity
     {
         
         /// <summary>
         /// 
+        ///                A unique identifier that is used to reference PTZ Nodes.
+        ///              
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PTZConfiguration PTZConfiguration;
+        public string Name;
         
         /// <summary>
-        /// Flag that makes configuration persistent. Example: User wants the configuration to exist after reboot.
-        ///								
+        /// 
+        ///                A list of Coordinate Systems available for the PTZ Node. For each Coordinate System, the PTZ Node MUST specify its allowed range.
+        ///              
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public bool ForcePersistence;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class SetConfigurationResponse
-    {
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetConfigurationOptions
-    {
-        
-        /// <summary>
-        /// Token of an existing configuration that the options are intended for.
-        ///								
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string ConfigurationToken;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetConfigurationOptionsResponse
-    {
-        
-        /// <summary>
-        /// The requested PTZ configuration options.
-        ///								
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PTZConfigurationOptions PTZConfigurationOptions;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class PTZConfigurationOptions
-    {
+        public PTZSpaces SupportedPTZSpaces;
         
         /// <summary>
         /// 
-        ///					The list of acceleration ramps supported by the device. The
-        ///					smallest acceleration value corresponds to the minimal index, the
-        ///					highest acceleration corresponds to the maximum index.					
-        ///				
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int[] PTZRamps;
-        
-        /// <summary>
-        /// 
-        ///            A list of supported coordinate systems including their range limitations.
-        ///          
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PTZSpaces Spaces;
-        
-        /// <summary>
-        /// 
-        ///            A timeout Range within which Timeouts are accepted by the PTZ Node.
-        ///          
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public DurationRange PTZTimeout;
-        
-        /// <summary>
-        /// Supported options for PT Direction Control.
+        ///                All preset operations MUST be available for this PTZ Node if one preset is supported.
+        ///              
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public PTControlDirectionOptions PTControlDirection;
+        public int MaximumNumberOfPresets;
         
+        /// <summary>
+        /// 
+        ///                A boolean operator specifying the availability of a home position. If set to true, the Home Position Operations MUST be available for this PTZ Node.
+        ///              
+        /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public PTZConfigurationOptions2 Extension;
+        public bool HomeSupported;
+        
+        /// <summary>
+        /// 
+        ///                A list of supported Auxiliary commands. If the list is not empty, the Auxiliary Operations MUST be available for this PTZ Node.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string[] AuxiliaryCommands;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public PTZNodeExtension Extension;
+    }
+    
+    /// <summary>
+    /// Base class for physical entities like inputs and outputs.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class DeviceEntity
+    {
+        
+        /// <summary>
+        /// Unique identifier referencing the physical entity.
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string token;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
@@ -608,6 +498,520 @@ namespace MyNs6
     {
     }
     
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZNodeExtension
+    {
+        
+        /// <summary>
+        /// 
+        ///            Detail of supported Preset Tour feature.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTZPresetTourSupported SupportedPresetTour;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PTZNodeExtension2 Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZPresetTourSupported
+    {
+        
+        /// <summary>
+        /// Indicates number of preset tours that can be created. Required preset tour operations shall be available for this PTZ Node if one or more preset tour is supported.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int MaximumNumberOfPresetTours;
+        
+        /// <summary>
+        /// Indicates which preset tour operations are available for this PTZ Node.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PTZPresetTourOperation[] PTZPresetTourOperation;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public PTZPresetTourSupportedExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum PTZPresetTourOperation
+    {
+        
+        Start,
+        
+        Stop,
+        
+        Pause,
+        
+        Extended,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZPresetTourSupportedExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZNodeExtension2
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class GetNodeRequest
+    {
+        
+        /// <summary>
+        /// Token of the requested PTZNode.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string NodeToken;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class GetNodeResponse
+    {
+        
+        /// <summary>
+        /// A requested PTZNode.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTZNode PTZNode;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class GetConfigurationRequest
+    {
+        
+        /// <summary>
+        /// Token of the requested PTZConfiguration.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string PTZConfigurationToken;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class GetConfigurationResponse
+    {
+        
+        /// <summary>
+        /// A requested PTZConfiguration.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTZConfiguration PTZConfiguration;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZConfiguration : ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// 
+        ///                A mandatory reference to the PTZ Node that the PTZ Configuration belongs to.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string NodeToken;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports absolute Pan/Tilt movements, it shall specify one Absolute Pan/Tilt Position Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DefaultAbsolutePantTiltPositionSpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports absolute zoom movements, it shall specify one Absolute Zoom Position Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string DefaultAbsoluteZoomPositionSpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports relative Pan/Tilt movements, it shall specify one RelativePan/Tilt Translation Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string DefaultRelativePanTiltTranslationSpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports relative zoom movements, it shall specify one Relative Zoom Translation Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string DefaultRelativeZoomTranslationSpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports continuous Pan/Tilt movements, it shall specify one Continuous Pan/Tilt Velocity Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string DefaultContinuousPanTiltVelocitySpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports continuous zoom movements, it shall specify one Continuous Zoom Velocity Space as default.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string DefaultContinuousZoomVelocitySpace;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports absolute or relative PTZ movements, it shall specify corresponding default Pan/Tilt and Zoom speeds.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public PTZSpeed DefaultPTZSpeed;
+        
+        /// <summary>
+        /// 
+        ///                If the PTZ Node supports continuous movements, it shall specify a default timeout, after which the movement stops.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string DefaultPTZTimeout;
+        
+        /// <summary>
+        /// 
+        ///                The Pan/Tilt limits element should be present for a PTZ Node that supports an absolute Pan/Tilt. If the element is present it signals the support for configurable Pan/Tilt limits. If limits are enabled, the Pan/Tilt movements shall always stay within the specified range. The Pan/Tilt limits are disabled by setting the limits to –INF or +INF.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public PanTiltLimits PanTiltLimits;
+        
+        /// <summary>
+        /// 
+        ///                The Zoom limits element should be present for a PTZ Node that supports absolute zoom. If the element is present it signals the supports for configurable Zoom limits. If limits are enabled the zoom movements shall always stay within the specified range. The Zoom limits are disabled by settings the limits to -INF and +INF.
+        ///              
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public ZoomLimits ZoomLimits;
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public PTZConfigurationExtension Extension;
+    }
+    
+    /// <summary>
+    /// Base type defining the common properties of a configuration.
+    /// </summary>
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ConfigurationEntity
+    {
+        
+        /// <summary>
+        /// Token that uniquely refernces this configuration. Length up to 64 characters.
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string token;
+        
+        /// <summary>
+        /// User readable name. Length up to 64 characters.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Name;
+        
+        /// <summary>
+        /// Number of internal references currently using this configuration. This parameter is read-only and cannot be changed by a set request. For example the value increases if the configuration is added to a media profile or attached to a PaneConfiguration.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int UseCount;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZSpeed
+    {
+        
+        /// <summary>
+        /// Pan and tilt speed. The x component corresponds to pan and the y component to tilt. If omitted in a request, the current (if any) PanTilt movement should not be affected. 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Vector2D PanTilt;
+        
+        /// <summary>
+        /// 
+        ///            A zoom speed. If omitted in a request, the current (if any) Zoom movement should not be affected.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Vector1D Zoom;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Vector2D
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float x;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float y;
+        
+        /// <summary>
+        /// 
+        ///  				Pan/tilt coordinate space selector. The following options are defined: http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string space;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Vector1D
+    {
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float x;
+        
+        /// <summary>
+        /// 
+        ///  				Pan/tilt coordinate space selector. The following options are defined: http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string space;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PanTiltLimits
+    {
+        
+        /// <summary>
+        /// 
+        ///            A range of pan tilt limits.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Space2DDescription Range;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class ZoomLimits
+    {
+        
+        /// <summary>
+        /// 
+        ///            A range of zoom limit
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Space1DDescription Range;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZConfigurationExtension
+    {
+        
+        /// <summary>
+        /// Optional element to configure PT Control Direction related features.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTControlDirection PTControlDirection;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PTZConfigurationExtension2 Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTControlDirection
+    {
+        
+        /// <summary>
+        /// Optional element to configure related parameters for E-Flip.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public EFlip EFlip;
+        
+        /// <summary>
+        /// Optional element to configure related parameters for reversing of PT Control Direction.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Reverse Reverse;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public PTControlDirectionExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class EFlip
+    {
+        
+        /// <summary>
+        /// Parameter to enable/disable E-Flip feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public EFlipMode Mode;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum EFlipMode
+    {
+        
+        OFF,
+        
+        ON,
+        
+        Extended,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class Reverse
+    {
+        
+        /// <summary>
+        /// Parameter to enable/disable Reverse feature.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ReverseMode Mode;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum ReverseMode
+    {
+        
+        OFF,
+        
+        ON,
+        
+        AUTO,
+        
+        Extended,
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTControlDirectionExtension
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZConfigurationExtension2
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class GetConfigurationsRequest
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class GetConfigurationsResponse
+    {
+        
+        /// <summary>
+        /// A list of all existing PTZConfigurations on the device.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTZConfiguration[] PTZConfiguration;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class SetConfigurationRequest
+    {
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTZConfiguration PTZConfiguration;
+        
+        /// <summary>
+        /// Flag that makes configuration persistent. Example: User wants the configuration to exist after reboot.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool ForcePersistence;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class SetConfigurationResponse
+    {
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class GetConfigurationOptionsRequest
+    {
+        
+        /// <summary>
+        /// Token of an existing configuration that the options are intended for.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ConfigurationToken;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
+    public class GetConfigurationOptionsResponse
+    {
+        
+        /// <summary>
+        /// The requested PTZ configuration options.
+        ///								
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTZConfigurationOptions PTZConfigurationOptions;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public class PTZConfigurationOptions
+    {
+        
+        /// <summary>
+        /// 
+        ///					The list of acceleration ramps supported by the device. The
+        ///					smallest acceleration value corresponds to the minimal index, the
+        ///					highest acceleration corresponds to the maximum index.					
+        ///				
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int[] PTZRamps;
+        
+        /// <summary>
+        /// 
+        ///            A list of supported coordinate systems including their range limitations.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PTZSpaces Spaces;
+        
+        /// <summary>
+        /// 
+        ///            A timeout Range within which Timeouts are accepted by the PTZ Node.
+        ///          
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public DurationRange PTZTimeout;
+        
+        /// <summary>
+        /// Supported options for PT Direction Control.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public PTControlDirectionOptions PTControlDirection;
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public PTZConfigurationOptions2 Extension;
+    }
+    
     /// <summary>
     /// Range of duration greater equal Min duration and less equal Max duration.
     /// </summary>
@@ -650,7 +1054,7 @@ namespace MyNs6
         /// Options of EFlip mode parameter.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string[] Mode;
+        public EFlipMode[] Mode;
         
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public EFlipOptionsExtension Extension;
@@ -669,7 +1073,7 @@ namespace MyNs6
         /// Options of Reverse mode parameter.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string[] Mode;
+        public ReverseMode[] Mode;
         
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public ReverseOptionsExtension Extension;
@@ -692,7 +1096,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class SendAuxiliaryCommand
+    public class SendAuxiliaryCommandRequest
     {
         
         /// <summary>
@@ -725,7 +1129,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetPresets
+    public class GetPresetsRequest
     {
         
         /// <summary>
@@ -795,42 +1199,9 @@ namespace MyNs6
         public Vector1D Zoom;
     }
     
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class Vector2D
-    {
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public float x;
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public float y;
-        
-        /// <summary>
-        /// 
-        ///  				Pan/tilt coordinate space selector. The following options are defined: http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string space;
-    }
-    
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class Vector1D
-    {
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public float x;
-        
-        /// <summary>
-        /// 
-        ///  				Pan/tilt coordinate space selector. The following options are defined: http://www.onvif.org/ver10/tptz/PanTiltSpaces/PositionGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/TranslationGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/VelocityGenericSpace http://www.onvif.org/ver10/tptz/PanTiltSpaces/GenericSpeedSpace
-        /// </summary>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string space;
-    }
-    
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class SetPreset
+    public class SetPresetRequest
     {
         
         /// <summary>
@@ -870,7 +1241,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class RemovePreset
+    public class RemovePresetRequest
     {
         
         /// <summary>
@@ -896,7 +1267,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GotoPreset
+    public class GotoPresetRequest
     {
         
         /// <summary>
@@ -921,25 +1292,6 @@ namespace MyNs6
         public PTZSpeed Speed;
     }
     
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
-    public class PTZSpeed
-    {
-        
-        /// <summary>
-        /// Pan and tilt speed. The x component corresponds to pan and the y component to tilt. If omitted in a request, the current (if any) PanTilt movement should not be affected. 
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Vector2D PanTilt;
-        
-        /// <summary>
-        /// 
-        ///            A zoom speed. If omitted in a request, the current (if any) Zoom movement should not be affected.
-        ///          
-        /// </summary>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Vector1D Zoom;
-    }
-    
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     public class GotoPresetResponse
@@ -948,7 +1300,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GotoHomePosition
+    public class GotoHomePositionRequest
     {
         
         /// <summary>
@@ -974,7 +1326,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class SetHomePosition
+    public class SetHomePositionRequest
     {
         
         /// <summary>
@@ -993,7 +1345,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class ContinuousMove
+    public class ContinuousMoveRequest
     {
         
         /// <summary>
@@ -1026,7 +1378,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class RelativeMove
+    public class RelativeMoveRequest
     {
         
         /// <summary>
@@ -1059,7 +1411,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetStatus
+    public class GetStatusRequest
     {
         
         /// <summary>
@@ -1128,18 +1480,29 @@ namespace MyNs6
         /// 
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string PanTilt;
+        public MoveStatus PanTilt;
         
         /// <summary>
         /// 
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Zoom;
+        public MoveStatus Zoom;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum MoveStatus
+    {
+        
+        IDLE,
+        
+        MOVING,
+        
+        UNKNOWN,
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class AbsoluteMove
+    public class AbsoluteMoveRequest
     {
         
         /// <summary>
@@ -1172,7 +1535,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class Stop
+    public class StopRequest
     {
         
         /// <summary>
@@ -1205,7 +1568,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetPresetTours
+    public class GetPresetToursRequest
     {
         
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1273,7 +1636,7 @@ namespace MyNs6
         /// Indicates state of this preset tour by Idle/Touring/Paused.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string State;
+        public PTZPresetTourState State;
         
         /// <summary>
         /// Indicates a tour spot currently staying.
@@ -1283,6 +1646,19 @@ namespace MyNs6
         
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public PTZPresetTourStatusExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum PTZPresetTourState
+    {
+        
+        Idle,
+        
+        Touring,
+        
+        Paused,
+        
+        Extended,
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
@@ -1352,10 +1728,21 @@ namespace MyNs6
         /// Optional parameter to choose which direction the preset tour goes. Forward shall be chosen in case it is omitted.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Direction;
+        public PTZPresetTourDirection Direction;
         
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public PTZPresetTourStartingConditionExtension Extension;
+    }
+    
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    public enum PTZPresetTourDirection
+    {
+        
+        Forward,
+        
+        Backward,
+        
+        Extended,
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
@@ -1370,7 +1757,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetPresetTour
+    public class GetPresetTourRequest
     {
         
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1391,7 +1778,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetPresetTourOptions
+    public class GetPresetTourOptionsRequest
     {
         
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1453,7 +1840,7 @@ namespace MyNs6
         /// Supported options for Direction of Preset Tour.
         /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string[] Direction;
+        public PTZPresetTourDirection[] Direction;
         
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public PTZPresetTourStartingConditionOptionsExtension Extension;
@@ -1534,7 +1921,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class CreatePresetTour
+    public class CreatePresetTourRequest
     {
         
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1552,7 +1939,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class ModifyPresetTour
+    public class ModifyPresetTourRequest
     {
         
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1570,7 +1957,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class OperatePresetTour
+    public class OperatePresetTourRequest
     {
         
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1580,7 +1967,7 @@ namespace MyNs6
         public string PresetTourToken;
         
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Operation;
+        public PTZPresetTourOperation Operation;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
@@ -1591,7 +1978,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class RemovePresetTour
+    public class RemovePresetTourRequest
     {
         
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1609,7 +1996,7 @@ namespace MyNs6
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.onvif.org/ver20/ptz/wsdl")]
-    public class GetCompatibleConfigurations
+    public class GetCompatibleConfigurationsRequest
     {
         
         /// <summary>
