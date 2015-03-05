@@ -15,614 +15,1692 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.DeviceManagement
     public interface Device
     {
         
+        /// <summary>
+        /// Returns information about services on the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetServicesResponse> GetServicesAsync(GetServicesRequest request);
         
+        /// <summary>
+        /// Returns the capabilities of the device service. The result is returned in a typed answer.
+        /// </summary>
         System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request);
         
+        /// <summary>
+        /// This operation gets basic device information from the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetDeviceInformationResponse> GetDeviceInformationAsync(GetDeviceInformationRequest request);
         
+        /// <summary>
+        /// This operation sets the device system date and time. The device shall support the
+        ///				configuration of the daylight saving setting and of the manual system date and time (if
+        ///				applicable) or indication of NTP time (if applicable) through the SetSystemDateAndTime
+        ///				command. 
+        ///				If system time and date are set manually, the client shall include UTCDateTime in the request.
+        ///				A TimeZone token which is not formed according to the rules of IEEE 1003.1 section 8.3 is considered as invalid timezone.
+        ///				The DayLightSavings flag should be set to true to activate any DST settings of the TimeZone string. 
+        ///				Clear the DayLightSavings flag if the DST portion of the TimeZone settings should be ignored.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<SetSystemDateAndTimeResponse> SetSystemDateAndTimeAsync(SetSystemDateAndTimeRequest request);
         
+        /// <summary>
+        /// This operation gets the device system date and time. The device shall support the return of
+        ///				the daylight saving setting and of the manual system date and time (if applicable) or indication
+        ///				of NTP time (if applicable) through the GetSystemDateAndTime command.
+        ///				A device shall provide the UTCDateTime information.
+        /// </summary>
         System.Threading.Tasks.Task<GetSystemDateAndTimeResponse> GetSystemDateAndTimeAsync(GetSystemDateAndTimeRequest request);
         
+        /// <summary>
+        /// This operation reloads the parameters on the device to their factory default values.
+        /// </summary>
         System.Threading.Tasks.Task<SetSystemFactoryDefaultResponse> SetSystemFactoryDefaultAsync(SetSystemFactoryDefaultRequest request);
         
+        /// <summary>
+        /// This operation upgrades a device firmware version. After a successful upgrade the response
+        ///				message is sent before the device reboots. The device should support firmware upgrade
+        ///				through the UpgradeSystemFirmware command. The exact format of the firmware data is
+        ///				outside the scope of this standard.
+        /// </summary>
         System.Threading.Tasks.Task<UpgradeSystemFirmwareResponse> UpgradeSystemFirmwareAsync(UpgradeSystemFirmwareRequest request);
         
+        /// <summary>
+        /// This operation reboots the device.
+        /// </summary>
         System.Threading.Tasks.Task<SystemRebootResponse> SystemRebootAsync(SystemRebootRequest request);
         
+        /// <summary>
+        /// This operation restores the system backup configuration files(s) previously retrieved from a
+        ///				device. The device should support restore of backup configuration file(s) through the
+        ///				RestoreSystem command. The exact format of the backup configuration file(s) is outside the
+        ///				scope of this standard. If the command is supported, it shall accept backup files returned by
+        ///				the GetSystemBackup command.
+        /// </summary>
         System.Threading.Tasks.Task<RestoreSystemResponse> RestoreSystemAsync(RestoreSystemRequest request);
         
+        /// <summary>
+        /// This operation is retrieves system backup configuration file(s) from a device. The device
+        ///				should support return of back up configuration file(s) through the GetSystemBackup command.
+        ///				The backup is returned with reference to a name and mime-type together with binary data.
+        ///				The exact format of the backup configuration files is outside the scope of this standard.
+        /// </summary>
         System.Threading.Tasks.Task<GetSystemBackupResponse> GetSystemBackupAsync(GetSystemBackupRequest request);
         
+        /// <summary>
+        /// This operation gets a system log from the device. The exact format of the system logs is outside the scope of this standard.
+        /// </summary>
         System.Threading.Tasks.Task<GetSystemLogResponse> GetSystemLogAsync(GetSystemLogRequest request);
         
+        /// <summary>
+        /// This operation gets arbitary device diagnostics information from the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetSystemSupportInformationResponse> GetSystemSupportInformationAsync(GetSystemSupportInformationRequest request);
         
+        /// <summary>
+        /// This operation requests the scope parameters of a device. The scope parameters are used in
+        ///				the device discovery to match a probe message, see Section 7. The Scope parameters are of
+        ///				two different types: FixedConfigurable
+        ///				Fixed scope parameters are permanent device characteristics and cannot be removed through the device management interface. 
+        ///				The scope type is indicated in the scope list returned in the get scope parameters response. A device shall support 
+        ///				retrieval of discovery scope parameters through the GetScopes command. As some scope parameters are mandatory, 
+        ///				the device shall return a non-empty scope list in the response.
+        /// </summary>
         System.Threading.Tasks.Task<GetScopesResponse> GetScopesAsync(GetScopesRequest request);
         
+        /// <summary>
+        /// This operation sets the scope parameters of a device. The scope parameters are used in the
+        ///				device discovery to match a probe message.
+        ///				This operation replaces all existing configurable scope parameters (not fixed parameters). If
+        ///				this shall be avoided, one should use the scope add command instead. The device shall
+        ///				support configuration of discovery scope parameters through the SetScopes command.
+        /// </summary>
         System.Threading.Tasks.Task<SetScopesResponse> SetScopesAsync(SetScopesRequest request);
         
+        /// <summary>
+        /// This operation adds new configurable scope parameters to a device. The scope parameters
+        ///				are used in the device discovery to match a probe message. The device shall
+        ///				support addition of discovery scope parameters through the AddScopes command.
+        /// </summary>
         System.Threading.Tasks.Task<AddScopesResponse> AddScopesAsync(AddScopesRequest request);
         
+        /// <summary>
+        /// This operation deletes scope-configurable scope parameters from a device. The scope
+        ///				parameters are used in the device discovery to match a probe message, see Section 7. The
+        ///				device shall support deletion of discovery scope parameters through the RemoveScopes
+        ///				command.
+        ///				Table
+        /// </summary>
         System.Threading.Tasks.Task<RemoveScopesResponse> RemoveScopesAsync(RemoveScopesRequest request);
         
+        /// <summary>
+        /// This operation gets the discovery mode of a device. See Section 7.2 for the definition of the
+        ///				different device discovery modes. The device shall support retrieval of the discovery mode
+        ///				setting through the GetDiscoveryMode command.
+        /// </summary>
         System.Threading.Tasks.Task<GetDiscoveryModeResponse> GetDiscoveryModeAsync(GetDiscoveryModeRequest request);
         
+        /// <summary>
+        /// This operation sets the discovery mode operation of a device. See Section 7.2 for the
+        ///				definition of the different device discovery modes. The device shall support configuration of
+        ///				the discovery mode setting through the SetDiscoveryMode command.
+        /// </summary>
         System.Threading.Tasks.Task<SetDiscoveryModeResponse> SetDiscoveryModeAsync(SetDiscoveryModeRequest request);
         
+        /// <summary>
+        /// This operation gets the remote discovery mode of a device. See Section 7.4 for the definition
+        ///				of remote discovery extensions. A device that supports remote discovery shall support
+        ///				retrieval of the remote discovery mode setting through the GetRemoteDiscoveryMode
+        ///				command.
+        /// </summary>
         System.Threading.Tasks.Task<GetRemoteDiscoveryModeResponse> GetRemoteDiscoveryModeAsync(GetRemoteDiscoveryModeRequest request);
         
+        /// <summary>
+        /// This operation sets the remote discovery mode of operation of a device. See Section 7.4 for
+        ///				the definition of remote discovery remote extensions. A device that supports remote discovery
+        ///				shall support configuration of the discovery mode setting through the
+        ///				SetRemoteDiscoveryMode command.
+        /// </summary>
         System.Threading.Tasks.Task<SetRemoteDiscoveryModeResponse> SetRemoteDiscoveryModeAsync(SetRemoteDiscoveryModeRequest request);
         
+        /// <summary>
+        /// This operation gets the remote DP address or addresses from a device. If the device supports
+        ///				remote discovery, as specified in Section 7.4, the device shall support retrieval of the remote
+        ///				DP address(es) through the GetDPAddresses command.
+        /// </summary>
         System.Threading.Tasks.Task<GetDPAddressesResponse> GetDPAddressesAsync(GetDPAddressesRequest request);
         
+        /// <summary>
+        /// This operation sets the remote DP address or addresses on a device. If the device supports
+        ///				remote discovery, as specified in Section 7.4, the device shall support configuration of the
+        ///				remote DP address(es) through the SetDPAddresses command.
+        /// </summary>
         System.Threading.Tasks.Task<SetDPAddressesResponse> SetDPAddressesAsync(SetDPAddressesRequest request);
         
+        /// <summary>
+        /// A client can ask for the device service endpoint reference address property that can be used
+        ///				to derive the password equivalent for remote user operation. The device shall support the
+        ///				GetEndpointReference command returning the address property of the device service
+        ///				endpoint reference.
+        /// </summary>
         System.Threading.Tasks.Task<GetEndpointReferenceResponse> GetEndpointReferenceAsync(GetEndpointReferenceRequest request);
         
+        /// <summary>
+        /// This operation returns the configured remote user (if any). A device supporting remote user
+        ///				handling shall support this operation. The user is only valid for the WS-UserToken profile or
+        ///				as a HTTP / RTSP user.
+        ///				The algorithm to use for deriving the password is described in section 5.12.2.1 of the core specification.
+        /// </summary>
         System.Threading.Tasks.Task<GetRemoteUserResponse> GetRemoteUserAsync(GetRemoteUserRequest request);
         
+        /// <summary>
+        /// This operation sets the remote user. A device supporting remote user handling shall support this
+        ///				operation. The user is only valid for the WS-UserToken profile or as a HTTP / RTSP user.
+        ///				The password that is set shall always be the original (not derived) password.
+        ///				If UseDerivedPassword is set password derivation shall be done by the device when connecting to a
+        ///				remote device.The algorithm to use for deriving the password is described in section 5.12.2.1 of the core specification.
+        ///				To remove the remote user SetRemoteUser should be called without the RemoteUser parameter.
+        /// </summary>
         System.Threading.Tasks.Task<SetRemoteUserResponse> SetRemoteUserAsync(SetRemoteUserRequest request);
         
+        /// <summary>
+        /// This operation lists the registered users and corresponding credentials on a device. The
+        ///				device shall support retrieval of registered device users and their credentials for the user
+        ///				token through the GetUsers command.
+        /// </summary>
         System.Threading.Tasks.Task<GetUsersResponse> GetUsersAsync(GetUsersRequest request);
         
+        /// <summary>
+        /// This operation creates new device users and corresponding credentials on a device for authentication purposes. 
+        ///				The device shall support creation of device users and their credentials through the CreateUsers
+        ///				command. Either all users are created successfully or a fault message shall be returned
+        ///				without creating any user.
+        ///				ONVIF compliant devices are recommended to support password length of at least 28 bytes,
+        ///				as clients may follow the password derivation mechanism which results in 'password
+        ///				equivalent' of length 28 bytes, as described in section 3.1.2 of the ONVIF security white paper.
+        /// </summary>
         System.Threading.Tasks.Task<CreateUsersResponse> CreateUsersAsync(CreateUsersRequest request);
         
+        /// <summary>
+        /// This operation deletes users on a device. The device shall support deletion of device users and their credentials 
+        ///				through the DeleteUsers command. A device may have one or more fixed users
+        ///				that cannot be deleted to ensure access to the unit. Either all users are deleted successfully or a
+        ///				fault message shall be returned and no users be deleted.
+        /// </summary>
         System.Threading.Tasks.Task<DeleteUsersResponse> DeleteUsersAsync(DeleteUsersRequest request);
         
+        /// <summary>
+        /// This operation updates the settings for one or several users on a device for authentication purposes.
+        ///				The device shall support update of device users and their credentials through the SetUser command. 
+        ///				Either all change requests are processed successfully or a fault message shall be returned and no change requests be processed.
+        /// </summary>
         System.Threading.Tasks.Task<SetUserResponse> SetUserAsync(SetUserRequest request);
         
+        /// <summary>
+        /// It is possible for an endpoint to request a URL that can be used to retrieve the complete
+        ///				schema and WSDL definitions of a device. The command gives in return a URL entry point
+        ///				where all the necessary product specific WSDL and schema definitions can be retrieved. The
+        ///				device shall provide a URL for WSDL and schema download through the GetWsdlUrl command.
+        /// </summary>
         System.Threading.Tasks.Task<GetWsdlUrlResponse> GetWsdlUrlAsync(GetWsdlUrlRequest request);
         
+        /// <summary>
+        /// Any endpoint can ask for the capabilities of a device using the capability exchange request
+        ///				response operation. The device shall indicate all its ONVIF compliant capabilities through the
+        ///				GetCapabilities command.
+        ///				The capability list includes references to the addresses (XAddr) of the service implementing
+        ///				the interface operations in the category. Apart from the addresses, the
+        ///				capabilities only reflect optional functions.
+        /// </summary>
         System.Threading.Tasks.Task<GetCapabilitiesResponse> GetCapabilitiesAsync(GetCapabilitiesRequest request);
         
+        /// <summary>
+        /// This operation is used by an endpoint to get the hostname from a device. The device shall
+        ///				return its hostname configurations through the GetHostname command.
+        /// </summary>
         System.Threading.Tasks.Task<GetHostnameResponse> GetHostnameAsync(GetHostnameRequest request);
         
+        /// <summary>
+        /// This operation sets the hostname on a device. It shall be possible to set the device hostname
+        ///				configurations through the SetHostname command.
+        ///				A device shall accept string formated according to RFC 1123 section 2.1 or alternatively to RFC 952, 
+        ///				other string shall be considered as invalid strings. 
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<SetHostnameResponse> SetHostnameAsync(SetHostnameRequest request);
         
+        /// <summary>
+        /// This operation controls whether the hostname is set manually or retrieved via DHCP.
+        /// </summary>
         System.Threading.Tasks.Task<SetHostnameFromDHCPResponse> SetHostnameFromDHCPAsync(SetHostnameFromDHCPRequest request);
         
+        /// <summary>
+        /// This operation gets the DNS settings from a device. The device shall return its DNS
+        ///				configurations through the GetDNS command.
+        /// </summary>
         System.Threading.Tasks.Task<GetDNSResponse> GetDNSAsync(GetDNSRequest request);
         
+        /// <summary>
+        /// This operation sets the DNS settings on a device. It shall be possible to set the device DNS
+        ///				configurations through the SetDNS command.
+        /// </summary>
         System.Threading.Tasks.Task<SetDNSResponse> SetDNSAsync(SetDNSRequest request);
         
+        /// <summary>
+        /// This operation gets the NTP settings from a device. If the device supports NTP, it shall be
+        ///				possible to get the NTP server settings through the GetNTP command.
+        /// </summary>
         System.Threading.Tasks.Task<GetNTPResponse> GetNTPAsync(GetNTPRequest request);
         
+        /// <summary>
+        /// This operation sets the NTP settings on a device. If the device supports NTP, it shall be
+        ///				possible to set the NTP server settings through the SetNTP command.
+        ///				A device shall accept string formated according to RFC 1123 section 2.1 or alternatively to RFC 952, 
+        ///				other string shall be considered as invalid strings. 
+        ///				Changes to the NTP server list will not affect the clock mode DateTimeType. Use SetSystemDateAndTime to activate NTP operation.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<SetNTPResponse> SetNTPAsync(SetNTPRequest request);
         
+        /// <summary>
+        /// This operation gets the dynamic DNS settings from a device. If the device supports dynamic
+        ///				DNS as specified in [RFC 2136] and [RFC 4702], it shall be possible to get the type, name
+        ///				and TTL through the GetDynamicDNS command.
+        /// </summary>
         System.Threading.Tasks.Task<GetDynamicDNSResponse> GetDynamicDNSAsync(GetDynamicDNSRequest request);
         
+        /// <summary>
+        /// This operation sets the dynamic DNS settings on a device. If the device supports dynamic
+        ///				DNS as specified in [RFC 2136] and [RFC 4702], it shall be possible to set the type, name
+        ///				and TTL through the SetDynamicDNS command.
+        /// </summary>
         System.Threading.Tasks.Task<SetDynamicDNSResponse> SetDynamicDNSAsync(SetDynamicDNSRequest request);
         
+        /// <summary>
+        /// This operation gets the network interface configuration from a device. The device shall
+        ///				support return of network interface configuration settings as defined by the NetworkInterface
+        ///				type through the GetNetworkInterfaces command.
+        /// </summary>
         System.Threading.Tasks.Task<GetNetworkInterfacesResponse> GetNetworkInterfacesAsync(GetNetworkInterfacesRequest request);
         
+        /// <summary>
+        /// This operation sets the network interface configuration on a device. The device shall support
+        ///				network configuration of supported network interfaces through the SetNetworkInterfaces
+        ///				command.
+        ///				For interoperability with a client unaware of the IEEE 802.11 extension a device shall retain
+        ///				its IEEE 802.11 configuration if the IEEE 802.11 configuration element isn’t present in the
+        ///				request.
+        /// </summary>
         System.Threading.Tasks.Task<SetNetworkInterfacesResponse> SetNetworkInterfacesAsync(SetNetworkInterfacesRequest request);
         
+        /// <summary>
+        /// This operation gets defined network protocols from a device. The device shall support the
+        ///				GetNetworkProtocols command returning configured network protocols.
+        /// </summary>
         System.Threading.Tasks.Task<GetNetworkProtocolsResponse> GetNetworkProtocolsAsync(GetNetworkProtocolsRequest request);
         
+        /// <summary>
+        /// This operation configures defined network protocols on a device. The device shall support
+        ///				configuration of defined network protocols through the SetNetworkProtocols command.
+        /// </summary>
         System.Threading.Tasks.Task<SetNetworkProtocolsResponse> SetNetworkProtocolsAsync(SetNetworkProtocolsRequest request);
         
+        /// <summary>
+        /// This operation gets the default gateway settings from a device. The device shall support the
+        ///				GetNetworkDefaultGateway command returning configured default gateway address(es).
+        /// </summary>
         System.Threading.Tasks.Task<GetNetworkDefaultGatewayResponse> GetNetworkDefaultGatewayAsync(GetNetworkDefaultGatewayRequest request);
         
+        /// <summary>
+        /// This operation sets the default gateway settings on a device. The device shall support
+        ///				configuration of default gateway through the SetNetworkDefaultGateway command.
+        /// </summary>
         System.Threading.Tasks.Task<SetNetworkDefaultGatewayResponse> SetNetworkDefaultGatewayAsync(SetNetworkDefaultGatewayRequest request);
         
+        /// <summary>
+        /// This operation gets the zero-configuration from a device. If the device supports dynamic IP
+        ///				configuration according to [RFC3927], it shall support the return of IPv4 zero configuration
+        ///				address and status through the GetZeroConfiguration command.
+        ///			Devices supporting zero configuration on more than one interface shall use the extension to list the additional interface settings.
+        /// </summary>
         System.Threading.Tasks.Task<GetZeroConfigurationResponse> GetZeroConfigurationAsync(GetZeroConfigurationRequest request);
         
+        /// <summary>
+        /// This operation sets the zero-configuration. Use GetCapalities to get if zero-zero-configuration is supported or not.
+        /// </summary>
         System.Threading.Tasks.Task<SetZeroConfigurationResponse> SetZeroConfigurationAsync(SetZeroConfigurationRequest request);
         
+        /// <summary>
+        /// This operation gets the IP address filter settings from a device. If the device supports device
+        ///				access control based on IP filtering rules (denied or accepted ranges of IP addresses), the
+        ///				device shall support the GetIPAddressFilter command.
+        /// </summary>
         System.Threading.Tasks.Task<GetIPAddressFilterResponse> GetIPAddressFilterAsync(GetIPAddressFilterRequest request);
         
+        /// <summary>
+        /// This operation sets the IP address filter settings on a device. If the device supports device
+        ///				access control based on IP filtering rules (denied or accepted ranges of IP addresses), the
+        ///				device shall support configuration of IP filtering rules through the SetIPAddressFilter
+        ///				command.
+        /// </summary>
         System.Threading.Tasks.Task<SetIPAddressFilterResponse> SetIPAddressFilterAsync(SetIPAddressFilterRequest request);
         
+        /// <summary>
+        /// This operation adds an IP filter address to a device. If the device supports device access
+        ///				control based on IP filtering rules (denied or accepted ranges of IP addresses), the device
+        ///				shall support adding of IP filtering addresses through the AddIPAddressFilter command.
+        /// </summary>
         System.Threading.Tasks.Task<AddIPAddressFilterResponse> AddIPAddressFilterAsync(AddIPAddressFilterRequest request);
         
+        /// <summary>
+        /// This operation deletes an IP filter address from a device. If the device supports device access
+        ///				control based on IP filtering rules (denied or accepted ranges of IP addresses), the device
+        ///				shall support deletion of IP filtering addresses through the RemoveIPAddressFilter command.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveIPAddressFilterResponse> RemoveIPAddressFilterAsync(RemoveIPAddressFilterRequest request);
         
+        /// <summary>
+        /// Access to different services and sub-sets of services should be subject to access control. The
+        ///				WS-Security framework gives the prerequisite for end-point authentication. Authorization
+        ///				decisions can then be taken using an access security policy. This standard does not mandate
+        ///				any particular policy description format or security policy but this is up to the device
+        ///				manufacturer or system provider to choose policy and policy description format of choice.
+        ///				However, an access policy (in arbitrary format) can be requested using this command. If the
+        ///				device supports access policy settings based on WS-Security authentication, then the device
+        ///				shall support this command.
+        /// </summary>
         System.Threading.Tasks.Task<GetAccessPolicyResponse> GetAccessPolicyAsync(GetAccessPolicyRequest request);
         
+        /// <summary>
+        /// This command sets the device access security policy (for more details on the access security
+        ///				policy see the Get command). If the device supports access policy settings
+        ///				based on WS-Security authentication, then the device shall support this command.
+        /// </summary>
         System.Threading.Tasks.Task<SetAccessPolicyResponse> SetAccessPolicyAsync(SetAccessPolicyRequest request);
         
+        /// <summary>
+        /// This operation generates a private/public key pair and also can create a self-signed device
+        ///				certificate as a result of key pair generation. The certificate is created using a suitable
+        ///				onboard key pair generation mechanism.
+        ///				If a device supports onboard key pair generation, the device that supports TLS shall support
+        ///				this certificate creation command. And also, if a device supports onboard key pair generation,
+        ///				the device that support IEEE 802.1X shall support this command for the purpose of key pair
+        ///				generation. Certificates and key pairs are identified using certificate IDs. These IDs are either
+        ///				chosen by the certificate generation requester or by the device (in case that no ID value is
+        ///				given).
+        /// </summary>
         System.Threading.Tasks.Task<CreateCertificateResponse> CreateCertificateAsync(CreateCertificateRequest request);
         
+        /// <summary>
+        /// This operation gets all device server certificates (including self-signed) for the purpose of TLS
+        ///				authentication and all device client certificates for the purpose of IEEE 802.1X authentication.
+        ///				This command lists only the TLS server certificates and IEEE 802.1X client certificates for the
+        ///				device (neither trusted CA certificates nor trusted root certificates). The certificates are
+        ///				returned as binary data. A device that supports TLS shall support this command and the
+        ///				certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+        ///				rules.
+        /// </summary>
         System.Threading.Tasks.Task<GetCertificatesResponse> GetCertificatesAsync(GetCertificatesRequest request);
         
+        /// <summary>
+        /// This operation is specific to TLS functionality. This operation gets the status
+        ///				(enabled/disabled) of the device TLS server certificates. A device that supports TLS shall
+        ///				support this command.
+        /// </summary>
         System.Threading.Tasks.Task<GetCertificatesStatusResponse> GetCertificatesStatusAsync(GetCertificatesStatusRequest request);
         
+        /// <summary>
+        /// This operation is specific to TLS functionality. This operation sets the status (enable/disable)
+        ///				of the device TLS server certificates. A device that supports TLS shall support this command.
+        ///				Typically only one device server certificate is allowed to be enabled at a time.
+        /// </summary>
         System.Threading.Tasks.Task<SetCertificatesStatusResponse> SetCertificatesStatusAsync(SetCertificatesStatusRequest request);
         
+        /// <summary>
+        /// This operation deletes a certificate or multiple certificates. The device MAY also delete a
+        ///				private/public key pair which is coupled with the certificate to be deleted. The device that
+        ///				support either TLS or IEEE 802.1X shall support the deletion of a certificate or multiple
+        ///				certificates through this command. Either all certificates are deleted successfully or a fault
+        ///				message shall be returned without deleting any certificate.
+        /// </summary>
         System.Threading.Tasks.Task<DeleteCertificatesResponse> DeleteCertificatesAsync(DeleteCertificatesRequest request);
         
+        /// <summary>
+        /// This operation requests a PKCS #10 certificate signature request from the device. The
+        ///				returned information field shall be either formatted exactly as specified in [PKCS#10] or PEM
+        ///				encoded [PKCS#10] format. In order for this command to work, the device must already have
+        ///				a private/public key pair. This key pair should be referred by CertificateID as specified in the
+        ///				input parameter description. This CertificateID refers to the key pair generated using
+        ///				CreateCertificate command.
+        ///				A device that support onboard key pair generation that supports either TLS or IEEE 802.1X
+        ///				using client certificate shall support this command.
+        /// </summary>
         System.Threading.Tasks.Task<GetPkcs10RequestResponse> GetPkcs10RequestAsync(GetPkcs10RequestRequest request);
         
+        /// <summary>
+        /// TLS server certificate(s) or IEEE 802.1X client certificate(s) created using the PKCS#10
+        ///				certificate request command can be loaded into the device using this command (see Section
+        ///				8.4.13). The certificate ID in the request shall be present. The device may sort the received
+        ///				certificate(s) based on the public key and subject information in the certificate(s).
+        ///				The certificate ID in the request will be the ID value the client wish to have. The device is
+        ///				supposed to scan the generated key pairs present in the device to identify which is the
+        ///				correspondent key pair with the loaded certificate and then make the link between the
+        ///				certificate and the key pair.
+        ///				A device that supports onboard key pair generation that support either TLS or IEEE 802.1X
+        ///				shall support this command.
+        ///				The certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+        ///				rules.
+        ///				This command is applicable to any device type, although the parameter name is called for
+        ///				historical reasons NVTCertificate.
+        /// </summary>
         System.Threading.Tasks.Task<LoadCertificatesResponse> LoadCertificatesAsync(LoadCertificatesRequest request);
         
+        /// <summary>
+        /// This operation is specific to TLS functionality. This operation gets the status
+        ///				(enabled/disabled) of the device TLS client authentication. A device that supports TLS shall
+        ///				support this command.
+        /// </summary>
         System.Threading.Tasks.Task<GetClientCertificateModeResponse> GetClientCertificateModeAsync(GetClientCertificateModeRequest request);
         
+        /// <summary>
+        /// This operation is specific to TLS functionality. This operation sets the status
+        ///				(enabled/disabled) of the device TLS client authentication. A device that supports TLS shall
+        ///				support this command.
+        /// </summary>
         System.Threading.Tasks.Task<SetClientCertificateModeResponse> SetClientCertificateModeAsync(SetClientCertificateModeRequest request);
         
+        /// <summary>
+        /// This operation gets a list of all available relay outputs and their settings.
+        ///				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+        /// </summary>
         System.Threading.Tasks.Task<GetRelayOutputsResponse> GetRelayOutputsAsync(GetRelayOutputsRequest request);
         
+        /// <summary>
+        /// This operation sets the settings of a relay output.
+        ///				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+        /// </summary>
         System.Threading.Tasks.Task<SetRelayOutputSettingsResponse> SetRelayOutputSettingsAsync(SetRelayOutputSettingsRequest request);
         
+        /// <summary>
+        /// This operation sets the state of a relay output.
+        ///				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+        /// </summary>
         System.Threading.Tasks.Task<SetRelayOutputStateResponse> SetRelayOutputStateAsync(SetRelayOutputStateRequest request);
         
+        /// <summary>
+        /// Manage auxiliary commands supported by a device, such as controlling an Infrared (IR) lamp, 
+        ///				a heater or a wiper or a thermometer that is connected to the device.
+        ///				The supported commands can be retrieved via the AuxiliaryCommands capability.
+        ///				Although the name of the auxiliary commands can be freely defined, commands starting with the prefix tt: are 
+        ///				reserved to define frequently used commands and these reserved commands shall all share the "tt:command|parameter" syntax.
+        ///				tt:Wiper|On – Request to start the wiper.tt:Wiper|Off – Request to stop the wiper.tt:Washer|On – Request to start the washer.tt:Washer|Off – Request to stop the washer.tt:WashingProcedure|On – Request to start the washing procedure.tt: WashingProcedure |Off – Request to stop the washing procedure.tt:IRLamp|On – Request to turn ON an IR illuminator attached to the unit.tt:IRLamp|Off – Request to turn OFF an IR illuminator attached to the unit.tt:IRLamp|Auto – Request to configure an IR illuminator attached to the unit so that it automatically turns ON and OFF.
+        ///				A device that indicates auxiliary service capability shall support this command.
+        /// </summary>
         System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommandAsync(SendAuxiliaryCommandRequest request);
         
+        /// <summary>
+        /// CA certificates will be loaded into a device and be used for the sake of following two cases.
+        ///				The one is for the purpose of TLS client authentication in TLS server function. The other one
+        ///				is for the purpose of Authentication Server authentication in IEEE 802.1X function. This
+        ///				operation gets all CA certificates loaded into a device. A device that supports either TLS client
+        ///				authentication or IEEE 802.1X shall support this command and the returned certificates shall
+        ///				be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding rules.
+        /// </summary>
         System.Threading.Tasks.Task<GetCACertificatesResponse> GetCACertificatesAsync(GetCACertificatesRequest request);
         
+        /// <summary>
+        /// There might be some cases that a Certificate Authority or some other equivalent creates a
+        ///				certificate without having PKCS#10 certificate signing request. In such cases, the certificate
+        ///				will be bundled in conjunction with its private key. This command will be used for such use
+        ///				case scenarios. The certificate ID in the request is optionally set to the ID value the client
+        ///				wish to have. If the certificate ID is not specified in the request, device can choose the ID
+        ///				accordingly.
+        ///				This operation imports a private/public key pair into the device.
+        ///				The certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+        ///				rules.
+        ///				A device that does not support onboard key pair generation and support either TLS or IEEE
+        ///				802.1X using client certificate shall support this command. A device that support onboard key
+        ///				pair generation MAY support this command. The security policy of a device that supports this
+        ///				operation should make sure that the private key is sufficiently protected.
+        /// </summary>
         System.Threading.Tasks.Task<LoadCertificateWithPrivateKeyResponse> LoadCertificateWithPrivateKeyAsync(LoadCertificateWithPrivateKeyRequest request);
         
+        /// <summary>
+        /// This operation requests the information of a certificate specified by certificate ID. The device
+        ///				should respond with its “Issuer DN”, “Subject DN”, “Key usage”, "Extended key usage”, “Key
+        ///				Length”, “Version”, “Serial Number”, “Signature Algorithm” and “Validity” data as the
+        ///				information of the certificate, as long as the device can retrieve such information from the
+        ///				specified certificate.
+        ///				A device that supports either TLS or IEEE 802.1X should support this command.
+        /// </summary>
         System.Threading.Tasks.Task<GetCertificateInformationResponse> GetCertificateInformationAsync(GetCertificateInformationRequest request);
         
+        /// <summary>
+        /// This command is used when it is necessary to load trusted CA certificates or trusted root
+        ///				certificates for the purpose of verification for its counterpart i.e. client certificate verification in
+        ///				TLS function or server certificate verification in IEEE 802.1X function.
+        ///				A device that support either TLS or IEEE 802.1X shall support this command. As for the
+        ///				supported certificate format, either DER format or PEM format is possible to be used. But a
+        ///				device that support this command shall support at least DER format as supported format type.
+        ///				The device may sort the received certificate(s) based on the public key and subject
+        ///				information in the certificate(s). Either all CA certificates are loaded successfully or a fault
+        ///				message shall be returned without loading any CA certificate.
+        /// </summary>
         System.Threading.Tasks.Task<LoadCACertificatesResponse> LoadCACertificatesAsync(LoadCACertificatesRequest request);
         
+        /// <summary>
+        /// This operation newly creates IEEE 802.1X configuration parameter set of the device. The
+        ///				device shall support this command if it supports IEEE 802.1X. If the device receives this
+        ///				request with already existing configuration token (Dot1XConfigurationToken) specification, the
+        ///				device should respond with 'ter:ReferenceToken ' error to indicate there is some configuration
+        ///				conflict.
+        /// </summary>
         System.Threading.Tasks.Task<CreateDot1XConfigurationResponse> CreateDot1XConfigurationAsync(CreateDot1XConfigurationRequest request);
         
+        /// <summary>
+        /// While the CreateDot1XConfiguration command is trying to create a new configuration
+        ///				parameter set, this operation modifies existing IEEE 802.1X configuration parameter set of
+        ///				the device. A device that support IEEE 802.1X shall support this command.
+        /// </summary>
         System.Threading.Tasks.Task<SetDot1XConfigurationResponse> SetDot1XConfigurationAsync(SetDot1XConfigurationRequest request);
         
+        /// <summary>
+        /// This operation gets one IEEE 802.1X configuration parameter set from the device by
+        ///				specifying the configuration token (Dot1XConfigurationToken).
+        ///				A device that supports IEEE 802.1X shall support this command.
+        ///				Regardless of whether the 802.1X method in the retrieved configuration has a password or
+        ///				not, the device shall not include the Password element in the response.
+        /// </summary>
         System.Threading.Tasks.Task<GetDot1XConfigurationResponse> GetDot1XConfigurationAsync(GetDot1XConfigurationRequest request);
         
+        /// <summary>
+        /// This operation gets all the existing IEEE 802.1X configuration parameter sets from the device.
+        ///				The device shall respond with all the IEEE 802.1X configurations so that the client can get to
+        ///				know how many IEEE 802.1X configurations are existing and how they are configured.
+        ///				A device that support IEEE 802.1X shall support this command.
+        ///				Regardless of whether the 802.1X method in the retrieved configuration has a password or
+        ///				not, the device shall not include the Password element in the response.
+        /// </summary>
         System.Threading.Tasks.Task<GetDot1XConfigurationsResponse> GetDot1XConfigurationsAsync(GetDot1XConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation deletes an IEEE 802.1X configuration parameter set from the device. Which
+        ///				configuration should be deleted is specified by the 'Dot1XConfigurationToken' in the request.
+        ///				A device that support IEEE 802.1X shall support this command.
+        /// </summary>
         System.Threading.Tasks.Task<DeleteDot1XConfigurationResponse> DeleteDot1XConfigurationAsync(DeleteDot1XConfigurationRequest request);
         
+        /// <summary>
+        /// This operation returns the IEEE802.11 capabilities. The device shall support
+        ///				this operation.
+        /// </summary>
         System.Threading.Tasks.Task<GetDot11CapabilitiesResponse> GetDot11CapabilitiesAsync(GetDot11CapabilitiesRequest request);
         
+        /// <summary>
+        /// This operation returns the status of a wireless network interface. The device shall support this
+        ///				command.
+        /// </summary>
         System.Threading.Tasks.Task<GetDot11StatusResponse> GetDot11StatusAsync(GetDot11StatusRequest request);
         
+        /// <summary>
+        /// This operation returns a lists of the wireless networks in range of the device. A device should
+        ///				support this operation.
+        /// </summary>
         System.Threading.Tasks.Task<ScanAvailableDot11NetworksResponse> ScanAvailableDot11NetworksAsync(ScanAvailableDot11NetworksRequest request);
         
+        /// <summary>
+        /// This operation is used to retrieve URIs from which system information may be downloaded
+        ///				using HTTP. URIs may be returned for the following system information:
+        ///				System Logs. Multiple system logs may be returned, of different types. The exact format of
+        ///				the system logs is outside the scope of this specification.
+        ///				Support Information. This consists of arbitrary device diagnostics information from a device.
+        ///				The exact format of the diagnostic information is outside the scope of this specification.
+        ///				System Backup. The received file is a backup file that can be used to restore the current
+        ///				device configuration at a later date. The exact format of the backup configuration file is
+        ///				outside the scope of this specification.
+        ///				If the device allows retrieval of system logs, support information or system backup data, it
+        ///				should make them available via HTTP GET. If it does, it shall support the GetSystemUris
+        ///				command.
+        /// </summary>
         System.Threading.Tasks.Task<GetSystemUrisResponse> GetSystemUrisAsync(GetSystemUrisRequest request);
         
+        /// <summary>
+        /// This operation initiates a firmware upgrade using the HTTP POST mechanism. The response
+        ///				to the command includes an HTTP URL to which the upgrade file may be uploaded. The
+        ///				actual upgrade takes place as soon as the HTTP POST operation has completed. The device
+        ///				should support firmware upgrade through the StartFirmwareUpgrade command. The exact
+        ///				format of the firmware data is outside the scope of this specification.
+        ///				Firmware upgrade over HTTP may be achieved using the following steps:Client calls StartFirmwareUpgrade.Server responds with upload URI and optional delay value.Client waits for delay duration if specified by server.Client transmits the firmware image to the upload URI using HTTP POST.Server reprograms itself using the uploaded image, then reboots.
+        ///				If the firmware upgrade fails because the upgrade file was invalid, the HTTP POST response
+        ///				shall be “415 Unsupported Media Type”. If the firmware upgrade fails due to an error at the
+        ///				device, the HTTP POST response shall be “500 Internal Server Error”.
+        ///				The value of the Content-Type header in the HTTP POST request shall be “application/octetstream”.
+        /// </summary>
         System.Threading.Tasks.Task<StartFirmwareUpgradeResponse> StartFirmwareUpgradeAsync(StartFirmwareUpgradeRequest request);
         
+        /// <summary>
+        /// This operation initiates a system restore from backed up configuration data using the HTTP
+        ///				POST mechanism. The response to the command includes an HTTP URL to which the backup
+        ///				file may be uploaded. The actual restore takes place as soon as the HTTP POST operation
+        ///				has completed. Devices should support system restore through the StartSystemRestore
+        ///				command. The exact format of the backup configuration data is outside the scope of this
+        ///				specification.
+        ///				System restore over HTTP may be achieved using the following steps:Client calls StartSystemRestore.Server responds with upload URI.Client transmits the configuration data to the upload URI using HTTP POST.Server applies the uploaded configuration, then reboots if necessary.
+        ///				If the system restore fails because the uploaded file was invalid, the HTTP POST response
+        ///				shall be “415 Unsupported Media Type”. If the system restore fails due to an error at the
+        ///				device, the HTTP POST response shall be “500 Internal Server Error”.
+        ///				The value of the Content-Type header in the HTTP POST request shall be “application/octetstream”.
+        /// </summary>
         System.Threading.Tasks.Task<StartSystemRestoreResponse> StartSystemRestoreAsync(StartSystemRestoreRequest request);
         
+        /// <summary>
+        /// 
+        ///			This operation lists all existing storage configurations for the device. 
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<GetStorageConfigurationsResponse> GetStorageConfigurationsAsync(GetStorageConfigurationsRequest request);
         
+        /// <summary>
+        /// 
+        ///			This operation creates a new storage configuration. 
+        ///			The configuration data shall be created in the device and shall be persistent (remain after reboot).
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<CreateStorageConfigurationResponse> CreateStorageConfigurationAsync(CreateStorageConfigurationRequest request);
         
+        /// <summary>
+        /// 
+        ///			This operation retrieves the Storage configuration associated with the given storage configuration token.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<GetStorageConfigurationResponse> GetStorageConfigurationAsync(GetStorageConfigurationRequest request);
         
+        /// <summary>
+        /// 
+        ///			This operation modifies an existing Storage configuration.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<SetStorageConfigurationResponse> SetStorageConfigurationAsync(SetStorageConfigurationRequest request);
         
+        /// <summary>
+        /// 
+        ///			This operation deletes the given storage configuration and configuration change shall always be persistent.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<DeleteStorageConfigurationResponse> DeleteStorageConfigurationAsync(DeleteStorageConfigurationRequest request);
     }
     
     public partial class DeviceClient : SoapServices.SoapClientBase, Device
     {
         
+        /// <summary>
+        /// Returns information about services on the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetServicesResponse> GetServicesAsync(GetServicesRequest request)
         {
             return this.CallAsync<GetServicesRequest, GetServicesResponse>(null, request);
         }
         
+        /// <summary>
+        /// Returns the capabilities of the device service. The result is returned in a typed answer.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request)
         {
             return this.CallAsync<GetServiceCapabilitiesRequest, GetServiceCapabilitiesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets basic device information from the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDeviceInformationResponse> GetDeviceInformationAsync(GetDeviceInformationRequest request)
         {
             return this.CallAsync<GetDeviceInformationRequest, GetDeviceInformationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the device system date and time. The device shall support the
+        ///				configuration of the daylight saving setting and of the manual system date and time (if
+        ///				applicable) or indication of NTP time (if applicable) through the SetSystemDateAndTime
+        ///				command. 
+        ///				If system time and date are set manually, the client shall include UTCDateTime in the request.
+        ///				A TimeZone token which is not formed according to the rules of IEEE 1003.1 section 8.3 is considered as invalid timezone.
+        ///				The DayLightSavings flag should be set to true to activate any DST settings of the TimeZone string. 
+        ///				Clear the DayLightSavings flag if the DST portion of the TimeZone settings should be ignored.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetSystemDateAndTimeResponse> SetSystemDateAndTimeAsync(SetSystemDateAndTimeRequest request)
         {
             return this.CallAsync<SetSystemDateAndTimeRequest, SetSystemDateAndTimeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the device system date and time. The device shall support the return of
+        ///				the daylight saving setting and of the manual system date and time (if applicable) or indication
+        ///				of NTP time (if applicable) through the GetSystemDateAndTime command.
+        ///				A device shall provide the UTCDateTime information.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetSystemDateAndTimeResponse> GetSystemDateAndTimeAsync(GetSystemDateAndTimeRequest request)
         {
             return this.CallAsync<GetSystemDateAndTimeRequest, GetSystemDateAndTimeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation reloads the parameters on the device to their factory default values.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetSystemFactoryDefaultResponse> SetSystemFactoryDefaultAsync(SetSystemFactoryDefaultRequest request)
         {
             return this.CallAsync<SetSystemFactoryDefaultRequest, SetSystemFactoryDefaultResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation upgrades a device firmware version. After a successful upgrade the response
+        ///				message is sent before the device reboots. The device should support firmware upgrade
+        ///				through the UpgradeSystemFirmware command. The exact format of the firmware data is
+        ///				outside the scope of this standard.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<UpgradeSystemFirmwareResponse> UpgradeSystemFirmwareAsync(UpgradeSystemFirmwareRequest request)
         {
             return this.CallAsync<UpgradeSystemFirmwareRequest, UpgradeSystemFirmwareResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation reboots the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SystemRebootResponse> SystemRebootAsync(SystemRebootRequest request)
         {
             return this.CallAsync<SystemRebootRequest, SystemRebootResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation restores the system backup configuration files(s) previously retrieved from a
+        ///				device. The device should support restore of backup configuration file(s) through the
+        ///				RestoreSystem command. The exact format of the backup configuration file(s) is outside the
+        ///				scope of this standard. If the command is supported, it shall accept backup files returned by
+        ///				the GetSystemBackup command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RestoreSystemResponse> RestoreSystemAsync(RestoreSystemRequest request)
         {
             return this.CallAsync<RestoreSystemRequest, RestoreSystemResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation is retrieves system backup configuration file(s) from a device. The device
+        ///				should support return of back up configuration file(s) through the GetSystemBackup command.
+        ///				The backup is returned with reference to a name and mime-type together with binary data.
+        ///				The exact format of the backup configuration files is outside the scope of this standard.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetSystemBackupResponse> GetSystemBackupAsync(GetSystemBackupRequest request)
         {
             return this.CallAsync<GetSystemBackupRequest, GetSystemBackupResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets a system log from the device. The exact format of the system logs is outside the scope of this standard.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetSystemLogResponse> GetSystemLogAsync(GetSystemLogRequest request)
         {
             return this.CallAsync<GetSystemLogRequest, GetSystemLogResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets arbitary device diagnostics information from the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetSystemSupportInformationResponse> GetSystemSupportInformationAsync(GetSystemSupportInformationRequest request)
         {
             return this.CallAsync<GetSystemSupportInformationRequest, GetSystemSupportInformationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests the scope parameters of a device. The scope parameters are used in
+        ///				the device discovery to match a probe message, see Section 7. The Scope parameters are of
+        ///				two different types: FixedConfigurable
+        ///				Fixed scope parameters are permanent device characteristics and cannot be removed through the device management interface. 
+        ///				The scope type is indicated in the scope list returned in the get scope parameters response. A device shall support 
+        ///				retrieval of discovery scope parameters through the GetScopes command. As some scope parameters are mandatory, 
+        ///				the device shall return a non-empty scope list in the response.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetScopesResponse> GetScopesAsync(GetScopesRequest request)
         {
             return this.CallAsync<GetScopesRequest, GetScopesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the scope parameters of a device. The scope parameters are used in the
+        ///				device discovery to match a probe message.
+        ///				This operation replaces all existing configurable scope parameters (not fixed parameters). If
+        ///				this shall be avoided, one should use the scope add command instead. The device shall
+        ///				support configuration of discovery scope parameters through the SetScopes command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetScopesResponse> SetScopesAsync(SetScopesRequest request)
         {
             return this.CallAsync<SetScopesRequest, SetScopesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds new configurable scope parameters to a device. The scope parameters
+        ///				are used in the device discovery to match a probe message. The device shall
+        ///				support addition of discovery scope parameters through the AddScopes command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddScopesResponse> AddScopesAsync(AddScopesRequest request)
         {
             return this.CallAsync<AddScopesRequest, AddScopesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation deletes scope-configurable scope parameters from a device. The scope
+        ///				parameters are used in the device discovery to match a probe message, see Section 7. The
+        ///				device shall support deletion of discovery scope parameters through the RemoveScopes
+        ///				command.
+        ///				Table
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveScopesResponse> RemoveScopesAsync(RemoveScopesRequest request)
         {
             return this.CallAsync<RemoveScopesRequest, RemoveScopesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the discovery mode of a device. See Section 7.2 for the definition of the
+        ///				different device discovery modes. The device shall support retrieval of the discovery mode
+        ///				setting through the GetDiscoveryMode command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDiscoveryModeResponse> GetDiscoveryModeAsync(GetDiscoveryModeRequest request)
         {
             return this.CallAsync<GetDiscoveryModeRequest, GetDiscoveryModeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the discovery mode operation of a device. See Section 7.2 for the
+        ///				definition of the different device discovery modes. The device shall support configuration of
+        ///				the discovery mode setting through the SetDiscoveryMode command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetDiscoveryModeResponse> SetDiscoveryModeAsync(SetDiscoveryModeRequest request)
         {
             return this.CallAsync<SetDiscoveryModeRequest, SetDiscoveryModeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the remote discovery mode of a device. See Section 7.4 for the definition
+        ///				of remote discovery extensions. A device that supports remote discovery shall support
+        ///				retrieval of the remote discovery mode setting through the GetRemoteDiscoveryMode
+        ///				command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetRemoteDiscoveryModeResponse> GetRemoteDiscoveryModeAsync(GetRemoteDiscoveryModeRequest request)
         {
             return this.CallAsync<GetRemoteDiscoveryModeRequest, GetRemoteDiscoveryModeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the remote discovery mode of operation of a device. See Section 7.4 for
+        ///				the definition of remote discovery remote extensions. A device that supports remote discovery
+        ///				shall support configuration of the discovery mode setting through the
+        ///				SetRemoteDiscoveryMode command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetRemoteDiscoveryModeResponse> SetRemoteDiscoveryModeAsync(SetRemoteDiscoveryModeRequest request)
         {
             return this.CallAsync<SetRemoteDiscoveryModeRequest, SetRemoteDiscoveryModeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the remote DP address or addresses from a device. If the device supports
+        ///				remote discovery, as specified in Section 7.4, the device shall support retrieval of the remote
+        ///				DP address(es) through the GetDPAddresses command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDPAddressesResponse> GetDPAddressesAsync(GetDPAddressesRequest request)
         {
             return this.CallAsync<GetDPAddressesRequest, GetDPAddressesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the remote DP address or addresses on a device. If the device supports
+        ///				remote discovery, as specified in Section 7.4, the device shall support configuration of the
+        ///				remote DP address(es) through the SetDPAddresses command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetDPAddressesResponse> SetDPAddressesAsync(SetDPAddressesRequest request)
         {
             return this.CallAsync<SetDPAddressesRequest, SetDPAddressesResponse>(null, request);
         }
         
+        /// <summary>
+        /// A client can ask for the device service endpoint reference address property that can be used
+        ///				to derive the password equivalent for remote user operation. The device shall support the
+        ///				GetEndpointReference command returning the address property of the device service
+        ///				endpoint reference.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetEndpointReferenceResponse> GetEndpointReferenceAsync(GetEndpointReferenceRequest request)
         {
             return this.CallAsync<GetEndpointReferenceRequest, GetEndpointReferenceResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the configured remote user (if any). A device supporting remote user
+        ///				handling shall support this operation. The user is only valid for the WS-UserToken profile or
+        ///				as a HTTP / RTSP user.
+        ///				The algorithm to use for deriving the password is described in section 5.12.2.1 of the core specification.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetRemoteUserResponse> GetRemoteUserAsync(GetRemoteUserRequest request)
         {
             return this.CallAsync<GetRemoteUserRequest, GetRemoteUserResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the remote user. A device supporting remote user handling shall support this
+        ///				operation. The user is only valid for the WS-UserToken profile or as a HTTP / RTSP user.
+        ///				The password that is set shall always be the original (not derived) password.
+        ///				If UseDerivedPassword is set password derivation shall be done by the device when connecting to a
+        ///				remote device.The algorithm to use for deriving the password is described in section 5.12.2.1 of the core specification.
+        ///				To remove the remote user SetRemoteUser should be called without the RemoteUser parameter.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetRemoteUserResponse> SetRemoteUserAsync(SetRemoteUserRequest request)
         {
             return this.CallAsync<SetRemoteUserRequest, SetRemoteUserResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists the registered users and corresponding credentials on a device. The
+        ///				device shall support retrieval of registered device users and their credentials for the user
+        ///				token through the GetUsers command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetUsersResponse> GetUsersAsync(GetUsersRequest request)
         {
             return this.CallAsync<GetUsersRequest, GetUsersResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation creates new device users and corresponding credentials on a device for authentication purposes. 
+        ///				The device shall support creation of device users and their credentials through the CreateUsers
+        ///				command. Either all users are created successfully or a fault message shall be returned
+        ///				without creating any user.
+        ///				ONVIF compliant devices are recommended to support password length of at least 28 bytes,
+        ///				as clients may follow the password derivation mechanism which results in 'password
+        ///				equivalent' of length 28 bytes, as described in section 3.1.2 of the ONVIF security white paper.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<CreateUsersResponse> CreateUsersAsync(CreateUsersRequest request)
         {
             return this.CallAsync<CreateUsersRequest, CreateUsersResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation deletes users on a device. The device shall support deletion of device users and their credentials 
+        ///				through the DeleteUsers command. A device may have one or more fixed users
+        ///				that cannot be deleted to ensure access to the unit. Either all users are deleted successfully or a
+        ///				fault message shall be returned and no users be deleted.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<DeleteUsersResponse> DeleteUsersAsync(DeleteUsersRequest request)
         {
             return this.CallAsync<DeleteUsersRequest, DeleteUsersResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation updates the settings for one or several users on a device for authentication purposes.
+        ///				The device shall support update of device users and their credentials through the SetUser command. 
+        ///				Either all change requests are processed successfully or a fault message shall be returned and no change requests be processed.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetUserResponse> SetUserAsync(SetUserRequest request)
         {
             return this.CallAsync<SetUserRequest, SetUserResponse>(null, request);
         }
         
+        /// <summary>
+        /// It is possible for an endpoint to request a URL that can be used to retrieve the complete
+        ///				schema and WSDL definitions of a device. The command gives in return a URL entry point
+        ///				where all the necessary product specific WSDL and schema definitions can be retrieved. The
+        ///				device shall provide a URL for WSDL and schema download through the GetWsdlUrl command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetWsdlUrlResponse> GetWsdlUrlAsync(GetWsdlUrlRequest request)
         {
             return this.CallAsync<GetWsdlUrlRequest, GetWsdlUrlResponse>(null, request);
         }
         
+        /// <summary>
+        /// Any endpoint can ask for the capabilities of a device using the capability exchange request
+        ///				response operation. The device shall indicate all its ONVIF compliant capabilities through the
+        ///				GetCapabilities command.
+        ///				The capability list includes references to the addresses (XAddr) of the service implementing
+        ///				the interface operations in the category. Apart from the addresses, the
+        ///				capabilities only reflect optional functions.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCapabilitiesResponse> GetCapabilitiesAsync(GetCapabilitiesRequest request)
         {
             return this.CallAsync<GetCapabilitiesRequest, GetCapabilitiesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation is used by an endpoint to get the hostname from a device. The device shall
+        ///				return its hostname configurations through the GetHostname command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetHostnameResponse> GetHostnameAsync(GetHostnameRequest request)
         {
             return this.CallAsync<GetHostnameRequest, GetHostnameResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the hostname on a device. It shall be possible to set the device hostname
+        ///				configurations through the SetHostname command.
+        ///				A device shall accept string formated according to RFC 1123 section 2.1 or alternatively to RFC 952, 
+        ///				other string shall be considered as invalid strings. 
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetHostnameResponse> SetHostnameAsync(SetHostnameRequest request)
         {
             return this.CallAsync<SetHostnameRequest, SetHostnameResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation controls whether the hostname is set manually or retrieved via DHCP.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetHostnameFromDHCPResponse> SetHostnameFromDHCPAsync(SetHostnameFromDHCPRequest request)
         {
             return this.CallAsync<SetHostnameFromDHCPRequest, SetHostnameFromDHCPResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the DNS settings from a device. The device shall return its DNS
+        ///				configurations through the GetDNS command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDNSResponse> GetDNSAsync(GetDNSRequest request)
         {
             return this.CallAsync<GetDNSRequest, GetDNSResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the DNS settings on a device. It shall be possible to set the device DNS
+        ///				configurations through the SetDNS command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetDNSResponse> SetDNSAsync(SetDNSRequest request)
         {
             return this.CallAsync<SetDNSRequest, SetDNSResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the NTP settings from a device. If the device supports NTP, it shall be
+        ///				possible to get the NTP server settings through the GetNTP command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetNTPResponse> GetNTPAsync(GetNTPRequest request)
         {
             return this.CallAsync<GetNTPRequest, GetNTPResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the NTP settings on a device. If the device supports NTP, it shall be
+        ///				possible to set the NTP server settings through the SetNTP command.
+        ///				A device shall accept string formated according to RFC 1123 section 2.1 or alternatively to RFC 952, 
+        ///				other string shall be considered as invalid strings. 
+        ///				Changes to the NTP server list will not affect the clock mode DateTimeType. Use SetSystemDateAndTime to activate NTP operation.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetNTPResponse> SetNTPAsync(SetNTPRequest request)
         {
             return this.CallAsync<SetNTPRequest, SetNTPResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the dynamic DNS settings from a device. If the device supports dynamic
+        ///				DNS as specified in [RFC 2136] and [RFC 4702], it shall be possible to get the type, name
+        ///				and TTL through the GetDynamicDNS command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDynamicDNSResponse> GetDynamicDNSAsync(GetDynamicDNSRequest request)
         {
             return this.CallAsync<GetDynamicDNSRequest, GetDynamicDNSResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the dynamic DNS settings on a device. If the device supports dynamic
+        ///				DNS as specified in [RFC 2136] and [RFC 4702], it shall be possible to set the type, name
+        ///				and TTL through the SetDynamicDNS command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetDynamicDNSResponse> SetDynamicDNSAsync(SetDynamicDNSRequest request)
         {
             return this.CallAsync<SetDynamicDNSRequest, SetDynamicDNSResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the network interface configuration from a device. The device shall
+        ///				support return of network interface configuration settings as defined by the NetworkInterface
+        ///				type through the GetNetworkInterfaces command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetNetworkInterfacesResponse> GetNetworkInterfacesAsync(GetNetworkInterfacesRequest request)
         {
             return this.CallAsync<GetNetworkInterfacesRequest, GetNetworkInterfacesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the network interface configuration on a device. The device shall support
+        ///				network configuration of supported network interfaces through the SetNetworkInterfaces
+        ///				command.
+        ///				For interoperability with a client unaware of the IEEE 802.11 extension a device shall retain
+        ///				its IEEE 802.11 configuration if the IEEE 802.11 configuration element isn’t present in the
+        ///				request.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetNetworkInterfacesResponse> SetNetworkInterfacesAsync(SetNetworkInterfacesRequest request)
         {
             return this.CallAsync<SetNetworkInterfacesRequest, SetNetworkInterfacesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets defined network protocols from a device. The device shall support the
+        ///				GetNetworkProtocols command returning configured network protocols.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetNetworkProtocolsResponse> GetNetworkProtocolsAsync(GetNetworkProtocolsRequest request)
         {
             return this.CallAsync<GetNetworkProtocolsRequest, GetNetworkProtocolsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation configures defined network protocols on a device. The device shall support
+        ///				configuration of defined network protocols through the SetNetworkProtocols command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetNetworkProtocolsResponse> SetNetworkProtocolsAsync(SetNetworkProtocolsRequest request)
         {
             return this.CallAsync<SetNetworkProtocolsRequest, SetNetworkProtocolsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the default gateway settings from a device. The device shall support the
+        ///				GetNetworkDefaultGateway command returning configured default gateway address(es).
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetNetworkDefaultGatewayResponse> GetNetworkDefaultGatewayAsync(GetNetworkDefaultGatewayRequest request)
         {
             return this.CallAsync<GetNetworkDefaultGatewayRequest, GetNetworkDefaultGatewayResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the default gateway settings on a device. The device shall support
+        ///				configuration of default gateway through the SetNetworkDefaultGateway command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetNetworkDefaultGatewayResponse> SetNetworkDefaultGatewayAsync(SetNetworkDefaultGatewayRequest request)
         {
             return this.CallAsync<SetNetworkDefaultGatewayRequest, SetNetworkDefaultGatewayResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the zero-configuration from a device. If the device supports dynamic IP
+        ///				configuration according to [RFC3927], it shall support the return of IPv4 zero configuration
+        ///				address and status through the GetZeroConfiguration command.
+        ///			Devices supporting zero configuration on more than one interface shall use the extension to list the additional interface settings.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetZeroConfigurationResponse> GetZeroConfigurationAsync(GetZeroConfigurationRequest request)
         {
             return this.CallAsync<GetZeroConfigurationRequest, GetZeroConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the zero-configuration. Use GetCapalities to get if zero-zero-configuration is supported or not.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetZeroConfigurationResponse> SetZeroConfigurationAsync(SetZeroConfigurationRequest request)
         {
             return this.CallAsync<SetZeroConfigurationRequest, SetZeroConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets the IP address filter settings from a device. If the device supports device
+        ///				access control based on IP filtering rules (denied or accepted ranges of IP addresses), the
+        ///				device shall support the GetIPAddressFilter command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetIPAddressFilterResponse> GetIPAddressFilterAsync(GetIPAddressFilterRequest request)
         {
             return this.CallAsync<GetIPAddressFilterRequest, GetIPAddressFilterResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the IP address filter settings on a device. If the device supports device
+        ///				access control based on IP filtering rules (denied or accepted ranges of IP addresses), the
+        ///				device shall support configuration of IP filtering rules through the SetIPAddressFilter
+        ///				command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetIPAddressFilterResponse> SetIPAddressFilterAsync(SetIPAddressFilterRequest request)
         {
             return this.CallAsync<SetIPAddressFilterRequest, SetIPAddressFilterResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds an IP filter address to a device. If the device supports device access
+        ///				control based on IP filtering rules (denied or accepted ranges of IP addresses), the device
+        ///				shall support adding of IP filtering addresses through the AddIPAddressFilter command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddIPAddressFilterResponse> AddIPAddressFilterAsync(AddIPAddressFilterRequest request)
         {
             return this.CallAsync<AddIPAddressFilterRequest, AddIPAddressFilterResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation deletes an IP filter address from a device. If the device supports device access
+        ///				control based on IP filtering rules (denied or accepted ranges of IP addresses), the device
+        ///				shall support deletion of IP filtering addresses through the RemoveIPAddressFilter command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveIPAddressFilterResponse> RemoveIPAddressFilterAsync(RemoveIPAddressFilterRequest request)
         {
             return this.CallAsync<RemoveIPAddressFilterRequest, RemoveIPAddressFilterResponse>(null, request);
         }
         
+        /// <summary>
+        /// Access to different services and sub-sets of services should be subject to access control. The
+        ///				WS-Security framework gives the prerequisite for end-point authentication. Authorization
+        ///				decisions can then be taken using an access security policy. This standard does not mandate
+        ///				any particular policy description format or security policy but this is up to the device
+        ///				manufacturer or system provider to choose policy and policy description format of choice.
+        ///				However, an access policy (in arbitrary format) can be requested using this command. If the
+        ///				device supports access policy settings based on WS-Security authentication, then the device
+        ///				shall support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAccessPolicyResponse> GetAccessPolicyAsync(GetAccessPolicyRequest request)
         {
             return this.CallAsync<GetAccessPolicyRequest, GetAccessPolicyResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command sets the device access security policy (for more details on the access security
+        ///				policy see the Get command). If the device supports access policy settings
+        ///				based on WS-Security authentication, then the device shall support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetAccessPolicyResponse> SetAccessPolicyAsync(SetAccessPolicyRequest request)
         {
             return this.CallAsync<SetAccessPolicyRequest, SetAccessPolicyResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation generates a private/public key pair and also can create a self-signed device
+        ///				certificate as a result of key pair generation. The certificate is created using a suitable
+        ///				onboard key pair generation mechanism.
+        ///				If a device supports onboard key pair generation, the device that supports TLS shall support
+        ///				this certificate creation command. And also, if a device supports onboard key pair generation,
+        ///				the device that support IEEE 802.1X shall support this command for the purpose of key pair
+        ///				generation. Certificates and key pairs are identified using certificate IDs. These IDs are either
+        ///				chosen by the certificate generation requester or by the device (in case that no ID value is
+        ///				given).
+        /// </summary>
         public virtual System.Threading.Tasks.Task<CreateCertificateResponse> CreateCertificateAsync(CreateCertificateRequest request)
         {
             return this.CallAsync<CreateCertificateRequest, CreateCertificateResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets all device server certificates (including self-signed) for the purpose of TLS
+        ///				authentication and all device client certificates for the purpose of IEEE 802.1X authentication.
+        ///				This command lists only the TLS server certificates and IEEE 802.1X client certificates for the
+        ///				device (neither trusted CA certificates nor trusted root certificates). The certificates are
+        ///				returned as binary data. A device that supports TLS shall support this command and the
+        ///				certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+        ///				rules.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCertificatesResponse> GetCertificatesAsync(GetCertificatesRequest request)
         {
             return this.CallAsync<GetCertificatesRequest, GetCertificatesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation is specific to TLS functionality. This operation gets the status
+        ///				(enabled/disabled) of the device TLS server certificates. A device that supports TLS shall
+        ///				support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCertificatesStatusResponse> GetCertificatesStatusAsync(GetCertificatesStatusRequest request)
         {
             return this.CallAsync<GetCertificatesStatusRequest, GetCertificatesStatusResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation is specific to TLS functionality. This operation sets the status (enable/disable)
+        ///				of the device TLS server certificates. A device that supports TLS shall support this command.
+        ///				Typically only one device server certificate is allowed to be enabled at a time.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetCertificatesStatusResponse> SetCertificatesStatusAsync(SetCertificatesStatusRequest request)
         {
             return this.CallAsync<SetCertificatesStatusRequest, SetCertificatesStatusResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation deletes a certificate or multiple certificates. The device MAY also delete a
+        ///				private/public key pair which is coupled with the certificate to be deleted. The device that
+        ///				support either TLS or IEEE 802.1X shall support the deletion of a certificate or multiple
+        ///				certificates through this command. Either all certificates are deleted successfully or a fault
+        ///				message shall be returned without deleting any certificate.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<DeleteCertificatesResponse> DeleteCertificatesAsync(DeleteCertificatesRequest request)
         {
             return this.CallAsync<DeleteCertificatesRequest, DeleteCertificatesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests a PKCS #10 certificate signature request from the device. The
+        ///				returned information field shall be either formatted exactly as specified in [PKCS#10] or PEM
+        ///				encoded [PKCS#10] format. In order for this command to work, the device must already have
+        ///				a private/public key pair. This key pair should be referred by CertificateID as specified in the
+        ///				input parameter description. This CertificateID refers to the key pair generated using
+        ///				CreateCertificate command.
+        ///				A device that support onboard key pair generation that supports either TLS or IEEE 802.1X
+        ///				using client certificate shall support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetPkcs10RequestResponse> GetPkcs10RequestAsync(GetPkcs10RequestRequest request)
         {
             return this.CallAsync<GetPkcs10RequestRequest, GetPkcs10RequestResponse>(null, request);
         }
         
+        /// <summary>
+        /// TLS server certificate(s) or IEEE 802.1X client certificate(s) created using the PKCS#10
+        ///				certificate request command can be loaded into the device using this command (see Section
+        ///				8.4.13). The certificate ID in the request shall be present. The device may sort the received
+        ///				certificate(s) based on the public key and subject information in the certificate(s).
+        ///				The certificate ID in the request will be the ID value the client wish to have. The device is
+        ///				supposed to scan the generated key pairs present in the device to identify which is the
+        ///				correspondent key pair with the loaded certificate and then make the link between the
+        ///				certificate and the key pair.
+        ///				A device that supports onboard key pair generation that support either TLS or IEEE 802.1X
+        ///				shall support this command.
+        ///				The certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+        ///				rules.
+        ///				This command is applicable to any device type, although the parameter name is called for
+        ///				historical reasons NVTCertificate.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<LoadCertificatesResponse> LoadCertificatesAsync(LoadCertificatesRequest request)
         {
             return this.CallAsync<LoadCertificatesRequest, LoadCertificatesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation is specific to TLS functionality. This operation gets the status
+        ///				(enabled/disabled) of the device TLS client authentication. A device that supports TLS shall
+        ///				support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetClientCertificateModeResponse> GetClientCertificateModeAsync(GetClientCertificateModeRequest request)
         {
             return this.CallAsync<GetClientCertificateModeRequest, GetClientCertificateModeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation is specific to TLS functionality. This operation sets the status
+        ///				(enabled/disabled) of the device TLS client authentication. A device that supports TLS shall
+        ///				support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetClientCertificateModeResponse> SetClientCertificateModeAsync(SetClientCertificateModeRequest request)
         {
             return this.CallAsync<SetClientCertificateModeRequest, SetClientCertificateModeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets a list of all available relay outputs and their settings.
+        ///				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetRelayOutputsResponse> GetRelayOutputsAsync(GetRelayOutputsRequest request)
         {
             return this.CallAsync<GetRelayOutputsRequest, GetRelayOutputsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the settings of a relay output.
+        ///				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetRelayOutputSettingsResponse> SetRelayOutputSettingsAsync(SetRelayOutputSettingsRequest request)
         {
             return this.CallAsync<SetRelayOutputSettingsRequest, SetRelayOutputSettingsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation sets the state of a relay output.
+        ///				This method has been depricated with version 2.0. Refer to the DeviceIO service.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetRelayOutputStateResponse> SetRelayOutputStateAsync(SetRelayOutputStateRequest request)
         {
             return this.CallAsync<SetRelayOutputStateRequest, SetRelayOutputStateResponse>(null, request);
         }
         
+        /// <summary>
+        /// Manage auxiliary commands supported by a device, such as controlling an Infrared (IR) lamp, 
+        ///				a heater or a wiper or a thermometer that is connected to the device.
+        ///				The supported commands can be retrieved via the AuxiliaryCommands capability.
+        ///				Although the name of the auxiliary commands can be freely defined, commands starting with the prefix tt: are 
+        ///				reserved to define frequently used commands and these reserved commands shall all share the "tt:command|parameter" syntax.
+        ///				tt:Wiper|On – Request to start the wiper.tt:Wiper|Off – Request to stop the wiper.tt:Washer|On – Request to start the washer.tt:Washer|Off – Request to stop the washer.tt:WashingProcedure|On – Request to start the washing procedure.tt: WashingProcedure |Off – Request to stop the washing procedure.tt:IRLamp|On – Request to turn ON an IR illuminator attached to the unit.tt:IRLamp|Off – Request to turn OFF an IR illuminator attached to the unit.tt:IRLamp|Auto – Request to configure an IR illuminator attached to the unit so that it automatically turns ON and OFF.
+        ///				A device that indicates auxiliary service capability shall support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommandAsync(SendAuxiliaryCommandRequest request)
         {
             return this.CallAsync<SendAuxiliaryCommandRequest, SendAuxiliaryCommandResponse>(null, request);
         }
         
+        /// <summary>
+        /// CA certificates will be loaded into a device and be used for the sake of following two cases.
+        ///				The one is for the purpose of TLS client authentication in TLS server function. The other one
+        ///				is for the purpose of Authentication Server authentication in IEEE 802.1X function. This
+        ///				operation gets all CA certificates loaded into a device. A device that supports either TLS client
+        ///				authentication or IEEE 802.1X shall support this command and the returned certificates shall
+        ///				be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding rules.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCACertificatesResponse> GetCACertificatesAsync(GetCACertificatesRequest request)
         {
             return this.CallAsync<GetCACertificatesRequest, GetCACertificatesResponse>(null, request);
         }
         
+        /// <summary>
+        /// There might be some cases that a Certificate Authority or some other equivalent creates a
+        ///				certificate without having PKCS#10 certificate signing request. In such cases, the certificate
+        ///				will be bundled in conjunction with its private key. This command will be used for such use
+        ///				case scenarios. The certificate ID in the request is optionally set to the ID value the client
+        ///				wish to have. If the certificate ID is not specified in the request, device can choose the ID
+        ///				accordingly.
+        ///				This operation imports a private/public key pair into the device.
+        ///				The certificates shall be encoded using ASN.1 [X.681], [X.682], [X.683] DER [X.690] encoding
+        ///				rules.
+        ///				A device that does not support onboard key pair generation and support either TLS or IEEE
+        ///				802.1X using client certificate shall support this command. A device that support onboard key
+        ///				pair generation MAY support this command. The security policy of a device that supports this
+        ///				operation should make sure that the private key is sufficiently protected.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<LoadCertificateWithPrivateKeyResponse> LoadCertificateWithPrivateKeyAsync(LoadCertificateWithPrivateKeyRequest request)
         {
             return this.CallAsync<LoadCertificateWithPrivateKeyRequest, LoadCertificateWithPrivateKeyResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests the information of a certificate specified by certificate ID. The device
+        ///				should respond with its “Issuer DN”, “Subject DN”, “Key usage”, "Extended key usage”, “Key
+        ///				Length”, “Version”, “Serial Number”, “Signature Algorithm” and “Validity” data as the
+        ///				information of the certificate, as long as the device can retrieve such information from the
+        ///				specified certificate.
+        ///				A device that supports either TLS or IEEE 802.1X should support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCertificateInformationResponse> GetCertificateInformationAsync(GetCertificateInformationRequest request)
         {
             return this.CallAsync<GetCertificateInformationRequest, GetCertificateInformationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command is used when it is necessary to load trusted CA certificates or trusted root
+        ///				certificates for the purpose of verification for its counterpart i.e. client certificate verification in
+        ///				TLS function or server certificate verification in IEEE 802.1X function.
+        ///				A device that support either TLS or IEEE 802.1X shall support this command. As for the
+        ///				supported certificate format, either DER format or PEM format is possible to be used. But a
+        ///				device that support this command shall support at least DER format as supported format type.
+        ///				The device may sort the received certificate(s) based on the public key and subject
+        ///				information in the certificate(s). Either all CA certificates are loaded successfully or a fault
+        ///				message shall be returned without loading any CA certificate.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<LoadCACertificatesResponse> LoadCACertificatesAsync(LoadCACertificatesRequest request)
         {
             return this.CallAsync<LoadCACertificatesRequest, LoadCACertificatesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation newly creates IEEE 802.1X configuration parameter set of the device. The
+        ///				device shall support this command if it supports IEEE 802.1X. If the device receives this
+        ///				request with already existing configuration token (Dot1XConfigurationToken) specification, the
+        ///				device should respond with 'ter:ReferenceToken ' error to indicate there is some configuration
+        ///				conflict.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<CreateDot1XConfigurationResponse> CreateDot1XConfigurationAsync(CreateDot1XConfigurationRequest request)
         {
             return this.CallAsync<CreateDot1XConfigurationRequest, CreateDot1XConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// While the CreateDot1XConfiguration command is trying to create a new configuration
+        ///				parameter set, this operation modifies existing IEEE 802.1X configuration parameter set of
+        ///				the device. A device that support IEEE 802.1X shall support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetDot1XConfigurationResponse> SetDot1XConfigurationAsync(SetDot1XConfigurationRequest request)
         {
             return this.CallAsync<SetDot1XConfigurationRequest, SetDot1XConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets one IEEE 802.1X configuration parameter set from the device by
+        ///				specifying the configuration token (Dot1XConfigurationToken).
+        ///				A device that supports IEEE 802.1X shall support this command.
+        ///				Regardless of whether the 802.1X method in the retrieved configuration has a password or
+        ///				not, the device shall not include the Password element in the response.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDot1XConfigurationResponse> GetDot1XConfigurationAsync(GetDot1XConfigurationRequest request)
         {
             return this.CallAsync<GetDot1XConfigurationRequest, GetDot1XConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation gets all the existing IEEE 802.1X configuration parameter sets from the device.
+        ///				The device shall respond with all the IEEE 802.1X configurations so that the client can get to
+        ///				know how many IEEE 802.1X configurations are existing and how they are configured.
+        ///				A device that support IEEE 802.1X shall support this command.
+        ///				Regardless of whether the 802.1X method in the retrieved configuration has a password or
+        ///				not, the device shall not include the Password element in the response.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDot1XConfigurationsResponse> GetDot1XConfigurationsAsync(GetDot1XConfigurationsRequest request)
         {
             return this.CallAsync<GetDot1XConfigurationsRequest, GetDot1XConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation deletes an IEEE 802.1X configuration parameter set from the device. Which
+        ///				configuration should be deleted is specified by the 'Dot1XConfigurationToken' in the request.
+        ///				A device that support IEEE 802.1X shall support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<DeleteDot1XConfigurationResponse> DeleteDot1XConfigurationAsync(DeleteDot1XConfigurationRequest request)
         {
             return this.CallAsync<DeleteDot1XConfigurationRequest, DeleteDot1XConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the IEEE802.11 capabilities. The device shall support
+        ///				this operation.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDot11CapabilitiesResponse> GetDot11CapabilitiesAsync(GetDot11CapabilitiesRequest request)
         {
             return this.CallAsync<GetDot11CapabilitiesRequest, GetDot11CapabilitiesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the status of a wireless network interface. The device shall support this
+        ///				command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetDot11StatusResponse> GetDot11StatusAsync(GetDot11StatusRequest request)
         {
             return this.CallAsync<GetDot11StatusRequest, GetDot11StatusResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns a lists of the wireless networks in range of the device. A device should
+        ///				support this operation.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<ScanAvailableDot11NetworksResponse> ScanAvailableDot11NetworksAsync(ScanAvailableDot11NetworksRequest request)
         {
             return this.CallAsync<ScanAvailableDot11NetworksRequest, ScanAvailableDot11NetworksResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation is used to retrieve URIs from which system information may be downloaded
+        ///				using HTTP. URIs may be returned for the following system information:
+        ///				System Logs. Multiple system logs may be returned, of different types. The exact format of
+        ///				the system logs is outside the scope of this specification.
+        ///				Support Information. This consists of arbitrary device diagnostics information from a device.
+        ///				The exact format of the diagnostic information is outside the scope of this specification.
+        ///				System Backup. The received file is a backup file that can be used to restore the current
+        ///				device configuration at a later date. The exact format of the backup configuration file is
+        ///				outside the scope of this specification.
+        ///				If the device allows retrieval of system logs, support information or system backup data, it
+        ///				should make them available via HTTP GET. If it does, it shall support the GetSystemUris
+        ///				command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetSystemUrisResponse> GetSystemUrisAsync(GetSystemUrisRequest request)
         {
             return this.CallAsync<GetSystemUrisRequest, GetSystemUrisResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation initiates a firmware upgrade using the HTTP POST mechanism. The response
+        ///				to the command includes an HTTP URL to which the upgrade file may be uploaded. The
+        ///				actual upgrade takes place as soon as the HTTP POST operation has completed. The device
+        ///				should support firmware upgrade through the StartFirmwareUpgrade command. The exact
+        ///				format of the firmware data is outside the scope of this specification.
+        ///				Firmware upgrade over HTTP may be achieved using the following steps:Client calls StartFirmwareUpgrade.Server responds with upload URI and optional delay value.Client waits for delay duration if specified by server.Client transmits the firmware image to the upload URI using HTTP POST.Server reprograms itself using the uploaded image, then reboots.
+        ///				If the firmware upgrade fails because the upgrade file was invalid, the HTTP POST response
+        ///				shall be “415 Unsupported Media Type”. If the firmware upgrade fails due to an error at the
+        ///				device, the HTTP POST response shall be “500 Internal Server Error”.
+        ///				The value of the Content-Type header in the HTTP POST request shall be “application/octetstream”.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<StartFirmwareUpgradeResponse> StartFirmwareUpgradeAsync(StartFirmwareUpgradeRequest request)
         {
             return this.CallAsync<StartFirmwareUpgradeRequest, StartFirmwareUpgradeResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation initiates a system restore from backed up configuration data using the HTTP
+        ///				POST mechanism. The response to the command includes an HTTP URL to which the backup
+        ///				file may be uploaded. The actual restore takes place as soon as the HTTP POST operation
+        ///				has completed. Devices should support system restore through the StartSystemRestore
+        ///				command. The exact format of the backup configuration data is outside the scope of this
+        ///				specification.
+        ///				System restore over HTTP may be achieved using the following steps:Client calls StartSystemRestore.Server responds with upload URI.Client transmits the configuration data to the upload URI using HTTP POST.Server applies the uploaded configuration, then reboots if necessary.
+        ///				If the system restore fails because the uploaded file was invalid, the HTTP POST response
+        ///				shall be “415 Unsupported Media Type”. If the system restore fails due to an error at the
+        ///				device, the HTTP POST response shall be “500 Internal Server Error”.
+        ///				The value of the Content-Type header in the HTTP POST request shall be “application/octetstream”.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<StartSystemRestoreResponse> StartSystemRestoreAsync(StartSystemRestoreRequest request)
         {
             return this.CallAsync<StartSystemRestoreRequest, StartSystemRestoreResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///			This operation lists all existing storage configurations for the device. 
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetStorageConfigurationsResponse> GetStorageConfigurationsAsync(GetStorageConfigurationsRequest request)
         {
             return this.CallAsync<GetStorageConfigurationsRequest, GetStorageConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///			This operation creates a new storage configuration. 
+        ///			The configuration data shall be created in the device and shall be persistent (remain after reboot).
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<CreateStorageConfigurationResponse> CreateStorageConfigurationAsync(CreateStorageConfigurationRequest request)
         {
             return this.CallAsync<CreateStorageConfigurationRequest, CreateStorageConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///			This operation retrieves the Storage configuration associated with the given storage configuration token.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetStorageConfigurationResponse> GetStorageConfigurationAsync(GetStorageConfigurationRequest request)
         {
             return this.CallAsync<GetStorageConfigurationRequest, GetStorageConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///			This operation modifies an existing Storage configuration.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetStorageConfigurationResponse> SetStorageConfigurationAsync(SetStorageConfigurationRequest request)
         {
             return this.CallAsync<SetStorageConfigurationRequest, SetStorageConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///			This operation deletes the given storage configuration and configuration change shall always be persistent.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<DeleteStorageConfigurationResponse> DeleteStorageConfigurationAsync(DeleteStorageConfigurationRequest request)
         {
             return this.CallAsync<DeleteStorageConfigurationRequest, DeleteStorageConfigurationResponse>(null, request);
@@ -3050,6 +4128,9 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.DeviceManagement
     /// Base class for physical entities like inputs and outputs.
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(NetworkInterface))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RelayOutput))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StorageConfiguration))]
     public class DeviceEntity
     {
         
@@ -4008,11 +5089,11 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.DeviceManagement
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CertificateID;
         
-		///// <summary>
-		///// base64 encoded DER representation of certificate.
-		///// </summary>
-		//[System.Xml.Serialization.XmlElementAttribute(Order=1)]
-		//public BinaryData Certificate;
+        /// <summary>
+        /// base64 encoded DER representation of certificate.
+        /// </summary>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public BinaryData Certificate;
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/device/wsdl")]

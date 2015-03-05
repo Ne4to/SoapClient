@@ -2,7 +2,6 @@
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -15,8 +14,8 @@ using System.Xml.Serialization;
 namespace SoapClientBuilder
 {
 	// TODO XmlElementAttribute.DataType
-	// TODO XmlElementAttribute.IsNullable
-	// TODO XML Documentation
+	// TODO XmlElementAttribute.IsNullable	
+	// TODO namespace comparer
 	public class ProxyBuilder
 	{
 		private const string ClientBaseClassName = "SoapServices.SoapClientBase";
@@ -26,9 +25,10 @@ namespace SoapClientBuilder
 
 		private readonly CodeCompileUnit _codeUnit;
 		private readonly CodeNamespace _codeNamespace;
+		private readonly Dictionary<string, CodeTypeMember> _generatedTypes = new Dictionary<string, CodeTypeMember>();
 
 		private readonly Dictionary<XName, XElement> _messageElements;
-		private readonly Dictionary<XName, CodeTypeReference> _generatedTypes = new Dictionary<XName, CodeTypeReference>();
+		private readonly Dictionary<XName, CodeTypeReference> _generatedTypesReferences = new Dictionary<XName, CodeTypeReference>();
 		private readonly Dictionary<XName, XElement> _schemaElements;
 		private readonly Dictionary<XName, XElement> _schemaComplexTypes;
 		private readonly Dictionary<XName, XElement> _schemaSimpleTypes;
@@ -61,17 +61,7 @@ namespace SoapClientBuilder
 			{
 				var portTypeName = portTypeElement.Attribute("name").Value;
 
-				XElement bindingElement = null;
-				foreach (var be in _wsdlDoc.Root.Elements(Namespaces.Wsdl + "binding"))
-				{
-					var typeName = GetTypeName(be, "type");
-					if (typeName.LocalName == portTypeName)
-					{
-						bindingElement = be;
-						break;
-					}
-				}
-
+				var bindingElement = GetBindingElement(portTypeName);
 				if (bindingElement == null)
 					continue;
 
@@ -84,11 +74,11 @@ namespace SoapClientBuilder
 				if (soapBindingElement == null)
 					continue;
 
+				//<soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+				//<http:binding verb="GET" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" />
 				if (soapBindingElement.Attribute("transport").Value != "http://schemas.xmlsoap.org/soap/http")
 					continue;
 
-				//<soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
-				//<http:binding verb="GET" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" />
 				var interfaceTypeDec = AddServiceInterface(portTypeName);
 				var implTypeDec = AddServiceImplementation(interfaceTypeDec);
 
@@ -106,16 +96,33 @@ namespace SoapClientBuilder
 						soapAction = soapActionAttr == null ? null : soapActionAttr.Value;
 					}
 
+					var operationComment = GetOperationComment(operation);
+
 					var inputElement = operation.Element(Namespaces.Wsdl + "input");
 					var inputTypeReference = Process(inputElement, true);
 
 					var outputElement = operation.Element(Namespaces.Wsdl + "output");
 					var outputTypeReference = Process(outputElement, false);
 
-					AddInterfaceOperation(operationName, outputTypeReference, interfaceTypeDec, inputTypeReference);
-					AddImplementationOperation(operationName, outputTypeReference, implTypeDec, inputTypeReference, soapAction);
+					AddInterfaceOperation(operationName, outputTypeReference, interfaceTypeDec, inputTypeReference, operationComment);
+					AddImplementationOperation(operationName, outputTypeReference, implTypeDec, inputTypeReference, soapAction, operationComment);
 				}
 			}
+		}
+
+		private XElement GetBindingElement(string portTypeName)
+		{
+			XElement bindingElement = null;
+			foreach (var be in _wsdlDoc.Root.Elements(Namespaces.Wsdl + "binding"))
+			{
+				var typeName = GetTypeName(be, "type");
+				if (typeName.LocalName == portTypeName)
+				{
+					bindingElement = be;
+					break;
+				}
+			}
+			return bindingElement;
 		}
 
 		private Dictionary<XName, XElement> GetSchemaItems(string itemName)
@@ -138,26 +145,29 @@ namespace SoapClientBuilder
 			return messageElements.ToDictionary(me => GetTypeName(me, "name", targetNamespace), me => me);
 		}
 
-		private void AddInterfaceOperation(string operationName, CodeTypeReference outputTypeReference,
-			CodeTypeDeclaration interfaceTypeDec, CodeTypeReference inputTypeReference)
+		private void AddInterfaceOperation(string operationName, CodeTypeReference outputTypeReference, CodeTypeDeclaration interfaceTypeDec, CodeTypeReference inputTypeReference, string comment)
 		{
 			var mth = new CodeMemberMethod();
 			mth.Name = operationName + "Async";
 			var typeName = String.Format("System.Threading.Tasks.Task<{0}>", outputTypeReference.BaseType);
 			mth.ReturnType = new CodeTypeReference() { BaseType = typeName };
+
+			AddComment(mth, comment);
 
 			mth.Parameters.Add(new CodeParameterDeclarationExpression(inputTypeReference.BaseType + "Request", "request"));
 
 			interfaceTypeDec.Members.Add(mth);
 		}
 
-		private static void AddImplementationOperation(string operationName, CodeTypeReference outputTypeReference, CodeTypeDeclaration implTypeDec, CodeTypeReference inputTypeReference, string soapAction)
+		private static void AddImplementationOperation(string operationName, CodeTypeReference outputTypeReference, CodeTypeDeclaration implTypeDec, CodeTypeReference inputTypeReference, string soapAction, string comment)
 		{
 			var mth = new CodeMemberMethod();
 			mth.Attributes = MemberAttributes.Public;
 			mth.Name = operationName + "Async";
 			var typeName = String.Format("System.Threading.Tasks.Task<{0}>", outputTypeReference.BaseType);
 			mth.ReturnType = new CodeTypeReference() { BaseType = typeName };
+
+			AddComment(mth, comment);
 
 			mth.Parameters.Add(new CodeParameterDeclarationExpression(inputTypeReference.BaseType + "Request", "request"));
 
@@ -225,7 +235,7 @@ namespace SoapClientBuilder
 				return new CodeTypeReference(type);
 
 			CodeTypeReference codeTypeReference;
-			if (_generatedTypes.TryGetValue(typeName, out codeTypeReference))
+			if (_generatedTypesReferences.TryGetValue(typeName, out codeTypeReference))
 				return codeTypeReference;
 
 			if (TryGetFromSchemaElement(typeName, isRoot, isRequest, out codeTypeReference))
@@ -259,7 +269,7 @@ namespace SoapClientBuilder
 			{
 				localName = GetCodeTypeName(typeName.LocalName);
 				typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
-				_generatedTypes.Add(typeName, typeReference);
+				_generatedTypesReferences.Add(typeName, typeReference);
 				CreateComplexTypeDeclaration(complexTypeElement, localName, typeName.NamespaceName, isRoot, isRequest);
 				return true;
 			}
@@ -269,7 +279,7 @@ namespace SoapClientBuilder
 
 			localName = GetCodeTypeName(tn.LocalName);
 			typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
-			_generatedTypes.Add(typeName, typeReference);
+			_generatedTypesReferences.Add(typeName, typeReference);
 
 			CreateComplexTypeDeclaration(x, localName, tn.NamespaceName, isRoot, isRequest);
 
@@ -287,7 +297,7 @@ namespace SoapClientBuilder
 
 			var localName = GetCodeTypeName(typeName.LocalName);
 			typeReference = new CodeTypeReference(new CodeTypeParameter(localName));
-			_generatedTypes.Add(typeName, typeReference);
+			_generatedTypesReferences.Add(typeName, typeReference);
 
 			CreateComplexTypeDeclaration(typeElement, localName, typeName.NamespaceName, isRoot, false);
 
@@ -316,7 +326,7 @@ namespace SoapClientBuilder
 				var itemType = GetTypeName(listElement, "itemType");
 				var itemTypeCodeRef = GetCodeTypeReference(itemType, false, false);
 				typeReference = new CodeTypeReference(String.Format("{0}[]", itemTypeCodeRef.BaseType));
-				_generatedTypes.Add(typeName, typeReference);
+				_generatedTypesReferences.Add(typeName, typeReference);
 
 				return true;
 			}
@@ -359,7 +369,7 @@ namespace SoapClientBuilder
 				}
 
 				typeReference = new CodeTypeReference(new CodeTypeParameter(targetEnum.Name));
-				_generatedTypes.Add(typeName, typeReference);
+				_generatedTypesReferences.Add(typeName, typeReference);
 
 				return true;
 			}
@@ -417,6 +427,7 @@ namespace SoapClientBuilder
 				TypeAttributes = TypeAttributes.Public
 			};
 			_codeNamespace.Types.Add(targetClass);
+			_generatedTypes.Add(targetClass.Name, targetClass);
 
 			var attrArgs = new List<CodeAttributeArgument>();
 			//attrArgs.Add(new CodeAttributeArgument("TypeName", new CodePrimitiveExpression(typeName)));
@@ -447,8 +458,9 @@ namespace SoapClientBuilder
 
 				var baseType = GetCodeTypeReference(baseTypeName, false, false);
 
-				// TODO add     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoEncoderConfiguration))]
-				//((CodeTypeMember) baseType).CustomAttributes.Add(null);
+				attrType = new CodeTypeReference(typeof(XmlIncludeAttribute));
+				var codeAttributeDeclaration = new CodeAttributeDeclaration(attrType, new CodeAttributeArgument(new CodeTypeOfExpression(targetClass.Name)));
+				_generatedTypes[baseType.BaseType].CustomAttributes.Add(codeAttributeDeclaration);
 
 				targetClass.BaseTypes.Add(baseType);
 
@@ -570,12 +582,17 @@ namespace SoapClientBuilder
 		private static void AddComment(XElement xElement, CodeTypeMember memberElement)
 		{
 			var comment = GetComment(xElement);
-			if (comment != null)
-			{
-				memberElement.Comments.Add(new CodeCommentStatement("<summary>", true));
-				memberElement.Comments.Add(new CodeCommentStatement(comment, true));
-				memberElement.Comments.Add(new CodeCommentStatement("</summary>", true));
-			}
+			AddComment(memberElement, comment);
+		}
+
+		private static void AddComment(CodeTypeMember memberElement, string comment)
+		{
+			if (comment == null)
+				return;
+
+			memberElement.Comments.Add(new CodeCommentStatement("<summary>", true));
+			memberElement.Comments.Add(new CodeCommentStatement(comment, true));
+			memberElement.Comments.Add(new CodeCommentStatement("</summary>", true));
 		}
 
 		private string FixFieldName(string name)
@@ -600,18 +617,15 @@ namespace SoapClientBuilder
 				return null;
 
 			return Regex.Replace(documentationElement.Value, "\n", "\r\n");
-
-			return documentationElement.Value;
 		}
 
-		private static XElement GetPortTypeOperationElement(XElement portTypeElement, string operationName)
+		private static string GetOperationComment(XElement xElement)
 		{
-			var q = from opEl in portTypeElement.Elements(Namespaces.Wsdl + "operation")
-					let nameAttr = opEl.Attribute("name")
-					where nameAttr != null && nameAttr.Value == operationName
-					select opEl;
+			var documentationElement = xElement.Element(Namespaces.Wsdl + "documentation");
+			if (documentationElement == null)
+				return null;
 
-			return q.Single();
+			return Regex.Replace(documentationElement.Value, "\n", "\r\n");
 		}
 
 		private static XName GetTypeName(XElement element, string attributeName, string targetNamespace)

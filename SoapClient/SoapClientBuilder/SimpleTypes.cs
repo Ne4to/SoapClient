@@ -40,7 +40,6 @@ namespace SoapClientBuilder
 
 			//_types.Add(XName.Get("contentType", Namespaces.Mime.NamespaceName), typeof(string));
 			//_types.Add(XName.Get("mustUnderstand", @"http://schemas.xmlsoap.org/soap/envelope/"), typeof(Boolean));
-			//_types.Add(XName.Get("anyURI", Namespaces.Xsd.NamespaceName), typeof(XElement)); // TODO
 		}
 
 		public static Type Get(XName name)

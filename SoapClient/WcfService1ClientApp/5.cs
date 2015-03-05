@@ -15,558 +15,1240 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media
     public interface Media
     {
         
+        /// <summary>
+        /// Returns the capabilities of the media service. The result is returned in a typed answer.
+        /// </summary>
         System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request);
         
+        /// <summary>
+        /// This command lists all available physical video inputs of the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoSourcesResponse> GetVideoSourcesAsync(GetVideoSourcesRequest request);
         
+        /// <summary>
+        /// This command lists all available physical audio inputs of the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioSourcesResponse> GetAudioSourcesAsync(GetAudioSourcesRequest request);
         
+        /// <summary>
+        /// This command lists all available physical audio outputs of the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioOutputsResponse> GetAudioOutputsAsync(GetAudioOutputsRequest request);
         
+        /// <summary>
+        /// This operation creates a new empty media profile. The media profile shall be created in the
+        ///device and shall be persistent (remain after reboot). A created profile shall be deletable and a device shall set the “fixed” attribute to false in the
+        ///returned Profile.
+        /// </summary>
         System.Threading.Tasks.Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request);
         
+        /// <summary>
+        /// If the profile token is already known, a profile can be fetched through the GetProfile command.
+        /// </summary>
         System.Threading.Tasks.Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request);
         
+        /// <summary>
+        /// Any endpoint can ask for the existing media profiles of a device using the GetProfiles
+        ///command. Pre-configured or dynamically configured profiles can be retrieved using this
+        ///command. This command lists all configured profiles in a device. The client does not need to
+        ///know the media profile in order to use the command.
+        /// </summary>
         System.Threading.Tasks.Task<GetProfilesResponse> GetProfilesAsync(GetProfilesRequest request);
         
+        /// <summary>
+        /// This operation adds a VideoEncoderConfiguration to an existing media profile. If a
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent. A device shall
+        ///support adding a compatible VideoEncoderConfiguration to a Profile containing a VideoSourceConfiguration and shall
+        ///support streaming video data of such a profile.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<AddVideoEncoderConfigurationResponse> AddVideoEncoderConfigurationAsync(AddVideoEncoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes a VideoEncoderConfiguration from an existing media profile. If the
+        ///media profile does not contain a VideoEncoderConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveVideoEncoderConfigurationResponse> RemoveVideoEncoderConfigurationAsync(RemoveVideoEncoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation adds a VideoSourceConfiguration to an existing media profile. If such a
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<AddVideoSourceConfigurationResponse> AddVideoSourceConfigurationAsync(AddVideoSourceConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes a VideoSourceConfiguration from an existing media profile. If the
+        ///media profile does not contain a VideoSourceConfiguration, the operation has no effect. The removal shall be persistent. Video source configurations should only be removed after removing a
+        ///VideoEncoderConfiguration from the media profile.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveVideoSourceConfigurationResponse> RemoveVideoSourceConfigurationAsync(RemoveVideoSourceConfigurationRequest request);
         
+        /// <summary>
+        /// This operation adds an AudioEncoderConfiguration to an existing media profile. If a 
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent. A device shall
+        ///support adding a compatible AudioEncoderConfiguration to a profile containing an AudioSourceConfiguration and shall
+        ///support streaming audio data of such a profile.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<AddAudioEncoderConfigurationResponse> AddAudioEncoderConfigurationAsync(AddAudioEncoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes an AudioEncoderConfiguration from an existing media profile. If the
+        ///media profile does not contain an AudioEncoderConfiguration, the operation has no effect.
+        ///The removal shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveAudioEncoderConfigurationResponse> RemoveAudioEncoderConfigurationAsync(RemoveAudioEncoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation adds an AudioSourceConfiguration to an existing media profile. If a
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<AddAudioSourceConfigurationResponse> AddAudioSourceConfigurationAsync(AddAudioSourceConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes an AudioSourceConfiguration from an existing media profile. If the
+        ///media profile does not contain an AudioSourceConfiguration, the operation has no effect. The
+        ///removal shall be persistent. Audio source configurations should only be removed after removing an
+        ///AudioEncoderConfiguration from the media profile.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveAudioSourceConfigurationResponse> RemoveAudioSourceConfigurationAsync(RemoveAudioSourceConfigurationRequest request);
         
+        /// <summary>
+        /// This operation adds a PTZConfiguration to an existing media profile. If a configuration exists
+        ///in the media profile, it will be replaced. The change shall be persistent. Adding a PTZConfiguration to a media profile means that streams using that media profile can
+        ///contain PTZ status (in the metadata), and that the media profile can be used for controlling
+        ///PTZ movement.
+        /// </summary>
         System.Threading.Tasks.Task<AddPTZConfigurationResponse> AddPTZConfigurationAsync(AddPTZConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes a PTZConfiguration from an existing media profile. If the media profile
+        ///does not contain a PTZConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<RemovePTZConfigurationResponse> RemovePTZConfigurationAsync(RemovePTZConfigurationRequest request);
         
+        /// <summary>
+        /// This operation adds a VideoAnalytics configuration to an existing media profile. If a
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent. Adding a VideoAnalyticsConfiguration to a media profile means that streams using that media
+        ///profile can contain video analytics data (in the metadata) as defined by the submitted configuration reference. A profile containing only a video analytics configuration but no video source configuration is incomplete. Therefore, a client should first add a video source configuration to a profile before adding a video analytics configuration. The device can deny adding of a video analytics
+        ///configuration before a video source configuration.
+        /// </summary>
         System.Threading.Tasks.Task<AddVideoAnalyticsConfigurationResponse> AddVideoAnalyticsConfigurationAsync(AddVideoAnalyticsConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes a VideoAnalyticsConfiguration from an existing media profile. If the media profile does not contain a VideoAnalyticsConfiguration, the operation has no effect.
+        ///The removal shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveVideoAnalyticsConfigurationResponse> RemoveVideoAnalyticsConfigurationAsync(RemoveVideoAnalyticsConfigurationRequest request);
         
+        /// <summary>
+        /// This operation adds a Metadata configuration to an existing media profile. If a configuration exists in the media profile, it will be replaced. The change shall be persistent. Adding a MetadataConfiguration to a Profile means that streams using that profile contain metadata. Metadata can consist of events, PTZ status, and/or video analytics data.
+        /// </summary>
         System.Threading.Tasks.Task<AddMetadataConfigurationResponse> AddMetadataConfigurationAsync(AddMetadataConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes a MetadataConfiguration from an existing media profile. If the media profile does not contain a MetadataConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveMetadataConfigurationResponse> RemoveMetadataConfigurationAsync(RemoveMetadataConfigurationRequest request);
         
+        /// <summary>
+        /// This operation adds an AudioOutputConfiguration to an existing media profile. If a configuration exists in the media profile, it will be replaced. The change shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<AddAudioOutputConfigurationResponse> AddAudioOutputConfigurationAsync(AddAudioOutputConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes an AudioOutputConfiguration from an existing media profile. If the media profile does not contain an AudioOutputConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveAudioOutputConfigurationResponse> RemoveAudioOutputConfigurationAsync(RemoveAudioOutputConfigurationRequest request);
         
+        /// <summary>
+        /// This operation adds an AudioDecoderConfiguration to an existing media profile. If a configuration exists in the media profile, it shall be replaced. The change shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<AddAudioDecoderConfigurationResponse> AddAudioDecoderConfigurationAsync(AddAudioDecoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation removes an AudioDecoderConfiguration from an existing media profile. If the media profile does not contain an AudioDecoderConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         System.Threading.Tasks.Task<RemoveAudioDecoderConfigurationResponse> RemoveAudioDecoderConfigurationAsync(RemoveAudioDecoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation deletes a profile. This change shall always be persistent. Deletion of a profile is only possible for non-fixed profiles
+        /// </summary>
         System.Threading.Tasks.Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request);
         
+        /// <summary>
+        /// This operation lists all existing video source configurations for a device. The client need not know anything about the video source configurations in order to use the command.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoSourceConfigurationsResponse> GetVideoSourceConfigurationsAsync(GetVideoSourceConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation lists all existing video encoder configurations of a device. This command lists all configured video encoder configurations in a device. The client need not know anything apriori about the video encoder configurations in order to use the command.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoEncoderConfigurationsResponse> GetVideoEncoderConfigurationsAsync(GetVideoEncoderConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation lists all existing audio source configurations of a device. This command lists all audio source configurations in a device. The client need not know anything apriori about the audio source configurations in order to use the command.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioSourceConfigurationsResponse> GetAudioSourceConfigurationsAsync(GetAudioSourceConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation lists all existing device audio encoder configurations. The client need not know anything apriori about the audio encoder configurations in order to use the command.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioEncoderConfigurationsResponse> GetAudioEncoderConfigurationsAsync(GetAudioEncoderConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation lists all video analytics configurations of a device. This command lists all configured video analytics in a device. The client need not know anything apriori about the video analytics in order to use the command.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationsResponse> GetVideoAnalyticsConfigurationsAsync(GetVideoAnalyticsConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation lists all existing metadata configurations. The client need not know anything apriori about the metadata in order to use the command.
+        /// </summary>
         System.Threading.Tasks.Task<GetMetadataConfigurationsResponse> GetMetadataConfigurationsAsync(GetMetadataConfigurationsRequest request);
         
+        /// <summary>
+        /// This command lists all existing AudioOutputConfigurations of a device. The NVC need not know anything apriori about the audio configurations to use this command.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioOutputConfigurationsResponse> GetAudioOutputConfigurationsAsync(GetAudioOutputConfigurationsRequest request);
         
+        /// <summary>
+        /// This command lists all existing AudioDecoderConfigurations of a device. The NVC need not know anything apriori about the audio decoder configurations in order to
+        ///use this command.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioDecoderConfigurationsResponse> GetAudioDecoderConfigurationsAsync(GetAudioDecoderConfigurationsRequest request);
         
+        /// <summary>
+        /// If the video source configuration token is already known, the video source configuration can be fetched through the GetVideoSourceConfiguration command.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoSourceConfigurationResponse> GetVideoSourceConfigurationAsync(GetVideoSourceConfigurationRequest request);
         
+        /// <summary>
+        /// If the video encoder configuration token is already known, the encoder configuration can be fetched through the GetVideoEncoderConfiguration command.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoEncoderConfigurationResponse> GetVideoEncoderConfigurationAsync(GetVideoEncoderConfigurationRequest request);
         
+        /// <summary>
+        /// The GetAudioSourceConfiguration command fetches the audio source configurations if the audio source configuration token is already known. An
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioSourceConfigurationResponse> GetAudioSourceConfigurationAsync(GetAudioSourceConfigurationRequest request);
         
+        /// <summary>
+        /// The GetAudioEncoderConfiguration command fetches the encoder configuration if the audio encoder configuration token is known.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioEncoderConfigurationResponse> GetAudioEncoderConfigurationAsync(GetAudioEncoderConfigurationRequest request);
         
+        /// <summary>
+        /// The GetVideoAnalyticsConfiguration command fetches the video analytics configuration if the video analytics token is known.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationResponse> GetVideoAnalyticsConfigurationAsync(GetVideoAnalyticsConfigurationRequest request);
         
+        /// <summary>
+        /// The GetMetadataConfiguration command fetches the metadata configuration if the metadata token is known.
+        /// </summary>
         System.Threading.Tasks.Task<GetMetadataConfigurationResponse> GetMetadataConfigurationAsync(GetMetadataConfigurationRequest request);
         
+        /// <summary>
+        /// If the audio output configuration token is already known, the output configuration can be fetched through the GetAudioOutputConfiguration command.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioOutputConfigurationResponse> GetAudioOutputConfigurationAsync(GetAudioOutputConfigurationRequest request);
         
+        /// <summary>
+        /// If the audio decoder configuration token is already known, the decoder configuration can be fetched through the GetAudioDecoderConfiguration command.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioDecoderConfigurationResponse> GetAudioDecoderConfigurationAsync(GetAudioDecoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation lists all the video encoder configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddVideoEncoderConfiguration command on the media profile. The result will vary depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleVideoEncoderConfigurationsResponse> GetCompatibleVideoEncoderConfigurationsAsync(GetCompatibleVideoEncoderConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation requests all the video source configurations of the device that are compatible
+        ///with a certain media profile. Each of the returned configurations shall be a valid input
+        ///parameter for the AddVideoSourceConfiguration command on the media profile. The result
+        ///will vary depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleVideoSourceConfigurationsResponse> GetCompatibleVideoSourceConfigurationsAsync(GetCompatibleVideoSourceConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation requests all audio encoder configurations of a device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioSourceConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleAudioEncoderConfigurationsResponse> GetCompatibleAudioEncoderConfigurationsAsync(GetCompatibleAudioEncoderConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation requests all audio source configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioEncoderConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleAudioSourceConfigurationsResponse> GetCompatibleAudioSourceConfigurationsAsync(GetCompatibleAudioSourceConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation requests all video analytic configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddVideoAnalyticsConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleVideoAnalyticsConfigurationsResponse> GetCompatibleVideoAnalyticsConfigurationsAsync(GetCompatibleVideoAnalyticsConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation requests all the metadata configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddMetadataConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleMetadataConfigurationsResponse> GetCompatibleMetadataConfigurationsAsync(GetCompatibleMetadataConfigurationsRequest request);
         
+        /// <summary>
+        /// This command lists all audio output configurations of a device that are compatible with a certain media profile. Each returned configuration shall be a valid input for the 
+        ///AddAudioOutputConfiguration command.
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleAudioOutputConfigurationsResponse> GetCompatibleAudioOutputConfigurationsAsync(GetCompatibleAudioOutputConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation lists all the audio decoder configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioDecoderConfiguration command on the media profile.
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleAudioDecoderConfigurationsResponse> GetCompatibleAudioDecoderConfigurationsAsync(GetCompatibleAudioDecoderConfigurationsRequest request);
         
+        /// <summary>
+        /// This operation modifies a video source configuration. The ForcePersistence flag indicates if the changes shall remain after reboot of the device. Running streams using this configuration may be immediately updated according to the new settings. The changes are not guaranteed to take effect unless the client requests a new stream URI and restarts any affected stream. NVC methods for changing a running stream are out of scope for this specification.
+        /// </summary>
         System.Threading.Tasks.Task<SetVideoSourceConfigurationResponse> SetVideoSourceConfigurationAsync(SetVideoSourceConfigurationRequest request);
         
+        /// <summary>
+        /// This operation modifies a video encoder configuration. The ForcePersistence flag indicates if the changes shall remain after reboot of the device. Changes in the Multicast settings shall always be persistent. Running streams using this configuration may be immediately updated according to the new settings. The changes are not guaranteed to take effect unless the client requests a new stream URI and restarts any affected stream. NVC methods for changing a running stream are out of scope for this specification. SessionTimeout is provided as a hint for keeping rtsp session by a device. If necessary the device may adapt parameter values for SessionTimeout elements without returning an error. For the time between keep alive calls the client shall adhere to the timeout value signaled via RTSP.
+        /// </summary>
         System.Threading.Tasks.Task<SetVideoEncoderConfigurationResponse> SetVideoEncoderConfigurationAsync(SetVideoEncoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation modifies an audio source configuration. The ForcePersistence flag indicates if
+        ///the changes shall remain after reboot of the device. Running streams using this configuration
+        ///may be immediately updated according to the new settings. The changes are not guaranteed
+        ///to take effect unless the client requests a new stream URI and restarts any affected stream
+        ///NVC methods for changing a running stream are out of scope for this specification.
+        /// </summary>
         System.Threading.Tasks.Task<SetAudioSourceConfigurationResponse> SetAudioSourceConfigurationAsync(SetAudioSourceConfigurationRequest request);
         
+        /// <summary>
+        /// This operation modifies an audio encoder configuration. The ForcePersistence flag indicates if
+        ///the changes shall remain after reboot of the device. Running streams using this configuration may be immediately updated
+        ///according to the new settings. The changes are not guaranteed to take effect unless the client
+        ///requests a new stream URI and restarts any affected streams. NVC methods for changing a
+        ///running stream are out of scope for this specification.
+        /// </summary>
         System.Threading.Tasks.Task<SetAudioEncoderConfigurationResponse> SetAudioEncoderConfigurationAsync(SetAudioEncoderConfigurationRequest request);
         
+        /// <summary>
+        /// A video analytics configuration is modified using this command. The ForcePersistence flag
+        ///indicates if the changes shall remain after reboot of the device or not. Running streams using
+        ///this configuration shall be immediately updated according to the new settings. Otherwise
+        ///inconsistencies can occur between the scene description processed by the rule engine and
+        ///the notifications produced by analytics engine and rule engine which reference the very same
+        ///video analytics configuration token.
+        /// </summary>
         System.Threading.Tasks.Task<SetVideoAnalyticsConfigurationResponse> SetVideoAnalyticsConfigurationAsync(SetVideoAnalyticsConfigurationRequest request);
         
+        /// <summary>
+        /// This operation modifies a metadata configuration. The ForcePersistence flag indicates if the
+        ///changes shall remain after reboot of the device. Changes in the Multicast settings shall
+        ///always be persistent. Running streams using this configuration may be updated immediately
+        ///according to the new settings. The changes are not guaranteed to take effect unless the client
+        ///requests a new stream URI and restarts any affected streams. NVC methods for changing a
+        ///running stream are out of scope for this specification.
+        /// </summary>
         System.Threading.Tasks.Task<SetMetadataConfigurationResponse> SetMetadataConfigurationAsync(SetMetadataConfigurationRequest request);
         
+        /// <summary>
+        /// This operation modifies an audio output configuration. The ForcePersistence flag indicates if
+        ///the changes shall remain after reboot of the device.
+        /// </summary>
         System.Threading.Tasks.Task<SetAudioOutputConfigurationResponse> SetAudioOutputConfigurationAsync(SetAudioOutputConfigurationRequest request);
         
+        /// <summary>
+        /// This operation modifies an audio decoder configuration. The ForcePersistence flag indicates if
+        ///the changes shall remain after reboot of the device.
+        /// </summary>
         System.Threading.Tasks.Task<SetAudioDecoderConfigurationResponse> SetAudioDecoderConfigurationAsync(SetAudioDecoderConfigurationRequest request);
         
+        /// <summary>
+        /// This operation returns the available options  (supported values and ranges for video source configuration parameters) when the video source parameters are
+        ///reconfigured If a video source configuration is specified, the options shall concern that
+        ///particular configuration. If a media profile is specified, the options shall be compatible with
+        ///that media profile.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoSourceConfigurationOptionsResponse> GetVideoSourceConfigurationOptionsAsync(GetVideoSourceConfigurationOptionsRequest request);
         
+        /// <summary>
+        /// This operation returns the available options (supported values and ranges for video encoder 
+        ///				configuration parameters) when the video encoder parameters are reconfigured. 
+        ///				For JPEG, MPEG4 and H264 extension elements have been defined that provide additional information. A device must provide the 
+        ///				XxxOption information for all encodings supported and should additionally provide the corresponding XxxOption2 information.
+        ///				This response contains the available video encoder configuration options. If a video encoder configuration is specified, 
+        ///				the options shall concern that particular configuration. If a media profile is specified, the options shall be 
+        ///				compatible with that media profile. If no tokens are specified, the options shall be considered generic for the device.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoEncoderConfigurationOptionsResponse> GetVideoEncoderConfigurationOptionsAsync(GetVideoEncoderConfigurationOptionsRequest request);
         
+        /// <summary>
+        /// This operation returns the available options (supported values and ranges for audio source configuration parameters) when the audio source parameters are
+        ///reconfigured. If an audio source configuration is specified, the options shall concern that
+        ///particular configuration. If a media profile is specified, the options shall be compatible with
+        ///that media profile.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioSourceConfigurationOptionsResponse> GetAudioSourceConfigurationOptionsAsync(GetAudioSourceConfigurationOptionsRequest request);
         
+        /// <summary>
+        /// This operation returns the available options  (supported values and ranges for audio encoder configuration parameters) when the audio encoder parameters are
+        ///reconfigured.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioEncoderConfigurationOptionsResponse> GetAudioEncoderConfigurationOptionsAsync(GetAudioEncoderConfigurationOptionsRequest request);
         
+        /// <summary>
+        /// This operation returns the available options (supported values and ranges for metadata configuration parameters) for changing the metadata configuration.
+        /// </summary>
         System.Threading.Tasks.Task<GetMetadataConfigurationOptionsResponse> GetMetadataConfigurationOptionsAsync(GetMetadataConfigurationOptionsRequest request);
         
+        /// <summary>
+        /// This operation returns the available options (supported values and ranges for audio output configuration parameters) for configuring an audio output.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioOutputConfigurationOptionsResponse> GetAudioOutputConfigurationOptionsAsync(GetAudioOutputConfigurationOptionsRequest request);
         
+        /// <summary>
+        /// This command list the audio decoding capabilities for a given profile and configuration of a
+        ///device.
+        /// </summary>
         System.Threading.Tasks.Task<GetAudioDecoderConfigurationOptionsResponse> GetAudioDecoderConfigurationOptionsAsync(GetAudioDecoderConfigurationOptionsRequest request);
         
+        /// <summary>
+        /// The GetGuaranteedNumberOfVideoEncoderInstances command can be used to request the
+        ///minimum number of guaranteed video encoder instances (applications) per Video Source
+        ///Configuration.
+        /// </summary>
         System.Threading.Tasks.Task<GetGuaranteedNumberOfVideoEncoderInstancesResponse> GetGuaranteedNumberOfVideoEncoderInstancesAsync(GetGuaranteedNumberOfVideoEncoderInstancesRequest request);
         
+        /// <summary>
+        /// This operation requests a URI that can be used to initiate a live media stream using RTSP as
+        ///the control protocol. The returned URI shall remain valid indefinitely even if the profile is
+        ///changed. The ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set
+        ///accordingly (ValidUntilConnect=false, ValidUntilReboot=false, timeout=PT0S). 
+        ///				The correct syntax for the StreamSetup element for these media stream setups defined in 5.1.1 of the streaming specification are as follows:
+        ///				RTP unicast over UDP: StreamType = "RTP_unicast", TransportProtocol = "UDP"RTP over RTSP over HTTP over TCP: StreamType = "RTP_unicast", TransportProtocol = "HTTP"RTP over RTSP over TCP: StreamType = "RTP_unicast", TransportProtocol = "RTSP"
+        ///If a multicast stream is requested the VideoEncoderConfiguration, AudioEncoderConfiguration and MetadataConfiguration element inside the corresponding 
+        ///media profile must be configured with valid multicast settings.
+        ///For full compatibility with other ONVIF services a device should not generate Uris longer than
+        ///128 octets.
+        /// </summary>
         System.Threading.Tasks.Task<GetStreamUriResponse> GetStreamUriAsync(GetStreamUriRequest request);
         
+        /// <summary>
+        /// This command starts multicast streaming using a specified media profile of a device.
+        ///Streaming continues until StopMulticastStreaming is called for the same Profile. The
+        ///streaming shall continue after a reboot of the device until a StopMulticastStreaming request is
+        ///received. The multicast address, port and TTL are configured in the
+        ///VideoEncoderConfiguration, AudioEncoderConfiguration and MetadataConfiguration
+        ///respectively.
+        /// </summary>
         System.Threading.Tasks.Task<StartMulticastStreamingResponse> StartMulticastStreamingAsync(StartMulticastStreamingRequest request);
         
+        /// <summary>
+        /// This command stop multicast streaming using a specified media profile of a device
+        /// </summary>
         System.Threading.Tasks.Task<StopMulticastStreamingResponse> StopMulticastStreamingAsync(StopMulticastStreamingRequest request);
         
+        /// <summary>
+        /// Synchronization points allow clients to decode and correctly use all data after the
+        ///synchronization point.
+        ///For example, if a video stream is configured with a large I-frame distance and a client loses a
+        ///single packet, the client does not display video until the next I-frame is transmitted. In such
+        ///cases, the client can request a Synchronization Point which enforces the device to add an I-Frame as soon as possible. Clients can request Synchronization Points for profiles. The device
+        ///shall add synchronization points for all streams associated with this profile.
+        ///Similarly, a synchronization point is used to get an update on full PTZ or event status through
+        ///the metadata stream.
+        ///If a video stream is associated with the profile, an I-frame shall be added to this video stream.
+        ///If a PTZ metadata stream is associated to the profile,
+        ///the PTZ position shall be repeated within the metadata stream.
+        /// </summary>
         System.Threading.Tasks.Task<SetSynchronizationPointResponse> SetSynchronizationPointAsync(SetSynchronizationPointRequest request);
         
+        /// <summary>
+        /// A client uses the GetSnapshotUri command to obtain a JPEG snapshot from the
+        ///device. The returned URI shall remain valid indefinitely even if the profile is changed. The
+        ///ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set accordingly
+        ///(ValidUntilConnect=false, ValidUntilReboot=false, timeout=PT0S). The URI can be used for
+        ///acquiring a JPEG image through a HTTP GET operation. The image encoding will always be
+        ///JPEG regardless of the encoding setting in the media profile. The Jpeg settings
+        ///(like resolution or quality) may be taken from the profile if suitable. The provided
+        ///image will be updated automatically and independent from calls to GetSnapshotUri.
+        /// </summary>
         System.Threading.Tasks.Task<GetSnapshotUriResponse> GetSnapshotUriAsync(GetSnapshotUriRequest request);
         
+        /// <summary>
+        /// A device returns the information for current video source mode and settable video source modes of specified video source. A device that indicates a capability of  VideoSourceModes shall support this command.
+        /// </summary>
         System.Threading.Tasks.Task<GetVideoSourceModesResponse> GetVideoSourceModesAsync(GetVideoSourceModesRequest request);
         
+        /// <summary>
+        /// SetVideoSourceMode changes the media profile structure relating to video source for the specified video source mode. A device that indicates a capability of VideoSourceModes shall support this command. The behavior after changing the mode is not defined in this specification.
+        /// </summary>
         System.Threading.Tasks.Task<SetVideoSourceModeResponse> SetVideoSourceModeAsync(SetVideoSourceModeRequest request);
         
+        /// <summary>
+        /// Get the OSDs.
+        /// </summary>
         System.Threading.Tasks.Task<GetOSDsResponse> GetOSDsAsync(GetOSDsRequest request);
         
+        /// <summary>
+        /// Get the OSD.
+        /// </summary>
         System.Threading.Tasks.Task<GetOSDResponse> GetOSDAsync(GetOSDRequest request);
         
+        /// <summary>
+        /// Get the OSD Options.
+        /// </summary>
         System.Threading.Tasks.Task<GetOSDOptionsResponse> GetOSDOptionsAsync(GetOSDOptionsRequest request);
         
+        /// <summary>
+        /// Set the OSD
+        /// </summary>
         System.Threading.Tasks.Task<SetOSDResponse> SetOSDAsync(SetOSDRequest request);
         
+        /// <summary>
+        /// Create the OSD.
+        /// </summary>
         System.Threading.Tasks.Task<CreateOSDResponse> CreateOSDAsync(CreateOSDRequest request);
         
+        /// <summary>
+        /// Delete the OSD.
+        /// </summary>
         System.Threading.Tasks.Task<DeleteOSDResponse> DeleteOSDAsync(DeleteOSDRequest request);
     }
     
     public partial class MediaClient : SoapServices.SoapClientBase, Media
     {
         
+        /// <summary>
+        /// Returns the capabilities of the media service. The result is returned in a typed answer.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request)
         {
             return this.CallAsync<GetServiceCapabilitiesRequest, GetServiceCapabilitiesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command lists all available physical video inputs of the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoSourcesResponse> GetVideoSourcesAsync(GetVideoSourcesRequest request)
         {
             return this.CallAsync<GetVideoSourcesRequest, GetVideoSourcesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command lists all available physical audio inputs of the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioSourcesResponse> GetAudioSourcesAsync(GetAudioSourcesRequest request)
         {
             return this.CallAsync<GetAudioSourcesRequest, GetAudioSourcesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command lists all available physical audio outputs of the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioOutputsResponse> GetAudioOutputsAsync(GetAudioOutputsRequest request)
         {
             return this.CallAsync<GetAudioOutputsRequest, GetAudioOutputsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation creates a new empty media profile. The media profile shall be created in the
+        ///device and shall be persistent (remain after reboot). A created profile shall be deletable and a device shall set the “fixed” attribute to false in the
+        ///returned Profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request)
         {
             return this.CallAsync<CreateProfileRequest, CreateProfileResponse>(null, request);
         }
         
+        /// <summary>
+        /// If the profile token is already known, a profile can be fetched through the GetProfile command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request)
         {
             return this.CallAsync<GetProfileRequest, GetProfileResponse>(null, request);
         }
         
+        /// <summary>
+        /// Any endpoint can ask for the existing media profiles of a device using the GetProfiles
+        ///command. Pre-configured or dynamically configured profiles can be retrieved using this
+        ///command. This command lists all configured profiles in a device. The client does not need to
+        ///know the media profile in order to use the command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetProfilesResponse> GetProfilesAsync(GetProfilesRequest request)
         {
             return this.CallAsync<GetProfilesRequest, GetProfilesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds a VideoEncoderConfiguration to an existing media profile. If a
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent. A device shall
+        ///support adding a compatible VideoEncoderConfiguration to a Profile containing a VideoSourceConfiguration and shall
+        ///support streaming video data of such a profile.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddVideoEncoderConfigurationResponse> AddVideoEncoderConfigurationAsync(AddVideoEncoderConfigurationRequest request)
         {
             return this.CallAsync<AddVideoEncoderConfigurationRequest, AddVideoEncoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes a VideoEncoderConfiguration from an existing media profile. If the
+        ///media profile does not contain a VideoEncoderConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveVideoEncoderConfigurationResponse> RemoveVideoEncoderConfigurationAsync(RemoveVideoEncoderConfigurationRequest request)
         {
             return this.CallAsync<RemoveVideoEncoderConfigurationRequest, RemoveVideoEncoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds a VideoSourceConfiguration to an existing media profile. If such a
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddVideoSourceConfigurationResponse> AddVideoSourceConfigurationAsync(AddVideoSourceConfigurationRequest request)
         {
             return this.CallAsync<AddVideoSourceConfigurationRequest, AddVideoSourceConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes a VideoSourceConfiguration from an existing media profile. If the
+        ///media profile does not contain a VideoSourceConfiguration, the operation has no effect. The removal shall be persistent. Video source configurations should only be removed after removing a
+        ///VideoEncoderConfiguration from the media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveVideoSourceConfigurationResponse> RemoveVideoSourceConfigurationAsync(RemoveVideoSourceConfigurationRequest request)
         {
             return this.CallAsync<RemoveVideoSourceConfigurationRequest, RemoveVideoSourceConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds an AudioEncoderConfiguration to an existing media profile. If a 
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent. A device shall
+        ///support adding a compatible AudioEncoderConfiguration to a profile containing an AudioSourceConfiguration and shall
+        ///support streaming audio data of such a profile.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddAudioEncoderConfigurationResponse> AddAudioEncoderConfigurationAsync(AddAudioEncoderConfigurationRequest request)
         {
             return this.CallAsync<AddAudioEncoderConfigurationRequest, AddAudioEncoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes an AudioEncoderConfiguration from an existing media profile. If the
+        ///media profile does not contain an AudioEncoderConfiguration, the operation has no effect.
+        ///The removal shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveAudioEncoderConfigurationResponse> RemoveAudioEncoderConfigurationAsync(RemoveAudioEncoderConfigurationRequest request)
         {
             return this.CallAsync<RemoveAudioEncoderConfigurationRequest, RemoveAudioEncoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds an AudioSourceConfiguration to an existing media profile. If a
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddAudioSourceConfigurationResponse> AddAudioSourceConfigurationAsync(AddAudioSourceConfigurationRequest request)
         {
             return this.CallAsync<AddAudioSourceConfigurationRequest, AddAudioSourceConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes an AudioSourceConfiguration from an existing media profile. If the
+        ///media profile does not contain an AudioSourceConfiguration, the operation has no effect. The
+        ///removal shall be persistent. Audio source configurations should only be removed after removing an
+        ///AudioEncoderConfiguration from the media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveAudioSourceConfigurationResponse> RemoveAudioSourceConfigurationAsync(RemoveAudioSourceConfigurationRequest request)
         {
             return this.CallAsync<RemoveAudioSourceConfigurationRequest, RemoveAudioSourceConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds a PTZConfiguration to an existing media profile. If a configuration exists
+        ///in the media profile, it will be replaced. The change shall be persistent. Adding a PTZConfiguration to a media profile means that streams using that media profile can
+        ///contain PTZ status (in the metadata), and that the media profile can be used for controlling
+        ///PTZ movement.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddPTZConfigurationResponse> AddPTZConfigurationAsync(AddPTZConfigurationRequest request)
         {
             return this.CallAsync<AddPTZConfigurationRequest, AddPTZConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes a PTZConfiguration from an existing media profile. If the media profile
+        ///does not contain a PTZConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemovePTZConfigurationResponse> RemovePTZConfigurationAsync(RemovePTZConfigurationRequest request)
         {
             return this.CallAsync<RemovePTZConfigurationRequest, RemovePTZConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds a VideoAnalytics configuration to an existing media profile. If a
+        ///configuration exists in the media profile, it will be replaced. The change shall be persistent. Adding a VideoAnalyticsConfiguration to a media profile means that streams using that media
+        ///profile can contain video analytics data (in the metadata) as defined by the submitted configuration reference. A profile containing only a video analytics configuration but no video source configuration is incomplete. Therefore, a client should first add a video source configuration to a profile before adding a video analytics configuration. The device can deny adding of a video analytics
+        ///configuration before a video source configuration.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddVideoAnalyticsConfigurationResponse> AddVideoAnalyticsConfigurationAsync(AddVideoAnalyticsConfigurationRequest request)
         {
             return this.CallAsync<AddVideoAnalyticsConfigurationRequest, AddVideoAnalyticsConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes a VideoAnalyticsConfiguration from an existing media profile. If the media profile does not contain a VideoAnalyticsConfiguration, the operation has no effect.
+        ///The removal shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveVideoAnalyticsConfigurationResponse> RemoveVideoAnalyticsConfigurationAsync(RemoveVideoAnalyticsConfigurationRequest request)
         {
             return this.CallAsync<RemoveVideoAnalyticsConfigurationRequest, RemoveVideoAnalyticsConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds a Metadata configuration to an existing media profile. If a configuration exists in the media profile, it will be replaced. The change shall be persistent. Adding a MetadataConfiguration to a Profile means that streams using that profile contain metadata. Metadata can consist of events, PTZ status, and/or video analytics data.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddMetadataConfigurationResponse> AddMetadataConfigurationAsync(AddMetadataConfigurationRequest request)
         {
             return this.CallAsync<AddMetadataConfigurationRequest, AddMetadataConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes a MetadataConfiguration from an existing media profile. If the media profile does not contain a MetadataConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveMetadataConfigurationResponse> RemoveMetadataConfigurationAsync(RemoveMetadataConfigurationRequest request)
         {
             return this.CallAsync<RemoveMetadataConfigurationRequest, RemoveMetadataConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds an AudioOutputConfiguration to an existing media profile. If a configuration exists in the media profile, it will be replaced. The change shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddAudioOutputConfigurationResponse> AddAudioOutputConfigurationAsync(AddAudioOutputConfigurationRequest request)
         {
             return this.CallAsync<AddAudioOutputConfigurationRequest, AddAudioOutputConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes an AudioOutputConfiguration from an existing media profile. If the media profile does not contain an AudioOutputConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveAudioOutputConfigurationResponse> RemoveAudioOutputConfigurationAsync(RemoveAudioOutputConfigurationRequest request)
         {
             return this.CallAsync<RemoveAudioOutputConfigurationRequest, RemoveAudioOutputConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation adds an AudioDecoderConfiguration to an existing media profile. If a configuration exists in the media profile, it shall be replaced. The change shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AddAudioDecoderConfigurationResponse> AddAudioDecoderConfigurationAsync(AddAudioDecoderConfigurationRequest request)
         {
             return this.CallAsync<AddAudioDecoderConfigurationRequest, AddAudioDecoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation removes an AudioDecoderConfiguration from an existing media profile. If the media profile does not contain an AudioDecoderConfiguration, the operation has no effect. The removal shall be persistent.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemoveAudioDecoderConfigurationResponse> RemoveAudioDecoderConfigurationAsync(RemoveAudioDecoderConfigurationRequest request)
         {
             return this.CallAsync<RemoveAudioDecoderConfigurationRequest, RemoveAudioDecoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation deletes a profile. This change shall always be persistent. Deletion of a profile is only possible for non-fixed profiles
+        /// </summary>
         public virtual System.Threading.Tasks.Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request)
         {
             return this.CallAsync<DeleteProfileRequest, DeleteProfileResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists all existing video source configurations for a device. The client need not know anything about the video source configurations in order to use the command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationsResponse> GetVideoSourceConfigurationsAsync(GetVideoSourceConfigurationsRequest request)
         {
             return this.CallAsync<GetVideoSourceConfigurationsRequest, GetVideoSourceConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists all existing video encoder configurations of a device. This command lists all configured video encoder configurations in a device. The client need not know anything apriori about the video encoder configurations in order to use the command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationsResponse> GetVideoEncoderConfigurationsAsync(GetVideoEncoderConfigurationsRequest request)
         {
             return this.CallAsync<GetVideoEncoderConfigurationsRequest, GetVideoEncoderConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists all existing audio source configurations of a device. This command lists all audio source configurations in a device. The client need not know anything apriori about the audio source configurations in order to use the command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationsResponse> GetAudioSourceConfigurationsAsync(GetAudioSourceConfigurationsRequest request)
         {
             return this.CallAsync<GetAudioSourceConfigurationsRequest, GetAudioSourceConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists all existing device audio encoder configurations. The client need not know anything apriori about the audio encoder configurations in order to use the command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationsResponse> GetAudioEncoderConfigurationsAsync(GetAudioEncoderConfigurationsRequest request)
         {
             return this.CallAsync<GetAudioEncoderConfigurationsRequest, GetAudioEncoderConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists all video analytics configurations of a device. This command lists all configured video analytics in a device. The client need not know anything apriori about the video analytics in order to use the command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationsResponse> GetVideoAnalyticsConfigurationsAsync(GetVideoAnalyticsConfigurationsRequest request)
         {
             return this.CallAsync<GetVideoAnalyticsConfigurationsRequest, GetVideoAnalyticsConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists all existing metadata configurations. The client need not know anything apriori about the metadata in order to use the command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetMetadataConfigurationsResponse> GetMetadataConfigurationsAsync(GetMetadataConfigurationsRequest request)
         {
             return this.CallAsync<GetMetadataConfigurationsRequest, GetMetadataConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command lists all existing AudioOutputConfigurations of a device. The NVC need not know anything apriori about the audio configurations to use this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationsResponse> GetAudioOutputConfigurationsAsync(GetAudioOutputConfigurationsRequest request)
         {
             return this.CallAsync<GetAudioOutputConfigurationsRequest, GetAudioOutputConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command lists all existing AudioDecoderConfigurations of a device. The NVC need not know anything apriori about the audio decoder configurations in order to
+        ///use this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationsResponse> GetAudioDecoderConfigurationsAsync(GetAudioDecoderConfigurationsRequest request)
         {
             return this.CallAsync<GetAudioDecoderConfigurationsRequest, GetAudioDecoderConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// If the video source configuration token is already known, the video source configuration can be fetched through the GetVideoSourceConfiguration command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationResponse> GetVideoSourceConfigurationAsync(GetVideoSourceConfigurationRequest request)
         {
             return this.CallAsync<GetVideoSourceConfigurationRequest, GetVideoSourceConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// If the video encoder configuration token is already known, the encoder configuration can be fetched through the GetVideoEncoderConfiguration command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationResponse> GetVideoEncoderConfigurationAsync(GetVideoEncoderConfigurationRequest request)
         {
             return this.CallAsync<GetVideoEncoderConfigurationRequest, GetVideoEncoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// The GetAudioSourceConfiguration command fetches the audio source configurations if the audio source configuration token is already known. An
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationResponse> GetAudioSourceConfigurationAsync(GetAudioSourceConfigurationRequest request)
         {
             return this.CallAsync<GetAudioSourceConfigurationRequest, GetAudioSourceConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// The GetAudioEncoderConfiguration command fetches the encoder configuration if the audio encoder configuration token is known.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationResponse> GetAudioEncoderConfigurationAsync(GetAudioEncoderConfigurationRequest request)
         {
             return this.CallAsync<GetAudioEncoderConfigurationRequest, GetAudioEncoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// The GetVideoAnalyticsConfiguration command fetches the video analytics configuration if the video analytics token is known.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoAnalyticsConfigurationResponse> GetVideoAnalyticsConfigurationAsync(GetVideoAnalyticsConfigurationRequest request)
         {
             return this.CallAsync<GetVideoAnalyticsConfigurationRequest, GetVideoAnalyticsConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// The GetMetadataConfiguration command fetches the metadata configuration if the metadata token is known.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetMetadataConfigurationResponse> GetMetadataConfigurationAsync(GetMetadataConfigurationRequest request)
         {
             return this.CallAsync<GetMetadataConfigurationRequest, GetMetadataConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// If the audio output configuration token is already known, the output configuration can be fetched through the GetAudioOutputConfiguration command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationResponse> GetAudioOutputConfigurationAsync(GetAudioOutputConfigurationRequest request)
         {
             return this.CallAsync<GetAudioOutputConfigurationRequest, GetAudioOutputConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// If the audio decoder configuration token is already known, the decoder configuration can be fetched through the GetAudioDecoderConfiguration command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationResponse> GetAudioDecoderConfigurationAsync(GetAudioDecoderConfigurationRequest request)
         {
             return this.CallAsync<GetAudioDecoderConfigurationRequest, GetAudioDecoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists all the video encoder configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddVideoEncoderConfiguration command on the media profile. The result will vary depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleVideoEncoderConfigurationsResponse> GetCompatibleVideoEncoderConfigurationsAsync(GetCompatibleVideoEncoderConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleVideoEncoderConfigurationsRequest, GetCompatibleVideoEncoderConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests all the video source configurations of the device that are compatible
+        ///with a certain media profile. Each of the returned configurations shall be a valid input
+        ///parameter for the AddVideoSourceConfiguration command on the media profile. The result
+        ///will vary depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleVideoSourceConfigurationsResponse> GetCompatibleVideoSourceConfigurationsAsync(GetCompatibleVideoSourceConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleVideoSourceConfigurationsRequest, GetCompatibleVideoSourceConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests all audio encoder configurations of a device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioSourceConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleAudioEncoderConfigurationsResponse> GetCompatibleAudioEncoderConfigurationsAsync(GetCompatibleAudioEncoderConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleAudioEncoderConfigurationsRequest, GetCompatibleAudioEncoderConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests all audio source configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioEncoderConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleAudioSourceConfigurationsResponse> GetCompatibleAudioSourceConfigurationsAsync(GetCompatibleAudioSourceConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleAudioSourceConfigurationsRequest, GetCompatibleAudioSourceConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests all video analytic configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddVideoAnalyticsConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleVideoAnalyticsConfigurationsResponse> GetCompatibleVideoAnalyticsConfigurationsAsync(GetCompatibleVideoAnalyticsConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleVideoAnalyticsConfigurationsRequest, GetCompatibleVideoAnalyticsConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests all the metadata configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddMetadataConfiguration command on the media profile. The result varies depending on the capabilities, configurations and settings in the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleMetadataConfigurationsResponse> GetCompatibleMetadataConfigurationsAsync(GetCompatibleMetadataConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleMetadataConfigurationsRequest, GetCompatibleMetadataConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command lists all audio output configurations of a device that are compatible with a certain media profile. Each returned configuration shall be a valid input for the 
+        ///AddAudioOutputConfiguration command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleAudioOutputConfigurationsResponse> GetCompatibleAudioOutputConfigurationsAsync(GetCompatibleAudioOutputConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleAudioOutputConfigurationsRequest, GetCompatibleAudioOutputConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation lists all the audio decoder configurations of the device that are compatible with a certain media profile. Each of the returned configurations shall be a valid input parameter for the AddAudioDecoderConfiguration command on the media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleAudioDecoderConfigurationsResponse> GetCompatibleAudioDecoderConfigurationsAsync(GetCompatibleAudioDecoderConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleAudioDecoderConfigurationsRequest, GetCompatibleAudioDecoderConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation modifies a video source configuration. The ForcePersistence flag indicates if the changes shall remain after reboot of the device. Running streams using this configuration may be immediately updated according to the new settings. The changes are not guaranteed to take effect unless the client requests a new stream URI and restarts any affected stream. NVC methods for changing a running stream are out of scope for this specification.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetVideoSourceConfigurationResponse> SetVideoSourceConfigurationAsync(SetVideoSourceConfigurationRequest request)
         {
             return this.CallAsync<SetVideoSourceConfigurationRequest, SetVideoSourceConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation modifies a video encoder configuration. The ForcePersistence flag indicates if the changes shall remain after reboot of the device. Changes in the Multicast settings shall always be persistent. Running streams using this configuration may be immediately updated according to the new settings. The changes are not guaranteed to take effect unless the client requests a new stream URI and restarts any affected stream. NVC methods for changing a running stream are out of scope for this specification. SessionTimeout is provided as a hint for keeping rtsp session by a device. If necessary the device may adapt parameter values for SessionTimeout elements without returning an error. For the time between keep alive calls the client shall adhere to the timeout value signaled via RTSP.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetVideoEncoderConfigurationResponse> SetVideoEncoderConfigurationAsync(SetVideoEncoderConfigurationRequest request)
         {
             return this.CallAsync<SetVideoEncoderConfigurationRequest, SetVideoEncoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation modifies an audio source configuration. The ForcePersistence flag indicates if
+        ///the changes shall remain after reboot of the device. Running streams using this configuration
+        ///may be immediately updated according to the new settings. The changes are not guaranteed
+        ///to take effect unless the client requests a new stream URI and restarts any affected stream
+        ///NVC methods for changing a running stream are out of scope for this specification.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetAudioSourceConfigurationResponse> SetAudioSourceConfigurationAsync(SetAudioSourceConfigurationRequest request)
         {
             return this.CallAsync<SetAudioSourceConfigurationRequest, SetAudioSourceConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation modifies an audio encoder configuration. The ForcePersistence flag indicates if
+        ///the changes shall remain after reboot of the device. Running streams using this configuration may be immediately updated
+        ///according to the new settings. The changes are not guaranteed to take effect unless the client
+        ///requests a new stream URI and restarts any affected streams. NVC methods for changing a
+        ///running stream are out of scope for this specification.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetAudioEncoderConfigurationResponse> SetAudioEncoderConfigurationAsync(SetAudioEncoderConfigurationRequest request)
         {
             return this.CallAsync<SetAudioEncoderConfigurationRequest, SetAudioEncoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// A video analytics configuration is modified using this command. The ForcePersistence flag
+        ///indicates if the changes shall remain after reboot of the device or not. Running streams using
+        ///this configuration shall be immediately updated according to the new settings. Otherwise
+        ///inconsistencies can occur between the scene description processed by the rule engine and
+        ///the notifications produced by analytics engine and rule engine which reference the very same
+        ///video analytics configuration token.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetVideoAnalyticsConfigurationResponse> SetVideoAnalyticsConfigurationAsync(SetVideoAnalyticsConfigurationRequest request)
         {
             return this.CallAsync<SetVideoAnalyticsConfigurationRequest, SetVideoAnalyticsConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation modifies a metadata configuration. The ForcePersistence flag indicates if the
+        ///changes shall remain after reboot of the device. Changes in the Multicast settings shall
+        ///always be persistent. Running streams using this configuration may be updated immediately
+        ///according to the new settings. The changes are not guaranteed to take effect unless the client
+        ///requests a new stream URI and restarts any affected streams. NVC methods for changing a
+        ///running stream are out of scope for this specification.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetMetadataConfigurationResponse> SetMetadataConfigurationAsync(SetMetadataConfigurationRequest request)
         {
             return this.CallAsync<SetMetadataConfigurationRequest, SetMetadataConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation modifies an audio output configuration. The ForcePersistence flag indicates if
+        ///the changes shall remain after reboot of the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetAudioOutputConfigurationResponse> SetAudioOutputConfigurationAsync(SetAudioOutputConfigurationRequest request)
         {
             return this.CallAsync<SetAudioOutputConfigurationRequest, SetAudioOutputConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation modifies an audio decoder configuration. The ForcePersistence flag indicates if
+        ///the changes shall remain after reboot of the device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetAudioDecoderConfigurationResponse> SetAudioDecoderConfigurationAsync(SetAudioDecoderConfigurationRequest request)
         {
             return this.CallAsync<SetAudioDecoderConfigurationRequest, SetAudioDecoderConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the available options  (supported values and ranges for video source configuration parameters) when the video source parameters are
+        ///reconfigured If a video source configuration is specified, the options shall concern that
+        ///particular configuration. If a media profile is specified, the options shall be compatible with
+        ///that media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoSourceConfigurationOptionsResponse> GetVideoSourceConfigurationOptionsAsync(GetVideoSourceConfigurationOptionsRequest request)
         {
             return this.CallAsync<GetVideoSourceConfigurationOptionsRequest, GetVideoSourceConfigurationOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the available options (supported values and ranges for video encoder 
+        ///				configuration parameters) when the video encoder parameters are reconfigured. 
+        ///				For JPEG, MPEG4 and H264 extension elements have been defined that provide additional information. A device must provide the 
+        ///				XxxOption information for all encodings supported and should additionally provide the corresponding XxxOption2 information.
+        ///				This response contains the available video encoder configuration options. If a video encoder configuration is specified, 
+        ///				the options shall concern that particular configuration. If a media profile is specified, the options shall be 
+        ///				compatible with that media profile. If no tokens are specified, the options shall be considered generic for the device.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoEncoderConfigurationOptionsResponse> GetVideoEncoderConfigurationOptionsAsync(GetVideoEncoderConfigurationOptionsRequest request)
         {
             return this.CallAsync<GetVideoEncoderConfigurationOptionsRequest, GetVideoEncoderConfigurationOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the available options (supported values and ranges for audio source configuration parameters) when the audio source parameters are
+        ///reconfigured. If an audio source configuration is specified, the options shall concern that
+        ///particular configuration. If a media profile is specified, the options shall be compatible with
+        ///that media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioSourceConfigurationOptionsResponse> GetAudioSourceConfigurationOptionsAsync(GetAudioSourceConfigurationOptionsRequest request)
         {
             return this.CallAsync<GetAudioSourceConfigurationOptionsRequest, GetAudioSourceConfigurationOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the available options  (supported values and ranges for audio encoder configuration parameters) when the audio encoder parameters are
+        ///reconfigured.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioEncoderConfigurationOptionsResponse> GetAudioEncoderConfigurationOptionsAsync(GetAudioEncoderConfigurationOptionsRequest request)
         {
             return this.CallAsync<GetAudioEncoderConfigurationOptionsRequest, GetAudioEncoderConfigurationOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the available options (supported values and ranges for metadata configuration parameters) for changing the metadata configuration.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetMetadataConfigurationOptionsResponse> GetMetadataConfigurationOptionsAsync(GetMetadataConfigurationOptionsRequest request)
         {
             return this.CallAsync<GetMetadataConfigurationOptionsRequest, GetMetadataConfigurationOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation returns the available options (supported values and ranges for audio output configuration parameters) for configuring an audio output.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioOutputConfigurationOptionsResponse> GetAudioOutputConfigurationOptionsAsync(GetAudioOutputConfigurationOptionsRequest request)
         {
             return this.CallAsync<GetAudioOutputConfigurationOptionsRequest, GetAudioOutputConfigurationOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command list the audio decoding capabilities for a given profile and configuration of a
+        ///device.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetAudioDecoderConfigurationOptionsResponse> GetAudioDecoderConfigurationOptionsAsync(GetAudioDecoderConfigurationOptionsRequest request)
         {
             return this.CallAsync<GetAudioDecoderConfigurationOptionsRequest, GetAudioDecoderConfigurationOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// The GetGuaranteedNumberOfVideoEncoderInstances command can be used to request the
+        ///minimum number of guaranteed video encoder instances (applications) per Video Source
+        ///Configuration.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetGuaranteedNumberOfVideoEncoderInstancesResponse> GetGuaranteedNumberOfVideoEncoderInstancesAsync(GetGuaranteedNumberOfVideoEncoderInstancesRequest request)
         {
             return this.CallAsync<GetGuaranteedNumberOfVideoEncoderInstancesRequest, GetGuaranteedNumberOfVideoEncoderInstancesResponse>(null, request);
         }
         
+        /// <summary>
+        /// This operation requests a URI that can be used to initiate a live media stream using RTSP as
+        ///the control protocol. The returned URI shall remain valid indefinitely even if the profile is
+        ///changed. The ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set
+        ///accordingly (ValidUntilConnect=false, ValidUntilReboot=false, timeout=PT0S). 
+        ///				The correct syntax for the StreamSetup element for these media stream setups defined in 5.1.1 of the streaming specification are as follows:
+        ///				RTP unicast over UDP: StreamType = "RTP_unicast", TransportProtocol = "UDP"RTP over RTSP over HTTP over TCP: StreamType = "RTP_unicast", TransportProtocol = "HTTP"RTP over RTSP over TCP: StreamType = "RTP_unicast", TransportProtocol = "RTSP"
+        ///If a multicast stream is requested the VideoEncoderConfiguration, AudioEncoderConfiguration and MetadataConfiguration element inside the corresponding 
+        ///media profile must be configured with valid multicast settings.
+        ///For full compatibility with other ONVIF services a device should not generate Uris longer than
+        ///128 octets.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetStreamUriResponse> GetStreamUriAsync(GetStreamUriRequest request)
         {
             return this.CallAsync<GetStreamUriRequest, GetStreamUriResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command starts multicast streaming using a specified media profile of a device.
+        ///Streaming continues until StopMulticastStreaming is called for the same Profile. The
+        ///streaming shall continue after a reboot of the device until a StopMulticastStreaming request is
+        ///received. The multicast address, port and TTL are configured in the
+        ///VideoEncoderConfiguration, AudioEncoderConfiguration and MetadataConfiguration
+        ///respectively.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<StartMulticastStreamingResponse> StartMulticastStreamingAsync(StartMulticastStreamingRequest request)
         {
             return this.CallAsync<StartMulticastStreamingRequest, StartMulticastStreamingResponse>(null, request);
         }
         
+        /// <summary>
+        /// This command stop multicast streaming using a specified media profile of a device
+        /// </summary>
         public virtual System.Threading.Tasks.Task<StopMulticastStreamingResponse> StopMulticastStreamingAsync(StopMulticastStreamingRequest request)
         {
             return this.CallAsync<StopMulticastStreamingRequest, StopMulticastStreamingResponse>(null, request);
         }
         
+        /// <summary>
+        /// Synchronization points allow clients to decode and correctly use all data after the
+        ///synchronization point.
+        ///For example, if a video stream is configured with a large I-frame distance and a client loses a
+        ///single packet, the client does not display video until the next I-frame is transmitted. In such
+        ///cases, the client can request a Synchronization Point which enforces the device to add an I-Frame as soon as possible. Clients can request Synchronization Points for profiles. The device
+        ///shall add synchronization points for all streams associated with this profile.
+        ///Similarly, a synchronization point is used to get an update on full PTZ or event status through
+        ///the metadata stream.
+        ///If a video stream is associated with the profile, an I-frame shall be added to this video stream.
+        ///If a PTZ metadata stream is associated to the profile,
+        ///the PTZ position shall be repeated within the metadata stream.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetSynchronizationPointResponse> SetSynchronizationPointAsync(SetSynchronizationPointRequest request)
         {
             return this.CallAsync<SetSynchronizationPointRequest, SetSynchronizationPointResponse>(null, request);
         }
         
+        /// <summary>
+        /// A client uses the GetSnapshotUri command to obtain a JPEG snapshot from the
+        ///device. The returned URI shall remain valid indefinitely even if the profile is changed. The
+        ///ValidUntilConnect, ValidUntilReboot and Timeout Parameter shall be set accordingly
+        ///(ValidUntilConnect=false, ValidUntilReboot=false, timeout=PT0S). The URI can be used for
+        ///acquiring a JPEG image through a HTTP GET operation. The image encoding will always be
+        ///JPEG regardless of the encoding setting in the media profile. The Jpeg settings
+        ///(like resolution or quality) may be taken from the profile if suitable. The provided
+        ///image will be updated automatically and independent from calls to GetSnapshotUri.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetSnapshotUriResponse> GetSnapshotUriAsync(GetSnapshotUriRequest request)
         {
             return this.CallAsync<GetSnapshotUriRequest, GetSnapshotUriResponse>(null, request);
         }
         
+        /// <summary>
+        /// A device returns the information for current video source mode and settable video source modes of specified video source. A device that indicates a capability of  VideoSourceModes shall support this command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetVideoSourceModesResponse> GetVideoSourceModesAsync(GetVideoSourceModesRequest request)
         {
             return this.CallAsync<GetVideoSourceModesRequest, GetVideoSourceModesResponse>(null, request);
         }
         
+        /// <summary>
+        /// SetVideoSourceMode changes the media profile structure relating to video source for the specified video source mode. A device that indicates a capability of VideoSourceModes shall support this command. The behavior after changing the mode is not defined in this specification.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetVideoSourceModeResponse> SetVideoSourceModeAsync(SetVideoSourceModeRequest request)
         {
             return this.CallAsync<SetVideoSourceModeRequest, SetVideoSourceModeResponse>(null, request);
         }
         
+        /// <summary>
+        /// Get the OSDs.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetOSDsResponse> GetOSDsAsync(GetOSDsRequest request)
         {
             return this.CallAsync<GetOSDsRequest, GetOSDsResponse>(null, request);
         }
         
+        /// <summary>
+        /// Get the OSD.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetOSDResponse> GetOSDAsync(GetOSDRequest request)
         {
             return this.CallAsync<GetOSDRequest, GetOSDResponse>(null, request);
         }
         
+        /// <summary>
+        /// Get the OSD Options.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetOSDOptionsResponse> GetOSDOptionsAsync(GetOSDOptionsRequest request)
         {
             return this.CallAsync<GetOSDOptionsRequest, GetOSDOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// Set the OSD
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetOSDResponse> SetOSDAsync(SetOSDRequest request)
         {
             return this.CallAsync<SetOSDRequest, SetOSDResponse>(null, request);
         }
         
+        /// <summary>
+        /// Create the OSD.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<CreateOSDResponse> CreateOSDAsync(CreateOSDRequest request)
         {
             return this.CallAsync<CreateOSDRequest, CreateOSDResponse>(null, request);
         }
         
+        /// <summary>
+        /// Delete the OSD.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<DeleteOSDResponse> DeleteOSDAsync(DeleteOSDRequest request)
         {
             return this.CallAsync<DeleteOSDRequest, DeleteOSDResponse>(null, request);
@@ -729,6 +1411,10 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media
     /// Base class for physical entities like inputs and outputs.
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoSource))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudioSource))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudioOutput))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OSDConfiguration))]
     public class DeviceEntity
     {
         
@@ -1788,6 +2474,15 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media
     /// Base type defining the common properties of a configuration.
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoSourceConfiguration))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudioSourceConfiguration))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoEncoderConfiguration))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudioEncoderConfiguration))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VideoAnalyticsConfiguration))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PTZConfiguration))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MetadataConfiguration))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudioOutputConfiguration))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AudioDecoderConfiguration))]
     public class ConfigurationEntity
     {
         
@@ -4089,6 +4784,7 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(JpegOptions2))]
     public class JpegOptions
     {
         
@@ -4112,6 +4808,7 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Mpeg4Options2))]
     public class Mpeg4Options
     {
         
@@ -4147,6 +4844,7 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media
     }
     
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(H264Options2))]
     public class H264Options
     {
         

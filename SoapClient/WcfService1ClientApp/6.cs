@@ -15,194 +15,550 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.PTZ
     public interface PTZ
     {
         
+        /// <summary>
+        /// Returns the capabilities of the PTZ service. The result is returned in a typed answer.
+        /// </summary>
         System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request);
         
+        /// <summary>
+        /// 
+        ///				Get the descriptions of the available PTZ Nodes.
+        ///				
+        ///				A PTZ-capable device may have multiple PTZ Nodes. The PTZ Nodes may represent
+        ///				mechanical PTZ drivers, uploaded PTZ drivers or digital PTZ drivers. PTZ Nodes are the
+        ///				lowest level entities in the PTZ control API and reflect the supported PTZ capabilities. The
+        ///				PTZ Node is referenced either by its name or by its reference token. 
+        ///      		
+        /// </summary>
         System.Threading.Tasks.Task<GetNodesResponse> GetNodesAsync(GetNodesRequest request);
         
+        /// <summary>
+        /// Get a specific PTZ Node identified by a reference
+        ///        token or a name.
+        ///	  
+        /// </summary>
         System.Threading.Tasks.Task<GetNodeResponse> GetNodeAsync(GetNodeRequest request);
         
+        /// <summary>
+        /// Get a specific PTZonfiguration from the device, identified by its reference token or name.
+        ///				
+        ///				The default Position/Translation/Velocity Spaces are introduced to allow NVCs sending move
+        ///				requests without the need to specify a certain coordinate system. The default Speeds are
+        ///				introduced to control the speed of move requests (absolute, relative, preset), where no
+        ///				explicit speed has been set.
+        ///				The allowed pan and tilt range for Pan/Tilt Limits is defined by a two-dimensional space range
+        ///				that is mapped to a specific Absolute Pan/Tilt Position Space. At least one Pan/Tilt Position
+        ///				Space is required by the PTZNode to support Pan/Tilt limits. The limits apply to all supported
+        ///				absolute, relative and continuous Pan/Tilt movements. The limits shall be checked within the
+        ///				coordinate system for which the limits have been specified. That means that even if
+        ///				movements are specified in a different coordinate system, the requested movements shall be
+        ///				transformed to the coordinate system of the limits where the limits can be checked. When a
+        ///				relative or continuous movements is specified, which would leave the specified limits, the PTZ
+        ///				unit has to move along the specified limits. The Zoom Limits have to be interpreted
+        ///				accordingly.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request);
         
+        /// <summary>
+        /// 
+        ///		        Get all the existing PTZConfigurations from the device.
+        ///				
+        ///				The default Position/Translation/Velocity Spaces are introduced to allow NVCs sending move
+        ///				requests without the need to specify a certain coordinate system. The default Speeds are
+        ///				introduced to control the speed of move requests (absolute, relative, preset), where no
+        ///				explicit speed has been set.
+        ///				The allowed pan and tilt range for Pan/Tilt Limits is defined by a two-dimensional space range
+        ///				that is mapped to a specific Absolute Pan/Tilt Position Space. At least one Pan/Tilt Position
+        ///				Space is required by the PTZNode to support Pan/Tilt limits. The limits apply to all supported
+        ///				absolute, relative and continuous Pan/Tilt movements. The limits shall be checked within the
+        ///				coordinate system for which the limits have been specified. That means that even if
+        ///				movements are specified in a different coordinate system, the requested movements shall be
+        ///				transformed to the coordinate system of the limits where the limits can be checked. When a
+        ///				relative or continuous movements is specified, which would leave the specified limits, the PTZ
+        ///				unit has to move along the specified limits. The Zoom Limits have to be interpreted
+        ///				accordingly.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<GetConfigurationsResponse> GetConfigurationsAsync(GetConfigurationsRequest request);
         
+        /// <summary>
+        /// 
+        ///        Set/update a existing PTZConfiguration on the device.
+        ///      
+        /// </summary>
         System.Threading.Tasks.Task<SetConfigurationResponse> SetConfigurationAsync(SetConfigurationRequest request);
         
+        /// <summary>
+        /// 
+        ///				List supported coordinate systems including their range limitations. Therefore, the options
+        ///				MAY differ depending on whether the PTZ Configuration is assigned to a Profile containing a
+        ///				Video Source Configuration. In that case, the options may additionally contain coordinate
+        ///				systems referring to the image coordinate system described by the Video Source
+        ///				Configuration. If the PTZ Node supports continuous movements, it shall return a Timeout Range within
+        ///				which Timeouts are accepted by the PTZ Node.				
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<GetConfigurationOptionsResponse> GetConfigurationOptionsAsync(GetConfigurationOptionsRequest request);
         
+        /// <summary>
+        /// 
+        ///        Operation to send auxiliary commands to the PTZ device
+        ///        mapped by the PTZNode in the selected profile. The
+        ///        operation is supported
+        ///        if the AuxiliarySupported element of the PTZNode is true
+        ///      
+        /// </summary>
         System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommandAsync(SendAuxiliaryCommandRequest request);
         
+        /// <summary>
+        /// 
+        ///        Operation to request all PTZ presets for the PTZNode
+        ///        in the selected profile. The operation is supported if there is support
+        ///        for at least on PTZ preset by the PTZNode.
+        /// </summary>
         System.Threading.Tasks.Task<GetPresetsResponse> GetPresetsAsync(GetPresetsRequest request);
         
+        /// <summary>
+        /// 
+        ///				The SetPreset command saves the current device position parameters so that the device can
+        ///				move to the saved preset position through the GotoPreset operation.
+        ///				In order to create a new preset, the SetPresetRequest contains no PresetToken. If creation is
+        ///				successful, the Response contains the PresetToken which uniquely identifies the Preset. An
+        ///				existing Preset can be overwritten by specifying the PresetToken of the corresponding Preset.
+        ///				In both cases (overwriting or creation) an optional PresetName can be specified. The
+        ///				operation fails if the PTZ device is moving during the SetPreset operation.
+        ///				The device MAY internally save additional states such as imaging properties in the PTZ
+        ///				Preset which then should be recalled in the GotoPreset operation.      
+        /// </summary>
         System.Threading.Tasks.Task<SetPresetResponse> SetPresetAsync(SetPresetRequest request);
         
+        /// <summary>
+        /// 
+        ///        Operation to remove a PTZ preset for the Node in
+        ///        the
+        ///        selected profile. The operation is supported if the
+        ///        PresetPosition
+        ///        capability exists for teh Node in the
+        ///        selected profile.
+        ///      
+        /// </summary>
         System.Threading.Tasks.Task<RemovePresetResponse> RemovePresetAsync(RemovePresetRequest request);
         
+        /// <summary>
+        /// 
+        ///        Operation to go to a saved preset position for the
+        ///        PTZNode in the selected profile. The operation is supported if there is
+        ///        support for at least on PTZ preset by the PTZNode.
+        /// </summary>
         System.Threading.Tasks.Task<GotoPresetResponse> GotoPresetAsync(GotoPresetRequest request);
         
+        /// <summary>
+        /// 
+        ///        Operation to move the PTZ device to it's "home" position. The operation is supported if the HomeSupported element in the PTZNode is true.
+        /// </summary>
         System.Threading.Tasks.Task<GotoHomePositionResponse> GotoHomePositionAsync(GotoHomePositionRequest request);
         
+        /// <summary>
+        /// Operation to save current position as the home position.
+        ///				The SetHomePosition command returns with a failure if the “home” position is fixed and
+        ///				cannot be overwritten. If the SetHomePosition is successful, it is possible to recall the
+        ///				Home Position with the GotoHomePosition command.
+        /// </summary>
         System.Threading.Tasks.Task<SetHomePositionResponse> SetHomePositionAsync(SetHomePositionRequest request);
         
+        /// <summary>
+        /// Operation for continuous Pan/Tilt and Zoom movements. The operation is supported if the PTZNode supports at least one continuous Pan/Tilt or Zoom space. If the space argument is omitted, the default space set by the PTZConfiguration will be used.
+        /// </summary>
         System.Threading.Tasks.Task<ContinuousMoveResponse> ContinuousMoveAsync(ContinuousMoveRequest request);
         
+        /// <summary>
+        /// Operation for Relative Pan/Tilt and Zoom Move. The operation is supported if the PTZNode supports at least one relative Pan/Tilt or Zoom space. 
+        ///				The speed argument is optional. If an x/y speed value is given it is up to the device to either use 
+        ///				the x value as absolute resoluting speed vector or to map x and y to the component speed. 
+        ///				If the speed argument is omitted, the default speed set by the PTZConfiguration will be used.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<RelativeMoveResponse> RelativeMoveAsync(RelativeMoveRequest request);
         
+        /// <summary>
+        /// 
+        ///				Operation to request PTZ status for the Node in the
+        ///				selected profile.
+        /// </summary>
         System.Threading.Tasks.Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request);
         
+        /// <summary>
+        /// Operation to move pan,tilt or zoom to a absolute destination. 
+        ///				The speed argument is optional. If an x/y speed value is given it is up to the device to either use 
+        ///				the x value as absolute resoluting speed vector or to map x and y to the component speed. 
+        ///				If the speed argument is omitted, the default speed set by the PTZConfiguration will be used.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<AbsoluteMoveResponse> AbsoluteMoveAsync(AbsoluteMoveRequest request);
         
+        /// <summary>
+        /// Operation to stop ongoing pan, tilt and zoom movements of absolute relative and continuous type.
+        ///If no stop argument for pan, tilt or zoom is set, the device will stop all ongoing pan, tilt and zoom movements.
+        /// </summary>
         System.Threading.Tasks.Task<StopResponse> StopAsync(StopRequest request);
         
+        /// <summary>
+        /// Operation to request PTZ preset tours in the selected media profiles.
+        /// </summary>
         System.Threading.Tasks.Task<GetPresetToursResponse> GetPresetToursAsync(GetPresetToursRequest request);
         
+        /// <summary>
+        /// Operation to request a specific PTZ preset tour in the selected media profile.
+        /// </summary>
         System.Threading.Tasks.Task<GetPresetTourResponse> GetPresetTourAsync(GetPresetTourRequest request);
         
+        /// <summary>
+        /// Operation to request available options to configure PTZ preset tour.
+        /// </summary>
         System.Threading.Tasks.Task<GetPresetTourOptionsResponse> GetPresetTourOptionsAsync(GetPresetTourOptionsRequest request);
         
+        /// <summary>
+        /// Operation to create a preset tour for the selected media profile.
+        /// </summary>
         System.Threading.Tasks.Task<CreatePresetTourResponse> CreatePresetTourAsync(CreatePresetTourRequest request);
         
+        /// <summary>
+        /// Operation to modify a preset tour for the selected media profile.
+        /// </summary>
         System.Threading.Tasks.Task<ModifyPresetTourResponse> ModifyPresetTourAsync(ModifyPresetTourRequest request);
         
+        /// <summary>
+        /// Operation to perform specific operation on the preset tour in selected media profile.
+        /// </summary>
         System.Threading.Tasks.Task<OperatePresetTourResponse> OperatePresetTourAsync(OperatePresetTourRequest request);
         
+        /// <summary>
+        /// Operation to delete a specific preset tour from the media profile.
+        /// </summary>
         System.Threading.Tasks.Task<RemovePresetTourResponse> RemovePresetTourAsync(RemovePresetTourRequest request);
         
+        /// <summary>
+        /// Operation to get all available PTZConfigurations that can be added to the referenced media profile. 
+        ///				A device providing more than one PTZConfiguration or more than one VideoSourceConfiguration or which has any other resource
+        ///				interdependency between PTZConfiguration entities and other resources listable in a media profile should implement this operation.
+        ///				PTZConfiguration entities returned by this operation shall not fail on adding them to the referenced media profile.
+        ///			
+        /// </summary>
         System.Threading.Tasks.Task<GetCompatibleConfigurationsResponse> GetCompatibleConfigurationsAsync(GetCompatibleConfigurationsRequest request);
     }
     
     public partial class PTZClient : SoapServices.SoapClientBase, PTZ
     {
         
+        /// <summary>
+        /// Returns the capabilities of the PTZ service. The result is returned in a typed answer.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetServiceCapabilitiesResponse> GetServiceCapabilitiesAsync(GetServiceCapabilitiesRequest request)
         {
             return this.CallAsync<GetServiceCapabilitiesRequest, GetServiceCapabilitiesResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///				Get the descriptions of the available PTZ Nodes.
+        ///				
+        ///				A PTZ-capable device may have multiple PTZ Nodes. The PTZ Nodes may represent
+        ///				mechanical PTZ drivers, uploaded PTZ drivers or digital PTZ drivers. PTZ Nodes are the
+        ///				lowest level entities in the PTZ control API and reflect the supported PTZ capabilities. The
+        ///				PTZ Node is referenced either by its name or by its reference token. 
+        ///      		
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetNodesResponse> GetNodesAsync(GetNodesRequest request)
         {
             return this.CallAsync<GetNodesRequest, GetNodesResponse>(null, request);
         }
         
+        /// <summary>
+        /// Get a specific PTZ Node identified by a reference
+        ///        token or a name.
+        ///	  
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetNodeResponse> GetNodeAsync(GetNodeRequest request)
         {
             return this.CallAsync<GetNodeRequest, GetNodeResponse>(null, request);
         }
         
+        /// <summary>
+        /// Get a specific PTZonfiguration from the device, identified by its reference token or name.
+        ///				
+        ///				The default Position/Translation/Velocity Spaces are introduced to allow NVCs sending move
+        ///				requests without the need to specify a certain coordinate system. The default Speeds are
+        ///				introduced to control the speed of move requests (absolute, relative, preset), where no
+        ///				explicit speed has been set.
+        ///				The allowed pan and tilt range for Pan/Tilt Limits is defined by a two-dimensional space range
+        ///				that is mapped to a specific Absolute Pan/Tilt Position Space. At least one Pan/Tilt Position
+        ///				Space is required by the PTZNode to support Pan/Tilt limits. The limits apply to all supported
+        ///				absolute, relative and continuous Pan/Tilt movements. The limits shall be checked within the
+        ///				coordinate system for which the limits have been specified. That means that even if
+        ///				movements are specified in a different coordinate system, the requested movements shall be
+        ///				transformed to the coordinate system of the limits where the limits can be checked. When a
+        ///				relative or continuous movements is specified, which would leave the specified limits, the PTZ
+        ///				unit has to move along the specified limits. The Zoom Limits have to be interpreted
+        ///				accordingly.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request)
         {
             return this.CallAsync<GetConfigurationRequest, GetConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///		        Get all the existing PTZConfigurations from the device.
+        ///				
+        ///				The default Position/Translation/Velocity Spaces are introduced to allow NVCs sending move
+        ///				requests without the need to specify a certain coordinate system. The default Speeds are
+        ///				introduced to control the speed of move requests (absolute, relative, preset), where no
+        ///				explicit speed has been set.
+        ///				The allowed pan and tilt range for Pan/Tilt Limits is defined by a two-dimensional space range
+        ///				that is mapped to a specific Absolute Pan/Tilt Position Space. At least one Pan/Tilt Position
+        ///				Space is required by the PTZNode to support Pan/Tilt limits. The limits apply to all supported
+        ///				absolute, relative and continuous Pan/Tilt movements. The limits shall be checked within the
+        ///				coordinate system for which the limits have been specified. That means that even if
+        ///				movements are specified in a different coordinate system, the requested movements shall be
+        ///				transformed to the coordinate system of the limits where the limits can be checked. When a
+        ///				relative or continuous movements is specified, which would leave the specified limits, the PTZ
+        ///				unit has to move along the specified limits. The Zoom Limits have to be interpreted
+        ///				accordingly.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetConfigurationsResponse> GetConfigurationsAsync(GetConfigurationsRequest request)
         {
             return this.CallAsync<GetConfigurationsRequest, GetConfigurationsResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///        Set/update a existing PTZConfiguration on the device.
+        ///      
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetConfigurationResponse> SetConfigurationAsync(SetConfigurationRequest request)
         {
             return this.CallAsync<SetConfigurationRequest, SetConfigurationResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///				List supported coordinate systems including their range limitations. Therefore, the options
+        ///				MAY differ depending on whether the PTZ Configuration is assigned to a Profile containing a
+        ///				Video Source Configuration. In that case, the options may additionally contain coordinate
+        ///				systems referring to the image coordinate system described by the Video Source
+        ///				Configuration. If the PTZ Node supports continuous movements, it shall return a Timeout Range within
+        ///				which Timeouts are accepted by the PTZ Node.				
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetConfigurationOptionsResponse> GetConfigurationOptionsAsync(GetConfigurationOptionsRequest request)
         {
             return this.CallAsync<GetConfigurationOptionsRequest, GetConfigurationOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///        Operation to send auxiliary commands to the PTZ device
+        ///        mapped by the PTZNode in the selected profile. The
+        ///        operation is supported
+        ///        if the AuxiliarySupported element of the PTZNode is true
+        ///      
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SendAuxiliaryCommandResponse> SendAuxiliaryCommandAsync(SendAuxiliaryCommandRequest request)
         {
             return this.CallAsync<SendAuxiliaryCommandRequest, SendAuxiliaryCommandResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///        Operation to request all PTZ presets for the PTZNode
+        ///        in the selected profile. The operation is supported if there is support
+        ///        for at least on PTZ preset by the PTZNode.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetPresetsResponse> GetPresetsAsync(GetPresetsRequest request)
         {
             return this.CallAsync<GetPresetsRequest, GetPresetsResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///				The SetPreset command saves the current device position parameters so that the device can
+        ///				move to the saved preset position through the GotoPreset operation.
+        ///				In order to create a new preset, the SetPresetRequest contains no PresetToken. If creation is
+        ///				successful, the Response contains the PresetToken which uniquely identifies the Preset. An
+        ///				existing Preset can be overwritten by specifying the PresetToken of the corresponding Preset.
+        ///				In both cases (overwriting or creation) an optional PresetName can be specified. The
+        ///				operation fails if the PTZ device is moving during the SetPreset operation.
+        ///				The device MAY internally save additional states such as imaging properties in the PTZ
+        ///				Preset which then should be recalled in the GotoPreset operation.      
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetPresetResponse> SetPresetAsync(SetPresetRequest request)
         {
             return this.CallAsync<SetPresetRequest, SetPresetResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///        Operation to remove a PTZ preset for the Node in
+        ///        the
+        ///        selected profile. The operation is supported if the
+        ///        PresetPosition
+        ///        capability exists for teh Node in the
+        ///        selected profile.
+        ///      
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemovePresetResponse> RemovePresetAsync(RemovePresetRequest request)
         {
             return this.CallAsync<RemovePresetRequest, RemovePresetResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///        Operation to go to a saved preset position for the
+        ///        PTZNode in the selected profile. The operation is supported if there is
+        ///        support for at least on PTZ preset by the PTZNode.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GotoPresetResponse> GotoPresetAsync(GotoPresetRequest request)
         {
             return this.CallAsync<GotoPresetRequest, GotoPresetResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///        Operation to move the PTZ device to it's "home" position. The operation is supported if the HomeSupported element in the PTZNode is true.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GotoHomePositionResponse> GotoHomePositionAsync(GotoHomePositionRequest request)
         {
             return this.CallAsync<GotoHomePositionRequest, GotoHomePositionResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to save current position as the home position.
+        ///				The SetHomePosition command returns with a failure if the “home” position is fixed and
+        ///				cannot be overwritten. If the SetHomePosition is successful, it is possible to recall the
+        ///				Home Position with the GotoHomePosition command.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<SetHomePositionResponse> SetHomePositionAsync(SetHomePositionRequest request)
         {
             return this.CallAsync<SetHomePositionRequest, SetHomePositionResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation for continuous Pan/Tilt and Zoom movements. The operation is supported if the PTZNode supports at least one continuous Pan/Tilt or Zoom space. If the space argument is omitted, the default space set by the PTZConfiguration will be used.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<ContinuousMoveResponse> ContinuousMoveAsync(ContinuousMoveRequest request)
         {
             return this.CallAsync<ContinuousMoveRequest, ContinuousMoveResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation for Relative Pan/Tilt and Zoom Move. The operation is supported if the PTZNode supports at least one relative Pan/Tilt or Zoom space. 
+        ///				The speed argument is optional. If an x/y speed value is given it is up to the device to either use 
+        ///				the x value as absolute resoluting speed vector or to map x and y to the component speed. 
+        ///				If the speed argument is omitted, the default speed set by the PTZConfiguration will be used.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RelativeMoveResponse> RelativeMoveAsync(RelativeMoveRequest request)
         {
             return this.CallAsync<RelativeMoveRequest, RelativeMoveResponse>(null, request);
         }
         
+        /// <summary>
+        /// 
+        ///				Operation to request PTZ status for the Node in the
+        ///				selected profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetStatusResponse> GetStatusAsync(GetStatusRequest request)
         {
             return this.CallAsync<GetStatusRequest, GetStatusResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to move pan,tilt or zoom to a absolute destination. 
+        ///				The speed argument is optional. If an x/y speed value is given it is up to the device to either use 
+        ///				the x value as absolute resoluting speed vector or to map x and y to the component speed. 
+        ///				If the speed argument is omitted, the default speed set by the PTZConfiguration will be used.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<AbsoluteMoveResponse> AbsoluteMoveAsync(AbsoluteMoveRequest request)
         {
             return this.CallAsync<AbsoluteMoveRequest, AbsoluteMoveResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to stop ongoing pan, tilt and zoom movements of absolute relative and continuous type.
+        ///If no stop argument for pan, tilt or zoom is set, the device will stop all ongoing pan, tilt and zoom movements.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<StopResponse> StopAsync(StopRequest request)
         {
             return this.CallAsync<StopRequest, StopResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to request PTZ preset tours in the selected media profiles.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetPresetToursResponse> GetPresetToursAsync(GetPresetToursRequest request)
         {
             return this.CallAsync<GetPresetToursRequest, GetPresetToursResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to request a specific PTZ preset tour in the selected media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetPresetTourResponse> GetPresetTourAsync(GetPresetTourRequest request)
         {
             return this.CallAsync<GetPresetTourRequest, GetPresetTourResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to request available options to configure PTZ preset tour.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetPresetTourOptionsResponse> GetPresetTourOptionsAsync(GetPresetTourOptionsRequest request)
         {
             return this.CallAsync<GetPresetTourOptionsRequest, GetPresetTourOptionsResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to create a preset tour for the selected media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<CreatePresetTourResponse> CreatePresetTourAsync(CreatePresetTourRequest request)
         {
             return this.CallAsync<CreatePresetTourRequest, CreatePresetTourResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to modify a preset tour for the selected media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<ModifyPresetTourResponse> ModifyPresetTourAsync(ModifyPresetTourRequest request)
         {
             return this.CallAsync<ModifyPresetTourRequest, ModifyPresetTourResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to perform specific operation on the preset tour in selected media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<OperatePresetTourResponse> OperatePresetTourAsync(OperatePresetTourRequest request)
         {
             return this.CallAsync<OperatePresetTourRequest, OperatePresetTourResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to delete a specific preset tour from the media profile.
+        /// </summary>
         public virtual System.Threading.Tasks.Task<RemovePresetTourResponse> RemovePresetTourAsync(RemovePresetTourRequest request)
         {
             return this.CallAsync<RemovePresetTourRequest, RemovePresetTourResponse>(null, request);
         }
         
+        /// <summary>
+        /// Operation to get all available PTZConfigurations that can be added to the referenced media profile. 
+        ///				A device providing more than one PTZConfiguration or more than one VideoSourceConfiguration or which has any other resource
+        ///				interdependency between PTZConfiguration entities and other resources listable in a media profile should implement this operation.
+        ///				PTZConfiguration entities returned by this operation shall not fail on adding them to the referenced media profile.
+        ///			
+        /// </summary>
         public virtual System.Threading.Tasks.Task<GetCompatibleConfigurationsResponse> GetCompatibleConfigurationsAsync(GetCompatibleConfigurationsRequest request)
         {
             return this.CallAsync<GetCompatibleConfigurationsRequest, GetCompatibleConfigurationsResponse>(null, request);
@@ -333,6 +689,7 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.PTZ
     /// Base class for physical entities like inputs and outputs.
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PTZNode))]
     public class DeviceEntity
     {
         
@@ -712,6 +1069,7 @@ namespace AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.PTZ
     /// Base type defining the common properties of a configuration.
     /// </summary>
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.onvif.org/ver10/schema")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PTZConfiguration))]
     public class ConfigurationEntity
     {
         
