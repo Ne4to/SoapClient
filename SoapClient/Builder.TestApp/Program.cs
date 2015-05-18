@@ -19,16 +19,17 @@ namespace Builder.TestApp
 			//LoadRussianPostWsdl();
 			//CreateRussianPostClient();
 
-			//LoadOnvifDmWsdl();
-			CreateOnvifDmClient();
+			//LoadWeatherWsdl();
+			//CreateWeatherClient();
+			return;
 
 			// http://www.onvif.org/onvif/ver10/device/wsdl/devicemgmt.wsdl
 			// http://www.onvif.org/onvif/ver10/media/wsdl/media.wsdl
 			// http://www.onvif.org/onvif/ver20/ptz/wsdl/ptz.wsdl
 
-			//LoadWeatherWsdl();
-			//CreateWeatherClient();
-
+			//LoadOnvifDmWsdl();
+			CreateOnvifDmClient();
+			
 			//LoadOnvifMediaWsdl();
 			CreateOnvifMediaClient();
 
@@ -48,52 +49,52 @@ namespace Builder.TestApp
 
 		private static void LoadRussianPostWsdl()
 		{
-			Load("http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?wsdl", "WcfService2.wsdl");
+			Load("http://voh.russianpost.ru:8080/niips-operationhistory-web/OperationHistory?wsdl", "RussianPost.wsdl");
 		}
 
 		private static void CreateRussianPostClient()
 		{
-			CreateClient("WcfService2.wsdl", @"2.cs", 2);
+			CreateClient("RussianPost.wsdl", @"RussianPost.cs", 2);
 		}
 
 		private static void LoadOnvifDmWsdl()
 		{
-			Load("http://www.onvif.org/onvif/ver10/device/wsdl/devicemgmt.wsdl", "WcfService3.wsdl");
+			Load("http://www.onvif.org/onvif/ver10/device/wsdl/devicemgmt.wsdl", "OnvifDm.wsdl");
 		}
 
 		private static void CreateOnvifDmClient()
 		{
-			CreateClient("WcfService3.wsdl", @"3.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.DeviceManagement");
+			CreateClient("OnvifDm.wsdl", @"OnvifDm.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.DeviceManagement");
 		}
 
 		private static void LoadWeatherWsdl()
 		{
-			Load("http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL", "WcfService4.wsdl");
+			Load("http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL", "WeatherWS.wsdl");
 		}
 
 		private static void CreateWeatherClient()
 		{
-			CreateClient("WcfService4.wsdl", @"4.cs", 4);
+			CreateClient("WeatherWS.wsdl", @"WeatherWS.cs", 4);
 		}
 
 		private static void LoadOnvifMediaWsdl()
 		{
-			Load("http://www.onvif.org/onvif/ver10/media/wsdl/media.wsdl", "WcfService5.wsdl");
+			Load("http://www.onvif.org/onvif/ver10/media/wsdl/media.wsdl", "OnvifMedia.wsdl");
 		}
 
 		private static void CreateOnvifMediaClient()
 		{
-			CreateClient("WcfService5.wsdl", @"5.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media");
+			CreateClient("OnvifMedia.wsdl", @"OnvifMedia.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.Media");
 		}
 
 		private static void LoadOnvifPtzWsdl()
 		{
-			Load("http://www.onvif.org/onvif/ver20/ptz/wsdl/ptz.wsdl", "WcfService6.wsdl");
+			Load("http://www.onvif.org/onvif/ver20/ptz/wsdl/ptz.wsdl", "OnvifPtz.wsdl");
 		}
 
 		private static void CreateOnvifPtzClient()
 		{
-			CreateClient("WcfService6.wsdl", @"6.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.PTZ");
+			CreateClient("OnvifPtz.wsdl", @"OnvifPtz.cs", "AstroSoft.WindowsStore.Onvif.Proxies.OnvifServices.PTZ");
 		}
 		
 		private static void Load(string uri, string filename)

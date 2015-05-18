@@ -110,26 +110,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1.cs" />
-    <Compile Include="2.cs" />
-    <Compile Include="3.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="4.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="5.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="6.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OnvifDm.cs" />
+    <Compile Include="OnvifMedia.cs" />
+    <Compile Include="OnvifPtz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RussianPost.cs" />
+    <Compile Include="WeatherWS.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

@@ -537,6 +537,10 @@ namespace SoapClientBuilder
 				{
 					xmlElementName = xElement.Attribute("name").Value;
 					fieldName = FixFieldName(xElement.Attribute("name").Value);
+
+					if (fieldName == targetClass.Name)
+						fieldName += "1";
+
 					typeName2 = GetTypeName(xElement, "type");
 				}
 
@@ -616,7 +620,7 @@ namespace SoapClientBuilder
 			if (documentationElement == null)
 				return null;
 
-			return Regex.Replace(documentationElement.Value, "\n", "\r\n");
+			return Regex.Replace(documentationElement.Value, "\n", "\r\n").Trim();
 		}
 
 		private static string GetOperationComment(XElement xElement)
@@ -625,7 +629,7 @@ namespace SoapClientBuilder
 			if (documentationElement == null)
 				return null;
 
-			return Regex.Replace(documentationElement.Value, "\n", "\r\n");
+			return Regex.Replace(documentationElement.Value, "\n", "\r\n").Trim();
 		}
 
 		private static XName GetTypeName(XElement element, string attributeName, string targetNamespace)
